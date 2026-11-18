@@ -338,7 +338,14 @@
       }).join('');
 
       return '<div class="theme-block" id="t-' + th.id + '">' +
-        '<header><h3><span class="axis-icon">' + svg(ICON[th.id], 17) + '</span>' + esc(th.name) + '</h3>' +
+        '<header>' +
+        '<div class="theme-head">' +
+        '<h3><span class="axis-icon">' + svg(ICON[th.id], 17) + '</span>' + esc(th.name) + '</h3>' +
+        '<span class="theme-share">' + shareMarkup(
+          SHARE_BASE + '?sel=' + Array.from(state.selected).join(',') + '#t-' + th.id,
+          th.name + ': ' + th.axisLeft + ' — ' + th.axisRight + '. Los 22 programas del 29N, lado a lado.',
+          'el tema ' + th.name.toLowerCase(), 'left') + '</span>' +
+        '</div>' +
         '<p>' + esc(th.intro) + '</p></header>' +
         '<div class="theme-cards">' + cards + '</div></div>';
     }).join('');

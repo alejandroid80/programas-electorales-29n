@@ -374,7 +374,9 @@ table.matrix tbody tr:last-child td, table.matrix tbody tr:last-child th { borde
 
 .theme-block { margin-bottom: 38px; scroll-margin-top: 88px; }
 .theme-block > header { margin-bottom: 16px; }
-.theme-block > header h3 { font-size: 1.28rem; display: flex; align-items: center; gap: 10px; }
+.theme-block > header .theme-head { display: flex; align-items: center; gap: 14px; }
+.theme-block > header h3 { font-size: 1.28rem; display: flex; align-items: center; gap: 10px; flex: 1 1 auto; min-width: 0; }
+.theme-block > header .theme-share { flex: none; margin-left: auto; }
 .theme-block > header .axis-icon { width: 32px; height: 32px; }
 .theme-block > header p { color: var(--ink-2); font-size: .92rem; margin: 7px 0 0; max-width: 72ch; }
 .theme-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 13px; }
