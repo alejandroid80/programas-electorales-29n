@@ -144,7 +144,7 @@
       return '<article class="card" id="p-' + p.id + '" style="--pc:' + p.color + '">' +
         '<div class="card-top">' +
           '<div class="card-head">' +
-            '<div class="badge">' + esc(p.short.length > 7 ? p.short.slice(0, 6) : p.short) + '</div>' +
+            '<div class="badge">' + esc(p.abbr || p.short.slice(0, 4)) + '</div>' +
             '<div><h3>' + esc(p.name) + '</h3>' +
             '<div class="role">' + esc(blocLabel(p.bloc)) + ' · programa en ' + esc(p.lang) + '</div></div>' +
           '</div>' +

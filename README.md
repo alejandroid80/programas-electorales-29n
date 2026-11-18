@@ -54,15 +54,14 @@ También funciona abriendo `index.html` directamente con doble clic (no usa mód
 
 ## Qué contiene la página
 
-1. **Mapa de posiciones** — 8 ejes (fiscalidad, vivienda, migración, energía, forma del Estado,
-   paz/militarismo, Unión Europea, servicios públicos). En cada eje se ven las posiciones posibles
-   y qué partido sostiene cada una.
-2. **Fichas de partidos** — una por partido, con las cuatro cifras que mejor resumen su programa
+1. **Fichas de partidos** — una por partido, con las cuatro cifras que mejor resumen su programa
    y sus principales propuestas, con enlace al `.rst` original.
 3. **Matriz comparativa** — tabla de 8 temas × los partidos seleccionados, para leer las
    diferencias de un vistazo.
 4. **Diferencias por tema** — los mismos ejes, con la posición y la propuesta concreta de cada partido.
-5. **Método y fuentes** — qué se ha resumido, qué no, y los enlaces al repositorio.
+5. **Mapa de posiciones** — los 8 ejes con las posiciones posibles y qué partido sostiene cada una.
+   Va casi al final, como vista de conjunto de lo anterior.
+6. **Método y fuentes** — qué se ha resumido, qué no, y los enlaces al repositorio.
 
 ## Notas de método
 
