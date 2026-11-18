@@ -395,34 +395,38 @@
   }
 
   /* ------------------------------------------------------- contador */
-  /* Abacus: solo guarda un numero. Sin cookies, sin IP, sin perfiles. */
+  /* Abacus: solo guarda un numero. Sin cookies, sin IP, sin perfiles.
+     La visita se cuenta una vez cada 12 horas por navegador, para que
+     recargar la pagina no dispare el contador. */
   const COUNTER_API = 'https://abacus.jasoncameron.dev';
   const COUNTER_NS = 'alejandroid80.github.io';
-  const COUNTER_KEY = 'programas-electorales-29n';
+  const COUNTER_KEY = 'pe29n-portada';
+  const COUNTER_WINDOW = 12 * 60 * 60 * 1000;
 
   function initCounter() {
     const box = $('#visits');
     const out = $('#visitsN');
     if (!box) return;
 
-    const paint = (n) => { out.textContent = n.toLocaleString('es-ES'); box.hidden = false; };
+    const paint = (n) => {
+      out.textContent = n.toLocaleString('es-ES');
+      $('#visitsWord').textContent = n === 1 ? 'visita' : 'visitas';
+      box.hidden = false;
+    };
 
-    // Una visita por sesion, no por recarga.
+    // ¿esta visita ya se conto?
+    let counted = false;
     try {
-      if (sessionStorage.getItem('pv_' + COUNTER_KEY)) {
-        fetch(COUNTER_API + '/get/' + COUNTER_NS + '/' + COUNTER_KEY, { mode: 'cors', cache: 'no-store' })
-          .then(r => r.ok ? r.json() : null)
-          .then(d => { if (d && typeof d.value === 'number') paint(d.value); })
-          .catch(() => {});
-        return;
-      }
-      sessionStorage.setItem('pv_' + COUNTER_KEY, '1');
-    } catch (e) { /* sin sessionStorage: se cuenta igualmente */ }
+      const last = parseInt(localStorage.getItem('pv_' + COUNTER_KEY) || '0', 10);
+      counted = Date.now() - last < COUNTER_WINDOW;
+      if (!counted) localStorage.setItem('pv_' + COUNTER_KEY, String(Date.now()));
+    } catch (e) { /* sin localStorage: se cuenta siempre */ }
 
-    fetch(COUNTER_API + '/hit/' + COUNTER_NS + '/' + COUNTER_KEY, { mode: 'cors', cache: 'no-store' })
-      .then(r => r.ok ? r.json() : null)
-      .then(d => { if (d && typeof d.value === 'number') paint(d.value); })
-      .catch(() => { /* si no se puede medir, no se muestra nada: no es cero */ });
+    const url = COUNTER_API + (counted ? '/get/' : '/hit/') + COUNTER_NS + '/' + COUNTER_KEY;
+    fetch(url, { mode: 'cors', cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d && typeof d.value === 'number') paint(d.value); })
+      .catch(function () { /* si no se puede medir no se muestra nada: no es cero */ });
   }
 
   /* --------------------------------------------------------- render */
