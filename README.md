@@ -52,6 +52,27 @@ python3 -m http.server 8765
 
 También funciona abriendo `index.html` directamente con doble clic (no usa módulos ES ni fetch).
 
+## Desplegar cambios
+
+```bash
+# 1. bump del version de assets en index.html (invalida la cache de Pages)
+#    assets/css/style.css?v=N   assets/js/data.js?v=N   assets/js/app.js?v=N
+# 2. commit y push
+git add -A && git commit -m "..." && git push origin main
+```
+
+GitHub Pages sirve `main` con `cache-control: max-age=600`, así que **hay que subir el `?v=N`**
+en cada cambio de CSS o JS; si no, quien ya visited la página seguirá viendo la versión anterior
+durante hasta 10 minutos. El HTML se refresca solo en cada push.
+
+Para comprobar que el despliegue ha terminado antes de anunciarlo:
+
+```bash
+NEW=$(git rev-parse HEAD)
+gh api repos/alejandroid80/programas-electorales-29n/pages -q '.status'          # built
+gh api repos/alejandroid80/programas-electorales-29n/pages/builds/latest -q '.commit'  # == $NEW
+```
+
 ## Qué contiene la página
 
 1. **Fichas de partidos** — una por partido, con las cuatro cifras que mejor resumen su programa
