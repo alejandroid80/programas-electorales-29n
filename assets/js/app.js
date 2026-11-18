@@ -31,7 +31,9 @@
     ue: '<circle cx="8" cy="8" r="6.2"/><circle cx="8" cy="1.8" r="1.15"/><circle cx="8" cy="14.2" r="1.15"/><circle cx="1.8" cy="8" r="1.15"/><circle cx="14.2" cy="8" r="1.15"/>',
     servicios: '<rect x="2.2" y="2.2" width="11.6" height="11.6" rx="2.6"/><path d="M8 4.9v6.2M4.9 8h6.2"/>',
     arrow: '<path d="M9.2 3.2H13v3.8"/><path d="M13 3.2 7.4 8.8"/><path d="M12.4 9.6v3.2H3.4V4.2h3.2"/>',
-    copy: '<rect x="5.6" y="5.6" width="7.9" height="7.9" rx="1.6"/><path d="M10.4 5.6V4.1a1.5 1.5 0 0 0-1.5-1.5H4.1a1.5 1.5 0 0 0-1.5 1.5v4.8a1.5 1.5 0 0 0 1.5 1.5h1.5"/>'
+    copy: '<rect x="5.6" y="5.6" width="7.9" height="7.9" rx="1.6"/><path d="M10.4 5.6V4.1a1.5 1.5 0 0 0-1.5-1.5H4.1a1.5 1.5 0 0 0-1.5 1.5v4.8a1.5 1.5 0 0 0 1.5 1.5h1.5"/>',
+    share: '<circle cx="12" cy="3.8" r="2"/><circle cx="4" cy="8" r="2"/><circle cx="12" cy="12.2" r="2"/><path d="M5.8 7l4.4-2.4M5.8 9l4.4 2.4"/>',
+    eye: '<path d="M1.6 8s2.7-5.2 6.4-5.2S14.4 8 14.4 8s-2.7 5.2-6.4 5.2S1.6 8 1.6 8Z"/><circle cx="8" cy="8" r="1.8"/>'
   };
   const ICON = {
     fiscal: 'fiscal', vivienda: 'vivienda', migracion: 'migracion', energia: 'energia',
@@ -196,7 +198,12 @@
 
       return '<article class="axis" id="axis-' + th.id + '">' +
         '<div class="axis-head"><span class="axis-icon">' + svg(ICON[th.id], 17) + '</span>' +
-        '<h3>' + esc(th.name) + '</h3></div>' +
+        '<h3>' + esc(th.name) + '</h3>' +
+        '<span class="axis-share">' + shareMarkup(
+          SHARE_BASE + '?sel=' + Array.from(state.selected).join(',') + '#t-' + th.id,
+          'Cómo se posicionan los partidos en ' + th.name.toLowerCase() + ': ' + th.axisLeft + ' — ' + th.axisRight,
+          'el eje ' + th.name.toLowerCase(), 'left') + '</span>' +
+        '</div>' +
         '<p class="axis-intro">' + esc(th.intro) + '</p>' +
         '<div class="scale">' +
           '<div class="scale-ends"><span>' + esc(th.axisLeft) + '</span><span>' + esc(th.axisRight) + '</span></div>' +
@@ -244,6 +251,10 @@
           '<span><b>' + p.words.toLocaleString('es-ES') + '</b> palabras</span></span>' +
           '<a class="src-link" href="' + REPO_RAW + p.doc + '" target="_blank" rel="noopener">' +
           'Leer el original' + svg('arrow', 13) + '</a>' +
+          shareMarkup(
+            SHARE_BASE + '?sel=' + p.id + '#p-' + p.id,
+            p.name + ' — ' + p.title + ': ' + p.tagline,
+            'la ficha de ' + p.short) +
           '<button type="button" class="chip pick" data-pick="' + p.id + '" aria-pressed="' + on + '">' +
             (on ? 'En la comparación' : 'Añadir a la comparación') + '</button>' +
         '</div>' +
@@ -288,8 +299,23 @@
     }).join('');
 
     $('#matrixCount').textContent = sel.length
-      ? 'Mostrando ' + sel.length + ' de ' + PARTIES.length + ' partidos. Desplaza la tabla en horizontal para ver el resto.'
+      ? 'Mostrando ' + sel.length + ' de ' + PARTIES.length + ' partidos' +
+        (sel.length > 4 ? '. Desplaza la tabla en horizontal para ver el resto.' : '.')
       : 'No hay partidos seleccionados: elige arriba al menos uno para ver la tabla.';
+
+    // El ancho minimo se ajusta al numero de columnas: con pocos partidos
+    // la tabla cabe entera y no hace falta desplazar en horizontal.
+    var table = $('#matrix');
+    table.style.setProperty('--matrix-min-w', (170 + sel.length * 205) + 'px');
+
+    // Boton de compartir la comparacion actual (la url ya lleva la seleccion).
+    var shareBox = $('#matrixShare');
+    if (shareBox) {
+      shareBox.innerHTML = sel.length ? shareMarkup(
+        currentUrl(),
+        'Comparando ' + sel.map(function (p) { return p.short; }).join(', ') + ' en los ocho ejes del 29N',
+        'esta comparación', 'left') : '';
+    }
   }
 
   /* -------------------------------------------------------- themes */
@@ -316,6 +342,87 @@
         '<p>' + esc(th.intro) + '</p></header>' +
         '<div class="theme-cards">' + cards + '</div></div>';
     }).join('');
+  }
+
+  /* ----------------------------------------------------------- compartir */
+  const SHARE_BASE = 'https://alejandroid80.github.io/programas-electorales-29n/';
+
+  function currentUrl() {
+    return location.origin + location.pathname + location.search;
+  }
+
+  function shareLinks(url, text) {
+    const u = encodeURIComponent(url);
+    const t = encodeURIComponent(text);
+    return [
+      { label: 'WhatsApp', href: 'https://wa.me/?text=' + t + '%20' + u },
+      { label: 'Facebook', href: 'https://www.facebook.com/sharer/sharer.php?u=' + u },
+      { label: 'X', href: 'https://twitter.com/intent/tweet?url=' + u + '&text=' + t },
+      { label: 'Bluesky', href: 'https://bsky.app/intent/compose?text=' + t + '%20' + u },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/sharing/share-offsite/?url=' + u },
+      { label: 'Telegram', href: 'https://t.me/share/url?url=' + u + '&text=' + t },
+      { label: 'Correo', href: 'mailto:?subject=' + encodeURIComponent(text) + '&body=' + encodeURIComponent(url + '\n\n' + text) }
+    ];
+  }
+
+  /* Boton de compartir con su menu. El texto y la url viajan en los
+     data-attributes, para que el menu se actualice al cambiar la seleccion. */
+  function shareMarkup(url, text, label, align) {
+    const canNative = typeof navigator !== 'undefined' && !!navigator.share;
+    const items = shareLinks(url, text).map(l =>
+      '<a href="' + esc(l.href) + '" target="_blank" rel="noopener noreferrer">' +
+      '<span class="swatch"></span>' + esc(l.label) + '</a>').join('');
+
+    return '<div class="share' + (align === 'left' ? ' left' : '') + '"' +
+      ' data-share-url="' + esc(url) + '" data-share-text="' + esc(text) + '">' +
+      '<button type="button" class="share-btn" data-share-toggle aria-expanded="false" aria-haspopup="true"' +
+      ' aria-label="' + esc('Compartir ' + label) + '">' + svg('share', 14) +
+      '<span>Compartir</span></button>' +
+      '<div class="share-menu" hidden role="menu">' +
+      (canNative
+        ? '<button type="button" class="native" data-share-native>' + svg('share', 14) + 'Compartir con…</button><div class="sep"></div>'
+        : '') +
+      items +
+      '<div class="sep"></div>' +
+      '<button type="button" data-share-copy>' + svg('copy', 14) + 'Copiar el enlace</button>' +
+      (canNative ? '' : '<p class="hint">Instagram solo admite compartir desde la app del móvil.</p>') +
+      '</div></div>';
+  }
+
+  function closeAllMenus() {
+    $$('.share-menu').forEach(m => { m.hidden = true; });
+    $$('[data-share-toggle]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+  }
+
+  /* ------------------------------------------------------- contador */
+  /* Abacus: solo guarda un numero. Sin cookies, sin IP, sin perfiles. */
+  const COUNTER_API = 'https://abacus.jasoncameron.dev';
+  const COUNTER_NS = 'alejandroid80.github.io';
+  const COUNTER_KEY = 'programas-electorales-29n';
+
+  function initCounter() {
+    const box = $('#visits');
+    const out = $('#visitsN');
+    if (!box) return;
+
+    const paint = (n) => { out.textContent = n.toLocaleString('es-ES'); box.hidden = false; };
+
+    // Una visita por sesion, no por recarga.
+    try {
+      if (sessionStorage.getItem('pv_' + COUNTER_KEY)) {
+        fetch(COUNTER_API + '/get/' + COUNTER_NS + '/' + COUNTER_KEY, { mode: 'cors', cache: 'no-store' })
+          .then(r => r.ok ? r.json() : null)
+          .then(d => { if (d && typeof d.value === 'number') paint(d.value); })
+          .catch(() => {});
+        return;
+      }
+      sessionStorage.setItem('pv_' + COUNTER_KEY, '1');
+    } catch (e) { /* sin sessionStorage: se cuenta igualmente */ }
+
+    fetch(COUNTER_API + '/hit/' + COUNTER_NS + '/' + COUNTER_KEY, { mode: 'cors', cache: 'no-store' })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (d && typeof d.value === 'number') paint(d.value); })
+      .catch(() => { /* si no se puede medir, no se muestra nada: no es cero */ });
   }
 
   /* --------------------------------------------------------- render */
@@ -388,6 +495,42 @@
   /* ------------------------------------------------------- eventos */
   function bind() {
     document.addEventListener('click', function (e) {
+      // --- menus de compartir ---
+      const toggle = e.target.closest('[data-share-toggle]');
+      if (toggle) {
+        const menu = toggle.nextElementSibling;
+        const wasOpen = !menu.hidden;
+        closeAllMenus();
+        if (!wasOpen) {
+          menu.hidden = false;
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+        return;
+      }
+
+      const native = e.target.closest('[data-share-native]');
+      if (native) {
+        const box = native.closest('.share');
+        if (navigator.share) {
+          navigator.share({
+            title: box.getAttribute('data-share-text'),
+            url: box.getAttribute('data-share-url')
+          }).catch(function () {});
+        }
+        closeAllMenus();
+        return;
+      }
+
+      const copy = e.target.closest('[data-share-copy]');
+      if (copy) {
+        const box = copy.closest('.share');
+        copyText(box.getAttribute('data-share-url'), copy);
+        closeAllMenus();
+        return;
+      }
+
+      if (!e.target.closest('.share')) closeAllMenus();
+
       const pick = e.target.closest('[data-pick]');
       if (pick) { toggleParty(pick.getAttribute('data-pick'), pick); return; }
 
@@ -433,6 +576,7 @@
 
     // atajos: "/" enfoca el buscador, "Esc" limpia la comparacion
     document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closeAllMenus(); }
       const tag = (e.target.tagName || '').toLowerCase();
       if (tag === 'input' || tag === 'textarea') {
         if (e.key === 'Escape') e.target.blur();
@@ -465,6 +609,7 @@
     renderThemeIndex();
     renderAll();
     bind();
+    initCounter();
   }
 
   if (document.readyState === 'loading') {

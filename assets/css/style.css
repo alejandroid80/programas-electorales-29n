@@ -180,6 +180,8 @@ section:first-of-type { border-top: none; }
   padding: 22px 24px 24px; box-shadow: var(--shadow);
 }
 .axis-head { display: flex; align-items: center; gap: 11px; margin-bottom: 6px; }
+.axis-head h3 { flex: 1 1 auto; min-width: 0; }
+.axis-share { flex: none; margin-left: auto; }
 .axis-head h3 { font-size: 1.12rem; }
 .axis-icon {
   width: 30px; height: 30px; border-radius: 8px; background: var(--bg-soft); color: var(--ink-2);
@@ -329,7 +331,7 @@ html[data-theme="dark"] .card { --pc-text: var(--pc-text-dark); }
   max-height: calc(100vh - 270px);
 }
 
-table.matrix { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 900px; font-size: .8rem; }
+table.matrix { border-collapse: separate; border-spacing: 0; width: 100%; min-width: var(--matrix-min-w, 900px); font-size: .8rem; }
 table.matrix th, table.matrix td { text-align: left; vertical-align: top; padding: 13px 15px; border-bottom: 1px solid var(--line); }
 table.matrix thead th {
   position: sticky; top: 0; z-index: 3; background: var(--bg-soft);
@@ -383,6 +385,74 @@ table.matrix tbody tr:last-child td, table.matrix tbody tr:last-child th { borde
   padding: 3px 8px; border-radius: 5px;
 }
 .tcard p { font-size: .82rem; color: var(--ink-2); margin: 0; line-height: 1.55; }
+
+/* ------------------------------------------------------------- Barras de scroll
+   Las que trae el navegador por defecto rompen el registro visual de la
+   pagina: se sustituyen por unas finas, del color de la paleta. */
+* { scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: var(--line-2); border-radius: 99px;
+  border: 3px solid var(--bg-card); background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--ink-3); background-clip: padding-box; }
+*::-webkit-scrollbar-corner { background: transparent; }
+html { scrollbar-color: var(--line-2) var(--bg); }
+
+/* Sombra que avisa de que la tabla sigue a la derecha. */
+.matrix-wrap { position: relative; }
+.matrix-wrap::after {
+  content: ""; position: sticky; right: 0; top: 0; float: right;
+  width: 26px; height: 100%; pointer-events: none;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--bg-card) 88%, transparent));
+}
+
+/* ------------------------------------------------------- Contador de visitas */
+.visits {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: .76rem; color: var(--ink-3); font-variant-numeric: tabular-nums;
+  padding: 5px 11px; border: 1px solid var(--line); border-radius: 99px;
+  background: var(--bg-card); white-space: nowrap;
+}
+.visits svg { color: var(--ink-3); flex: none; }
+.visits b { color: var(--ink-2); font-weight: 650; }
+.visits[hidden] { display: none; }
+
+/* ---------------------------------------------------- Boton de compartir */
+.share { position: relative; display: inline-flex; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+  font-family: var(--sans); font-size: .76rem; font-weight: 600;
+  padding: 6px 12px; border-radius: 99px; border: 1px solid var(--line);
+  background: var(--bg-card); color: var(--ink-2); min-height: 34px;
+  transition: color .15s, border-color .15s;
+}
+.share-btn:hover { color: var(--ink); border-color: var(--ink-3); }
+.share-btn svg { flex: none; }
+.share-btn[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+
+.share-menu {
+  position: absolute; z-index: 40; top: calc(100% + 8px); right: 0;
+  min-width: 208px; padding: 6px;
+  background: var(--bg-card); border: 1px solid var(--line-2);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-lift);
+}
+.share-menu[hidden] { display: none; }
+.share-menu a, .share-menu button {
+  display: flex; align-items: center; gap: 10px; width: 100%;
+  font-family: var(--sans); font-size: .83rem; font-weight: 500; color: var(--ink);
+  text-decoration: none; padding: 9px 11px; border: 0; border-radius: 6px;
+  background: none; cursor: pointer; text-align: left; min-height: 38px;
+}
+.share-menu a:hover, .share-menu button:hover { background: var(--bg-soft); }
+.share-menu .sep { height: 1px; background: var(--line); margin: 5px 8px; }
+.share-menu .native { font-weight: 650; color: var(--accent); }
+.share-menu .swatch { width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--ink-3); }
+.share-menu .hint { font-size: .7rem; color: var(--ink-3); padding: 4px 11px 6px; }
+
+/* El menu se abre hacia la izquierda cuando no cabe a la derecha. */
+.share.left .share-menu { right: auto; left: 0; }
 
 /* --------------------------------------------------------- Methodology */
 .method { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
