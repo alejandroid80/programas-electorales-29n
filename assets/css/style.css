@@ -451,8 +451,15 @@ html { scrollbar-color: var(--line-2) var(--bg); }
 .share-menu .swatch { width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--ink-3); }
 .share-menu .hint { font-size: .7rem; color: var(--ink-3); padding: 4px 11px 6px; }
 
-/* El menu se abre hacia la izquierda cuando no cabe a la derecha. */
-.share.left .share-menu { right: auto; left: 0; }
+/* El menu se ancla al borde derecho del boton y se abre hacia dentro,
+   para no salirse de la tarjeta ni del viewport. */
+.share-menu { right: 0; left: auto; }
+/* En el pie de la ficha el boton no esta en el extremo: se ancla a su
+   izquierda para que el menu no se salga de la tarjeta. */
+.card-foot .share-menu { right: auto; left: 0; }
+@media (max-width: 620px) {
+  .share-menu { position: fixed; left: 12px; right: 12px; width: auto; }
+}
 
 /* --------------------------------------------------------- Methodology */
 .method { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }

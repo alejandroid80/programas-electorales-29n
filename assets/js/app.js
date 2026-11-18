@@ -385,7 +385,7 @@
       items +
       '<div class="sep"></div>' +
       '<button type="button" data-share-copy>' + svg('copy', 14) + 'Copiar el enlace</button>' +
-      (canNative ? '' : '<p class="hint">Instagram solo admite compartir desde la app del móvil.</p>') +
+      (canNative ? '' : '<p class="hint">Instagram solo se comparte desde su app.</p>') +
       '</div></div>';
   }
 
