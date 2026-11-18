@@ -164,6 +164,7 @@
       const ticks = th.scale.map(function (key, i) {
         const x = n === 1 ? 50 : (i / (n - 1)) * 100;
         return '<span class="scale-tick" style="left:' + x + '%" data-label="' +
+          esc(th.positions[key].short || th.positions[key].label) + '" title="' +
           esc(th.positions[key].label) + '"></span>';
       }).join('');
 

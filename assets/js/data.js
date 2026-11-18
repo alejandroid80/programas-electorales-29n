@@ -24,18 +24,22 @@ const THEMES = [
     positions: {
       bajar: {
         label: 'Bajada general',
+        short: 'Bajar',
         desc: 'Reducir la presión fiscal sobre familias, autónomos y empresas. Menos Estado, menos gasto.'
       },
       gradual: {
         label: 'Bajar a bajos, subir a altos',
+        short: 'Gradual',
         desc: 'Deflactación y bajadas para rentas medias y bajas; más carga sobre patrimonios, grandes fortunas y grandes empresas.'
       },
       subir: {
         label: 'Subir a grandes fortunas',
+        short: 'Subir',
         desc: 'Impuestos a las grandes fortunas, a la banca, a las eléctricas y a las grandes empresas, con más gasto social.'
       },
       recorte: {
         label: 'Recorte del gasto',
+        short: 'Recorte',
         desc: 'Recorte drástico del gasto público y de las subvenciones, con el argumento del Estado como lastre.'
       }
     }
@@ -51,18 +55,22 @@ const THEMES = [
     positions: {
       oferta: {
         label: 'Más suelo y oferta',
+        short: 'Oferta',
         desc: 'Agilizar la construcción, ampliar suelo y deregular para que el mercado forme los precios.'
       },
       precio: {
         label: 'Regular precios y parque público',
+        short: 'Regular',
         desc: 'Topes o bajadas obligatorias del alquiler, suelo público y un parque de vivienda social en alquiler.'
       },
       universal: {
         label: 'Plan social y universal',
+        short: 'Universal',
         desc: 'Un derecho a la vivienda blindado constitucionalmente, con inversión pública garantiza a escala.'
       },
       fiscal: {
         label: ' Incentivos y licencias',
+        short: 'Fiscal',
         desc: 'Bajar impuestos, eliminar el IBI o los tipos, y acelerar licencias de obra.'
       }
     }
@@ -78,14 +86,17 @@ const THEMES = [
     positions: {
       expulsion: {
         label: 'Prioridad nacional y expulsión',
+        short: 'Expulsar',
         desc: 'Restricción de entrada, fin de regularizaciones y de las expulsiones.'
       },
       control: {
         label: 'Control y cierre',
+        short: 'Control',
         desc: 'Más control fronterizo y de las condiciones de residencia, con un flujo de entrada ordenado.'
       },
       regular: {
         label: 'Vías legales e integración',
+        short: 'Integrar',
         desc: 'Regularización, vías de asilo, protección internacional e integración.'
       }
     }
@@ -101,14 +112,17 @@ const THEMES = [
     positions: {
       nuclear: {
         label: 'Nuclear y transición lenta',
+        short: 'Nuclear',
         desc: 'Prórroga de las centrales, fin del tope regulatorio a la inversión en redes y rechazo del Pacto Verde.'
       },
       mixto: {
         label: 'Renovables con cierre nuclear a 2035',
+        short: 'Transición',
         desc: 'Electrificación, almacenamiento y renovables, con un calendario de cierre nuclear acordado y transición justa.'
       },
       renovable: {
         label: '100 % renovable',
+        short: 'Renovable',
         desc: 'Sistema eléctrico libre de combustibles fósiles, con inversión pública en la transición.'
       }
     }
@@ -124,18 +138,22 @@ const THEMES = [
     positions: {
       unitario: {
         label: 'Estado unitario reforzado',
+        short: 'Unitario',
         desc: 'Más Estado, un centro de autoridad fuerte y una identidad nacional común.'
       },
       autonomico: {
         label: 'Más autogobierno',
+        short: 'Autonómico',
         desc: 'Reformar la financiación territorial y financiera para dar más competencias a las comunidades.'
       },
       federal: {
         label: 'República federal',
+        short: 'Federal',
         desc: 'Un proceso constituyente o una reforma federal con Senado reformado.'
       },
       independiente: {
         label: 'Derecho a decidir',
+        short: 'Independiente',
         desc: 'Reconocimiento del derecho de autodeterminación de la nación.'
       }
     }
@@ -151,14 +169,17 @@ const THEMES = [
     positions: {
       mas: {
         label: 'Más defensa',
+        short: 'Más gasto',
         desc: 'Aumento del gasto militar, hasta el 2 % del PIB, con rechazo de la Agenda 2030.'
       },
       reforma: {
         label: 'Reformar la OTAN',
+        short: 'Reforma',
         desc: 'Defensa al servicio de la paz, multilateralismo y reforma de la composición de la alianza.'
       },
       desarme: {
         label: 'Desarme y reversión del rearme',
+        short: 'Desarme',
         desc: 'Reversión del rearme, desarme nuclear, cierre de bases y embargo de armas.'
       }
     }
@@ -174,14 +195,17 @@ const THEMES = [
     positions: {
       critica: {
         label: 'Europa crítica o de salida',
+        short: 'Crítica',
         desc: 'Rechazo de la ampliación, de las políticas de la Comisión o incluso de la salida.'
       },
       integrar: {
         label: 'Europa más integrada',
+        short: 'Integrar',
         desc: 'Una UE más integrada, democrática y con más presupuesto propio.'
       },
       pueblos: {
         label: 'Europa de los pueblos',
+        short: 'Pueblos',
         desc: 'Una Europa federal, con democracia directa, soberanía fiscal y control popular.'
       }
     }
@@ -197,14 +221,17 @@ const THEMES = [
     positions: {
       blindar: {
         label: 'Blindar y reforzar',
+        short: 'Blindar',
         desc: 'Más financiación, blindaje constitucional y gestión directa frente a la privatización.'
       },
       eficiencia: {
         label: 'Eficiencia y dimensionar',
+        short: 'Eficiencia',
         desc: 'Menos estructuras, más eficiencia, y eliminando el gasto ideológico.'
       },
       reducir: {
         label: 'Reducir y desregular',
+        short: 'Reducir',
         desc: 'Desregulación de la planificación, la energía y la economía.'
       }
     }

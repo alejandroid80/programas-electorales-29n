@@ -206,8 +206,7 @@ section:first-of-type { border-top: none; }
 .scale-tick::after {
   content: attr(data-label); position: absolute; top: 13px; left: 50%;
   transform: translateX(-50%); font-size: .68rem; color: var(--ink-3);
-  white-space: nowrap; font-weight: 600; max-width: 150px; overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap; font-weight: 600;
 }
 /* El primero se alinea a la izquierda y el ultimo a la derecha, para que
    sus etiquetas no se salgan de la pista. */
@@ -329,6 +328,7 @@ html[data-theme="dark"] .card { --pc-text: var(--pc-text-dark); }
   background: var(--bg-card); box-shadow: var(--shadow);
   max-height: calc(100vh - 270px);
 }
+
 table.matrix { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 900px; font-size: .8rem; }
 table.matrix th, table.matrix td { text-align: left; vertical-align: top; padding: 13px 15px; border-bottom: 1px solid var(--line); }
 table.matrix thead th {

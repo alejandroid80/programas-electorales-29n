@@ -180,6 +180,8 @@ for (const th of THEMES) {
   }
   for (const k of Object.keys(th.positions || {})) {
     if (!th.positions[k].label || !th.positions[k].desc) fail(`eje "${th.id}" posicion "${k}": falta label o desc`);
+    if (!th.positions[k].short) fail(`eje "${th.id}" posicion "${k}": falta la etiqueta corta`);
+    else if (th.positions[k].short.length > 16) fail(`eje "${th.id}" posicion "${k}": etiqueta corta demasiado larga ("${th.positions[k].short}")`);
   }
   for (const k of Object.keys(th.positions || {})) {
     if (!th.scale.includes(k)) fail(`eje "${th.id}": la posicion "${k}" no esta en la escala`);
