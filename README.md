@@ -31,18 +31,37 @@ programas-electorales-29n/
 │   └── js/
 │       ├── data.js         # DATOS: temas, partidos, detalle por tema
 │       └── app.js          # LÓGICA: render, filtros, comparador
+├── scripts/
+│   └── check-data.js       # control automático de calidad de los datos
 └── README.md
 ```
 
 - `data.js` es el único fichero que hay que tocar para actualizar el contenido. Contiene:
-  - `THEMES`: los 8 ejes de comparación y, para cada eje, las posiciones posibles con su descripción.
-  - `PARTIES`: los 22 partidos, con color, bloque, idioma, título del programa, páginas, palabras,
-    cuatro cifras destacadas, los puntos fuertes y su posición en cada eje.
+  - `THEMES`: los 8 ejes de comparación, las posiciones posibles de cada uno con su descripción,
+    y la `scale` que los ordena de izquierda a derecha.
+  - `PARTIES`: los 22 partidos, con color, variante de color legible sobre fondo claro y oscuro,
+    perfil del programa, título traducido y original, páginas, palabras, cuatro cifras destacadas,
+    los puntos fuertes y su posición en cada eje.
   - `DETAIL`: la propuesta literal de cada partido en cada eje (lo que alimenta la matriz y las
     tarjetas por tema).
-- `app.js` no contiene datos: solo renderiza y gestiona el estado (selección, búsqueda, filtros).
+- `app.js` no contiene datos: solo renderiza y gestiona el estado (selección, búsqueda, filtros,
+  URL compartible y copiado).
 
-## Cómo abrirla
+## Control de calidad de los datos
+
+```bash
+node scripts/check-data.js
+```
+
+Falla con código de salida 1 si encuentra texto corrupto (caracteres de otro alfabeto, palabras
+pegadas en camelCase, erratas de inglés o francés), formas no castellanas que se colaron en las
+traducciones, campos que faltan, referencias rotas entre ejes y escalas, o cifras de páginas y
+palabras que no cuadran con el README del repositorio de origen.
+
+Conviene ejecutarlo **antes de cada publicación**: durante la revisión de diseño este control
+destapó 20 textos corruptos que a simple vista no se veían.
+
+## Qué contiene la página
 
 ```bash
 cd "Documentos/Proyectos OpenCode/programas-electorales-29n"

@@ -173,7 +173,7 @@
         g.members.forEach(function (p, row) {
           dots.push('<button type="button" class="scale-dot" data-pick="' + p.id + '"' +
             ' aria-pressed="' + state.selected.has(p.id) + '"' +
-            ' style="left:' + xOf(g.key) + '%; top:' + (row * 15 + 8) + 'px; background:' + p.color + '"' +
+            ' style="left:' + xOf(g.key) + '%; top:' + (row * 19 + 8) + 'px; background:' + p.color + '"' +
             ' title="' + esc(p.name + ' — ' + g.pos.label) + '"' +
             ' aria-label="' + esc(p.name + ' — ' + g.pos.label + ' en ' + th.name) + '"></button>');
         });
@@ -199,7 +199,7 @@
         '<p class="axis-intro">' + esc(th.intro) + '</p>' +
         '<div class="scale">' +
           '<div class="scale-ends"><span>' + esc(th.axisLeft) + '</span><span>' + esc(th.axisRight) + '</span></div>' +
-          '<div class="scale-track" style="--track-h:' + (maxRows * 15 + 46) + 'px">' +
+          '<div class="scale-track" style="--track-h:' + (maxRows * 19 + 46) + 'px">' +
             '<div class="scale-line"></div>' + ticks + dots.join('') +
           '</div>' +
         '</div>' +
