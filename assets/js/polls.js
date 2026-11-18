@@ -288,7 +288,7 @@
 
       '<div class="voto-bloque">' +
         '<h3>Lo que dicen los medios</h3>' +
-        '<p>Promedio de las encuestas publicadas en los principales medios españoles. Cuanto mayor es la horquilla entre las encuestas, mas desacuerdo hay entre las casas: un dato alto no siempre significa un cambio real.</p>' +
+        '<p>Promedio de las encuestas publicadas en los principales medios españoles. Cuanto mayor es la horquilla entre las encuestas, más desacuerdo hay entre las casas: un dato alto no siempre significa un cambio real.</p>' +
         graficoMedia() +
         tablaMedia() +
         tablaEncuestas() +

@@ -1,24 +1,26 @@
 {
- "generado": "2026-11-18T21:26:49.224Z",
+ "generado": "2026-11-18T21:35:34.586Z",
  "elecciones": "2026-11-29",
  "fuentes": [
   {
    "id": "media",
    "nombre": "Agregado de encuestas de los medios",
-   "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
-   "home": "https://www.ondacero.es/"
+   "url": "https://www.ondacero.es/elecciones/generales/encuestas/"
   },
   {
    "id": "cis",
    "nombre": "CIS, estimacion de voto",
-   "url": "https://www.cis.es/",
-   "home": "https://www.cis.es/"
+   "url": "https://www.cis.es/"
   },
   {
    "id": "electomania",
    "nombre": "Electomania",
-   "url": "https://electomania.es/",
-   "home": "https://electomania.es/"
+   "url": "https://electomania.es/"
+  },
+  {
+   "id": "preelectoral",
+   "nombre": "CIS, encuesta preelectoral",
+   "url": "https://www.cis.es/"
   }
  ],
  "media": {
@@ -4361,5 +4363,143 @@
    }
   }
  ],
+ "preelectoral": {
+  "estudio": 3584,
+  "titulo": "Preelectoral elecciones generales 2026",
+  "actualizado": "2026-11-18",
+  "url": "https://www.cis.es/documents/d/guest/3584_estimacion-pdf",
+  "mayoria": 176,
+  "XL": 350,
+  "partidos": [
+   {
+    "etiqueta": "PSOE",
+    "estimacion": 33.3,
+    "directo": 28.7,
+    "escaMin": 134,
+    "escaMax": 143,
+    "escaMedio": 139
+   },
+   {
+    "etiqueta": "PP",
+    "estimacion": 25.5,
+    "directo": 17.2,
+    "escaMin": 98,
+    "escaMax": 106,
+    "escaMedio": 102
+   },
+   {
+    "etiqueta": "VOX",
+    "estimacion": 18.4,
+    "directo": 15,
+    "escaMin": 57,
+    "escaMax": 65,
+    "escaMedio": 61
+   },
+   {
+    "etiqueta": "Frente Amplio",
+    "estimacion": 4.7,
+    "directo": 3.3,
+    "escaMin": 7,
+    "escaMax": 11,
+    "escaMedio": 9
+   },
+   {
+    "etiqueta": "ERC-Podemos",
+    "estimacion": 3.1,
+    "directo": 2.4,
+    "escaMin": 10,
+    "escaMax": 14,
+    "escaMedio": 12
+   },
+   {
+    "etiqueta": "EH-Bildu",
+    "estimacion": 1.8,
+    "directo": 1.3,
+    "escaMin": 7,
+    "escaMax": 10,
+    "escaMedio": 9
+   },
+   {
+    "etiqueta": "Compromís: Front Valencià",
+    "estimacion": 1.6,
+    "directo": 1.2,
+    "escaMin": 4,
+    "escaMax": 6,
+    "escaMedio": 5
+   },
+   {
+    "etiqueta": "Adelante Andalucía",
+    "estimacion": 1.5,
+    "directo": 1.1,
+    "escaMin": 3,
+    "escaMax": 4,
+    "escaMedio": 4
+   },
+   {
+    "etiqueta": "Junts",
+    "estimacion": 1.2,
+    "directo": 0.7,
+    "escaMin": 2,
+    "escaMax": 4,
+    "escaMedio": 3
+   },
+   {
+    "etiqueta": "Podemos",
+    "estimacion": 1.1,
+    "directo": 0.8,
+    "escaMin": 0,
+    "escaMax": 1,
+    "escaMedio": 1
+   },
+   {
+    "etiqueta": "BNG",
+    "estimacion": 1,
+    "directo": 0.7,
+    "escaMin": 2,
+    "escaMax": 3,
+    "escaMedio": 3
+   },
+   {
+    "etiqueta": "EAJ-PNV",
+    "estimacion": 0.7,
+    "directo": 0.4,
+    "escaMin": 2,
+    "escaMax": 4,
+    "escaMedio": 3
+   },
+   {
+    "etiqueta": "UPC",
+    "estimacion": 0.4,
+    "directo": 0.3,
+    "escaMin": 0,
+    "escaMax": 2,
+    "escaMedio": 1
+   },
+   {
+    "etiqueta": "Ara Més-Front Ampli",
+    "estimacion": 0.2,
+    "directo": 0.2,
+    "escaMin": 0,
+    "escaMax": 1,
+    "escaMedio": 1
+   },
+   {
+    "etiqueta": "SALF",
+    "estimacion": 1.4,
+    "directo": 1.3,
+    "escaMin": null,
+    "escaMax": null,
+    "escaMedio": null
+   },
+   {
+    "etiqueta": "CC-Municipalistas Primero Canarias",
+    "estimacion": 0.2,
+    "directo": 0.2,
+    "escaMin": null,
+    "escaMax": null,
+    "escaMedio": null
+   }
+  ]
+ },
  "errores": []
 }

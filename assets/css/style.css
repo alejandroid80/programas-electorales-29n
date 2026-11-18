@@ -593,6 +593,70 @@ html[data-theme="dark"] .voto-table .baja { color: #ff9a8f; }
   .voto-table th, .voto-table td { padding: 8px 11px; }
 }
 
+/* ------------------------------------------------------- Pactometro */
+.pacto-bloque { margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+.pacto-bloque h3 { font-size: 1.24rem; margin-bottom: 6px; }
+.pacto-bloque > p { font-size: .9rem; color: var(--ink-2); max-width: 76ch; margin-bottom: 16px; }
+
+.pacto-panel {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 20px;
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 20px 22px; box-shadow: var(--shadow);
+}
+.pacto-instr { font-size: .84rem; color: var(--ink-3); margin: 0 0 14px; max-width: 60ch; }
+
+.pacto-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.pacto-chip {
+  display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto;
+  column-gap: 8px; row-gap: 1px; align-items: center;
+  font-family: var(--sans); text-align: left; cursor: pointer;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+  border-radius: var(--radius-sm); padding: 8px 12px; min-height: 52px;
+  transition: border-color .15s, background .15s;
+}
+.pacto-chip:hover { border-color: var(--ink-3); }
+.pacto-chip.on { border-color: var(--accent); background: var(--accent-soft); }
+.pacto-chip .dot { width: 11px; height: 11px; border-radius: 50%; grid-row: 1 / 3; align-self: center; }
+.pacto-chip-nom { font-size: .84rem; font-weight: 650; }
+.pacto-chip-voto { font-size: .74rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pacto-chip-esc { grid-column: 2; font-size: .72rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pacto-chip.on .pacto-chip-voto, .pacto-chip.on .pacto-chip-esc { color: var(--ink-2); }
+
+.pacto-veredicto { border-radius: var(--radius-sm); padding: 13px 16px; margin-bottom: 14px; }
+.pacto-veredicto b { display: block; font-family: var(--serif); font-size: 1.2rem; margin-bottom: 3px; }
+.pacto-veredicto p { font-size: .83rem; margin: 0; color: var(--ink-2); }
+.pacto-veredicto.ok { background: color-mix(in srgb, #1a7f4b 13%, var(--bg-card)); }
+.pacto-veredicto.ok b { color: #14663d; }
+.pacto-veredicto.aviso { background: var(--gold-soft); }
+.pacto-veredicto.aviso b { color: var(--gold); }
+.pacto-veredicto.mal { background: color-mix(in srgb, #b3261e 11%, var(--bg-card)); }
+.pacto-veredicto.mal b { color: #8f1d16; }
+.pacto-veredicto.neutro { background: var(--bg-soft); }
+html[data-theme="dark"] .pacto-veredicto.ok b { color: #6ee7a8; }
+html[data-theme="dark"] .pacto-veredicto.mal b { color: #ff9a8f; }
+
+.pacto-cifras { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 10px; }
+.pacto-cifras div { display: flex; flex-direction: column; }
+.pacto-cifras b { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1.15; letter-spacing: -.02em; }
+.pacto-cifras span { font-size: .72rem; color: var(--ink-3); line-height: 1.3; max-width: 15ch; }
+
+.pacto-svg { width: 100%; height: auto; display: block; margin: 6px 0 10px; }
+.pacto-fondo { fill: var(--bg-soft); }
+.pacto-mayoria { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 3; }
+.pacto-mayoria-txt { fill: var(--accent); font-size: 10.5px; font-family: var(--sans); font-weight: 600; }
+.pacto-total-txt { fill: var(--ink-3); font-size: 10.5px; font-family: var(--sans); }
+
+.pacto-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+.pacto-lista li { display: flex; align-items: baseline; gap: 8px; font-size: .83rem; color: var(--ink-2); }
+.pacto-lista li .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; align-self: center; }
+.pacto-lista li b { font-weight: 650; color: var(--ink); font-variant-numeric: tabular-nums; }
+.pacto-lista li i { font-style: normal; margin-left: auto; color: var(--ink-3); font-size: .78rem; font-variant-numeric: tabular-nums; }
+.pacto-lista .mas { color: var(--ink-3); }
+
+@media (max-width: 900px) {
+  .pacto-panel { grid-template-columns: 1fr; }
+}
+
 /* --------------------------------------------------------- Methodology */
 .method { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
 .mbox { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }

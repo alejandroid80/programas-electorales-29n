@@ -276,6 +276,25 @@ if (fs.existsSync(POLLS)) {
       }
     });
   }
+  const pre = P.preelectoral;
+  if (pre) {
+    if (!/^\d{4,5}$/.test(String(pre.estudio))) fail('voto (preelectoral): codigo de estudio invalido');
+    if (pre.mayoria !== 176) fail('voto (preelectoral): la mayoria deberia ser 176, no ' + pre.mayoria);
+    if (!pre.partidos || pre.partidos.length < 10) fail('voto (preelectoral): faltan partidos');
+    (pre.partidos || []).forEach((p) => {
+      if (typeof p.estimacion !== 'number' || p.estimacion <= 0 || p.estimacion > 100) {
+        fail(`voto (preelectoral): estimacion invalida: ${p.etiqueta} = ${p.estimacion}`);
+      }
+      if (p.escaMin != null && p.escaMax != null && p.escaMin > p.escaMax) {
+        fail(`voto (preelectoral): horquilla invertida en ${p.etiqueta} (${p.escaMin}-${p.escaMax})`);
+      }
+      if (p.escaMin != null && p.escaMax != null && (p.escaMin < 0 || p.escaMax > 350)) {
+        fail(`voto (preelectoral): escanos fuera de rango en ${p.etiqueta}`);
+      }
+    });
+  } else {
+    console.warn('aviso: no hay datos preelectorales (el pactometro quedara sin datos)');
+  }
   if (P.electomania) {
     P.electomania.forEach((e) => {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(e.fecha)) fail(`voto (Electomania): fecha invalida "${e.fecha}"`);

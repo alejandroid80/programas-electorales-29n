@@ -9,6 +9,33 @@ const REPO = 'https://github.com/jynus/programas-electorales-29n-generales-2026'
 const REPO_RAW = REPO + '/blob/main/programas_electorales/';
 
 /* ---------------------------------------------------------------------
+   Etiquetas con las que el CIS presenta cada partido en su nota de
+   estimacion de voto, para casar su tabla con las fichas de esta pagina.
+   --------------------------------------------------------------------- */
+const CIS_LABELS = {
+  psoe: 'PSOE',
+  pp: 'PP',
+  vox: 'VOX',
+  frente_amplio: 'Frente Amplio',
+  erc: 'ERC-Podemos',
+  bildu: 'EH-Bildu',
+  compromis: 'Compromís: Front Valencià',
+  adelante: 'Adelante Andalucía',
+  podemos: 'Podemos',
+  bng: 'BNG',
+  pnv: 'EAJ-PNV',
+  salf: 'SALF',
+  cc: 'CC-Municipalistas Primero Canarias'
+};
+
+/* Partidos que el CIS estima y que no tienen ficha propia aqui. */
+const CIS_EXTRA = [
+  { id: 'junts', etiqueta: 'Junts', nombre: 'Junts per Catalunya', color: '#c8102e' },
+  { id: 'upc', etiqueta: 'UPC', nombre: 'Unidad del Pueblo Canario', color: '#2e8b57' },
+  { id: 'ara_mes', etiqueta: 'Ara Més-Front Ampli', nombre: 'Ara Més-Front Ampli', color: '#d94f2b' }
+];
+
+/* ---------------------------------------------------------------------
    Ejes de comparación. Cada eje define un mapa de posiciones ordenadas
    y los partidos se asignan a una de ellas.
    --------------------------------------------------------------------- */

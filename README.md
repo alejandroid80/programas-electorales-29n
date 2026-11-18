@@ -21,6 +21,25 @@ el texto carácter a carácter contra el original, con sumas SHA-256 de cada PDF
 
 Cada tarjeta de la web enlaza al fichero `.rst` correspondiente dentro del repositorio.
 
+## Pactómetro
+
+Una herramienta interactiva dentro de la sección de intención de voto: se marcan los partidos
+que se pusieran de acuerdo y la pagina calcula que pasando habría.
+
+- **Fuente**: la encuesta **preelectoral del CIS** (estudio 3584), la unica que reparte
+  escanos por partido. Su PDF se lee con `pdftotext -layout` (`poppler-utils`) y se
+  parsea con `scripts/parse-cis-pdf.js`.
+- **Descubrimiento**: el bot no fija el número de estudio, lo busca sondeando una ventana de
+  códigos alrededor del último barómetro conocido (con pausas para no castigar al CIS) y se
+  queda con el PDF que sea preelectoral y traiga repartos de escanos.
+- **Cálculo**: suma de los **puntos medios** de las horquillas de escaños, contra los 176
+  necesarios para la mayoría absoluta de 350. El CIS dice de su propia estimación que las
+  horquillas **no se suman** (son percentiles de su modelo, no intervalos de confianza), así que
+  la web lo dice en un aviso: se suman los puntos medios y el rango se enseña solo como
+  referencia.
+- **Mayoría simple**: cuando el bloque no llega a 176 pero es el más numeroso, la web lo indica
+  y nombra al rival más fuerte.
+
 ## Intención de voto (bot)
 
 ```bash

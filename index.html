@@ -141,6 +141,17 @@
       <div id="voto">
         <p class="voto-cargando">Cargando los datos de intención de voto…</p>
       </div>
+
+      <div class="pacto-bloque">
+        <h3>Pactómetro</h3>
+        <p>
+          Qué pasaría si algunos partidos se pusieran de acuerdo para gobernar. Usa la estimación
+          preelectoral del CIS, la única que reparte escaños por partido.
+        </p>
+        <div id="pacto">
+          <p class="voto-cargando">Cargando el reparto de escaños…</p>
+        </div>
+      </div>
     </section>
   </div>
 
@@ -210,6 +221,15 @@
           </ul>
         </div>
         <div class="mbox">
+          <h3>El pactómetro y sus límites</h3>
+          <ul>
+            <li>El reparto de escaños sale de la <b>encuesta preelectoral del CIS</b> (estudio 3584, 45.074 entrevistas), la única fuente que reparte diputados por partido. El bot la lee del PDF del CIS cada día.</li>
+            <li>El CIS advierte de su propia estimación que <b>las horquillas no se suman</b>: son percentiles de su modelo, no intervalos de confianza. El pactómetro suma los puntos medios y enseña el rango solo como referencia.</li>
+            <li>La mayoría absoluta son <b>176 de 350</b>. Cuando el bloque no llega pero es el más numeroso, se indica que tiene mayoría simple y se nombra al rival más fuerte.</li>
+            <li>No es una predicción: es un cálculo sobre la estimación del CIS de octubre de 2026.</li>
+          </ul>
+        </div>
+        <div class="mbox">
           <h3>Lo que esta página no es</h3>
           <ul>
             <li>No es una predicción electoral ni un sondeo.</li>
@@ -253,5 +273,6 @@
 <script src="assets/js/data.js?v=15"></script>
 <script src="assets/js/app.js?v=15"></script>
 <script src="assets/js/polls.js?v=15"></script>
+<script src="assets/js/pacto.js?v=15"></script>
 </body>
 </html>
