@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programas electorales 29N 2026 — los partidos, punto por punto</title>
+<meta name="description" content="Comparativa de los 22 programas electorales de las elecciones generales del 29 de noviembre de 2026: principales puntos de cada partido y diferencias entre ellos, a partir del repositorio de programas en .rst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <div class="brand"><b>29N · 2026</b><span>Programas electorales a un clic</span></div>
+    <nav class="nav">
+      <a href="#mapa">Mapa de posiciones</a>
+      <a href="#fichas">Fichas de partidos</a>
+      <a href="#matriz">Matriz comparativa</a>
+      <a href="#temas">Diferencias por tema</a>
+      <a href="#metodo">Método y fuentes</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" title="Cambiar entre tema claro y oscuro" aria-label="Cambiar tema">◐</button>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ------------------------------------------------------------- HERO -->
+  <div class="wrap">
+    <section class="hero">
+      <span class="eyebrow">Elecciones generales · 29 de noviembre de 2026</span>
+      <h1>Veintidós programas, <em>una</em> España que se juega en noviembre</h1>
+      <p class="lead">
+        El repositorio <a href="https://github.com/jynus/programas-electorales-29n-generales-2026" target="_blank" rel="noopener"><strong>jynus/programas-electorales-29n-generales-2026</strong></a> convierte a texto verificado
+        los programas electorales que los partidos publicaron para los próximos generales. Esta página los lee, los resume y los pone
+        <strong>lado a lado</strong>: qué propone cada quien, y en qué se diferencian de verdad.
+      </p>
+      <div class="stats" id="stats"></div>
+      <div class="btn-row">
+        <a class="btn primary" href="#fichas">Ver las fichas de los partidos</a>
+        <a class="btn" href="#matriz">Ir a la matriz comparativa</a>
+        <a class="btn" href="#mapa">Ver el mapa de posiciones</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ------------------------------------------------------------- MAPA -->
+  <div class="wrap">
+    <section id="mapa">
+      <div class="sec-head">
+        <div class="kicker">Mapa de posiciones</div>
+        <h2>Ocho ejes, veintidós programas</h2>
+        <p>
+          En cada eje, las casillas de arriba son las posiciones posibles y las etiquetas de abajo son los partidos que la sostienen.
+          Pulsa una etiqueta para filtrar el resto de la página por ese partido, o usa el botón de cada tarjeta para añadirlo a la comparación.
+        </p>
+      </div>
+      <div class="spectrum" id="spectrum"></div>
+    </section>
+  </div>
+
+  <!-- ----------------------------------------------------------- FICHAS -->
+  <div class="wrap">
+    <section id="fichas">
+      <div class="sec-head">
+        <div class="kicker">Fichas de partidos</div>
+        <h2>Los puntos fuertes de cada programa</h2>
+        <p>Resumen de las propuestas que cada partido recoge en su propio texto. El recuento de páginas y palabras procede del repositorio.</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="search" id="search" placeholder="Buscar partido, tema o propuesta…" aria-label="Buscar">
+        </label>
+        <div class="chips" id="blocChips"></div>
+        <button class="chip" id="resetBtn" type="button">Limpiar filtros</button>
+      </div>
+
+      <div class="parties" id="parties"></div>
+      <div class="empty-state hidden" id="emptyState">Ningún partido coincide con la búsqueda.</div>
+    </section>
+  </div>
+
+  <!-- ----------------------------------------------------------- MATRIZ -->
+  <div class="wrap">
+    <section id="matriz">
+      <div class="sec-head">
+        <div class="kicker">Matriz comparativa</div>
+        <h2>Qué dice cada partido de cada tema</h2>
+        <p>La tabla se construye con los partidos que tengas seleccionados. Arriba a la derecha puedes activarlos o desactivarlos uno a uno.</p>
+      </div>
+      <div class="toolbar">
+        <div class="chips" id="selectChips"></div>
+        <button class="chip" id="allBtn" type="button">Seleccionar todos</button>
+        <button class="chip" id="coreBtn" type="button">Solo los grandes</button>
+        <button class="chip" id="noneBtn" type="button">Ninguno</button>
+      </div>
+      <div class="matrix-wrap">
+        <table class="matrix" id="matrix">
+          <thead><tr id="matrixHead"></tr></thead>
+          <tbody id="matrixBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- ------------------------------------------------------------ TEMAS -->
+  <div class="wrap">
+    <section id="temas">
+      <div class="sec-head">
+        <div class="kicker">Diferencias por tema</div>
+        <h2>Dónde se separan exactamente</h2>
+        <p>Las mismas ocho ejes, ahora con la posición literal de cada partido y su propuesta concreta. Es la parte de la página que mejor explica las diferencias.</p>
+      </div>
+      <div id="themeBlocks"></div>
+    </section>
+  </div>
+
+  <!-- ----------------------------------------------------------- MÉTODO -->
+  <div class="wrap">
+    <section id="metodo">
+      <div class="sec-head">
+        <div class="kicker">Método y fuentes</div>
+        <h2>De dónde sale todo lo de aquí</h2>
+        <p>Sin esto, una comparativa electoral no deja de ser una impresión personal.</p>
+      </div>
+
+      <div class="method">
+        <div class="mbox">
+          <h3>La fuente primaria</h3>
+          <p>
+            El repositorio de <a href="https://github.com/jynus/programas-electorales-29n-generales-2026" target="_blank" rel="noopener">jynus</a>
+            convierte a <code>.rst</code> el PDF original de cada programa (o su web, cuando el partido no publicó PDF) y verifica
+            el texto carácter a carácter contra el original, con sumas SHA-256 de cada PDF.
+          </p>
+          <p>Cada tarjeta enlaza directamente al <code>.rst</code> correspondiente.</p>
+        </div>
+        <div class="mbox">
+          <h3>Qué se ha resumido</h3>
+          <ul>
+            <li>Los <b>puntos fuertes</b> reproducen propuestas concretas y verificables del programa (cifras, plazos, trabas legales).</li>
+            <li>Las <b>posiciones por eje</b> son una clasificación de lectura: agrupan programas que, en ese tema concreto, comparten enfoque.</li>
+            <li>Cuando un partido no aborda un tema, se dice explícitamente en lugar de inventar una posición.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>Los idiomas de los originales</h3>
+          <ul>
+            <li>BNG publica su programa en <b>gallego</b>, ERC y Compromís-Front en <b>catalán</b>, EH Bildu y el PNV en <b>euskera</b> y castellano.</li>
+            <li>Cuando aquí se cita una propuesta de esos programas, se respeta la <b>lengua original</b> del partido, marcada con una etiqueta <code>GL</code>, <code>CA</code> o <code>EU</code>.</li>
+            <li>La interfaz de esta página está siempre en castellano.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>Lo que esta página no es</h3>
+          <ul>
+            <li>No es una predicción electoral ni un sondeo.</li>
+            <li>No valora la viabilidad de las propuestas.</li>
+            <li>No es un resumen oficial de los partidos: es una lectura de sus textos.</li>
+            <li>Los programas se publicaron en distintas fechas y con distinta extensión; el detalle de cada uno no es directamente comparable.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>Los originales</h3>
+          <ul>
+            <li><code>programas_electorales/</code>: los 24 ficheros <code>.rst</code> verificados.</li>
+            <li><code>documentos_originales/</code>: los PDF de origen con sus sumas SHA-256.</li>
+            <li><code>scripts/build.py</code>: regenera todo y falla si algo no cuadra.</li>
+          </ul>
+          <p style="margin-top:10px"><a href="https://github.com/jynus/programas-electorales-29n-generales-2026/tree/main/programas_electorales" target="_blank" rel="noopener">Ver los 24 programas en el repositorio →</a></p>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Una advertencia sobre el formato.</strong> Los programas van de 617 palabras (Feministas al Congreso) a 51.399 (Podemos),
+        y hay cuatro perfiles muy distintos: manifiestos branded de partido, programas por capítulos muy presupuestados, contratos electorales
+        con compromisos numerados y planes de área con fuentes citadas. Comparar el detalle de un bloque de 150 páginas con el de dos páginas
+        puede inducir a error: por eso aquí se resumen las <em>propuestas</em>, no el número de páginas.
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap fcols">
+    <div>
+      Resumen elaborado a partir de los programas electorales del 29N de 2026 publicados por los partidos y verificados en
+      <a href="https://github.com/jynus/programas-electorales-29n-generales-2026" target="_blank" rel="noopener">github.com/jynus/programas-electorales-29n-generales-2026</a>.
+    </div>
+    <div>Página sin cookies ni seguimiento · <span id="year"></span></div>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
