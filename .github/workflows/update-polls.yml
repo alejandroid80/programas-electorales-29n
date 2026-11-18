@@ -32,6 +32,14 @@ jobs:
         with:
           node-version: '20'
 
+      # pdftotext hace falta para leer la nota de estimacion de voto del CIS,
+      # que es la unica fuente que reparte escanos por partido.
+      - name: Instalar poppler-utils
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          pdftotext -v 2>&1 | head -1
+
       - name: Recoger los datos
         id: fetch
         run: node scripts/update-polls.mjs
