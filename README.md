@@ -4,6 +4,14 @@ Pequeña página web (HTML/CSS/JS sin dependencias ni build) que resume los **22
 electorales** de las elecciones generales del 29 de noviembre de 2026 y muestra, lado a lado,
 las diferencias entre ellos.
 
+## 🌐 Publicada
+
+**https://alejandroid80.github.io/programas-electorales-29n/**
+
+Alojada en GitHub Pages desde el repositorio
+[alejandroid80/programas-electorales-29n](https://github.com/alejandroid80/programas-electorales-29n)
+(branch `main`, raíz). Cada `git push` a `main` redespliega la web automáticamente.
+
 ## Fuente de los datos
 
 Todo el contenido procede del repositorio de
