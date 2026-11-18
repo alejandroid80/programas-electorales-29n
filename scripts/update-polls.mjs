@@ -151,8 +151,10 @@ async function fetchCis() {
 /* --------------------------------------------------- 3. Electomania (fichas) */
 const EM_API = 'https://electomania.es/wp-json/wp/v2/posts';
 
-async function fetchElectomania(limite = 14) {
-  const url = `${EM_API}?per_page=${limite}&_fields=id,date,link,title,content`;
+async function fetchElectomania(limite = 12) {
+  // Se piden muchos mas posts porque entre las encuestas se cuelan noticias:
+  // el filtro por pais y por tabla deja solo las encuestas de Espana.
+  const url = `${EM_API}?per_page=50&_fields=id,date,link,title,content`;
   const posts = JSON.parse(await get(url));
   if (!Array.isArray(posts) || !posts.length) throw new Error('Electomania no devuelve posts');
 
@@ -195,9 +197,11 @@ async function fetchElectomania(limite = 14) {
 
     // Electomania tambien publica encuestas de otros paises: solo interesan
     // las de Espana. El JSON-LD lo dice explicitamente en la descripcion.
+    // Si el pais no se reconoce, la ficha se descarta: es preferible perder
+    // una encuesta a meter una de otro pais.
     const desc = ld.description || '';
-    const pais = (desc.match(/en ([A-Za-zÁÉÍÓÚÑáéíóúñ]+) para las pr/) || [])[1];
-    if (pais && pais !== 'España') continue;
+    const pais = (desc.match(/en ([A-Za-zÁÉÍÓÚÑáéíóúñ ]{2,30}) para las pr/) || [])[1];
+    if (!pais || pais.trim() !== 'España') continue;
 
     salida.push({
       fecha: (p.date || '').slice(0, 10),
@@ -212,7 +216,9 @@ async function fetchElectomania(limite = 14) {
     });
   }
   if (!salida.length) throw new Error('no se ha extraido ninguna tabla de Electomania');
-  return salida;
+  // Se ordenan por fecha y se acotan: el API intercala noticias con encuestas.
+  salida.sort((a, b) => (a.fecha < b.fecha ? 1 : a.fecha > b.fecha ? -1 : 0));
+  return salida.slice(0, limite);
 }
 
 /* --------------------------------------------------------------- programa */

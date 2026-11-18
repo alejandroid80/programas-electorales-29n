@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-18T21:21:25.226Z",
+ "generado": "2026-11-18T21:26:49.224Z",
  "elecciones": "2026-11-29",
  "fuentes": [
   {
@@ -4189,6 +4189,175 @@
     "Vox": 54,
     "Otros": 33,
     "Frente Amplio": 11
+   }
+  },
+  {
+   "fecha": "2026-11-17",
+   "titular": "Tracking Sondaxe (17 nov): \"la derecha mantiene distancia sobre la absoluta pese a la subida del PSOE\"",
+   "ficha": "Sondaxe España 17/11/2026",
+   "sondeante": "Sondaxe para La Voz de Galicia",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sondaxe-17-nov-la-derecha-mantiene-distancia-sobre-la-absoluta-pese-a-la-subida-del-psoe/",
+   "muestra": null,
+   "v": {
+    "PP": 29.7,
+    "PSOE": 26.7,
+    "Vox": 18,
+    "Otros": 13.3,
+    "Frente Amplio*": 7.2,
+    "Se Acabó la Fiesta": 3,
+    "Podemos": 2.1
+   },
+   "esc": {
+    "PP": 125,
+    "PSOE": 112,
+    "Vox": 66,
+    "Otros": 32,
+    "Frente Amplio*": 12,
+    "Se Acabó la Fiesta": 1,
+    "Podemos": 2
+   }
+  },
+  {
+   "fecha": "2026-11-17",
+   "titular": "Tracking 40dB (17 nov): \"Vox se frena y cede terreno al PP\"",
+   "ficha": "40dB España 17/11/2026",
+   "sondeante": "40dB para El País",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-40db-17-nov-vox-se-frena-y-cede-terreno-al-pp/",
+   "muestra": null,
+   "v": {
+    "PP": 31.8,
+    "PSOE": 30.6,
+    "Vox": 17.5,
+    "Otros": 13.6,
+    "Frente Amplio": 3.7,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.7,
+    "Podemos": 1.1
+   },
+   "esc": {
+    "PP": 133,
+    "PSOE": 120,
+    "Vox": 58,
+    "Otros": 39,
+    "Frente Amplio": 5,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 5,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-16",
+   "titular": "Tracking Sigma Dos (16 nov): \"El PSOE hunde todavía más al Frente Amplio y se coloca a menos de cinco puntos del PP\"",
+   "ficha": "Sigma Dos España 16/11/2026",
+   "sondeante": "Sigma Dos para El Mundo",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sigma-dos-16-nov-el-psoe-hunde-todavia-mas-al-frente-amplio-y-se-coloca-a-menos-de-cinco-puntos-del-pp/",
+   "muestra": null,
+   "v": {
+    "PP": 30.8,
+    "PSOE": 26.1,
+    "Vox": 19.8,
+    "Otros": 15.2,
+    "Frente Amplio": 6.7,
+    "Podemos": 1.4
+   },
+   "esc": {
+    "PP": 126,
+    "PSOE": 110,
+    "Vox": 66,
+    "Otros": 34,
+    "Frente Amplio": 14,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-16",
+   "titular": "Tracking SW Demoscopia (16 nov): \"PP y Vox tendrían que incorporar a Junts para conseguir la mayoría\"",
+   "ficha": "SW Demoscopia España 16/11/2026",
+   "sondeante": "SW Demoscopia para La Séptima",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sw-demoscopia-16-nov-pp-y-vox-tendrian-que-incorporar-a-junts-para-conseguir-la-mayoria/",
+   "muestra": null,
+   "v": {
+    "PSOE": 31.8,
+    "PP": 28.6,
+    "Vox": 16.8,
+    "Otros": 15.4,
+    "Frente Amplio": 7.4
+   },
+   "esc": {
+    "PSOE": 134,
+    "PP": 115,
+    "Vox": 57,
+    "Otros": 33,
+    "Frente Amplio": 11
+   }
+  },
+  {
+   "fecha": "2026-11-16",
+   "titular": "Tracking Sondaxe (16 nov): \"El PSOE le quita tres escaños al PP y reduce la ventaja de Feijoo a 18 actas\"",
+   "ficha": "Sondaxe España 16/11/2026",
+   "sondeante": "Sondaxe para La Voz de Galicia",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sondaxe-16-nov-el-psoe-le-quita-tres-escanos-al-pp-y-reduce-la-ventaja-de-feijoo-a-18-actas/",
+   "muestra": null,
+   "v": {
+    "PP": 30.2,
+    "PSOE": 26.7,
+    "Vox": 17.6,
+    "Otros": 15.4,
+    "Frente Amplio": 7.9,
+    "Podemos": 2.2
+   },
+   "esc": {
+    "PP": 127,
+    "PSOE": 109,
+    "Vox": 65,
+    "Otros": 35,
+    "Frente Amplio": 12,
+    "Podemos": 2
+   }
+  },
+  {
+   "fecha": "2026-11-16",
+   "titular": "Encuesta Invymark (16 nov): \"El PP ganaría las elecciones por 4 puntos\"",
+   "ficha": "Invymark España 16/11/2026",
+   "sondeante": "Invymark para La Sexta",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/encuesta-invymark-16-nov-el-pp-ganaria-las-elecciones-por-4-puntos/",
+   "muestra": null,
+   "v": {
+    "PP": 32.2,
+    "PSOE": 28.2,
+    "Vox": 19.1,
+    "Otros": 14.1,
+    "Frente Amplio*": 6.4
+   },
+   "esc": {}
+  },
+  {
+   "fecha": "2026-11-16",
+   "titular": "Tracking 40dB (16 nov): \"El PSOE remonta pero no altera la mayoría de la derecha\"",
+   "ficha": "40dB España 16/11/2026",
+   "sondeante": "40dB para El País",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-40db-16-nov-el-psoe-remonta-pero-no-altera-la-mayoria-de-la-derecha/",
+   "muestra": null,
+   "v": {
+    "PP": 31.5,
+    "PSOE": 30.3,
+    "Vox": 18,
+    "Otros": 13.7,
+    "Frente Amplio*": 5.4,
+    "Podemos": 1.1
+   },
+   "esc": {
+    "PP": 130,
+    "PSOE": 119,
+    "Vox": 62,
+    "Otros": 28,
+    "Frente Amplio*": 10,
+    "Podemos": 0
    }
   }
  ],

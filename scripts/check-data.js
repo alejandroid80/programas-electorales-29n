@@ -280,6 +280,10 @@ if (fs.existsSync(POLLS)) {
     P.electomania.forEach((e) => {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(e.fecha)) fail(`voto (Electomania): fecha invalida "${e.fecha}"`);
       if (!e.url) fail('voto (Electomania): ficha sin enlace a la fuente');
+      // Electomania publica tambien encuestas de otros paises: solo valen las de Espana.
+      if (!/Espa[nñ]a/.test(e.ficha || '')) {
+        fail(`voto (Electomania): ficha que no es de Espana -> "${e.ficha}"`);
+      }
     });
   }
 } else {
