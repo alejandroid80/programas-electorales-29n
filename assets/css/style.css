@@ -277,13 +277,19 @@ section:first-of-type { border-top: none; }
 .live { font-size: .82rem; color: var(--ink-3); margin: 0 0 16px; min-height: 1.2em; }
 
 .parties { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
+/* El borde de color va en la propia tarjeta (y no en .card-top) para que
+   respete el radio sin necesitar overflow:hidden, que recortaba el menu
+   de compartir al salirse de la tarjeta. */
 .card {
-  background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
-  overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  background: var(--bg-card); border: 1px solid var(--line); border-top: 3px solid var(--pc);
+  border-radius: var(--radius); box-shadow: var(--shadow); display: flex; flex-direction: column;
   transition: box-shadow .2s, transform .2s; scroll-margin-top: 88px;
+  position: relative; z-index: 0;
 }
+/* Con el menu abierto, la tarjeta pasa por delante de las siguientes. */
+.card:has(.share-menu:not([hidden])) { z-index: 50; }
 .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
-.card-top { padding: 16px 18px 14px; border-top: 3px solid var(--pc); }
+.card-top { padding: 16px 18px 14px; }
 .card-head { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 10px; }
 .card-head .badge {
   width: 44px; height: 42px; border-radius: 11px; background: var(--pc); color: var(--pc-fg);
@@ -434,22 +440,27 @@ html { scrollbar-color: var(--line-2) var(--bg); }
 
 .share-menu {
   position: absolute; z-index: 40; top: calc(100% + 8px); right: 0;
-  min-width: 208px; padding: 6px;
+  width: 244px; padding: 6px;
   background: var(--bg-card); border: 1px solid var(--line-2);
   border-radius: var(--radius-sm); box-shadow: var(--shadow-lift);
 }
 .share-menu[hidden] { display: none; }
+/* Cuando no cabe abajo, el menu se abre hacia arriba. */
+.share.up .share-menu { top: auto; bottom: calc(100% + 8px); }
 .share-menu a, .share-menu button {
-  display: flex; align-items: center; gap: 10px; width: 100%;
-  font-family: var(--sans); font-size: .83rem; font-weight: 500; color: var(--ink);
-  text-decoration: none; padding: 9px 11px; border: 0; border-radius: 6px;
-  background: none; cursor: pointer; text-align: left; min-height: 38px;
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  font-family: var(--sans); font-size: .8rem; font-weight: 500; color: var(--ink);
+  text-decoration: none; padding: 8px 10px; border: 0; border-radius: 6px;
+  background: none; cursor: pointer; text-align: left; min-height: 34px;
 }
 .share-menu a:hover, .share-menu button:hover { background: var(--bg-soft); }
-.share-menu .sep { height: 1px; background: var(--line); margin: 5px 8px; }
+.share-menu .sep { height: 1px; background: var(--line); margin: 5px 6px; }
 .share-menu .native { font-weight: 650; color: var(--accent); }
-.share-menu .swatch { width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--ink-3); }
-.share-menu .hint { font-size: .7rem; color: var(--ink-3); padding: 4px 11px 6px; }
+.share-menu .swatch { width: 7px; height: 7px; border-radius: 50%; flex: none; background: var(--ink-3); }
+.share-menu .hint { font-size: .68rem; color: var(--ink-3); padding: 5px 10px 4px; line-height: 1.35; }
+/* Las redes van en dos columnas: el menu es mas bajo y cabe mejor. */
+.share-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.share-grid a { padding: 7px 9px; min-height: 32px; font-size: .78rem; }
 
 /* El menu se ancla al borde derecho del boton y se abre hacia dentro,
    para no salirse de la tarjeta ni del viewport. */
@@ -458,7 +469,12 @@ html { scrollbar-color: var(--line-2) var(--bg); }
    izquierda para que el menu no se salga de la tarjeta. */
 .card-foot .share-menu { right: auto; left: 0; }
 @media (max-width: 620px) {
-  .share-menu { position: fixed; left: 12px; right: 12px; width: auto; }
+  /* En movil el menu es una hoja pegada al pie de la pantalla: siempre
+     visible y con el pulgar al alcance. */
+  .share .share-menu, .share.up .share-menu, .card-foot .share-menu {
+    position: fixed; left: 12px; right: 12px; top: auto; bottom: 12px;
+    width: auto; max-width: 420px; margin-inline: auto;
+  }
 }
 
 /* --------------------------------------------------------- Methodology */

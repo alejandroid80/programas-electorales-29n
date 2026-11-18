@@ -382,7 +382,7 @@
       (canNative
         ? '<button type="button" class="native" data-share-native>' + svg('share', 14) + 'Compartir con…</button><div class="sep"></div>'
         : '') +
-      items +
+      '<div class="share-grid">' + items + '</div>' +
       '<div class="sep"></div>' +
       '<button type="button" data-share-copy>' + svg('copy', 14) + 'Copiar el enlace</button>' +
       (canNative ? '' : '<p class="hint">Instagram solo se comparte desde su app.</p>') +
@@ -523,6 +523,13 @@
         if (!wasOpen) {
           menu.hidden = false;
           toggle.setAttribute('aria-expanded', 'true');
+          // Si el menu no cabe por abajo, se abre hacia arriba.
+          var box = toggle.closest('.share');
+          box.classList.remove('up');
+          var r = menu.getBoundingClientRect();
+          if (r.bottom > window.innerHeight - 8 && r.top > r.height + 16) {
+            box.classList.add('up');
+          }
         }
         return;
       }
