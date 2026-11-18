@@ -17,6 +17,9 @@ const THEMES = [
     id: 'fiscal',
     name: 'Economía y fiscalidad',
     icon: '€',
+    scale: ['subir', 'gradual', 'bajar', 'recorte'],
+    axisLeft: 'Máxima presión redistributiva',
+    axisRight: 'Menos Estado, más mercado',
     intro: 'La pregunta de fondo: ¿bajan o suben los impuestos, y a quién se los suben?',
     positions: {
       bajar: {
@@ -41,6 +44,9 @@ const THEMES = [
     id: 'vivienda',
     name: 'Vivienda',
     icon: '⌂',
+    scale: ['precio', 'universal', 'fiscal', 'oferta'],
+    axisLeft: 'El alquiler lo fija el Estado',
+    axisRight: 'El mercado lo fija',
     intro: 'La política de vivienda es, hoy por hoy, la política social que más debate genera.',
     positions: {
       oferta: {
@@ -65,6 +71,9 @@ const THEMES = [
     id: 'migracion',
     name: 'Inmigración',
     icon: '⇄',
+    scale: ['regular', 'control', 'expulsion'],
+    axisLeft: 'Vías legales e integración',
+    axisRight: 'Prioridad nacional y expulsión',
     intro: 'El eje más polarizado del ciclo electoral: del rechazo a la integración.',
     positions: {
       expulsion: {
@@ -77,7 +86,7 @@ const THEMES = [
       },
       regular: {
         label: 'Vías legales e integración',
-        desc: 'Regularización,vellido de asylum, protección internacional e integración.'
+        desc: 'Regularización, vías de asilo, protección internacional e integración.'
       }
     }
   },
@@ -85,6 +94,9 @@ const THEMES = [
     id: 'energia',
     name: 'Energía y clima',
     icon: '⚡',
+    scale: ['renovable', 'mixto', 'nuclear'],
+    axisLeft: '100 % renovable',
+    axisRight: 'Nuclear y transición lenta',
     intro: 'Nuclear sí o no, y con qué ritmo se abandona el carbón y el gas.',
     positions: {
       nuclear: {
@@ -93,7 +105,7 @@ const THEMES = [
       },
       mixto: {
         label: 'Renovables con cierre nuclear a 2035',
-        desc: 'Electrificación, storage y renovables, con un calendario de cierre nuclear acordado y transición justa.'
+        desc: 'Electrificación, almacenamiento y renovables, con un calendario de cierre nuclear acordado y transición justa.'
       },
       renovable: {
         label: '100 % renovable',
@@ -105,6 +117,9 @@ const THEMES = [
     id: 'estado',
     name: 'Forma del Estado',
     icon: '◈',
+    scale: ['unitario', 'autonomico', 'federal', 'independiente'],
+    axisLeft: 'Estado unitario',
+    axisRight: 'Derecho a decidir',
     intro: 'Qué Estado se propone: unitario, federal, o con derecho a decidir.',
     positions: {
       unitario: {
@@ -113,7 +128,7 @@ const THEMES = [
       },
       autonomico: {
         label: 'Más autogobierno',
-        desc: 'Reformar laostar territorial y financiera para dar más competencias a las comunidades.'
+        desc: 'Reformar la financiación territorial y financiera para dar más competencias a las comunidades.'
       },
       federal: {
         label: 'República federal',
@@ -129,6 +144,9 @@ const THEMES = [
     id: 'militar',
     name: 'Paz y militarismo',
     icon: '☮',
+    scale: ['desarme', 'reforma', 'mas'],
+    axisLeft: 'Desarme y paz',
+    axisRight: 'Más gasto militar',
     intro: 'Gasto militar, OTAN, armas a Israel y la voz de España en el mundo.',
     positions: {
       mas: {
@@ -149,6 +167,9 @@ const THEMES = [
     id: 'ue',
     name: 'Unión Europea',
     icon: '★',
+    scale: ['pueblos', 'integrar', 'critica'],
+    axisLeft: 'Europa de los pueblos',
+    axisRight: 'Europa crítica o de salida',
     intro: 'De la incondicional a la integración al soberanismo económico.',
     positions: {
       critica: {
@@ -169,6 +190,9 @@ const THEMES = [
     id: 'servicios',
     name: 'Servicios públicos y Estado',
     icon: '✚',
+    scale: ['blindar', 'eficiencia', 'reducir'],
+    axisLeft: 'Blindar el Estado de bienestar',
+    axisRight: 'Reducir y desregular',
     intro: 'El peso del Estado: blindar los servicios públicos o dimensionar la administración.',
     positions: {
       blindar: {
@@ -177,7 +201,7 @@ const THEMES = [
       },
       eficiencia: {
         label: 'Eficiencia y dimensionar',
-        desc: 'Menos estructuras, más eficiencia, y elimination del gasto ideológico.'
+        desc: 'Menos estructuras, más eficiencia, y eliminando el gasto ideológico.'
       },
       reducir: {
         label: 'Reducir y desregular',
@@ -197,6 +221,9 @@ const PARTIES = [
     short: 'PP',
     abbr: 'PP',
     color: '#0B5FA5',
+    pcText: { light: '#0b5fa5', dark: '#548fc0' },
+    badgeFg: '#ffffff',
+    profile: 'capitulos',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'pp.rst',
@@ -229,6 +256,9 @@ const PARTIES = [
     short: 'PSOE',
     abbr: 'PSOE',
     color: '#C8102E',
+    pcText: { light: '#c8102e', dark: '#db6175' },
+    badgeFg: '#ffffff',
+    profile: 'capitulos',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'psoe.rst',
@@ -250,7 +280,7 @@ const PARTIES = [
       { t: 'Vivienda como derecho fundamental', d: 'Reforma de la Constitución, movilizar el 1 % del PIB anual, parque público estatal de 100.000 viviendas, el 1 % de la licitación anual de obra pública para un fondo de adquisición, impuesto a solares residenciales ociosos y congelación de rentas por encima del índice de referencia.' },
       { t: 'Salarios y trabajo', d: 'Reducción de la jornada a 37,5 horas e incentivos a la negociación colectiva hacia las 35; deducción del IRPF condicionada a la evolución de los precios; blindaje constitucional de las pensiones con revalorización por IPC y reducción de la brecha de género en las pensiones.' },
       { t: 'Fiscalidad y servicios públicos', d: 'Tasa a los "tecnooligarcas" que complementa la tasa Google, tasa a los viajes de lujo y refuerzo de la tasa Tobin; acabar con las listas de espera, Plan Sonríe de salud bucodental y gestión directa como modalidad preferente en la sanidad.' },
-      { t: 'Educación y cuidados', d: 'Universalización de la educación infantil de 0 a 3 años, abandono escolar temprano por debajo del 10 % antes de 2030, Estatuto del Docente, primera Ley de Servicios Sociales y Programa deplacement de aged para envejecer en casa.' },
+      { t: 'Educación y cuidados', d: 'Universalización de la educación infantil de 0 a 3 años, abandono escolar temprano por debajo del 10 % antes de 2030, Estatuto del Docente, primera Ley de Servicios Sociales y el Plan «A Tu Lado» para envejecer en casa.' },
       { t: 'Clima y territorio', d: 'Mantener el cierre de las centrales nucleares hasta 2035 con transición justa, Ley de Adaptación al Cambio Climático, Agencia Estatal de Protección Civil y una financiación territorial justa.' },
       { t: 'Democracia y Europa', d: 'Escaño ciudadano en Congreso y Senado, supresión de aforamientos, reforma del Senado, Defensor de las Generaciones Futuras; ampliación de la UE con los Balcanes Occidentales e impuesto mínimo global sobre las multinacionales.' }
     ]
@@ -261,6 +291,9 @@ const PARTIES = [
     short: 'Podemos',
     abbr: 'POD',
     color: '#6B3FA0',
+    pcText: { light: '#6b3fa0', dark: '#9a7cbe' },
+    badgeFg: '#ffffff',
+    profile: 'capitulos',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'podemos.rst',
@@ -293,6 +326,9 @@ const PARTIES = [
     short: 'Vox',
     abbr: 'VOX',
     color: '#166534',
+    pcText: { light: '#166534', dark: '#5e9573' },
+    badgeFg: '#ffffff',
+    profile: 'capitulos',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'vox.rst',
@@ -325,10 +361,14 @@ const PARTIES = [
     short: 'ERC',
     abbr: 'ERC',
     color: '#C99700',
+    pcText: { light: '#8b6c0a', dark: '#c99700' },
+    badgeFg: '#1a1013',
+    profile: 'capitulos',
     bloc: 'nacionalista',
     lang: 'catalán',
     doc: 'erc.rst',
-    title: 'Pel país. Per la gent. Pel futur.',
+    title: 'Por el país. Por la gente. Por el futuro.',
+    titleOrig: 'Pel país. Per la gent. Pel futur.',
     pages: 48,
     words: 25307,
     tagline: 'Tres ejes: defender el país, defender la gente y defender los servicios públicos.',
@@ -344,10 +384,10 @@ const PARTIES = [
     ],
     keys: [
       { t: 'A. Defender el país', d: 'Autodeterminación y plurinacionalidad, protección efectiva de la lengua catalana, defensa de la escuela catalana, financiación y soberanía fiscal, cultura catalana con espacio comunicativo nacional, más competencias y una Unión Europea con proyección internacional.' },
-      { t: 'B. Defender la gente', d: 'Plan de choque sobre la vivienda —con traspaso de los pisos de la SAREB a la Generalitat y habilitación de una LAU catalana—, coste de la vida, fiscalidad más justa, feminismo y derechos LGBTI+, trabajo digno, reindustrialización, transición energética justa, futuro de la pagesia y el mundo rural, sociedad digital y bienestar animal.' },
+      { t: 'B. Defender la gente', d: 'Plan de choque sobre la vivienda —con traspaso de los pisos de la SAREB a la Generalitat y habilitación de una LAU catalana—, coste de la vida, fiscalidad más justa, feminismo y derechos LGBTI+, trabajo digno, reindustrialización, transición energética justa, futuro de la.pagesía y el mundo rural, sociedad digital y bienestar animal.' },
       { t: 'C. Defender los servicios públicos', d: 'Inversión en infraestructuras con garantías de ejecución, red ferroviaria al servicio del país, servicios sociales como pilar del Estado del bienestar, sanidad pública, más herramientas de seguridad, municipalismo y universidades públicas de calidad.' },
-      { t: 'Luchas amalgamate', d: 'Derogar la Ley Mordaza, suprimir los delitos de ofensa a los sentimientos religiosos y de injurias contra la Corona, convertir la comisaría de Vía Laietana en espacio de memoria y auditar los bienes espoliados por el franquismo.' },
-      { t: 'Coyuntura', d: 'El programa parte del 43 % de apoyo a la independencia y del 76 % de acuerdo con el derecho de decidir, medidos por el barómetro del CEO, y de una.Identifier crisis de vivienda que sitúa al acceso a la vivienda en el centro del debate.' }
+      { t: 'Luchas estructurales', d: 'Derogar la Ley Mordaza, suprimir los delitos de ofensa a los sentimientos religiosos y de injurias contra la Corona, convertir la comisaría de Vía Laietana en espacio de memoria y auditar los bienes espoliados por el franquismo.' },
+      { t: 'Coyuntura', d: 'El programa parte del 43 % de apoyo a la independencia y del 76 % de acuerdo con el derecho de decidir, medidos por el barómetro del CEO, y de una crisis de vivienda que sitúa al acceso a la vivienda en el centro del debate.' }
     ]
   },
   {
@@ -356,10 +396,14 @@ const PARTIES = [
     short: 'BNG',
     abbr: 'BNG',
     color: '#9D174D',
+    pcText: { light: '#9d174d', dark: '#c26f91' },
+    badgeFg: '#ffffff',
+    profile: 'areas',
     bloc: 'nacionalista',
     lang: 'gallego',
     doc: 'bng.rst',
-    title: 'Programa electoral · 29N. Xerais 2026',
+    title: 'Programa electoral · 29N. Generales 2026',
+    titleOrig: 'Programa electoral · 29N. Xerais 2026',
     pages: 91,
     words: 25684,
     tagline: 'Once áreas para "más fuerza para Galicia", con un bloque propio de soberanía digital.',
@@ -374,12 +418,12 @@ const PARTIES = [
       { k: '9', v: 'líneas de soberanía digital' }
     ],
     keys: [
-      { t: 'Dereito a unha vida digna', d: 'Vivenda, dereitos da clase traballadora, defensa do sistema público de pensións, combate á pobreza e inclusión social, acollida e dereitos das persoas migrantes, políticas feministas, dereitos LGBT e defensa da democracia e das librerías públicas.' },
-      { t: 'Servicios públicos de calidade', d: 'Educación, sanidade, persoas maiores e dependencia, garantías de bo goberno e reestruturación da administración estatal na Galiza.' },
-      { t: 'Economía ao servizo das maiorías', d: 'Nova fiscalidade, sector industrial, sector primario (agroganadeiro e pesqueiro), compromiso firme coas persoas autónomas, ciencia e investigación e transición enerxética xusta con minería sostíbel.' },
-      { t: 'Infraestruturas públicas', d: 'Infraestruturas ferroviarias, viarias e de portos e aeroportos, con ordenación territorial.' },
-      { t: 'Crise ambiental e lingua', d: 'Patrimonio natural e biodiversidade, ordenación e protección do litoral e medio mariño, política forestal e montes; lingua galega e cultura.' },
-      { t: 'Democracia e soberanía dixital', d: 'Nove líneas: soberanía dixital e IA galega, dereitos civís e control público dos algoritmos, nube soberana e datos en man común, redes sociais ao servizo das persoas, fiscalidade do valor dixital, loita contra o extractivismo dixital e Galiza como nodo atlántico.' }
+      { t: 'Derecho a una vida digna', d: 'Vivienda, derechos de la clase trabajadora, defensa del sistema público de pensiones, combate a la pobreza e inclusión social, acogida y derechos de las personas migrantes, políticas feministas, derechos LGBT y defensa de la democracia y de las libertades públicas.' },
+      { t: 'Servicios públicos de calidad', d: 'Educación, sanidad, personas mayores y dependencia, garantías de buen gobierno y reestructuración de la administración estatal en Galicia.' },
+      { t: 'Economía al servicio de las mayorías', d: 'Nueva fiscalidad, sector industrial, sector primario (agroganadero y pesquero), compromiso firme con las personas autónomas, ciencia e investigación y transición energética justa con minería sostenible.' },
+      { t: 'Infraestructuras públicas', d: 'Infraestructuras ferroviarias, viarias y de puertos y aeropuertos, con ordenación territorial.' },
+      { t: 'Crisis ambiental y lengua', d: 'Patrimonio natural y biodiversidad, ordenación y protección del litoral y medio marino, política forestal y montes; lengua gallega y cultura.' },
+      { t: 'Democracia y soberanía digital', d: 'Nueve líneas: soberanía digital e IA gallega, derechos cívicos y control público de los algoritmos, nube soberana y datos en común, redes sociales al servicio de las personas, fiscalidad del valor digital, lucha contra el extractivismo digital y Galicia como nodo atlántico.' }
     ]
   },
   {
@@ -388,10 +432,14 @@ const PARTIES = [
     short: 'EH Bildu',
     abbr: 'EH',
     color: '#4C9A2A',
+    pcText: { light: '#417e27', dark: '#4e9b2c' },
+    badgeFg: '#1a1013',
+    profile: 'capitulos',
     bloc: 'nacionalista',
     lang: 'euskera / castellano',
     doc: 'eh_bildu-es.rst',
-    title: 'Posible egin.',
+    title: 'Posible hacerlo.',
+    titleOrig: 'Posible egin.',
     pages: 30,
     words: 11817,
     tagline: 'Derechos y libertades, reconocimiento de Euskal Herria y paz y convivencia.',
@@ -410,7 +458,7 @@ const PARTIES = [
       { t: 'Regulación fina del alquiler', d: 'Extranjeros multipropietarios con al menos dos años de padrón previo, compra de edificios completos condicionada a alquiler regulado, máximo del 2 % de actualización anual de la renta, IVA del 21 % en alojamientos turísticos de corta duración y eliminación de las SOCIMIs como figura promotora.' },
       { t: 'Derechos y libertades', d: 'Empleo, pensiones, contención de precios, servicios públicos (salud, educación, cuidados y administración), escudo social, familias e infancia, política fiscal, transición ecosocial, feminismo y LGTBIQ+, migración, inteligencia artificial y libertad de expresión.' },
       { t: 'Nación y autogobierno', d: 'Reconocimiento de Euskal Herria como nación y plurinacionalidad, autogobierno, defensa del Concierto Económico Vasco y del Convenio Económico Navarro, euskera, cultura y producción audiovisual.' },
-      { t: 'Paz: diez compromisos', d: 'Por los pueblos contra las injerencias, por la paz contra las guerras, seguridad europea e indivisible, no a la OTAN, bases fuera y Bardenas para los Davis, desarme nuclear, libertad para Palestina frente al genocidio y la ocupación, defensa del pueblo saharaui, fin del bloqueo contra Cuba y multilateralismo.' },
+      { t: 'Paz: diez compromisos', d: 'Por los pueblos contra las injerencias, por la paz contra las guerras, seguridad europea e indivisible, no a la OTAN, bases fuera y los campos de Bardenas para la población, desarme nuclear, libertad para Palestina frente al genocidio y la ocupación, defensa del pueblo saharaui, fin del bloqueo contra Cuba y multilateralismo.' },
       { t: 'Convivencia', d: 'Convivencia y memoria democrática como primer apartado del bloque de paz.' }
     ]
   },
@@ -420,6 +468,9 @@ const PARTIES = [
     short: 'PNV',
     abbr: 'PNV',
     color: '#0E7C6B',
+    pcText: { light: '#0e7c6b', dark: '#41988a' },
+    badgeFg: '#ffffff',
+    profile: 'capitulos',
     bloc: 'nacionalista',
     lang: 'castellano / euskera',
     doc: 'pnv-es.rst',
@@ -439,7 +490,7 @@ const PARTIES = [
     ],
     keys: [
       { t: '01 · Poder construir tu vida aquí', d: 'Vivienda con más oferta y sin abusos, emancipación juvenil, mejores salarios y derechos laborales, educación que abra oportunidades y jóvenes con voz en las decisiones públicas.' },
-      { t: '02 · Una Euskadi que trabaja y prospera', d: 'Industria fuerte con centros de decisión en Euskadi, apoyo a autónomos y Intra-emprendedores, energía competitiva, transición ecológica, futuro para campo y pesca, infraestructuras con fechas y una fiscalidad que favorezca la actividad.' },
+      { t: '02 · Una Euskadi que trabaja y prospera', d: 'Industria fuerte con centros de decisión en Euskadi, apoyo a autónomos y emprendedores, energía competitiva, transición ecológica, futuro para campo y pesca, infraestructuras con fechas y una fiscalidad que favorezca la actividad.' },
       { t: '03 · Vivir con tranquilidad y con derechos', d: 'Ertzaintza con todas las capacidades, migración gestionada desde Euskadi con derechos y responsabilidades, igualdad real y vida libre de violencia machista, derechos LGTBIQ+ y derechos humanos sin retrocesos.' },
       { t: '04 · Cuidar lo que hemos conseguido', d: 'Pensiones dignas y justicia para las largas carreras de cotización, sanidad pública, reconocimiento del trabajo de cuidados, protección ante enfermedades graves y dependencia, reparación justa de las víctimas del amianto y protección de la infancia.' },
       { t: '05 · Decidir aquí, hacer que nos escuchen allí', d: 'Cumplimiento del Estatuto y defensa de competencias, relación bilateral y derechos históricos, defensa del Concierto Económico y un nuevo pacto político con reconocimiento nacional, bilateralidad y garantías; justicia más cercana, verdad y reparación, voz propia en Europa y fondos europeos gestionados desde Euskadi.' }
@@ -451,6 +502,9 @@ const PARTIES = [
     short: 'Adelante',
     abbr: 'AA',
     color: '#A21CAF',
+    pcText: { light: '#a21caf', dark: '#c167c9' },
+    badgeFg: '#ffffff',
+    profile: 'areas',
     bloc: 'regionalista',
     lang: 'castellano',
     doc: 'adelante_andalucia.rst',
@@ -483,6 +537,9 @@ const PARTIES = [
     short: 'Compromís',
     abbr: 'C-F',
     color: '#8A9A0B',
+    pcText: { light: '#6a7610', dark: '#8a9a0b' },
+    badgeFg: '#1a1013',
+    profile: 'areas',
     bloc: 'regionalista',
     lang: 'catalán',
     doc: 'compromis_front_valencia.rst',
@@ -495,18 +552,18 @@ const PARTIES = [
       estado: 'autonomico', militar: 'reforma', ue: 'integrar', servicios: 'blindar'
     },
         highlights: [
-      { k: '7', v: 'prioridades de la coalitions' },
-      { k: '465 M€', v: 'de recaptación fiscal adicional' },
+      { k: '7', v: 'prioridades de la coalición' },
+      { k: '465 M€', v: 'de recaudación fiscal adicional' },
       { k: '50 M€', v: 'para la autoridad metropolitana de transporte' },
       { k: '2 años', v: 'después de la DANA' }
     ],
     keys: [
-      { t: '1 · Una vida segura', d: 'Habitatge, salaris i condicions laborals, persones autònomes i pensions.' },
-      { t: '2 · Serveis públics per a cuidar i protegir', d: 'Sanitat, salut pública, educació, serveis socials i sistemes de cures, mobilitat sostenible, cultura, esport, oci educatiu, model comunicatiu i drets digitals i universitats.' },
-      { t: '3 · Democratització de l’economia', d: 'Fiscalitat, comerç, indústria i empresa, ciència i innovació, agricultura i pesca, drets de les persones consumidores i turisme.' },
-      { t: '4 · Un territori habitable i resilient', d: 'Medi ambient i biodiversitat, energia, aigua, territori, model de ciutat i urbanisme i resposta a les emergències.' },
-      { t: '5 · Més democràcia, més drets, més llibertats', d: 'Administració pública, transparència i participació, anticorrupció, justícia i seguretat, memòria democràtica, drets lingüístics, laïcisme, drets animals, infància, persones majors, famílies, joventut, igualtat de tracte, feminisme i drets LGTBIQ+.' },
-      { t: '6-7 · País amb veu pròpia i Compromís amb la Pau', d: 'Model de finançament autonòmic, model d’estat, municipalisme; i política exterior i defensa, drets humans i legalitat internacional, Unió Europea, solidaritat global i migració.' }
+      { t: '1 · Una vida segura', d: 'Vivienda, salarios y condiciones laborales, personas autónomas y pensiones.' },
+      { t: '2 · Servicios públicos para cuidar y proteger', d: 'Sanidad, salud pública, educación, servicios sociales y sistemas de cuidados, movilidad sostenible, cultura, deporte, ocio educativo, modelo comunicativo y derechos digitales y universidades.' },
+      { t: '3 · Democratización de la economía', d: 'Fiscalidad, comercio, industria y empresa, ciencia e innovación, agricultura y pesca, derechos de las personas consumidoras y turismo.' },
+      { t: '4 · Un territorio habitable y resiliente', d: 'Medio ambiente y biodiversidad, energía, agua, territorio, modelo de ciudad y urbanismo y respuesta a las emergencias.' },
+      { t: '5 · Más democracia, más derechos, más libertades', d: 'Administración pública, transparencia y participación, anticorrupción, justicia y seguridad, memoria democrática, derechos lingüísticos, laicismo, derechos animales, infancia, personas mayores, familias, juventud, igualdad de trato, feminismo y derechos LGTBIQ+.' },
+      { t: '6-7 · País con voz propia y Compromís con la Paz', d: 'Modelo de financiación autonómica, modelo de Estado y municipalismo; y política exterior y defensa, derechos humanos y legalidad internacional, Unión Europea, solidaridad global y migración.' }
     ]
   },
   {
@@ -515,6 +572,9 @@ const PARTIES = [
     short: 'CC',
     abbr: 'CC',
     color: '#45B8E8',
+    pcText: { light: '#337895', dark: '#45b8e8' },
+    badgeFg: '#1a1013',
+    profile: 'capitulos',
     bloc: 'regionalista',
     lang: 'castellano',
     doc: 'coalicion_canaria.rst',
@@ -546,6 +606,9 @@ const PARTIES = [
     short: 'Frente Amplio',
     abbr: 'FA',
     color: '#F97316',
+    pcText: { light: '#b15719', dark: '#f97316' },
+    badgeFg: '#1a1013',
+    profile: 'areas',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'frente_amplio.rst',
@@ -578,6 +641,9 @@ const PARTIES = [
     short: 'F. Obrero',
     abbr: 'FO',
     color: '#991B1B',
+    pcText: { light: '#991b1b', dark: '#c17474' },
+    badgeFg: '#ffffff',
+    profile: 'capitulos',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'frente_obrero.rst',
@@ -608,6 +674,9 @@ const PARTIES = [
     short: 'PACMA',
     abbr: 'PACMA',
     color: '#0FA3C4',
+    pcText: { light: '#127a92', dark: '#0fa3c4' },
+    badgeFg: '#1a1013',
+    profile: 'areas',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'pacma.rst',
@@ -639,6 +708,9 @@ const PARTIES = [
     short: 'Humanista',
     abbr: 'PH',
     color: '#9BC53D',
+    pcText: { light: '#5f772f', dark: '#9bc53d' },
+    badgeFg: '#1a1013',
+    profile: 'plan',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'partido_humanista.rst',
@@ -671,6 +743,9 @@ const PARTIES = [
     short: 'M+J',
     abbr: 'M+J',
     color: '#4338CA',
+    pcText: { light: '#4338ca', dark: '#857edd' },
+    badgeFg: '#ffffff',
+    profile: 'plan',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'por_un_mundo_mas_justo.rst',
@@ -701,13 +776,16 @@ const PARTIES = [
     short: 'D-21',
     abbr: 'D21',
     color: '#155E75',
+    pcText: { light: '#155e75', dark: '#6092a1' },
+    badgeFg: '#ffffff',
+    profile: 'manifiesto',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'democracia21.rst',
     title: 'España Limpia',
     pages: 13,
     words: 2559,
-    tagline: 'El programa más corto y más concreto: Institution contra el clientelismo.',
+    tagline: 'El programa más corto y más concreto: instituciones contra el clientelismo.',
     axes: {
       fiscal: 'gradual', vivienda: 'oferta', migracion: 'control', energia: 'nuclear',
       estado: 'unitario', militar: 'reforma', ue: 'integrar', servicios: 'eficiencia'
@@ -733,6 +811,9 @@ const PARTIES = [
     short: 'SALF',
     abbr: 'SALF',
     color: '#8C6D1F',
+    pcText: { light: '#8b6c1f', dark: '#a08645' },
+    badgeFg: '#ffffff',
+    profile: 'contrato',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'salf.rst',
@@ -765,6 +846,9 @@ const PARTIES = [
     short: 'IE',
     abbr: 'IE',
     color: '#2E4B9B',
+    pcText: { light: '#2e4b9b', dark: '#7588bd' },
+    badgeFg: '#ffffff',
+    profile: 'contrato',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'iustitia_europa.rst',
@@ -787,7 +871,7 @@ const PARTIES = [
       { t: 'Tijeretazo económico', d: 'Reducción drástica del gasto político, de la administración y de las subvenciones, transparencia y control del gasto público, reforma de las pensiones, cuota cero de autónomos durante cuatro años, fin de la subvención pública al clientelismo y vivienda: propiedad frente a especulación e intervencionismo estatal.' },
       { t: 'Más España y menos Unión Europea', d: 'Rechazo de las subvenciones de la UE y de las organizaciones supranacionales, y un capítulo específico contra la Agenda 2030.' },
       { t: 'Inmigración: tolerancia cero', d: 'Reforma integral de la Ley de Extranjería con tolerancia cero con la inmigración ilegal y fronteras blindadas con Ejército y Armada.' },
-      { t: 'Resto de capítulos', d: 'Nuevo modelo policial, educación sin ideología, integración de las terapias naturales en el Servicio Nacional de Salud, justicia moderne, energía para "apagar el globalismo y encender España", defensa del sector primario y defensa de los derechos fundamentales y las libertades públicas.' }
+      { t: 'Resto de capítulos', d: 'Nuevo modelo policial, educación sin ideología, integración de las terapias naturales en el Servicio Nacional de Salud y modernización de la justicia, energía para "apagar el globalismo y encender España", defensa del sector primario y defensa de los derechos fundamentales y las libertades públicas.' }
     ]
   },
   {
@@ -796,6 +880,9 @@ const PARTIES = [
     short: 'Teruel Existe',
     abbr: 'TE',
     color: '#64748B',
+    pcText: { light: '#627188', dark: '#7d8a9e' },
+    badgeFg: '#ffffff',
+    profile: 'capitulos',
     bloc: 'regionalista',
     lang: 'castellano',
     doc: 'teruel_existe.rst',
@@ -828,6 +915,9 @@ const PARTIES = [
     short: 'Soria ¡Ya!',
     abbr: 'SY',
     color: '#78350F',
+    pcText: { light: '#78350f', dark: '#aa8068' },
+    badgeFg: '#ffffff',
+    profile: 'manifiesto',
     bloc: 'regionalista',
     lang: 'castellano',
     doc: 'soria_ya.rst',
@@ -858,13 +948,16 @@ const PARTIES = [
     short: 'Feministas',
     abbr: 'FC',
     color: '#EC4899',
+    pcText: { light: '#c03f7f', dark: '#ec4a9a' },
+    badgeFg: '#1a1013',
+    profile: 'manifiesto',
     bloc: 'nacional',
     lang: 'castellano',
     doc: 'feministas_al_congreso.rst',
     title: 'Juntas hacemos historia',
     pages: 2,
     words: 617,
-    tagline: 'El programa más breve del repositorio: dos páginas y una네요 declaración.',
+    tagline: 'El programa más breve del repositorio: dos páginas y una breve declaración.',
     axes: {
       fiscal: 'gradual', vivienda: 'precio', migracion: 'regular', energia: 'renovable',
       estado: 'autonomico', militar: 'reforma', ue: 'integrar', servicios: 'blindar'
@@ -894,7 +987,7 @@ const BLOCS = [
 const DETAIL = {
   pp: {
     fiscal: 'Baja el IRPF, deflacta el IRPF y aplica un 0 % a quien cobre el SMI. Bonificación del 100 % del IRPF el primer año a menores de 35.',
-    vivienda: 'Nuevo Ley del Suelo, licencias en 3 meses y deroga de la Ley de Vivienda: fin de zonas tensionadas y del índice de precios.',
+    vivienda: 'Nueva Ley del Suelo, licencias en 3 meses y deroga de la Ley de Vivienda: fin de zonas tensionadas y del índice de precios.',
     migracion: 'Control de fronteras y "compromiso mutuo" para vivir en España; el Estado presente en todo el territorio.',
     energia: 'Elimina el calendario de cierre de las cinco centrales, suprime el impuesto del 7 % a la producción y garantiza la red.',
     estado: 'Reunir la Nación, pacto territorial y la nacionalidad española como vínculo de pertenencia.',
@@ -905,8 +998,8 @@ const DETAIL = {
   psoe: {
     fiscal: 'Deducción del IRPF condicionada a la evolución de los precios, tasa a los tecnooligarcas, tasa al lujo y refuerzo de la tasa Tobin.',
     vivienda: 'Reforma de la Constitución, 1 % del PIB anual, 100.000 viviendas públicas estatales e impuesto a solares ociosos.',
-    migracion: 'Plan de Integración y Ciudadanía 2026-2030, desarrollo de la Ley Zerolo y hearty protección internacional.',
-    energia: 'Mantiene el cierre nuclear hasta 2035 con transición justa,/storage y Plan Social para el Clima.',
+    migracion: 'Plan de Integración y Ciudadanía 2026-2030, desarrollo de la Ley Zerolo y una protección internacional efectiva.',
+    energia: 'Mantiene el cierre nuclear hasta 2035 con transición justa, almacenamiento y Plan Social para el Clima.',
     estado: 'Un Estado autonómico que funciona: cooperación, autogobierno y cohesión.',
     militar: 'Defensa moderna al servicio de la paz y la seguridad, con España como observador del TPAN y defensa del multilateralismo.',
     ue: 'Ampliación con los Balcanes Occidentales, impuesto mínimo global y Una UE más integrada y democrática.',
@@ -919,7 +1012,7 @@ const DETAIL = {
     energia: 'Sistema eléctrico 100 % renovable y libre de combustibles fósiles, ley de residuo cero.',
     estado: 'España, república plurinacional: proceso constituyente, referéndum y reforma federal del Senado.',
     militar: 'Reversión completa del rearme, embargo de armas contra Israel y desarme.',
-    ue: 'Europa de los pueblos: mecanismo soberano europeo, fiscalidad común y rejection del «Europa fortaleza».',
+    ue: 'Europa de los pueblos: mecanismo soberano europeo, fiscalidad común y rechazo del «Europa fortaleza».',
     servicios: 'Blindaje del derecho al aborto, universalización de la sanidad, la educación y los servicios sociales.'
   },
   vox: {
@@ -933,24 +1026,24 @@ const DETAIL = {
     servicios: 'Desregulación de la planificación y la economía, con el Estado redimensionado.'
   },
   erc: {
-    fiscal: 'Un modelo económico y una fiscalidad más justas, con soberania fiscal como palanca.',
-    vivienda: 'Plan de choque: traspaso de los pisos de la SAREB a la Generalitat y habilitación de una LAU catalana.',
-    migracion: 'Acollida, inclusión y derechos de las personas migrantes;عليم y antirr acismo.',
+    fiscal: 'Un modelo económico y una fiscalidad más justas, con soberanía fiscal como palanca.',
+    vivienda: 'Plan de choque: traspaso de los pisos de la SAREB a la Generalitat y habilitación de una ley de arrendamientos urbanos catalana.',
+    migracion: 'Acogida, inclusión y derechos de las personas migrantes; educación y antirracismo.',
     energia: 'Transición energética justa, ecológica y accesible, con reindustrialización del país.',
-    estado: 'Autodeterminación como derecha central: Recognition de la plurinacionalidad y más competencias.',
-    militar: 'Unión Europea, proyección internacional y cooperación, con política de paz.',
+    estado: 'Autodeterminación como derecho central: reconocimiento de la plurinacionalidad y más competencias.',
+    militar: 'Política exterior al servicio de la paz, con proyección internacional.',
     ue: 'Unión Europea, proyección internacional y cooperación al servicio del país.',
-    servicios: 'Defensa de la sanitat pública, los servicios sociales, el municipalismo y las universidades públicas.'
+    servicios: 'Defensa de la sanidad pública, los servicios sociales, el municipalismo y las universidades públicas.'
   },
   bng: {
-    fiscal: 'Nova fiscalidade conCriterion social y compromiso firme coas persoas autónomas.',
-    vivienda: 'Dereito a unha vida digna: vivienda frente a la especulación inmobiliaria y la falta de política pública.',
-    migracion: 'Acollida, inclusión e dereitos das persoas migrantes, con regularización y integración.',
-    energia: 'Transición enerxética xusta, con minería sostíbel y compromiso contra el extractivismo.',
-    estado: 'Reestruturación da administración estatal na Galiza y garantías de bo goberno.',
-    militar: 'Galiza pola paz, con la peace y la convivencia como criterio.',
-    ue: 'Soberanía dixital, nube soberana y Galicia como nodo de interconexión atlántico.',
-    servicios: 'Educación, sanidade, persoas maiores e dependencia como prioridades de calidade.'
+    fiscal: 'Nueva fiscalidad con criterio social y compromiso firme con las personas autónomas.',
+    vivienda: 'Derecho a una vida digna: vivienda frente a la especulación inmobiliaria y la falta de política pública.',
+    migracion: 'Acogida, inclusión y derechos de las personas migrantes, con regularización e integración.',
+    energia: 'Transición energética justa, con minería sostenible y compromiso contra el extractivismo.',
+    estado: 'Reestructuración de la administración estatal en Galicia y garantías de buen gobierno.',
+    militar: 'Galicia por la paz, con la paz y la convivencia como criterio.',
+    ue: 'Soberanía digital, nube soberana y Galicia como nodo de interconexión atlántico.',
+    servicios: 'Educación, sanidad, personas mayores y dependencia como prioridades de calidad.',
   },
   bildu: {
     fiscal: 'Política fiscal al servicio de la transición ecosocial, con reparto justo de la renta.',
@@ -975,7 +1068,7 @@ const DETAIL = {
   adelante: {
     fiscal: 'Impuesto a las grandes fortunas y terratenientes, IRPF que sube desde 100.000 € e impuestos a la banca y las eléctricas.',
     vivienda: 'Fin de la especulación inmobiliaria y garantía del derecho a la vivienda, con criterios de cesión.',
-    migracion: 'Derechos para todas las personas, con política de integración y defensa del Estatuto.',
+    migracion: 'Derechos para todas las personas, con política de integración y defensa del Estatuto de Autonomía.',
     energia: 'Desprivatización de toda la energía para una transición ecosocial.',
     estado: 'Andalucía, nacionalidad histórica, con financiación justa y autogobierno.',
     militar: 'Justicia para Palestina, el Sáhara y el Rif, en un bloque de política exterior.',
@@ -983,18 +1076,18 @@ const DETAIL = {
     servicios: 'Desprivatización de la sanidad y de la escuela, banca pública y ley estatal de cuidados.'
   },
   compromis: {
-    fiscal: 'Fiscalitat con una mirada de justicia social, dentro del bloque de democratización de la economía.',
-    vivienda: 'Habitatge como primer bloque: una vida segura con housing, salaris i pensions.',
-    migracion: 'Solidaritat global i migració, y drets humans i legalitat internacional.',
-    energia: 'Energia, aigua i territori en un bloque de territorio habitable y resilient.',
-    estado: 'Model de finançament autonòmic i inversions, model d’estat i municipalisme.',
-    militar: 'Compromís amb la Pau i la dignitat humana, con política exterior y defensa.',
-    ue: 'Unió Europea como eje del bloque de política exterior.',
-    servicios: 'Serveis públics per a cuidar i protegir: sanitat, educació, serveis socials i cures.'
+    fiscal: 'Fiscalidad con una mirada de justicia social, dentro del bloque de democratización de la economía.',
+    vivienda: 'Vivienda como primer bloque: una vida segura con vivienda, salarios y pensiones.',
+    migracion: 'Solidaridad global y migración, con derechos humanos y legalidad internacional.',
+    energia: 'Energía, agua y territorio en un bloque de territorio habitable y resiliente.',
+    estado: 'Modelo de financiación autonómica e inversiones, modelo de Estado y municipalismo.',
+    militar: 'Compromís con la Paz y la dignidad humana, con política exterior y defensa.',
+    ue: 'Unión Europea como eje del bloque de política exterior.',
+    servicios: 'Servicios públicos para cuidar y proteger: sanidad, educación, servicios sociales y cuidados.',
   },
   cc: {
     fiscal: 'Financiación estable para los servicios públicos y uso del ahorro público para las necesidades de Canarias.',
-    vivienda: 'Defender el derecho a vivir y permanecer en Canarias, con housi en el centro.',
+    vivienda: 'Defender el derecho a vivir y permanecer en Canarias, con la vivienda en el centro.',
     migracion: 'Una política migratoria solidaria y europea.',
     energia: 'Energía limpia, almacenamiento energético y economía azul para diversificar la economía.',
     estado: 'Cumplir el Estatuto, participación efectiva y reconocimiento de la singularidad canaria.',
@@ -1008,18 +1101,18 @@ const DETAIL = {
     migracion: 'Ley integral antirracista, procedimientos estables de regularización y fin de las devoluciones.',
     energia: '3,5 % del PIB anual en transición ecológica y revisión al alza del PNIEC.',
     estado: 'Hacia una República Federal, con reforma del Senado y fin de la criminalización de la protesta.',
-    militar: 'Seguridad humana, desarme, nuevolavoz de la arquitectura de seguridad mundial.',
+    militar: 'Seguridad humana, desarme y una nueva arquitectura de seguridad mundial.',
     ue: 'Hacia una Europa de los pueblos, con mecanismo fiscal propio y reforma del BCE.',
     servicios: 'Sanidad, educación, cultura y cuidados como derechos, con reversión de las subcontratas.'
   },
   frente_obrero: {
-    fiscal: 'Capítulo propio de fiscalidad, con una critique del modelo de austeridad.',
-    vivienda: 'Capítulo de vivienda con las demandas del programa structs en un eje de clase.',
-    migracion: 'Rechazo del modelo migratorio actual y defensa de los trabajadores.',
+    fiscal: 'Capítulo propio de fiscalidad, con una crítica del modelo de austeridad.',
+    vivienda: 'Capítulo de vivienda con las demandas del programa en un eje de clase.',
+    migracion: 'Rechazo del modelo migratorio actual, que el programa describe como una herramienta para abaratar la mano de obra.',
     energia: 'Soberanía energética y recuperación de la industria española.',
     estado: 'Soberanía nacional como capítulo propio, con un bloque por eje.',
     militar: 'Capítulo propio del ejército y de las fuerzas y cuerpos de seguridad del Estado.',
-    ue: 'Soberanía y critique del dispositivo supranacional.',
+    ue: 'Soberanía y crítica del dispositivo supranacional.',
     servicios: 'Educación, cultura, sanidad, pensiones y vivienda con enfoque de clase.'
   },
   pacma: {
@@ -1028,7 +1121,7 @@ const DETAIL = {
     migracion: 'Derechos e intereses de las personas migrantes.',
     energia: 'Modelo energético sostenible y minoración en el consumo; NO a las macrogranjas.',
     estado: 'Regeneración democrática con reforma de la Ley de Iniciativa Legislativa Popular y de la Ley Electoral.',
-    militar: 'No se Dimitréplica con los 프로세—justicia social y medio ambiente.',
+    militar: 'Sin bloque propio de defensa: el eje es la justicia social y el medio ambiente.',
     ue: 'Compromiso con el consumo responsable y el uso sostenible de los recursos.',
     servicios: 'Sanidad pública, universal y de calidad, con oposición al copago, y educación y cultura para todos.'
   },
@@ -1045,7 +1138,7 @@ const DETAIL = {
   mj: {
     fiscal: 'Fiscalidad justa y sostenibilidad de las finanzas públicas, con compromisos medibles.',
     vivienda: 'Gran parque público de vivienda asequible en alquiler, con medidas y plazos.',
-    migracion: 'Política migratoria con establesObjets y vías seguras.',
+    migracion: 'Política migratoria con procedimientos estables y vías seguras.',
     energia: 'Emergencia climática, cuidado del planeta y transición energética como áreas separadas.',
     estado: 'Calidad democrática, buen gobierno y participación ciudadana como áreas propias.',
     militar: 'Política exterior al servicio de la paz y el desarrollo sostenible, y cooperación.',
@@ -1067,7 +1160,7 @@ const DETAIL = {
     vivienda: 'Primera vivienda un 35 % más barata por ley, suelo público gratis y licencia en un mes.',
     migracion: 'Expulsión en 48 horas, fin de regularizaciones y sin papeles, sin ayudas.',
     energia: 'Sin un bloque propio de energía: se integra en economía y geopolítica.',
-    estado: 'Referéndum sobre elrena Europa y defensa de la soberanía de Ceuta, Melilla y Gibraltar.',
+    estado: 'Referéndum sobre la renegociación europea y la soberanía de Ceuta, Melilla y Gibraltar.',
     militar: 'La mili voluntaria a 1.600 €, 5.000 militares más en Ceuta y Melilla y el 2 % en España.',
     ue: 'Referéndum de renegociación y de salida, con veto a Mercosur, la PAC y el Pacto Verde.',
     servicios: 'Gestión directa: una sola central de compras, 60 días para operarte y 10.000 camas más.'

@@ -4,7 +4,6 @@
 (function () {
   'use strict';
 
-  /* --------------------------------------------------------- estado */
   const CORE = ['pp', 'psoe', 'podemos', 'vox', 'erc', 'bng', 'bildu', 'pnv'];
   const state = {
     selected: new Set(CORE),
@@ -19,10 +18,30 @@
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[c]));
   const byId = (id) => PARTIES.find(p => p.id === id);
-  const isDark = () => state.theme === 'dark';
 
-  /* Código corto del idioma del programa: los resúmenes en gallego,
-     catalán o euskera se citan en la lengua original del partido. */
+  /* ------------------------------------------------------------- iconos */
+  // Un solo trazo, un solo grosor, 16x16. Sin glifos Unicode.
+  const ICONS = {
+    fiscal: '<path d="M2.5 5h11M2.5 9h11M2.5 13h6"/>',
+    vivienda: '<path d="M2 7.2 8 2.5l6 4.7"/><path d="M3.8 6.6v6.9h8.4V6.6"/><path d="M6.6 13.5V9.6h2.8v3.9"/>',
+    migracion: '<path d="M2 5.4h9.6M9.2 2.9 11.7 5.4 9.2 7.9"/><path d="M14 10.6H4.4M6.8 8.1 4.3 10.6l2.5 2.5"/>',
+    energia: '<path d="M9.4 1.8 4.2 9.1h3.3L6.6 14.2 11.8 6.8H8.5l.9-5Z"/>',
+    estado: '<path d="M1.8 5.6h12.4"/><path d="M3.4 5.6v7.2M6.4 5.6v7.2M9.6 5.6v7.2M12.6 5.6v7.2"/><path d="M1.8 14.4h12.4"/>',
+    militar: '<path d="M3.8 14.4V1.6"/><path d="M3.8 2.8h8.6l-2.3 2.7 2.3 2.7H3.8"/>',
+    ue: '<circle cx="8" cy="8" r="6.2"/><circle cx="8" cy="1.8" r="1.15"/><circle cx="8" cy="14.2" r="1.15"/><circle cx="1.8" cy="8" r="1.15"/><circle cx="14.2" cy="8" r="1.15"/>',
+    servicios: '<rect x="2.2" y="2.2" width="11.6" height="11.6" rx="2.6"/><path d="M8 4.9v6.2M4.9 8h6.2"/>',
+    arrow: '<path d="M9.2 3.2H13v3.8"/><path d="M13 3.2 7.4 8.8"/><path d="M12.4 9.6v3.2H3.4V4.2h3.2"/>',
+    copy: '<rect x="5.6" y="5.6" width="7.9" height="7.9" rx="1.6"/><path d="M10.4 5.6V4.1a1.5 1.5 0 0 0-1.5-1.5H4.1a1.5 1.5 0 0 0-1.5 1.5v4.8a1.5 1.5 0 0 0 1.5 1.5h1.5"/>'
+  };
+  const ICON = {
+    fiscal: 'fiscal', vivienda: 'vivienda', migracion: 'migracion', energia: 'energia',
+    estado: 'estado', militar: 'militar', ue: 'ue', servicios: 'servicios'
+  };
+  const svg = (name, size) => '<svg width="' + (size || 16) + '" height="' + (size || 16) +
+    '" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.35" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[name] + '</svg>';
+
+  /* --------------------------------------------------------- idioma */
   const LANG_CODE = {
     'castellano': 'ES', 'gallego': 'GL', 'catalán': 'CA',
     'euskera / castellano': 'EU', 'castellano / euskera': 'EU'
@@ -33,10 +52,46 @@
   };
   const langCode = (p) => LANG_CODE[p.lang] || 'ES';
 
-  /* --------------------------------------------------------- tema */
+  const PROFILE_LABEL = {
+    manifiesto: 'Manifiesto',
+    contrato: 'Contrato electoral',
+    capitulos: 'Programa por capítulos',
+    areas: 'Programa por áreas',
+    plan: 'Plan con fuentes citadas'
+  };
+
+  const BLOC_LABEL = {
+    nacional: 'Nacional',
+    nacionalista: 'Nacionalista',
+    regionalista: 'Regional'
+  };
+
+  /* ----------------------------------------------------------- estado */
+  function readUrl() {
+    const q = new URLSearchParams(location.search);
+    if (q.has('sel')) {
+      const ids = q.get('sel').split(',').filter(Boolean).filter(id => byId(id));
+      state.selected = new Set(ids);
+    }
+    if (q.has('q')) state.query = q.get('q');
+    if (q.has('bloc')) state.blocs = new Set(q.get('bloc').split(',').filter(Boolean));
+  }
+
+  function writeUrl() {
+    const q = new URLSearchParams();
+    if (state.selected.size) q.set('sel', Array.from(state.selected).join(','));
+    if (state.query) q.set('q', state.query);
+    if (state.blocs.size) q.set('bloc', Array.from(state.blocs).join(','));
+    const s = q.toString();
+    history.replaceState(null, '', s ? '?' + s : location.pathname);
+  }
+
+  /* ----------------------------------------------------------- tema */
   function applyTheme() {
     document.documentElement.setAttribute('data-theme', state.theme);
-    $('#themeBtn').textContent = state.theme === 'dark' ? '☀' : '◐';
+    const btn = $('#themeBtn');
+    btn.setAttribute('aria-pressed', String(state.theme === 'dark'));
+    btn.setAttribute('aria-label', state.theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
     try { localStorage.setItem('pe29n-theme', state.theme); } catch (e) {}
   }
 
@@ -55,25 +110,19 @@
   }
 
   /* ------------------------------------------------------- helpers */
-  function blocLabel(id) {
-    const b = BLOCS.find(x => x.id === id);
-    return b ? b.label : id;
-  }
-
   function matchQuery(p) {
     if (!state.query) return true;
     const q = state.query.toLowerCase();
     const hay = [
-      p.name, p.short, p.title, p.tagline, p.lang, blocLabel(p.bloc),
-      p.doc,
+      p.name, p.short, p.title, p.tagline, p.lang, p.doc, PROFILE_LABEL[p.profile],
       p.keys.map(k => k.t + ' ' + k.d).join(' '),
       p.highlights.map(h => h.k + ' ' + h.v).join(' ')
     ].join(' ').toLowerCase();
-    return q.split(/\s+/).every(function (w) { return hay.indexOf(w) !== -1; });
+    return q.split(/\s+/).every(w => hay.indexOf(w) !== -1);
   }
 
   function visibleParties() {
-    return PARTIES.filter(function (p) {
+    return PARTIES.filter(p => {
       if (state.blocs.size && !state.blocs.has(p.bloc)) return false;
       return matchQuery(p);
     });
@@ -81,48 +130,80 @@
 
   /* ------------------------------------------------------- stats */
   function renderStats() {
-    const totalWords = PARTIES.reduce(function (a, p) { return a + p.words; }, 0);
-    const totalPages = PARTIES.reduce(function (a, p) { return a + p.pages; }, 0);
-    const maxWords = Math.max.apply(null, PARTIES.map(p => p.words));
-    const minWords = Math.min.apply(null, PARTIES.map(p => p.words));
+    const totalWords = PARTIES.reduce((a, p) => a + p.words, 0);
+    const totalPages = PARTIES.reduce((a, p) => a + p.pages, 0);
     const items = [
       { b: String(PARTIES.length), s: 'programas analizados' },
       { b: String(THEMES.length), s: 'ejes de comparación' },
       { b: (totalWords / 1000).toFixed(0) + 'k', s: 'palabras leídas' },
       { b: String(totalPages), s: 'páginas de programa' },
-      { b: (maxWords / 1000).toFixed(1) + 'k', s: 'el más extenso (' + byId('podemos').short + ')' },
-      { b: String(minWords), s: 'el más breve (' + byId('feministas').short + ')' }
+      { b: '617', s: 'el más breve' },
+      { b: '51k', s: 'el más extenso' }
     ];
-    $('#stats').innerHTML = items.map(function (i) {
-      return '<div class="stat"><b>' + esc(i.b) + '</b><span>' + esc(i.s) + '</span></div>';
-    }).join('');
+    $('#stats').innerHTML = items.map(i =>
+      '<div class="stat"><b>' + esc(i.b) + '</b><span>' + esc(i.s) + '</span></div>').join('');
   }
 
-  /* ----------------------------------------------------- spectrum */
+  /* ----------------------------------------------------- el mapa 0-100 */
   function renderSpectrum() {
     $('#spectrum').innerHTML = THEMES.map(function (th) {
-      const keys = Object.keys(th.positions);
-      const cols = keys.length;
-      const posCells = keys.map(function (k) {
-        const pos = th.positions[k];
-        const users = PARTIES.filter(function (p) { return p.axes[th.id] === k; });
-        const cls = users.length ? '' : ' empty';
-        return '<div class="pos' + cls + '"><b>' + esc(pos.label) + '</b>' + esc(pos.desc) + '</div>';
+      const n = th.scale.length;
+      const xOf = (key) => n === 1 ? 50 : (th.scale.indexOf(key) / (n - 1)) * 100;
+
+      // agrupar los partidos por posicion
+      const groups = th.scale.map(function (key) {
+        return { key: key, pos: th.positions[key], members: [] };
+      });
+      PARTIES.forEach(function (p) {
+        const g = groups.find(g => g.key === p.axes[th.id]);
+        if (g) g.members.push(p);
+      });
+      const maxRows = Math.max.apply(null, groups.map(g => g.members.length).concat([1]));
+
+      // marcas de la escala
+      const ticks = th.scale.map(function (key, i) {
+        const x = n === 1 ? 50 : (i / (n - 1)) * 100;
+        return '<span class="scale-tick" style="left:' + x + '%" data-label="' +
+          esc(th.positions[key].label) + '"></span>';
       }).join('');
 
-      const pips = PARTIES.map(function (p) {
-        const k = p.axes[th.id];
-        const on = state.selected.has(p.id);
-        return '<button type="button" class="pip' + (on ? ' on' : ' off') + '" data-pick="' + p.id +
-          '" title="' + esc(p.name + ' — ' + th.positions[k].label) + '" aria-pressed="' + on + '">' +
-          '<span class="dot" style="background:' + p.color + '"></span>' + esc(p.short) + '</button>';
+      // puntos: uno por partido, apilados si comparten posicion
+      const dots = [];
+      groups.forEach(function (g) {
+        g.members.forEach(function (p, row) {
+          dots.push('<button type="button" class="scale-dot" data-pick="' + p.id + '"' +
+            ' aria-pressed="' + state.selected.has(p.id) + '"' +
+            ' style="left:' + xOf(g.key) + '%; top:' + (row * 15 + 8) + 'px; background:' + p.color + '"' +
+            ' title="' + esc(p.name + ' — ' + g.pos.label) + '"' +
+            ' aria-label="' + esc(p.name + ' — ' + g.pos.label + ' en ' + th.name) + '"></button>');
+        });
+      });
+
+      // leyenda agrupada
+      const groupHtml = groups.map(function (g) {
+        const items = g.members.map(function (p) {
+          return '<li><button type="button" class="pip" data-pick="' + p.id + '"' +
+            ' aria-pressed="' + state.selected.has(p.id) + '"' +
+            ' title="' + esc(p.name) + '">' +
+            '<span class="dot" style="background:' + p.color + '"></span>' + esc(p.short) + '</button></li>';
+        }).join('');
+        return '<section class="sgroup">' +
+          '<h4 class="sgroup-label">' + esc(g.pos.label) + '</h4>' +
+          '<p class="sgroup-desc">' + esc(g.pos.desc) + '</p>' +
+          '<ul class="sgroup-parties">' + items + '</ul></section>';
       }).join('');
 
-      return '<article class="axis" data-theme="' + th.id + '">' +
-        '<div class="axis-head"><span class="icon">' + esc(th.icon) + '</span><h3>' + esc(th.name) + '</h3></div>' +
-        '<p class="intro">' + esc(th.intro) + '</p>' +
-        '<div class="positions" style="--cols:' + cols + '">' + posCells + '</div>' +
-        '<div class="pips">' + pips + '</div>' +
+      return '<article class="axis" id="axis-' + th.id + '">' +
+        '<div class="axis-head"><span class="axis-icon">' + svg(ICON[th.id], 17) + '</span>' +
+        '<h3>' + esc(th.name) + '</h3></div>' +
+        '<p class="axis-intro">' + esc(th.intro) + '</p>' +
+        '<div class="scale">' +
+          '<div class="scale-ends"><span>' + esc(th.axisLeft) + '</span><span>' + esc(th.axisRight) + '</span></div>' +
+          '<div class="scale-track" style="--track-h:' + (maxRows * 15 + 46) + 'px">' +
+            '<div class="scale-line"></div>' + ticks + dots.join('') +
+          '</div>' +
+        '</div>' +
+        '<div class="scale-groups" style="--cols:' + n + '">' + groupHtml + '</div>' +
         '</article>';
     }).join('');
   }
@@ -131,33 +212,39 @@
   function renderParties() {
     const list = visibleParties();
     $('#emptyState').classList.toggle('hidden', list.length > 0);
+    $('#live').textContent = list.length === PARTIES.length
+      ? 'Mostrando los ' + list.length + ' partidos.'
+      : 'Mostrando ' + list.length + ' de ' + PARTIES.length + ' partidos.';
 
     $('#parties').innerHTML = list.map(function (p) {
       const on = state.selected.has(p.id);
-      const hl = p.highlights.map(function (h) {
-        return '<div><b>' + esc(h.k) + '</b><span>' + esc(h.v) + '</span></div>';
-      }).join('');
-      const keys = p.keys.map(function (k) {
-        return '<li><b>' + esc(k.t) + '</b>' + esc(k.d) + '</li>';
-      }).join('');
+      const hl = p.highlights.map(h =>
+        '<div><b>' + esc(h.k) + '</b><span>' + esc(h.v) + '</span></div>').join('');
+      const keys = p.keys.map(k => '<li><b>' + esc(k.t) + '</b>' + esc(k.d) + '</li>').join('');
 
-      return '<article class="card" id="p-' + p.id + '" style="--pc:' + p.color + '">' +
+      return '<article class="card" id="p-' + p.id + '" style="--pc:' + p.color +
+        ';--pc-fg:' + p.badgeFg + ';--pc-text-light:' + p.pcText.light +
+        ';--pc-text-dark:' + p.pcText.dark + '">' +
         '<div class="card-top">' +
           '<div class="card-head">' +
-            '<div class="badge">' + esc(p.abbr || p.short.slice(0, 4)) + '</div>' +
+            '<div class="badge">' + esc(p.abbr) + '</div>' +
             '<div><h3>' + esc(p.name) + '</h3>' +
-            '<div class="role">' + esc(blocLabel(p.bloc)) + ' · programa en ' + esc(p.lang) + '</div></div>' +
+            '<div class="role">' + esc(BLOC_LABEL[p.bloc]) + ' · programa original en ' + esc(p.lang) + '</div></div>' +
           '</div>' +
+          '<span class="profile">' + esc(PROFILE_LABEL[p.profile]) + '</span>' +
           '<div class="card-title">«' + esc(p.title) + '»</div>' +
+          (p.titleOrig ? '<div class="card-title-orig">Original: «' + esc(p.titleOrig) + '»</div>' : '') +
           '<p class="card-tag">' + esc(p.tagline) + '</p>' +
         '</div>' +
         '<div class="hl">' + hl + '</div>' +
         '<ul class="keys">' + keys + '</ul>' +
         '<div class="card-foot">' +
-          '<span class="meta"><span><b>' + p.pages + '</b> págs.</span><span><b>' + p.words.toLocaleString('es-ES') + '</b> palabras</span></span>' +
-          '<a class="src-link" href="' + REPO_RAW + p.doc + '" target="_blank" rel="noopener">' + esc(p.doc) + ' ↗</a>' +
-          '<button type="button" class="chip pick' + (on ? ' on' : '') + '" data-pick="' + p.id + '">' +
-            (on ? '✓ En la comparación' : '+ Comparar') + '</button>' +
+          '<span class="meta"><span><b>' + p.pages + '</b> págs.</span>' +
+          '<span><b>' + p.words.toLocaleString('es-ES') + '</b> palabras</span></span>' +
+          '<a class="src-link" href="' + REPO_RAW + p.doc + '" target="_blank" rel="noopener">' +
+          'Leer el original' + svg('arrow', 13) + '</a>' +
+          '<button type="button" class="chip pick" data-pick="' + p.id + '" aria-pressed="' + on + '">' +
+            (on ? 'En la comparación' : 'Añadir a la comparación') + '</button>' +
         '</div>' +
       '</article>';
     }).join('');
@@ -166,76 +253,65 @@
   /* -------------------------------------------------------- chips */
   function renderBlocChips() {
     const counts = {};
-    BLOCS.forEach(function (b) {
-      counts[b.id] = PARTIES.filter(function (p) { return p.bloc === b.id; }).length;
-    });
-    $('#blocChips').innerHTML = BLOCS.map(function (b) {
-      const on = state.blocs.has(b.id);
-      return '<button type="button" class="chip' + (on ? ' on' : '') + '" data-bloc="' + b.id + '">' +
-        esc(b.label) + '<span class="n">' + counts[b.id] + '</span></button>';
-    }).join('');
+    BLOCS.forEach(b => { counts[b.id] = PARTIES.filter(p => p.bloc === b.id).length; });
+    $('#blocChips').innerHTML = BLOCS.map(b =>
+      '<button type="button" class="chip" data-bloc="' + b.id + '" aria-pressed="' + state.blocs.has(b.id) + '">' +
+      esc(b.label) + '<span class="n">' + counts[b.id] + '</span></button>').join('');
   }
 
   function renderSelectChips() {
-    $('#selectChips').innerHTML = PARTIES.map(function (p) {
-      const on = state.selected.has(p.id);
-      return '<button type="button" class="chip' + (on ? ' on' : '') + '" data-pick="' + p.id + '">' +
-        '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + p.color + ';margin-right:6px"></span>' +
-        esc(p.short) + '</button>';
-    }).join('');
+    $('#selectChips').innerHTML = PARTIES.map(p =>
+      '<button type="button" class="chip" data-pick="' + p.id + '" aria-pressed="' + state.selected.has(p.id) + '">' +
+      '<span class="dot" style="background:' + p.color + '"></span>' + esc(p.short) + '</button>').join('');
   }
 
   /* ------------------------------------------------------- matrix */
   function renderMatrix() {
-    const sel = PARTIES.filter(function (p) { return state.selected.has(p.id); });
+    const sel = PARTIES.filter(p => state.selected.has(p.id));
 
-    $('#matrixHead').innerHTML = '<th scope="col">Tema</th>' + sel.map(function (p) {
-      return '<th scope="col"><span class="th-party"><span class="dot" style="background:' + p.color + '"></span>' +
-        esc(p.short) + '</span></th>';
-    }).join('');
+    $('#matrixHead').innerHTML = '<th scope="col">Tema</th>' + sel.map(p =>
+      '<th scope="col"><span class="th-party"><span class="dot" style="background:' + p.color + '"></span>' +
+      esc(p.short) + '</span></th>').join('');
 
     $('#matrixBody').innerHTML = THEMES.map(function (th) {
       const cells = sel.map(function (p) {
         const key = p.axes[th.id];
         const pos = th.positions[key];
         const txt = (DETAIL[p.id] && DETAIL[p.id][th.id]) ? DETAIL[p.id][th.id] : '—';
-        const tag = pos
-          ? '<span class="cell-pos" style="background:' + hexA(p.color, .14) + ';color:' + p.color + '">' + esc(pos.label) + '</span>'
-          : '';
-        const lang = langCode(p);
-        const mark = lang === 'ES' ? '' :
-          '<span class="lang-tag" title="Cita ' + LANG_NAME[lang] + '">' + lang + '</span>';
-        return '<td>' + tag + mark + '<span class="cell-txt">' + esc(txt) + '</span></td>';
+        const tag = '<span class="cell-pos"><span class="dot" style="background:' + p.color + '"></span>' +
+          esc(pos ? pos.label : '—') + '</span>';
+        return '<td>' + tag + '<span class="cell-txt">' + esc(txt) + '</span></td>';
       }).join('');
-      return '<tr><th scope="row"><span class="kicker">' + esc(th.icon) + '</span>' + esc(th.name) + '</th>' + cells + '</tr>';
+      return '<tr><th scope="row"><span class="axis-icon" style="display:inline-grid;vertical-align:-5px;margin-right:7px">' +
+        svg(ICON[th.id], 14) + '</span>' + esc(th.name) + '</th>' + cells + '</tr>';
     }).join('');
-  }
 
-  function hexA(hex, alpha) {
-    const h = hex.replace('#', '');
-    const r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
-    return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+    $('#matrixCount').textContent = sel.length
+      ? 'Mostrando ' + sel.length + ' de ' + PARTIES.length + ' partidos. Desplaza la tabla en horizontal para ver el resto.'
+      : 'No hay partidos seleccionados: elige arriba al menos uno para ver la tabla.';
   }
 
   /* -------------------------------------------------------- themes */
+  function renderThemeIndex() {
+    $('#themeIndex').innerHTML = THEMES.map(th =>
+      '<a href="#t-' + th.id + '">' + svg(ICON[th.id], 14) + esc(th.name) + '</a>').join('');
+  }
+
   function renderThemes() {
     $('#themeBlocks').innerHTML = THEMES.map(function (th) {
       const cards = PARTIES.map(function (p) {
         const key = p.axes[th.id];
         const pos = th.positions[key];
         const txt = (DETAIL[p.id] && DETAIL[p.id][th.id]) ? DETAIL[p.id][th.id] : '—';
-        const lang = langCode(p);
-        const mark = lang === 'ES' ? '' :
-          '<span class="lang-tag" title="Cita ' + LANG_NAME[lang] + '">' + lang + '</span>';
-        return '<div class="tcard" style="--pc:' + p.color + '">' +
+        return '<div class="tcard">' +
           '<div class="who"><span class="dot" style="background:' + p.color + '"></span>' +
-          '<b>' + esc(p.short) + '</b>' + mark +
+          '<b>' + esc(p.short) + '</b>' +
           '<span class="pos-tag">' + esc(pos ? pos.label : '—') + '</span></div>' +
           '<p>' + esc(txt) + '</p></div>';
       }).join('');
 
       return '<div class="theme-block" id="t-' + th.id + '">' +
-        '<header><h3><span class="icon">' + esc(th.icon) + '</span>' + esc(th.name) + '</h3>' +
+        '<header><h3><span class="axis-icon">' + svg(ICON[th.id], 17) + '</span>' + esc(th.name) + '</h3>' +
         '<p>' + esc(th.intro) + '</p></header>' +
         '<div class="theme-cards">' + cards + '</div></div>';
     }).join('');
@@ -249,65 +325,143 @@
     renderSelectChips();
     renderMatrix();
     renderThemes();
+    writeUrl();
   }
 
-  function toggleParty(id) {
-    if (state.selected.has(id)) state.selected.delete(id);
-    else state.selected.add(id);
+  /* Mantiene el foco donde estaba tras reconstruir el DOM. */
+  function toggleParty(id, origin) {
+    const wasOn = state.selected.has(id);
+    if (wasOn) state.selected.delete(id); else state.selected.add(id);
     renderAll();
+    // devolver el foco al control que se pulsó
+    const sel = '[data-pick="' + id + '"]';
+    const cands = $$(sel);
+    let target = null;
+    if (origin && origin.classList.contains('chip') && origin.classList.contains('pick')) {
+      target = $('#parties [data-pick="' + id + '"]');
+    } else if (cands.length) {
+      target = cands[0];
+    }
+    if (target) target.focus({ preventScroll: true });
   }
 
-  /* --------------------------------------------------------- eventos */
+  /* ------------------------------------------------------- copiar */
+  function copyText(text, btn) {
+    const done = () => {
+      const old = btn.textContent;
+      btn.textContent = 'Copiado';
+      setTimeout(() => { btn.textContent = old; }, 1600);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+    } else {
+      fallbackCopy(text, done);
+    }
+  }
+  function fallbackCopy(text, done) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  function tableAsText() {
+    const sel = PARTIES.filter(p => state.selected.has(p.id));
+    const lines = [];
+    lines.push('Programas electorales 29N 2026 — comparación');
+    lines.push('');
+    lines.push(['Tema'].concat(sel.map(p => p.short)).join(' | '));
+    THEMES.forEach(function (th) {
+      lines.push([th.name].concat(sel.map(p => th.positions[p.axes[th.id]].label)).join(' | '));
+    });
+    lines.push('');
+    lines.push('Fuente: github.com/jynus/programas-electorales-29n-generales-2026');
+    return lines.join('\n');
+  }
+
+  /* ------------------------------------------------------- eventos */
   function bind() {
     document.addEventListener('click', function (e) {
       const pick = e.target.closest('[data-pick]');
-      if (pick) {
-        toggleParty(pick.getAttribute('data-pick'));
-        return;
-      }
+      if (pick) { toggleParty(pick.getAttribute('data-pick'), pick); return; }
+
       const bloc = e.target.closest('[data-bloc]');
       if (bloc) {
         const id = bloc.getAttribute('data-bloc');
         if (state.blocs.has(id)) state.blocs.delete(id); else state.blocs.add(id);
         renderBlocChips();
         renderParties();
+        writeUrl();
+        return;
+      }
+
+      if (e.target.closest('#emptyReset')) { clearFilters(); return; }
+      if (e.target.closest('#copyLinkBtn')) {
+        copyText(location.href, $('#copyLinkBtn')); return;
+      }
+      if (e.target.closest('#copyTableBtn')) {
+        copyText(tableAsText(), $('#copyTableBtn')); return;
       }
     });
 
     $('#search').addEventListener('input', function (e) {
       state.query = e.target.value.trim();
       renderParties();
+      writeUrl();
     });
 
-    $('#resetBtn').addEventListener('click', function () {
-      state.blocs.clear();
-      state.query = '';
-      $('#search').value = '';
-      renderBlocChips();
-      renderParties();
-    });
+    $('#resetBtn').addEventListener('click', clearFilters);
 
     $('#allBtn').addEventListener('click', function () {
-      PARTIES.forEach(function (p) { state.selected.add(p.id); });
+      PARTIES.forEach(p => state.selected.add(p.id));
       renderAll();
     });
-
+    $('#coreBtn').addEventListener('click', function () {
+      state.selected = new Set(CORE);
+      renderAll();
+    });
     $('#noneBtn').addEventListener('click', function () {
       state.selected.clear();
       renderAll();
     });
 
-    $('#coreBtn').addEventListener('click', function () {
-      state.selected = new Set(CORE);
-      renderAll();
+    // atajos: "/" enfoca el buscador, "Esc" limpia la comparacion
+    document.addEventListener('keydown', function (e) {
+      const tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea') {
+        if (e.key === 'Escape') e.target.blur();
+        return;
+      }
+      if (e.key === '/') { e.preventDefault(); $('#search').focus(); }
+      if (e.key === 'Escape' && state.selected.size) {
+        state.selected.clear();
+        renderAll();
+      }
     });
+  }
+
+  function clearFilters() {
+    state.blocs.clear();
+    state.query = '';
+    $('#search').value = '';
+    renderBlocChips();
+    renderParties();
+    writeUrl();
   }
 
   /* ----------------------------------------------------------- init */
   function init() {
     initTheme();
+    readUrl();
+    $('#search').value = state.query;
     $('#year').textContent = new Date().getFullYear();
     renderStats();
+    renderThemeIndex();
     renderAll();
     bind();
   }
