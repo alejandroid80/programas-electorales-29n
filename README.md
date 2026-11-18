@@ -21,6 +21,34 @@ el texto carácter a carácter contra el original, con sumas SHA-256 de cada PDF
 
 Cada tarjeta de la web enlaza al fichero `.rst` correspondiente dentro del repositorio.
 
+## Intención de voto (bot)
+
+```bash
+node scripts/update-polls.mjs
+```
+
+Recoge tres fuentes públicas y las normaliza en `data/voting-intention.json`, que la web
+lee de forma estática:
+
+| Fuente | Qué aporta | Cómo se accede |
+|---|---|---|
+| **Onda Cero** | El agregado de las encuestas de los principales medios (122 en el momento de escribir esto), con el promedio mensual y el efecto casa de cada ADP | JSON incrustado en su página de explorador |
+| **CIS** | La estimación de voto oficial de los barómetros mensuales, 64 estudios desde 2021 | Serie abierta en CSV (CC BY 4.0) |
+| **Electomanía** | La ficha de cada encuesta con su reparto de escaños, encuestadora y licencia | API pública de WordPress, con JSON-LD `schema.org/Dataset` (CC BY 4.0) |
+
+El bot **nunca inventa datos**: si una fuente falla, conserva el dato anterior de esa fuente
+y anota el error en `errores`, que la web muestra como aviso. Los huecos se muestran como «—».
+
+El workflow `.github/workflows/update-polls.yml` lo ejecuta cada día a las **23:00 UTC**
+(la hora más cercana a medianoche en Madrid todo el año) y también se puede lanzar a mano.
+Solo hace commit si el fichero ha cambiado.
+
+### Verificar los datos
+
+`scripts/check-data.js` comprueba los datos de los programas. Para los datos de las
+encuestas, `update-polls.mjs` valida que cada fuente traiga lo mínimo esperado (partidos,
+meses, encuestas) y avisa si alguna falla.
+
 ## Estructura
 
 ```
@@ -30,9 +58,15 @@ programas-electorales-29n/
 │   ├── css/style.css       # estilos (tema claro/oscuro, responsive)
 │   └── js/
 │       ├── data.js         # DATOS: temas, partidos, detalle por tema
-│       └── app.js          # LÓGICA: render, filtros, comparador
+│       ├── app.js          # LÓGICA: render, filtros, comparador
+│       └── polls.js        # Sección de intención de voto
+├── data/
+│   └── voting-intention.json   # datos de las encuestas (los genera el bot)
 ├── scripts/
-│   └── check-data.js       # control automático de calidad de los datos
+│   ├── check-data.js       # control automático de calidad de los datos
+│   └── update-polls.mjs    # bot que recoge las encuestas
+├── .github/workflows/
+│   └── update-polls.yml    # el bot, cada día a las 23:00 UTC
 └── README.md
 ```
 

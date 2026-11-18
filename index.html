@@ -26,6 +26,7 @@
       <a href="#fichas">Fichas</a>
       <a href="#matriz">Matriz</a>
       <a href="#temas">Diferencias</a>
+      <a href="#voto-sec">Voto</a>
       <a href="#mapa">Mapa</a>
       <a href="#metodo">Método</a>
     </nav>
@@ -127,6 +128,22 @@
     </section>
   </div>
 
+  <!-- ------------------------------------------------------ INTENCIÓN DE VOTO -->
+  <div class="wrap">
+    <section id="voto-sec">
+      <div class="sec-head">
+        <h2>Intención de voto</h2>
+        <p>
+          Lo que dicen las encuestas que se van publicando en los principales medios españoles y lo que estima
+          el CIS. Los datos los recoge un bot cada día de forma automática; abajo siempre se indica de cuándo son.
+        </p>
+      </div>
+      <div id="voto">
+        <p class="voto-cargando">Cargando los datos de intención de voto…</p>
+      </div>
+    </section>
+  </div>
+
   <!-- ------------------------------------------------------------- MAPA -->
   <div class="wrap">
     <section id="mapa">
@@ -184,6 +201,15 @@
           </ul>
         </div>
         <div class="mbox">
+          <h3>De dónde sale la intención de voto</h3>
+          <ul>
+            <li><b>Medios</b>: el agregado de Onda Cero, que reúne las encuestas publicadas en ABC, El País, El Mundo, El Español, El Confidencial, La Vanguardia, La Razón, Onda Cero y una docena más, con su efecto casa.</li>
+            <li><b>CIS</b>: la estimación oficial de los barómetros mensuales, transcrita de la serie abierta de <a href="https://gastiaso.github.io/barometros/" target="_blank" rel="noopener">Barómetro a barómetro</a> (CC BY 4.0).</li>
+            <li><b>Electomanía</b>: la ficha de cada encuesta con su reparto de escaños y su encuestadora (CC BY 4.0).</li>
+            <li>Un bot las recoge cada día y escribe <code>data/voting-intention.json</code>. Si una fuente falla, se conserva el dato anterior y se avisa: nunca se rellena con ceros.</li>
+          </ul>
+        </div>
+        <div class="mbox">
           <h3>Lo que esta página no es</h3>
           <ul>
             <li>No es una predicción electoral ni un sondeo.</li>
@@ -226,5 +252,6 @@
 
 <script src="assets/js/data.js?v=15"></script>
 <script src="assets/js/app.js?v=15"></script>
+<script src="assets/js/polls.js?v=15"></script>
 </body>
 </html>

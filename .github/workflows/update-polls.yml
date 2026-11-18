@@ -1,0 +1,63 @@
+name: Actualizar la intención de voto
+
+# Recoge las encuestas de los medios, la estimación del CIS y las fichas de
+# Electomania, y regenera data/voting-intention.json.
+# Corre a las 00:00 de Madrid (23:00 UTC en invierno, 22:00 UTC en verano:
+# se usa 23:00 UTC, la hora que mas se acerca a medianoche todo el año).
+on:
+  schedule:
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: 'Regenerar aunque los datos no hayan cambiado'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-polls
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Recoger los datos
+        id: fetch
+        run: node scripts/update-polls.mjs
+
+      - name: Comprobar si han cambiado
+        id: diff
+        run: |
+          if git diff --quiet -- data/voting-intention.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publicar
+        if: steps.diff.outputs.changed == 'true' || inputs.forzar == 'true'
+        run: |
+          git config user.name  "bot-intencion-voto[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/voting-intention.json
+          git commit -m "Actualiza la intención de voto ($(date -u +%Y-%m-%d))" || echo "nada que confirmar"
+          git push
+
+      - name: Resumen
+        run: |
+          {
+            echo "### Intención de voto actualizada"
+            echo ""
+            echo "- Generado: $(node -e "console.log(require('./data/voting-intention.json').generado)")"
+          } >> "$GITHUB_STEP_SUMMARY"

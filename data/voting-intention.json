@@ -1,0 +1,4196 @@
+{
+ "generado": "2026-11-18T21:21:25.226Z",
+ "elecciones": "2026-11-29",
+ "fuentes": [
+  {
+   "id": "media",
+   "nombre": "Agregado de encuestas de los medios",
+   "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+   "home": "https://www.ondacero.es/"
+  },
+  {
+   "id": "cis",
+   "nombre": "CIS, estimacion de voto",
+   "url": "https://www.cis.es/",
+   "home": "https://www.cis.es/"
+  },
+  {
+   "id": "electomania",
+   "nombre": "Electomania",
+   "url": "https://electomania.es/",
+   "home": "https://electomania.es/"
+  }
+ ],
+ "media": {
+  "partidos": [
+   {
+    "id": "pp",
+    "nombre": "PP",
+    "color": "#1a74b8"
+   },
+   {
+    "id": "psoe",
+    "nombre": "PSOE",
+    "color": "#e1061a"
+   },
+   {
+    "id": "vox",
+    "nombre": "Vox",
+    "color": "#3d821b"
+   },
+   {
+    "id": "sumar",
+    "nombre": "Sumar",
+    "color": "#d6246e"
+   },
+   {
+    "id": "fa",
+    "nombre": "Frente Amplio",
+    "color": "#d9480f"
+   },
+   {
+    "id": "podemos",
+    "nombre": "Podemos",
+    "color": "#6f2c91"
+   },
+   {
+    "id": "salf",
+    "nombre": "SALF",
+    "color": "#9a6630"
+   },
+   {
+    "id": "otros",
+    "nombre": "Otros",
+    "color": "#6c737c"
+   }
+  ],
+  "actualizado": "2026-11-15",
+  "elecciones": "2026-11-29",
+  "total": 122,
+  "fuente": "Datos recopilados a partir de una selección de las principales encuestas publicadas en los medios",
+  "promedios": [
+   {
+    "mes": "2025-09",
+    "n": 9,
+    "v": {
+     "pp": 33.84,
+     "psoe": 26.88,
+     "vox": 16.26,
+     "sumar": 6.23,
+     "fa": null,
+     "podemos": 4.17,
+     "salf": 1.5,
+     "otros": 11.29
+    }
+   },
+   {
+    "mes": "2025-10",
+    "n": 6,
+    "v": {
+     "pp": 31.52,
+     "psoe": 28.05,
+     "vox": 17.38,
+     "sumar": 6.37,
+     "fa": null,
+     "podemos": 3.8,
+     "salf": 1.44,
+     "otros": 11.68
+    }
+   },
+   {
+    "mes": "2025-11",
+    "n": 6,
+    "v": {
+     "pp": 32.37,
+     "psoe": 27.58,
+     "vox": 17.02,
+     "sumar": 6.48,
+     "fa": null,
+     "podemos": 3.73,
+     "salf": 1.62,
+     "otros": 11.47
+    }
+   },
+   {
+    "mes": "2025-12",
+    "n": 5,
+    "v": {
+     "pp": 32.84,
+     "psoe": 27.26,
+     "vox": 17.76,
+     "sumar": 6.24,
+     "fa": null,
+     "podemos": 3.68,
+     "salf": 1.74,
+     "otros": 10.48
+    }
+   },
+   {
+    "mes": "2026-01",
+    "n": 8,
+    "v": {
+     "pp": 32.09,
+     "psoe": 26.41,
+     "vox": 17.75,
+     "sumar": 7.06,
+     "fa": null,
+     "podemos": 4.16,
+     "salf": 1.78,
+     "otros": 11.38
+    }
+   },
+   {
+    "mes": "2026-02",
+    "n": 5,
+    "v": {
+     "pp": 31.26,
+     "psoe": 26.28,
+     "vox": 19.02,
+     "sumar": 6.7,
+     "fa": null,
+     "podemos": 3.94,
+     "salf": 2.17,
+     "otros": 11.5
+    }
+   },
+   {
+    "mes": "2026-03",
+    "n": 5,
+    "v": {
+     "pp": 32.06,
+     "psoe": 27.22,
+     "vox": 17.84,
+     "sumar": 6.54,
+     "fa": null,
+     "podemos": 3.62,
+     "salf": 1.95,
+     "otros": 11.16
+    }
+   },
+   {
+    "mes": "2026-04",
+    "n": 5,
+    "v": {
+     "pp": 31.82,
+     "psoe": 27.72,
+     "vox": 17.86,
+     "sumar": 6.34,
+     "fa": null,
+     "podemos": 3.04,
+     "salf": 2.13,
+     "otros": 11.94
+    }
+   },
+   {
+    "mes": "2026-05",
+    "n": 4,
+    "v": {
+     "pp": 32.88,
+     "psoe": 28.07,
+     "vox": 17.18,
+     "sumar": 5.95,
+     "fa": null,
+     "podemos": 3.23,
+     "salf": 2,
+     "otros": 11.65
+    }
+   },
+   {
+    "mes": "2026-06",
+    "n": 8,
+    "v": {
+     "pp": 32.92,
+     "psoe": 26.27,
+     "vox": 17.69,
+     "sumar": 6.16,
+     "fa": null,
+     "podemos": 3.05,
+     "salf": 1.98,
+     "otros": 12.41
+    }
+   },
+   {
+    "mes": "2026-07",
+    "n": 8,
+    "v": {
+     "pp": 32.56,
+     "psoe": 26.44,
+     "vox": 17.45,
+     "sumar": 6.31,
+     "fa": null,
+     "podemos": 3.14,
+     "salf": 1.93,
+     "otros": 12.65
+    }
+   },
+   {
+    "mes": "2026-08",
+    "n": 3,
+    "v": {
+     "pp": 33.7,
+     "psoe": 25.53,
+     "vox": 17.63,
+     "sumar": 6.13,
+     "fa": null,
+     "podemos": 3,
+     "salf": 2.3,
+     "otros": 13.23
+    }
+   },
+   {
+    "mes": "2026-09",
+    "n": 8,
+    "v": {
+     "pp": 33.2,
+     "psoe": 26.05,
+     "vox": 18.24,
+     "sumar": 5.84,
+     "fa": null,
+     "podemos": 3.21,
+     "salf": 1.81,
+     "otros": 11.88
+    }
+   },
+   {
+    "mes": "2026-10",
+    "n": 20,
+    "v": {
+     "pp": 31.89,
+     "psoe": 26.58,
+     "vox": 18.88,
+     "sumar": 6.36,
+     "fa": 7.45,
+     "podemos": 2.77,
+     "salf": 1.75,
+     "otros": 12.31
+    }
+   },
+   {
+    "mes": "2026-11",
+    "n": 22,
+    "v": {
+     "pp": 31.04,
+     "psoe": 27.25,
+     "vox": 18.82,
+     "sumar": null,
+     "fa": 6.97,
+     "podemos": 1.76,
+     "salf": 1.86,
+     "otros": 12.81
+    }
+   }
+  ],
+  "encuestas": [
+   {
+    "medio": "Ara",
+    "fuente": "YouGov",
+    "pub": "2026-11-15",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.6,
+     "psoe": 25.9,
+     "vox": 20.3,
+     "sumar": null,
+     "fa": 9.2,
+     "podemos": 1.8,
+     "salf": null,
+     "otros": 13.2
+    }
+   },
+   {
+    "medio": "La Voz de Galicia",
+    "fuente": "Sondaxe",
+    "pub": "2026-11-15",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.8,
+     "psoe": 26.4,
+     "vox": 18.2,
+     "sumar": null,
+     "fa": 6.4,
+     "podemos": 2.2,
+     "salf": 1.6,
+     "otros": 14.4
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-11-15",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.2,
+     "psoe": 25.6,
+     "vox": 19.7,
+     "sumar": null,
+     "fa": 7.2,
+     "podemos": 1.4,
+     "salf": null,
+     "otros": 14.9
+    }
+   },
+   {
+    "medio": "La Séptima",
+    "fuente": "SW Demoscopia",
+    "pub": "2026-11-15",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 28.5,
+     "psoe": 31.7,
+     "vox": 17.1,
+     "sumar": null,
+     "fa": 7.3,
+     "podemos": 1.7,
+     "salf": 2.1,
+     "otros": 11.6
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-11-15",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.4,
+     "psoe": 29.9,
+     "vox": 18.3,
+     "sumar": null,
+     "fa": 5.4,
+     "podemos": 1.3,
+     "salf": 1.8,
+     "otros": 11.9
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2026-11-10",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.1,
+     "psoe": 27.3,
+     "vox": 18.6,
+     "sumar": null,
+     "fa": 5.6,
+     "podemos": 1.9,
+     "salf": 0.4,
+     "otros": 13.1
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-11-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.2,
+     "psoe": 25.2,
+     "vox": 19.4,
+     "sumar": null,
+     "fa": 8.1,
+     "podemos": 1.6,
+     "salf": null,
+     "otros": 14.5
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-11-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.6,
+     "psoe": 25.6,
+     "vox": 19.3,
+     "sumar": null,
+     "fa": 6.9,
+     "podemos": 2.4,
+     "salf": null,
+     "otros": 13.2
+    }
+   },
+   {
+    "medio": "ABC",
+    "fuente": "GAD3",
+    "pub": "2026-11-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.9,
+     "psoe": 25.9,
+     "vox": 18.6,
+     "sumar": null,
+     "fa": 6.9,
+     "podemos": 1.4,
+     "salf": 1.3,
+     "otros": 14
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-11-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.9,
+     "psoe": 29.9,
+     "vox": 18,
+     "sumar": null,
+     "fa": 5,
+     "podemos": 1.2,
+     "salf": 2,
+     "otros": 12
+    }
+   },
+   {
+    "medio": "La Voz de Galicia",
+    "fuente": "Sondaxe",
+    "pub": "2026-11-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.7,
+     "psoe": 27.3,
+     "vox": 18.6,
+     "sumar": null,
+     "fa": 7.1,
+     "podemos": 2.2,
+     "salf": 1.6,
+     "otros": 13.5
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-11-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.3,
+     "psoe": 27.7,
+     "vox": 18.9,
+     "sumar": null,
+     "fa": 5.9,
+     "podemos": 1.2,
+     "salf": 2.2,
+     "otros": 11.8
+    }
+   },
+   {
+    "medio": "La Séptima",
+    "fuente": "SW Demoscopia",
+    "pub": "2026-11-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 28.7,
+     "psoe": 31,
+     "vox": 17.3,
+     "sumar": null,
+     "fa": 7.6,
+     "podemos": 1.7,
+     "salf": 2.1,
+     "otros": 11.6
+    }
+   },
+   {
+    "medio": "El Confidencial",
+    "fuente": "IMOP Insights",
+    "pub": "2026-11-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.8,
+     "psoe": 25.9,
+     "vox": 19.9,
+     "sumar": null,
+     "fa": 8.1,
+     "podemos": 1.2,
+     "salf": 1.7,
+     "otros": 13.4
+    }
+   },
+   {
+    "medio": "El Diario",
+    "fuente": "Ateneo del Dato",
+    "pub": "2026-11-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.5,
+     "psoe": 28.6,
+     "vox": 18.6,
+     "sumar": null,
+     "fa": 6.1,
+     "podemos": 1.5,
+     "salf": 1.7,
+     "otros": 12
+    }
+   },
+   {
+    "medio": "La Séptima",
+    "fuente": "SW Demoscopia",
+    "pub": "2026-11-07",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 28.8,
+     "psoe": 30.8,
+     "vox": 17.2,
+     "sumar": null,
+     "fa": 7.7,
+     "podemos": 1.8,
+     "salf": 2.1,
+     "otros": 11.6
+    }
+   },
+   {
+    "medio": "Onda Cero",
+    "fuente": "Celeste Tel",
+    "pub": "2026-11-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.8,
+     "psoe": 25.7,
+     "vox": 19.2,
+     "sumar": null,
+     "fa": 8,
+     "podemos": 1.9,
+     "salf": 1.6,
+     "otros": 11.8
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-11-02",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.8,
+     "psoe": 25.5,
+     "vox": 19.9,
+     "sumar": null,
+     "fa": 6.6,
+     "podemos": 2.4,
+     "salf": 2.6,
+     "otros": 11.2
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-11-02",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.7,
+     "psoe": 26.6,
+     "vox": 19.1,
+     "sumar": null,
+     "fa": 6.1,
+     "podemos": 1.7,
+     "salf": 2.5,
+     "otros": 11.3
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-11-02",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.3,
+     "psoe": 24.6,
+     "vox": 19.3,
+     "sumar": null,
+     "fa": 8,
+     "podemos": 1.9,
+     "salf": null,
+     "otros": 14.9
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-11-02",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33,
+     "psoe": 25.6,
+     "vox": 19.3,
+     "sumar": null,
+     "fa": 6.9,
+     "podemos": 2.4,
+     "salf": null,
+     "otros": 12.8
+    }
+   },
+   {
+    "medio": "La Voz de Galicia",
+    "fuente": "Sondaxe",
+    "pub": "2026-11-01",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.2,
+     "psoe": 26.9,
+     "vox": 19.2,
+     "sumar": null,
+     "fa": 7.2,
+     "podemos": 2,
+     "salf": 2.4,
+     "otros": 13.1
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-10-26",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.4,
+     "psoe": 27,
+     "vox": 18.6,
+     "sumar": null,
+     "fa": 6.1,
+     "podemos": 1.8,
+     "salf": 2.4,
+     "otros": 11.7
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-10-26",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.6,
+     "psoe": 26.1,
+     "vox": 19.9,
+     "sumar": null,
+     "fa": 8.2,
+     "podemos": 2.8,
+     "salf": null,
+     "otros": 12.4
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-10-26",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.1,
+     "psoe": 25.8,
+     "vox": 19,
+     "sumar": null,
+     "fa": 6.6,
+     "podemos": 2.6,
+     "salf": null,
+     "otros": 12.9
+    }
+   },
+   {
+    "medio": "El Diario",
+    "fuente": "Ateneo del Dato",
+    "pub": "2026-10-25",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.1,
+     "psoe": 27.6,
+     "vox": 19.8,
+     "sumar": null,
+     "fa": 6.8,
+     "podemos": 2.7,
+     "salf": null,
+     "otros": 12
+    }
+   },
+   {
+    "medio": "El Confidencial",
+    "fuente": "IMOP Insights",
+    "pub": "2026-10-23",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 28.5,
+     "psoe": 27.1,
+     "vox": 20,
+     "sumar": null,
+     "fa": 8.9,
+     "podemos": 1.9,
+     "salf": 1.2,
+     "otros": 12.4
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-10-19",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.5,
+     "psoe": 25.3,
+     "vox": 19.5,
+     "sumar": null,
+     "fa": 8.1,
+     "podemos": 2.8,
+     "salf": null,
+     "otros": 12.8
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-10-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.6,
+     "psoe": 26.2,
+     "vox": 18.8,
+     "sumar": 4.9,
+     "fa": null,
+     "podemos": 2.8,
+     "salf": 2.1,
+     "otros": 12.6
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-10-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.9,
+     "psoe": 25.3,
+     "vox": 19.1,
+     "sumar": 7.6,
+     "fa": null,
+     "podemos": 3.1,
+     "salf": null,
+     "otros": 13
+    }
+   },
+   {
+    "medio": "El Periódico",
+    "fuente": "GESOP",
+    "pub": "2026-10-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 28.7,
+     "psoe": 26.1,
+     "vox": 18.9,
+     "sumar": 8,
+     "fa": null,
+     "podemos": 2.6,
+     "salf": 2,
+     "otros": 13.7
+    }
+   },
+   {
+    "medio": "ABC",
+    "fuente": "GAD3",
+    "pub": "2026-10-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.4,
+     "psoe": 26.4,
+     "vox": 18.2,
+     "sumar": 7.4,
+     "fa": null,
+     "podemos": 2.3,
+     "salf": null,
+     "otros": 14.3
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-10-11",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32,
+     "psoe": 25.9,
+     "vox": 18.7,
+     "sumar": 6.9,
+     "fa": null,
+     "podemos": 3.4,
+     "salf": 1.3,
+     "otros": 11.8
+    }
+   },
+   {
+    "medio": "La Sexta",
+    "fuente": "Invymark",
+    "pub": "2026-10-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.8,
+     "psoe": 28,
+     "vox": 18.8,
+     "sumar": 6.3,
+     "fa": null,
+     "podemos": 3.2,
+     "salf": 1.8,
+     "otros": 9.1
+    }
+   },
+   {
+    "medio": "El Confidencial",
+    "fuente": "IMOP Insights",
+    "pub": "2026-10-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.4,
+     "psoe": 26.5,
+     "vox": 19,
+     "sumar": 7.6,
+     "fa": null,
+     "podemos": 2.3,
+     "salf": 1.9,
+     "otros": 12.3
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2026-10-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34,
+     "psoe": 28.2,
+     "vox": 18.2,
+     "sumar": 5.3,
+     "fa": null,
+     "podemos": 2.6,
+     "salf": 0.5,
+     "otros": 12.9
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-10-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.9,
+     "psoe": 28.1,
+     "vox": 18.9,
+     "sumar": 5.3,
+     "fa": null,
+     "podemos": 2.3,
+     "salf": 1.8,
+     "otros": 11.7
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-10-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.1,
+     "psoe": 25,
+     "vox": 18.2,
+     "sumar": 5.3,
+     "fa": null,
+     "podemos": 3.9,
+     "salf": null,
+     "otros": 13.5
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-10-05",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.4,
+     "psoe": 26.5,
+     "vox": 18.1,
+     "sumar": 5.3,
+     "fa": null,
+     "podemos": 3.1,
+     "salf": 2.2,
+     "otros": 11.4
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-10-05",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.6,
+     "psoe": 25.6,
+     "vox": 18.3,
+     "sumar": 6.6,
+     "fa": null,
+     "podemos": 3.3,
+     "salf": null,
+     "otros": 13.6
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-10-05",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.6,
+     "psoe": 27.4,
+     "vox": 18.4,
+     "sumar": 5.6,
+     "fa": null,
+     "podemos": 2.7,
+     "salf": 2,
+     "otros": 12.3
+    }
+   },
+   {
+    "medio": "El Diario",
+    "fuente": "Ateneo del Dato",
+    "pub": "2026-10-03",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.2,
+     "psoe": 27.5,
+     "vox": 19.2,
+     "sumar": 7,
+     "fa": null,
+     "podemos": 3.3,
+     "salf": null,
+     "otros": 9.8
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-09-27",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.9,
+     "psoe": 25.7,
+     "vox": 18,
+     "sumar": 5.7,
+     "fa": null,
+     "podemos": 3.3,
+     "salf": 2,
+     "otros": 11.4
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2026-09-24",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.7,
+     "psoe": 26.3,
+     "vox": 17.3,
+     "sumar": 4.5,
+     "fa": null,
+     "podemos": 3.7,
+     "salf": 1,
+     "otros": 12.5
+    }
+   },
+   {
+    "medio": "Onda Cero",
+    "fuente": "Celeste Tel",
+    "pub": "2026-09-24",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.9,
+     "psoe": 25.4,
+     "vox": 17.8,
+     "sumar": 5.1,
+     "fa": null,
+     "podemos": 3.3,
+     "salf": 1.7,
+     "otros": 12.8
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-09-13",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.5,
+     "psoe": 25.6,
+     "vox": 18.9,
+     "sumar": 6.9,
+     "fa": null,
+     "podemos": 2.8,
+     "salf": 2.5,
+     "otros": 11.8
+    }
+   },
+   {
+    "medio": "La Sexta",
+    "fuente": "Invymark",
+    "pub": "2026-09-13",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.7,
+     "psoe": 26.8,
+     "vox": 18.6,
+     "sumar": 6.1,
+     "fa": null,
+     "podemos": 3.3,
+     "salf": 1.8,
+     "otros": 9.7
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-09-07",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.4,
+     "psoe": 24.9,
+     "vox": 18.3,
+     "sumar": 5.7,
+     "fa": null,
+     "podemos": 3.4,
+     "salf": null,
+     "otros": 13.3
+    }
+   },
+   {
+    "medio": "ABC",
+    "fuente": "GAD3",
+    "pub": "2026-09-07",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.1,
+     "psoe": 26.1,
+     "vox": 19.2,
+     "sumar": 7,
+     "fa": null,
+     "podemos": 3.1,
+     "salf": 1.5,
+     "otros": 12
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-09-07",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.4,
+     "psoe": 27.6,
+     "vox": 17.8,
+     "sumar": 5.7,
+     "fa": null,
+     "podemos": 2.8,
+     "salf": 2.2,
+     "otros": 11.5
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-08-31",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.1,
+     "psoe": 25.4,
+     "vox": 17.9,
+     "sumar": 6.6,
+     "fa": null,
+     "podemos": 2.8,
+     "salf": null,
+     "otros": 14.2
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-08-10",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.8,
+     "psoe": 26,
+     "vox": 17,
+     "sumar": 5.9,
+     "fa": null,
+     "podemos": 2.7,
+     "salf": 2.3,
+     "otros": 12.3
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-08-10",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.2,
+     "psoe": 25.2,
+     "vox": 18,
+     "sumar": 5.9,
+     "fa": null,
+     "podemos": 3.5,
+     "salf": null,
+     "otros": 13.2
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-07-27",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.8,
+     "psoe": 26.1,
+     "vox": 17.3,
+     "sumar": 7.4,
+     "fa": null,
+     "podemos": 3,
+     "salf": null,
+     "otros": 13.4
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2026-07-23",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.9,
+     "psoe": 27,
+     "vox": 16.5,
+     "sumar": 3.8,
+     "fa": null,
+     "podemos": 4.1,
+     "salf": 1,
+     "otros": 12.7
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-07-19",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.1,
+     "psoe": 26.1,
+     "vox": 17.6,
+     "sumar": 6.1,
+     "fa": null,
+     "podemos": 2.7,
+     "salf": 2.4,
+     "otros": 13
+    }
+   },
+   {
+    "medio": "Prensa Ibérica",
+    "fuente": "GESOP",
+    "pub": "2026-07-14",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.4,
+     "psoe": 26.5,
+     "vox": 17.8,
+     "sumar": 7.7,
+     "fa": null,
+     "podemos": 4,
+     "salf": 2,
+     "otros": 12.6
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-07-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.6,
+     "psoe": 25.7,
+     "vox": 16.9,
+     "sumar": 6,
+     "fa": null,
+     "podemos": 2.8,
+     "salf": 2.2,
+     "otros": 12.8
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-07-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.5,
+     "psoe": 25,
+     "vox": 17.8,
+     "sumar": 6.1,
+     "fa": null,
+     "podemos": 3.6,
+     "salf": null,
+     "otros": 13
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-07-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32,
+     "psoe": 28,
+     "vox": 17.2,
+     "sumar": 5.8,
+     "fa": null,
+     "podemos": 3.1,
+     "salf": 2.1,
+     "otros": 11.8
+    }
+   },
+   {
+    "medio": "La Vanguardia",
+    "fuente": "Ipsos",
+    "pub": "2026-07-05",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.2,
+     "psoe": 27.1,
+     "vox": 18.5,
+     "sumar": 7.6,
+     "fa": null,
+     "podemos": 1.8,
+     "salf": 1.9,
+     "otros": 11.9
+    }
+   },
+   {
+    "medio": "La Sexta",
+    "fuente": "Invymark",
+    "pub": "2026-06-27",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.5,
+     "psoe": 27.3,
+     "vox": 17.5,
+     "sumar": 5.7,
+     "fa": null,
+     "podemos": 3.5,
+     "salf": 1.7,
+     "otros": 10.8
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-06-22",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32,
+     "psoe": 25.6,
+     "vox": 18.1,
+     "sumar": 7.2,
+     "fa": null,
+     "podemos": 3.2,
+     "salf": 2.2,
+     "otros": 11.7
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-06-14",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.6,
+     "psoe": 26.4,
+     "vox": 17.2,
+     "sumar": 7,
+     "fa": null,
+     "podemos": 3.4,
+     "salf": null,
+     "otros": 13.4
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-06-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.4,
+     "psoe": 27.7,
+     "vox": 17.4,
+     "sumar": 6.2,
+     "fa": null,
+     "podemos": 2.3,
+     "salf": 2.1,
+     "otros": 11.9
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-06-01",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.2,
+     "psoe": 25.4,
+     "vox": 18.9,
+     "sumar": 5.3,
+     "fa": null,
+     "podemos": 3.1,
+     "salf": 2,
+     "otros": 14.1
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-06-01",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.9,
+     "psoe": 25.9,
+     "vox": 17.4,
+     "sumar": 5.7,
+     "fa": null,
+     "podemos": 2.2,
+     "salf": 2.5,
+     "otros": 12.4
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-06-01",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.7,
+     "psoe": 25.1,
+     "vox": 17.9,
+     "sumar": 6.3,
+     "fa": null,
+     "podemos": 3.6,
+     "salf": null,
+     "otros": 12.4
+    }
+   },
+   {
+    "medio": "ABC",
+    "fuente": "GAD3",
+    "pub": "2026-06-01",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.1,
+     "psoe": 26.8,
+     "vox": 17.1,
+     "sumar": 5.9,
+     "fa": null,
+     "podemos": 3.1,
+     "salf": 1.4,
+     "otros": 12.6
+    }
+   },
+   {
+    "medio": "La Sexta",
+    "fuente": "Invymark",
+    "pub": "2026-05-31",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.1,
+     "psoe": 27.8,
+     "vox": 17.6,
+     "sumar": 5.5,
+     "fa": null,
+     "podemos": 3.4,
+     "salf": 1.7,
+     "otros": 10.7
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2026-05-28",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.8,
+     "psoe": 27.7,
+     "vox": 16,
+     "sumar": 5.7,
+     "fa": null,
+     "podemos": 3.5,
+     "salf": null,
+     "otros": 12.3
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-05-04",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.3,
+     "psoe": 28.4,
+     "vox": 17.2,
+     "sumar": 6.9,
+     "fa": null,
+     "podemos": 3.5,
+     "salf": null,
+     "otros": 11.7
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-05-04",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.3,
+     "psoe": 28.4,
+     "vox": 17.9,
+     "sumar": 5.7,
+     "fa": null,
+     "podemos": 2.5,
+     "salf": 2.3,
+     "otros": 11.9
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-04-20",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.8,
+     "psoe": 27,
+     "vox": 16.9,
+     "sumar": 6.6,
+     "fa": null,
+     "podemos": 3.4,
+     "salf": 2.6,
+     "otros": 11.7
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-04-13",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.8,
+     "psoe": 26.9,
+     "vox": 18.3,
+     "sumar": 5.8,
+     "fa": null,
+     "podemos": 3.8,
+     "salf": null,
+     "otros": 12.4
+    }
+   },
+   {
+    "medio": "La Vanguardia",
+    "fuente": "Ipsos",
+    "pub": "2026-04-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.9,
+     "psoe": 28.4,
+     "vox": 18.3,
+     "sumar": 5.8,
+     "fa": null,
+     "podemos": 1.8,
+     "salf": 2.2,
+     "otros": 12.6
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-04-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.5,
+     "psoe": 27.7,
+     "vox": 17.1,
+     "sumar": 7.7,
+     "fa": null,
+     "podemos": 3.5,
+     "salf": null,
+     "otros": 11.5
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-04-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.1,
+     "psoe": 28.6,
+     "vox": 18.7,
+     "sumar": 5.8,
+     "fa": null,
+     "podemos": 2.7,
+     "salf": 1.6,
+     "otros": 11.5
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-03-29",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.7,
+     "psoe": 27.6,
+     "vox": 18.3,
+     "sumar": 6.9,
+     "fa": null,
+     "podemos": 3.3,
+     "salf": 2.2,
+     "otros": 10
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2026-03-25",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.6,
+     "psoe": 27.9,
+     "vox": 15.8,
+     "sumar": 4.9,
+     "fa": null,
+     "podemos": 3.8,
+     "salf": 0.8,
+     "otros": 12.2
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-03-23",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.9,
+     "psoe": 26.5,
+     "vox": 18,
+     "sumar": 6.6,
+     "fa": null,
+     "podemos": 3.6,
+     "salf": 2.5,
+     "otros": 10.9
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-03-04",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.2,
+     "psoe": 27.7,
+     "vox": 18.8,
+     "sumar": 5.9,
+     "fa": null,
+     "podemos": 3.3,
+     "salf": 2.3,
+     "otros": 11.8
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-03-02",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.9,
+     "psoe": 26.4,
+     "vox": 18.3,
+     "sumar": 8.4,
+     "fa": null,
+     "podemos": 4.1,
+     "salf": null,
+     "otros": 10.9
+    }
+   },
+   {
+    "medio": "El Diario",
+    "fuente": "Ateneo del Dato",
+    "pub": "2026-02-24",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.4,
+     "psoe": 27,
+     "vox": 20.3,
+     "sumar": 7.2,
+     "fa": null,
+     "podemos": 3.8,
+     "salf": null,
+     "otros": 12.3
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-02-22",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.5,
+     "psoe": 25.8,
+     "vox": 20.3,
+     "sumar": 6.7,
+     "fa": null,
+     "podemos": 3.7,
+     "salf": 2.4,
+     "otros": 10.6
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-02-16",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.1,
+     "psoe": 25,
+     "vox": 18.4,
+     "sumar": 7.2,
+     "fa": null,
+     "podemos": 4.2,
+     "salf": 2.5,
+     "otros": 10.6
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-02-16",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.1,
+     "psoe": 25.9,
+     "vox": 18.1,
+     "sumar": 6,
+     "fa": null,
+     "podemos": 4.3,
+     "salf": null,
+     "otros": 12.6
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-02-10",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.2,
+     "psoe": 27.7,
+     "vox": 18,
+     "sumar": 6.4,
+     "fa": null,
+     "podemos": 3.7,
+     "salf": 1.6,
+     "otros": 11.4
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-01-31",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.1,
+     "psoe": 26.1,
+     "vox": 17.8,
+     "sumar": 8.2,
+     "fa": null,
+     "podemos": 4.6,
+     "salf": null,
+     "otros": 10.9
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2026-01-27",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.4,
+     "psoe": 27,
+     "vox": 16.6,
+     "sumar": 5,
+     "fa": null,
+     "podemos": 5.1,
+     "salf": null,
+     "otros": 11.9
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-01-18",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30,
+     "psoe": 26.1,
+     "vox": 19.2,
+     "sumar": 8,
+     "fa": null,
+     "podemos": 3.2,
+     "salf": 1.8,
+     "otros": 11.7
+    }
+   },
+   {
+    "medio": "Prensa Ibérica",
+    "fuente": "GESOP",
+    "pub": "2026-01-18",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30,
+     "psoe": 26.5,
+     "vox": 17.8,
+     "sumar": 8.3,
+     "fa": null,
+     "podemos": 4.3,
+     "salf": 1.7,
+     "otros": 11.4
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-01-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.5,
+     "psoe": 25.7,
+     "vox": 17.9,
+     "sumar": 6.5,
+     "fa": null,
+     "podemos": 3.8,
+     "salf": 2.1,
+     "otros": 11.5
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-01-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.5,
+     "psoe": 26.3,
+     "vox": 17.6,
+     "sumar": 6.1,
+     "fa": null,
+     "podemos": 4.4,
+     "salf": null,
+     "otros": 12.1
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-01-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.5,
+     "psoe": 27.1,
+     "vox": 17.9,
+     "sumar": 5.9,
+     "fa": null,
+     "podemos": 3.5,
+     "salf": 2.1,
+     "otros": 12
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-01-07",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.7,
+     "psoe": 26.5,
+     "vox": 17.2,
+     "sumar": 8.5,
+     "fa": null,
+     "podemos": 4.4,
+     "salf": 1.2,
+     "otros": 9.5
+    }
+   },
+   {
+    "medio": "La Sexta",
+    "fuente": "Invymark",
+    "pub": "2025-12-22",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.5,
+     "psoe": 27.4,
+     "vox": 18.6,
+     "sumar": 5.2,
+     "fa": null,
+     "podemos": 3.8,
+     "salf": 1.5,
+     "otros": 10
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2025-12-09",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.1,
+     "psoe": 27.3,
+     "vox": 16.9,
+     "sumar": 7.8,
+     "fa": null,
+     "podemos": 4.3,
+     "salf": 1.2,
+     "otros": 9.4
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2025-12-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.4,
+     "psoe": 26.2,
+     "vox": 17.4,
+     "sumar": 7.5,
+     "fa": null,
+     "podemos": 2.8,
+     "salf": 2.3,
+     "otros": 10.4
+    }
+   },
+   {
+    "medio": "La Sexta",
+    "fuente": "Invymark",
+    "pub": "2025-12-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.2,
+     "psoe": 27.6,
+     "vox": 18.5,
+     "sumar": 5,
+     "fa": null,
+     "podemos": 3.8,
+     "salf": 1.4,
+     "otros": 10.5
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2025-12-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31,
+     "psoe": 27.8,
+     "vox": 17.4,
+     "sumar": 5.7,
+     "fa": null,
+     "podemos": 3.7,
+     "salf": 2.3,
+     "otros": 12.1
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2025-11-24",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.2,
+     "psoe": 28.1,
+     "vox": 19,
+     "sumar": 6.1,
+     "fa": null,
+     "podemos": 3.6,
+     "salf": 2,
+     "otros": 12
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2025-11-19",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.4,
+     "psoe": 27.3,
+     "vox": 16.2,
+     "sumar": 6.3,
+     "fa": null,
+     "podemos": 4,
+     "salf": null,
+     "otros": 12.8
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2025-11-17",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.8,
+     "psoe": 27.2,
+     "vox": 16.7,
+     "sumar": 5.6,
+     "fa": null,
+     "podemos": 4.1,
+     "salf": 1.9,
+     "otros": 10.7
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2025-11-10",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.7,
+     "psoe": 27.2,
+     "vox": 16.9,
+     "sumar": 6.6,
+     "fa": null,
+     "podemos": 3.5,
+     "salf": 1.7,
+     "otros": 10.4
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2025-11-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.6,
+     "psoe": 27.4,
+     "vox": 16.2,
+     "sumar": 7.5,
+     "fa": null,
+     "podemos": 4.2,
+     "salf": 0.9,
+     "otros": 10.2
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2025-11-03",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.5,
+     "psoe": 28.3,
+     "vox": 17.1,
+     "sumar": 6.8,
+     "fa": null,
+     "podemos": 3,
+     "salf": 1.6,
+     "otros": 12.7
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2025-10-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34,
+     "psoe": 26.9,
+     "vox": 16.6,
+     "sumar": 6.2,
+     "fa": null,
+     "podemos": 3.9,
+     "salf": 1.6,
+     "otros": 10.8
+    }
+   },
+   {
+    "medio": "Prensa Ibérica",
+    "fuente": "GESOP",
+    "pub": "2025-10-12",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29,
+     "psoe": 27.8,
+     "vox": 18.4,
+     "sumar": 8,
+     "fa": null,
+     "podemos": 3.7,
+     "salf": 1.6,
+     "otros": 11.5
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2025-10-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 33.8,
+     "psoe": 27.2,
+     "vox": 15.9,
+     "sumar": 7.4,
+     "fa": null,
+     "podemos": 4,
+     "salf": 1.3,
+     "otros": 10.4
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2025-10-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.4,
+     "psoe": 26.6,
+     "vox": 16.1,
+     "sumar": 4.8,
+     "fa": null,
+     "podemos": 4.6,
+     "salf": null,
+     "otros": 13.5
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2025-10-06",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.5,
+     "psoe": 29.4,
+     "vox": 16.7,
+     "sumar": 6.7,
+     "fa": null,
+     "podemos": 2.8,
+     "salf": 1.3,
+     "otros": 12.6
+    }
+   },
+   {
+    "medio": "Antena 3",
+    "fuente": "Opina 360",
+    "pub": "2025-10-01",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 27.4,
+     "psoe": 30.4,
+     "vox": 20.6,
+     "sumar": 5.1,
+     "fa": null,
+     "podemos": 3.8,
+     "salf": 1.4,
+     "otros": 11.3
+    }
+   },
+   {
+    "medio": "La Sexta",
+    "fuente": "Invymark",
+    "pub": "2025-09-21",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 36.1,
+     "psoe": 28.3,
+     "vox": 16.3,
+     "sumar": 4.7,
+     "fa": null,
+     "podemos": 4,
+     "salf": 1.5,
+     "otros": 9.1
+    }
+   },
+   {
+    "medio": "Onda Cero",
+    "fuente": "Celeste Tel",
+    "pub": "2025-09-20",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.9,
+     "psoe": 26.1,
+     "vox": 15.2,
+     "sumar": 5.6,
+     "fa": null,
+     "podemos": 4.7,
+     "salf": 1.7,
+     "otros": 11.8
+    }
+   },
+   {
+    "medio": "Henneo y Joly",
+    "fuente": "DYM",
+    "pub": "2025-09-18",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 35.2,
+     "psoe": 26.9,
+     "vox": 15.7,
+     "sumar": 5.6,
+     "fa": null,
+     "podemos": 3.9,
+     "salf": 0.4,
+     "otros": 12.3
+    }
+   },
+   {
+    "medio": "ABC",
+    "fuente": "GAD3",
+    "pub": "2025-09-15",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32,
+     "psoe": 26.9,
+     "vox": 17.9,
+     "sumar": 6.6,
+     "fa": null,
+     "podemos": 4,
+     "salf": 2,
+     "otros": 10.6
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2025-09-14",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.6,
+     "psoe": 27,
+     "vox": 17.2,
+     "sumar": 7.4,
+     "fa": null,
+     "podemos": 4.1,
+     "salf": 1.9,
+     "otros": 10.8
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2025-09-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 35.2,
+     "psoe": 25.8,
+     "vox": 15.4,
+     "sumar": 4.9,
+     "fa": null,
+     "podemos": 5.2,
+     "salf": null,
+     "otros": 13.5
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2025-09-08",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.7,
+     "psoe": 27.7,
+     "vox": 17.4,
+     "sumar": 6.6,
+     "fa": null,
+     "podemos": 3.4,
+     "salf": 1.6,
+     "otros": 12.6
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2025-09-01",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.5,
+     "psoe": 26.2,
+     "vox": 16.1,
+     "sumar": 6.9,
+     "fa": null,
+     "podemos": 4,
+     "salf": 1.7,
+     "otros": 10.6
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2025-09-01",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 34.4,
+     "psoe": 27,
+     "vox": 15.1,
+     "sumar": 7.8,
+     "fa": null,
+     "podemos": 4.2,
+     "salf": 1.2,
+     "otros": 10.3
+    }
+   }
+  ],
+  "efectoCasa": [
+   {
+    "fuente": "Sigma Dos",
+    "medios": [
+     "El Mundo"
+    ],
+    "n": 19,
+    "d": {
+     "pp": 0.2,
+     "psoe": -0.6,
+     "vox": -0.1,
+     "sumar": 1.1,
+     "fa": 0.8,
+     "podemos": 0.2,
+     "salf": -0.5,
+     "otros": 0.2
+    }
+   },
+   {
+    "fuente": "Sociométrica",
+    "medios": [
+     "El Español"
+    ],
+    "n": 17,
+    "d": {
+     "pp": 0.9,
+     "psoe": -0.5,
+     "vox": -0.3,
+     "sumar": -0.1,
+     "fa": -1.1,
+     "podemos": -0.2,
+     "salf": 0.4,
+     "otros": -0.5
+    }
+   },
+   {
+    "fuente": "40dB",
+    "medios": [
+     "El País y Cadena SER"
+    ],
+    "n": 16,
+    "d": {
+     "pp": -0.9,
+     "psoe": 1.2,
+     "vox": -0.1,
+     "sumar": -0.3,
+     "fa": -1.8,
+     "podemos": -0.5,
+     "salf": 0.1,
+     "otros": 0.1
+    }
+   },
+   {
+    "fuente": "NC Report",
+    "medios": [
+     "La Razón"
+    ],
+    "n": 14,
+    "d": {
+     "pp": 1.6,
+     "psoe": -1,
+     "vox": -0.1,
+     "sumar": -0.7,
+     "fa": -0.3,
+     "podemos": 0.5,
+     "salf": 0.3,
+     "otros": 0.7
+    }
+   },
+   {
+    "fuente": "Target Point",
+    "medios": [
+     "El Debate"
+    ],
+    "n": 11,
+    "d": {
+     "pp": -1.1,
+     "psoe": -0.4,
+     "vox": 0.9,
+     "sumar": 0.4,
+     "fa": -0.4,
+     "podemos": -0.1,
+     "salf": 0.3,
+     "otros": -0.2
+    }
+   },
+   {
+    "fuente": "DYM",
+    "medios": [
+     "Henneo y Joly"
+    ],
+    "n": 9,
+    "d": {
+     "pp": 1.9,
+     "psoe": 0.3,
+     "vox": -0.9,
+     "sumar": -1.2,
+     "fa": -1.4,
+     "podemos": 0.3,
+     "salf": -1.1,
+     "otros": 0.7
+    }
+   },
+   {
+    "fuente": "Invymark",
+    "medios": [
+     "La Sexta"
+    ],
+    "n": 7,
+    "d": {
+     "pp": 0.8,
+     "psoe": 0.7,
+     "vox": 0.3,
+     "sumar": -0.6,
+     "fa": null,
+     "podemos": 0.2,
+     "salf": -0.2,
+     "otros": -1.5
+    }
+   },
+   {
+    "fuente": "GAD3",
+    "medios": [
+     "ABC"
+    ],
+    "n": 5,
+    "d": {
+     "pp": -0.7,
+     "psoe": -0.2,
+     "vox": 0.2,
+     "sumar": 0.6,
+     "fa": -0.1,
+     "podemos": -0.2,
+     "salf": -0.2,
+     "otros": 0.6
+    }
+   },
+   {
+    "fuente": "Ateneo del Dato",
+    "medios": [
+     "El Diario"
+    ],
+    "n": 4,
+    "d": {
+     "pp": -0.2,
+     "psoe": 1,
+     "vox": 0.6,
+     "sumar": 0.6,
+     "fa": -0.8,
+     "podemos": 0,
+     "salf": -0.2,
+     "otros": -0.7
+    }
+   },
+   {
+    "fuente": "GESOP",
+    "medios": [
+     "El Periódico",
+     "Prensa Ibérica"
+    ],
+    "n": 4,
+    "d": {
+     "pp": -2.7,
+     "psoe": -0.1,
+     "vox": 0.4,
+     "sumar": 1.5,
+     "fa": null,
+     "podemos": 0.2,
+     "salf": 0.1,
+     "otros": 0.3
+    }
+   },
+   {
+    "fuente": "Celeste Tel",
+    "medios": [
+     "Onda Cero"
+    ],
+    "n": 3,
+    "d": {
+     "pp": 0.8,
+     "psoe": -1,
+     "vox": -0.4,
+     "sumar": -0.7,
+     "fa": 1,
+     "podemos": 0.3,
+     "salf": -0.1,
+     "otros": 0.1
+    }
+   },
+   {
+    "fuente": "IMOP Insights",
+    "medios": [
+     "El Confidencial"
+    ],
+    "n": 3,
+    "d": {
+     "pp": -2,
+     "psoe": -0.3,
+     "vox": 0.8,
+     "sumar": 1.2,
+     "fa": 1.3,
+     "podemos": -0.6,
+     "salf": -0.2,
+     "otros": 0.2
+    }
+   },
+   {
+    "fuente": "SW Demoscopia",
+    "medios": [
+     "La Séptima"
+    ],
+    "n": 3,
+    "d": {
+     "pp": -2.4,
+     "psoe": 3.9,
+     "vox": -1.6,
+     "sumar": null,
+     "fa": 0.6,
+     "podemos": 0,
+     "salf": 0.2,
+     "otros": -1.2
+    }
+   },
+   {
+    "fuente": "Sondaxe",
+    "medios": [
+     "La Voz de Galicia"
+    ],
+    "n": 3,
+    "d": {
+     "pp": -1.1,
+     "psoe": -0.4,
+     "vox": -0.2,
+     "sumar": null,
+     "fa": -0.1,
+     "podemos": 0.4,
+     "salf": 0,
+     "otros": 0.9
+    }
+   },
+   {
+    "fuente": "Ipsos",
+    "medios": [
+     "La Vanguardia"
+    ],
+    "n": 2,
+    "d": {
+     "pp": -1.1,
+     "psoe": 0.7,
+     "vox": 0.7,
+     "sumar": 0.4,
+     "fa": null,
+     "podemos": -1.3,
+     "salf": 0,
+     "otros": 0
+    }
+   }
+  ]
+ },
+ "cis": {
+  "actualizado": "2026-10",
+  "estudio": "3582",
+  "titulo": "BARÓMETRO 2026-10",
+  "n": 5024,
+  "fechaCampo": "2026-10-01",
+  "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290",
+  "estimaciones": [
+   {
+    "partido": "PSOE",
+    "etiqueta": "PSOE",
+    "valor": 34,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "PP",
+    "etiqueta": "PP",
+    "valor": 22.2,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "VOX",
+    "etiqueta": "VOX",
+    "valor": 17.1,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "OTRO",
+    "etiqueta": "Otros partidos",
+    "valor": 7.9,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "SUMAR",
+    "etiqueta": "SUMAR / Frente Amplio",
+    "valor": 6.1,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "PODEMOS",
+    "etiqueta": "Podemos",
+    "valor": 3.1,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "ERC",
+    "etiqueta": "ERC",
+    "valor": 3,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "SALF",
+    "etiqueta": "Se Acabó la Fiesta",
+    "valor": 1.8,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "EH_BILDU",
+    "etiqueta": "EH Bildu",
+    "valor": 1.6,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "JUNTS",
+    "etiqueta": "Junts",
+    "valor": 1.1,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "BNG",
+    "etiqueta": "BNG",
+    "valor": 0.9,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "PNV",
+    "etiqueta": "EAJ-PNV",
+    "valor": 0.6,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "BLANCO",
+    "etiqueta": "En blanco",
+    "valor": 0.3,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "CC",
+    "etiqueta": "CCa",
+    "valor": 0.2,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   },
+   {
+    "partido": "UPN",
+    "etiqueta": "UPN",
+    "valor": 0.1,
+    "url": "https://www.cis.es/documents/20117/14396821/3582_Estimacion.pdf/2bcc5f28-7a97-d5be-6b29-fd3fa778c60a?version=1.0&t=1791970151290"
+   }
+  ],
+  "serie": [
+   {
+    "mes": "2021-01",
+    "estudio": "3307",
+    "v": {
+     "PSOE": 30.7,
+     "PP": 20.5,
+     "VOX": 13,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 10.7,
+     "Ciudadanos": 9.3,
+     "ERC": 2.9,
+     "JxCat": 1.5,
+     "EAJ-PNV": 1.6,
+     "EH Bildu": 0.9,
+     "Más País / Compromís": 1.5,
+     "CUP": 0.6,
+     "CCa-NC": 0.5,
+     "NA+": 0.6,
+     "BNG": 0.5,
+     "PRC": 0.3,
+     "PACMA": 1.3,
+     "Otros partidos": 1.9,
+     "En blanco": 1.7
+    }
+   },
+   {
+    "mes": "2021-02",
+    "estudio": "3309",
+    "v": {
+     "PSOE": 30.7,
+     "PP": 18.8,
+     "VOX": 13.6,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 11.2,
+     "Ciudadanos": 9.3,
+     "ERC": 3.5,
+     "JxCat": 1.3,
+     "EAJ-PNV": 1.5,
+     "EH Bildu": 0.8,
+     "Más País / Compromís": 1.7,
+     "CUP": 0.9,
+     "CCa-NC": 0.4,
+     "NA+": 0.4,
+     "BNG": 0.7,
+     "PRC": 0.2,
+     "Teruel Existe": 0.1,
+     "PACMA": 1.4,
+     "Otros partidos": 1.7,
+     "En blanco": 1.8
+    }
+   },
+   {
+    "mes": "2021-03",
+    "estudio": "3313",
+    "v": {
+     "PSOE": 31.3,
+     "PP": 17.9,
+     "VOX": 15,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 9.6,
+     "Ciudadanos": 9.5,
+     "ERC": 3.2,
+     "JxCat": 1.5,
+     "EAJ-PNV": 1.7,
+     "EH Bildu": 1,
+     "Más País / Compromís": 2,
+     "CUP": 0.8,
+     "CCa-NC": 0.2,
+     "NA+": 0.4,
+     "BNG": 0.6,
+     "Teruel Existe": 0.1,
+     "PACMA": 1.5,
+     "Otros partidos": 2.2,
+     "En blanco": 1.5
+    }
+   },
+   {
+    "mes": "2021-04",
+    "estudio": "3318",
+    "v": {
+     "PSOE": 31.5,
+     "PP": 20.6,
+     "VOX": 15.4,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 10.7,
+     "Ciudadanos": 6.7,
+     "ERC": 2.8,
+     "JxCat": 1.5,
+     "EAJ-PNV": 1.5,
+     "EH Bildu": 0.9,
+     "Más País / Compromís": 1.9,
+     "CUP": 0.6,
+     "CCa-NC": 0.3,
+     "NA+": 0.4,
+     "BNG": 0.5,
+     "PACMA": 1.2,
+     "Otros partidos": 1.9,
+     "En blanco": 1.6
+    }
+   },
+   {
+    "mes": "2021-05",
+    "estudio": "3322",
+    "v": {
+     "PSOE": 27.9,
+     "PP": 23.4,
+     "VOX": 13.7,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 10.4,
+     "Ciudadanos": 5.3,
+     "Más País / Compromís": 3.8,
+     "ERC": 3,
+     "JxCat": 1.6,
+     "EAJ-PNV": 1.1,
+     "EH Bildu": 1.1,
+     "CUP": 0.6,
+     "BNG": 0.5,
+     "NA+": 0.4,
+     "CCa-NC": 0.3,
+     "PRC": 0.2,
+     "Teruel Existe": 0.1,
+     "PACMA": 1.3,
+     "Otros partidos": 2.8,
+     "En blanco": 2.5
+    }
+   },
+   {
+    "mes": "2021-06",
+    "estudio": "3326",
+    "v": {
+     "PSOE": 27.4,
+     "PP": 23.9,
+     "VOX": 13,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 12,
+     "Ciudadanos": 5.7,
+     "Más País / Compromís": 4.1,
+     "ERC": 3.6,
+     "JxCat": 1.6,
+     "EAJ-PNV": 1.4,
+     "EH Bildu": 1,
+     "BNG": 0.7,
+     "PACMA": 0.9,
+     "CUP": 0.8,
+     "NA+": 0.4,
+     "CCa-NC": 0.2,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 1.8,
+     "En blanco": 1.3
+    }
+   },
+   {
+    "mes": "2021-07",
+    "estudio": "3330",
+    "v": {
+     "PSOE": 28.6,
+     "PP": 23.4,
+     "VOX": 13.6,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 10.6,
+     "Ciudadanos": 5.5,
+     "Más País / Compromís": 3.7,
+     "ERC": 3.3,
+     "JxCat": 1.9,
+     "EAJ-PNV": 1.4,
+     "PACMA": 1.3,
+     "BNG": 0.8,
+     "EH Bildu": 0.7,
+     "CUP": 0.7,
+     "CCa-NC": 0.3,
+     "NA+": 0.3,
+     "PRC": 0.2,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 2.2,
+     "En blanco": 1.4
+    }
+   },
+   {
+    "mes": "2021-09",
+    "estudio": "3334",
+    "v": {
+     "PSOE": 29.6,
+     "PP": 20.5,
+     "VOX": 13.8,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 11.3,
+     "Ciudadanos": 6.5,
+     "Más País / Compromís": 3.3,
+     "ERC": 3.2,
+     "JxCat": 1.5,
+     "EAJ-PNV": 1.3,
+     "PACMA": 1.2,
+     "EH Bildu": 0.9,
+     "CUP": 0.8,
+     "NA+": 0.4,
+     "CCa-NC": 0.4,
+     "BNG": 0.5,
+     "Teruel Existe": 0.1,
+     "PRC": 0.1,
+     "Otros partidos": 3.3,
+     "En blanco": 1.3
+    }
+   },
+   {
+    "mes": "2021-10",
+    "estudio": "3337",
+    "v": {
+     "PSOE": 28.5,
+     "PP": 22.1,
+     "VOX": 13.2,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 11.8,
+     "Ciudadanos": 6,
+     "ERC": 3.1,
+     "Más País / Compromís": 3,
+     "JxCat": 1.6,
+     "PACMA": 1.5,
+     "EAJ-PNV": 1.3,
+     "CUP": 0.9,
+     "EH Bildu": 0.7,
+     "BNG": 0.5,
+     "NA+": 0.4,
+     "CCa-NC": 0.4,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 2.8,
+     "En blanco": 2
+    }
+   },
+   {
+    "mes": "2021-11",
+    "estudio": "3340",
+    "v": {
+     "PSOE": 27.6,
+     "PP": 20.9,
+     "VOX": 14.3,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 13.6,
+     "Ciudadanos": 5.7,
+     "Más País / Compromís": 3.1,
+     "ERC": 2.6,
+     "JxCat": 1.5,
+     "EAJ-PNV": 1.4,
+     "PACMA": 1.2,
+     "CUP": 1,
+     "EH Bildu": 0.8,
+     "BNG": 0.6,
+     "CCa-NC": 0.4,
+     "NA+": 0.4,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 2.7,
+     "En blanco": 2
+    }
+   },
+   {
+    "mes": "2021-12",
+    "estudio": "3344",
+    "v": {
+     "PSOE": 28,
+     "PP": 20.8,
+     "VOX": 14.6,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 13.7,
+     "Ciudadanos": 5.9,
+     "ERC": 2.5,
+     "Más País / Compromís": 2.2,
+     "JxCat": 1.4,
+     "EAJ-PNV": 1.2,
+     "PACMA": 1.2,
+     "EH Bildu": 0.8,
+     "CUP": 0.8,
+     "BNG": 0.6,
+     "NA+": 0.4,
+     "CCa-NC": 0.3,
+     "PRC": 0.2,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 3.9,
+     "En blanco": 1.4
+    }
+   },
+   {
+    "mes": "2022-01",
+    "estudio": "3347",
+    "v": {
+     "PSOE": 28.5,
+     "PP": 21.5,
+     "VOX": 14.7,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 13.1,
+     "Ciudadanos": 4,
+     "ERC": 3,
+     "Más País / Compromís": 2.8,
+     "PACMA": 1.4,
+     "JxCat": 1.4,
+     "EAJ-PNV": 1.3,
+     "EH Bildu": 0.9,
+     "CUP": 0.7,
+     "BNG": 0.6,
+     "CCa-NC": 0.4,
+     "NA+": 0.1,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 3.5,
+     "En blanco": 1.9
+    }
+   },
+   {
+    "mes": "2022-02",
+    "estudio": "3351",
+    "v": {
+     "PSOE": 28.6,
+     "PP": 21.3,
+     "VOX": 14.8,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 13.6,
+     "Ciudadanos": 4.8,
+     "Más País / Compromís": 2.5,
+     "ERC": 2.4,
+     "JxCat": 1.6,
+     "PACMA": 1.5,
+     "EAJ-PNV": 1.3,
+     "EH Bildu": 1.1,
+     "CUP": 1,
+     "BNG": 0.6,
+     "NA+": 0.1,
+     "CCa-NC": 0.1,
+     "Teruel Existe": 0.1,
+     "PRC": 0.1,
+     "Otros partidos": 3.3,
+     "En blanco": 1.2
+    }
+   },
+   {
+    "mes": "2022-03",
+    "estudio": "3355",
+    "v": {
+     "PSOE": 31.5,
+     "PP": 23.8,
+     "VOX": 16.3,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 11.8,
+     "Ciudadanos": 3.2,
+     "ERC": 2.7,
+     "Más País / Compromís": 2,
+     "EAJ-PNV": 1.3,
+     "JxCat": 1.3,
+     "CUP": 1.1,
+     "EH Bildu": 1,
+     "PACMA": 0.8,
+     "BNG": 0.5,
+     "NA+": 0.4,
+     "CCa-NC": 0.4,
+     "PRC": 0.2,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 1.2,
+     "En blanco": 0.4
+    }
+   },
+   {
+    "mes": "2022-04",
+    "estudio": "3359",
+    "v": {
+     "PSOE": 30.3,
+     "PP": 27.2,
+     "VOX": 14.4,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 10.7,
+     "ERC": 2.4,
+     "Más País / Compromís": 2.1,
+     "Ciudadanos": 2,
+     "EAJ-PNV": 1.3,
+     "PACMA": 1.2,
+     "JxCat": 1.2,
+     "EH Bildu": 1.2,
+     "CUP": 0.9,
+     "BNG": 0.6,
+     "CCa-NC": 0.3,
+     "NA+": 0.2,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 1.8,
+     "En blanco": 2
+    }
+   },
+   {
+    "mes": "2022-05",
+    "estudio": "3363",
+    "v": {
+     "PSOE": 30.3,
+     "PP": 28.7,
+     "VOX": 16.6,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 9.6,
+     "ERC": 2.5,
+     "Más País / Compromís": 2.1,
+     "Ciudadanos": 1.8,
+     "EAJ-PNV": 1.3,
+     "JxCat": 1.2,
+     "EH Bildu": 1.1,
+     "PACMA": 0.9,
+     "CUP": 0.6,
+     "BNG": 0.5,
+     "CCa-NC": 0.3,
+     "NA+": 0.2,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 1.5,
+     "En blanco": 0.6
+    }
+   },
+   {
+    "mes": "2022-06",
+    "estudio": "3366",
+    "v": {
+     "PSOE": 29.2,
+     "PP": 27,
+     "VOX": 16.5,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 9.8,
+     "ERC": 2.4,
+     "Ciudadanos": 1.9,
+     "Más País / Compromís": 1.9,
+     "EAJ-PNV": 1.4,
+     "PACMA": 1.2,
+     "JxCat": 1.2,
+     "EH Bildu": 0.8,
+     "CUP": 0.8,
+     "BNG": 0.6,
+     "NA+": 0.4,
+     "CCa-NC": 0.3,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 3.8,
+     "En blanco": 0.6
+    }
+   },
+   {
+    "mes": "2022-07",
+    "estudio": "3371",
+    "v": {
+     "PP": 30.1,
+     "PSOE": 28.2,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 13.4,
+     "VOX": 12,
+     "ERC": 2.9,
+     "Más País / Compromís": 1.9,
+     "Ciudadanos": 1.7,
+     "EAJ-PNV": 1.4,
+     "PACMA": 0.9,
+     "EH Bildu": 1,
+     "BNG": 0.5,
+     "JxCat": 1.2,
+     "CUP": 0.9,
+     "NA+": 0.4,
+     "CCa-NC": 0.3,
+     "PRC": 0.2,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 2.2,
+     "En blanco": 0.8
+    }
+   },
+   {
+    "mes": "2022-09",
+    "estudio": "3375",
+    "v": {
+     "PSOE": 29.2,
+     "PP": 28.5,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 12.8,
+     "VOX": 10.3,
+     "Ciudadanos": 2.8,
+     "ERC": 2.4,
+     "Más País / Compromís": 1.9,
+     "JxCat": 1.4,
+     "PACMA": 1,
+     "EAJ-PNV": 1,
+     "CUP": 0.8,
+     "EH Bildu": 0.7,
+     "NA+": 0.6,
+     "BNG": 0.5,
+     "CCa-NC": 0.1,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 4.2,
+     "En blanco": 1.7
+    }
+   },
+   {
+    "mes": "2022-10",
+    "estudio": "3380",
+    "v": {
+     "PSOE": 32.7,
+     "PP": 28.7,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 12.7,
+     "VOX": 8.8,
+     "Ciudadanos": 2.7,
+     "ERC": 2.1,
+     "PACMA": 1.5,
+     "JxCat": 1.5,
+     "EAJ-PNV": 1.2,
+     "Más País / Compromís": 1.1,
+     "EH Bildu": 0.9,
+     "BNG": 0.6,
+     "CUP": 0.5,
+     "NA+": 0.4,
+     "CCa-NC": 0.4,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 3.3,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2022-11",
+    "estudio": "3384",
+    "v": {
+     "PSOE": 32.7,
+     "PP": 27.2,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 12.2,
+     "VOX": 10.1,
+     "Ciudadanos": 2.5,
+     "ERC": 2.2,
+     "Más País / Compromís": 1.5,
+     "EAJ-PNV": 1.4,
+     "PACMA": 1.1,
+     "JxCat": 1,
+     "EH Bildu": 1,
+     "CUP": 0.7,
+     "BNG": 0.5,
+     "NA+": 0.5,
+     "CCa-NC": 0.4,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 3.9,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2022-12",
+    "estudio": "3388",
+    "v": {
+     "PSOE": 30.6,
+     "PP": 28.6,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 12.4,
+     "VOX": 10.2,
+     "Ciudadanos": 2.9,
+     "ERC": 2.4,
+     "JxCat": 1.4,
+     "Más País": 1.3,
+     "PACMA": 1.1,
+     "EAJ-PNV": 1.1,
+     "EH Bildu": 0.8,
+     "Compromís": 0.7,
+     "BNG": 0.6,
+     "CUP": 0.6,
+     "NA+": 0.5,
+     "CCa-NC": 0.3,
+     "Teruel Existe": 0.1,
+     "PRC": 0.1,
+     "Otros partidos": 3.3,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2023-01",
+    "estudio": "3390",
+    "v": {
+     "PSOE": 30.2,
+     "PP": 28.5,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 14.2,
+     "VOX": 10,
+     "Ciudadanos": 2.9,
+     "ERC": 2.2,
+     "JxCat": 1.4,
+     "PACMA": 1.2,
+     "Más País": 0.9,
+     "EAJ-PNV": 0.8,
+     "Compromís": 0.8,
+     "EH Bildu": 0.8,
+     "CUP": 0.7,
+     "NA+": 0.7,
+     "BNG": 0.6,
+     "CCa-NC": 0.2,
+     "PRC": 0.2,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 2.7,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2023-02",
+    "estudio": "3395",
+    "v": {
+     "PSOE": 32.1,
+     "PP": 29.8,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 12.7,
+     "VOX": 10,
+     "ERC": 2,
+     "Ciudadanos": 2,
+     "PACMA": 1.2,
+     "EH Bildu": 1.1,
+     "JxCat": 1.1,
+     "EAJ-PNV": 0.8,
+     "Más País": 0.7,
+     "BNG": 0.6,
+     "Compromís": 0.6,
+     "NA+": 0.5,
+     "CUP": 0.5,
+     "CCa-NC": 0.4,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 2.8,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2023-03",
+    "estudio": "3398",
+    "v": {
+     "PSOE": 32.7,
+     "PP": 28,
+     "VOX": 10.1,
+     "Unidas Podemos (En Comú Podem, En Común-Unidas Podemos)": 10,
+     "ERC": 2.5,
+     "Ciudadanos": 2.4,
+     "PACMA": 1.2,
+     "EAJ-PNV": 1.1,
+     "JxCat": 1.1,
+     "Más País": 0.8,
+     "BNG": 0.7,
+     "EH Bildu": 0.7,
+     "Compromís": 0.6,
+     "CUP": 0.5,
+     "CCa-NC": 0.4,
+     "UPN": 0.3,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 5.8,
+     "En blanco": 0.8
+    }
+   },
+   {
+    "mes": "2023-04",
+    "estudio": "3403",
+    "v": {
+     "PSOE": 30.4,
+     "PP": 26.1,
+     "VOX": 11.1,
+     "SUMAR (IU, Compromís, En Comú, Más País, CHA, EQUO)": 10.6,
+     "U. Podemos": 6.7,
+     "Ciudadanos": 2.8,
+     "ERC": 2.1,
+     "PACMA": 1.3,
+     "EAJ-PNV": 1.2,
+     "EH Bildu": 1,
+     "JxCat": 0.9,
+     "CUP": 0.6,
+     "BNG": 0.5,
+     "CCa-NC": 0.3,
+     "UPN": 0.1,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 3.2,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2023-05",
+    "estudio": "3405",
+    "v": {
+     "PSOE": 29.1,
+     "PP": 27.2,
+     "SUMAR (IU, Compromís, En Comú, Más País, CHA, EQUO)": 12.3,
+     "VOX": 10.6,
+     "Unidas Podemos": 6.1,
+     "ERC": 2.4,
+     "Ciudadanos": 2.3,
+     "PACMA": 1.2,
+     "JxCat": 1.2,
+     "EH Bildu": 0.9,
+     "EAJ-PNV": 0.9,
+     "BNG": 0.8,
+     "CUP": 0.7,
+     "CCa-NC": 0.5,
+     "UPN": 0.1,
+     "PRC": 0.1,
+     "Teruel Existe": 0.1,
+     "Otros partidos": 3,
+     "En blanco": 0.8
+    }
+   },
+   {
+    "mes": "2023-06",
+    "estudio": "3410",
+    "v": {
+     "PSOE": 31.2,
+     "PP": 30.7,
+     "Movimiento SUMAR (IU, Compromís, En Comú, Más País, CHA, EQUO, Podemos)": 14.3,
+     "VOX": 10.6,
+     "ERC": 1.8,
+     "JxCat": 1.6,
+     "EAJ-PNV": 1.1,
+     "EH Bildu": 1.1,
+     "PACMA": 0.7,
+     "BNG": 0.7,
+     "CUP": 0.5,
+     "CCa-NC": 0.3,
+     "Teruel Existe": 0.1,
+     "UPN": 0.1,
+     "Otros partidos": 4.1,
+     "En blanco": 1.1
+    }
+   },
+   {
+    "mes": "2023-07",
+    "estudio": "3413",
+    "v": {
+     "PSOE": 31,
+     "PP": 29.6,
+     "Movimiento SUMAR": 15.5,
+     "VOX": 11.7,
+     "ERC": 1.7,
+     "EH Bildu": 1.2,
+     "EAJ-PNV": 1.1,
+     "Junts": 1.1,
+     "BNG": 0.8,
+     "PACMA": 0.6,
+     "CUP": 0.6,
+     "UPN": 0.2,
+     "CCa": 0.1,
+     "Existe": 0.1,
+     "Otros partidos": 2,
+     "En blanco": 2.6
+    }
+   },
+   {
+    "mes": "2023-09",
+    "estudio": "3420",
+    "v": {
+     "PSOE": 33.5,
+     "PP": 31.7,
+     "SUMAR": 11.9,
+     "VOX": 11.1,
+     "Junts": 1.7,
+     "ERC": 1.7,
+     "EH Bildu": 1.3,
+     "EAJ-PNV": 0.9,
+     "BNG": 0.7,
+     "CCa": 0.3,
+     "UPN": 0.2,
+     "Otros partidos": 3.8,
+     "En blanco": 1.4
+    }
+   },
+   {
+    "mes": "2023-10",
+    "estudio": "3423",
+    "v": {
+     "PSOE": 32.6,
+     "PP": 32.2,
+     "SUMAR": 12.7,
+     "VOX": 10.1,
+     "ERC": 1.9,
+     "Junts": 1.3,
+     "EH Bildu": 0.9,
+     "EAJ-PNV": 0.8,
+     "BNG": 0.8,
+     "PACMA": 1,
+     "CCa": 0.1,
+     "UPN": 0.1,
+     "Otros partidos": 3.7,
+     "En blanco": 1.9
+    }
+   },
+   {
+    "mes": "2023-11",
+    "estudio": "3427",
+    "v": {
+     "PP": 33.9,
+     "PSOE": 31.3,
+     "SUMAR": 11.8,
+     "VOX": 10,
+     "ERC": 1.9,
+     "Junts": 1.4,
+     "EH Bildu": 1.3,
+     "EAJ-PNV": 0.9,
+     "PACMA": 0.8,
+     "BNG": 0.7,
+     "CCa": 0.4,
+     "UPN": 0.1,
+     "Otros partidos": 3,
+     "En blanco": 2.4
+    }
+   },
+   {
+    "mes": "2023-12",
+    "estudio": "3431",
+    "v": {
+     "PP": 33.2,
+     "PSOE": 31.8,
+     "SUMAR": 11.8,
+     "VOX": 8.5,
+     "ERC": 1.9,
+     "Junts": 1.3,
+     "EH Bildu": 1.1,
+     "EAJ-PNV": 0.9,
+     "BNG": 0.8,
+     "PACMA": 0.7,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 4.6,
+     "En blanco": 2.8
+    }
+   },
+   {
+    "mes": "2024-01",
+    "estudio": "3435",
+    "v": {
+     "PSOE": 34,
+     "PP": 32.1,
+     "SUMAR": 9.7,
+     "VOX": 8.3,
+     "Podemos": 2.7,
+     "Junts": 1.5,
+     "ERC": 1.4,
+     "EH Bildu": 0.9,
+     "EAJ-PNV": 0.8,
+     "BNG": 0.7,
+     "PACMA": 0.6,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 4.2,
+     "En blanco": 2.8
+    }
+   },
+   {
+    "mes": "2024-02",
+    "estudio": "3441",
+    "v": {
+     "PP": 33.2,
+     "PSOE": 33,
+     "SUMAR": 10.2,
+     "VOX": 7.9,
+     "Podemos": 2.9,
+     "ERC": 2.1,
+     "Junts": 1,
+     "EAJ-PNV": 1,
+     "EH Bildu": 0.8,
+     "BNG": 0.7,
+     "PACMA": 0.6,
+     "CCa": 0.1,
+     "UPN": 0.1,
+     "Otros partidos": 3.4,
+     "En blanco": 2.9
+    }
+   },
+   {
+    "mes": "2024-03",
+    "estudio": "3445",
+    "v": {
+     "PP": 34,
+     "PSOE": 31.3,
+     "VOX": 9.9,
+     "SUMAR": 9.2,
+     "Podemos": 2.2,
+     "ERC": 1.9,
+     "Junts": 1.2,
+     "EH Bildu": 1.1,
+     "EAJ-PNV": 0.9,
+     "BNG": 0.9,
+     "PACMA": 0.7,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 4.3,
+     "En blanco": 2.1
+    }
+   },
+   {
+    "mes": "2024-04",
+    "estudio": "3450",
+    "v": {
+     "PP": 33.5,
+     "PSOE": 32.5,
+     "VOX": 10.1,
+     "SUMAR": 8.2,
+     "Podemos": 3.1,
+     "ERC": 1.4,
+     "Junts": 1.4,
+     "EAJ-PNV": 1,
+     "EH Bildu": 0.9,
+     "BNG": 0.8,
+     "PACMA": 0.7,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 3.7,
+     "En blanco": 2.4
+    }
+   },
+   {
+    "mes": "2024-05",
+    "estudio": "3457",
+    "v": {
+     "PSOE": 35.5,
+     "PP": 30.4,
+     "VOX": 10.2,
+     "SUMAR": 8,
+     "Podemos": 2.2,
+     "Junts": 1.5,
+     "EH Bildu": 1.3,
+     "ERC": 1.1,
+     "EAJ-PNV": 0.8,
+     "BNG": 0.6,
+     "PACMA": 0.6,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 5.1,
+     "En blanco": 2.3
+    }
+   },
+   {
+    "mes": "2024-06",
+    "estudio": "3463",
+    "v": {
+     "PSOE": 31.7,
+     "PP": 30.7,
+     "VOX": 12.1,
+     "SUMAR": 8.8,
+     "Podemos": 3.6,
+     "ERC": 1.8,
+     "Junts": 1.6,
+     "Se Acabó la Fiesta": 1.5,
+     "EH Bildu": 1.1,
+     "EAJ-PNV": 0.9,
+     "BNG": 0.9,
+     "PACMA": 0.7,
+     "CCa": 0.5,
+     "UPN": 0.1,
+     "Otros partidos": 3.1,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2024-07",
+    "estudio": "3468",
+    "v": {
+     "PSOE": 32.9,
+     "PP": 30.2,
+     "VOX": 12.2,
+     "SUMAR": 6.6,
+     "Podemos": 4,
+     "Se Acabó la Fiesta": 2.7,
+     "ERC": 1.7,
+     "Junts": 1.6,
+     "EH Bildu": 1.2,
+     "EAJ-PNV": 1.1,
+     "PACMA": 0.7,
+     "BNG": 0.6,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 3.5,
+     "En blanco": 0.6
+    }
+   },
+   {
+    "mes": "2024-09",
+    "estudio": "3474",
+    "v": {
+     "PSOE": 33,
+     "PP": 28.5,
+     "VOX": 13.1,
+     "SUMAR": 7.8,
+     "Podemos": 3.6,
+     "Se Acabó la Fiesta": 2.9,
+     "ERC": 1.4,
+     "Junts": 1.3,
+     "EH Bildu": 1.1,
+     "EAJ-PNV": 0.9,
+     "BNG": 0.8,
+     "PACMA": 0.8,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 3.4,
+     "En blanco": 1
+    }
+   },
+   {
+    "mes": "2024-10",
+    "estudio": "3478",
+    "v": {
+     "PSOE": 34,
+     "PP": 31.5,
+     "VOX": 11.8,
+     "SUMAR": 6.3,
+     "Podemos": 3.3,
+     "Se Acabó la Fiesta": 1.7,
+     "ERC": 1.6,
+     "Junts": 1.2,
+     "EAJ-PNV": 1,
+     "EH Bildu": 0.9,
+     "BNG": 0.8,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 4.4,
+     "En blanco": 1
+    }
+   },
+   {
+    "mes": "2024-11",
+    "estudio": "3485",
+    "v": {
+     "PSOE": 34.2,
+     "PP": 29.3,
+     "VOX": 11.8,
+     "SUMAR": 7,
+     "Podemos": 3.4,
+     "Se Acabó la Fiesta": 2,
+     "Junts": 1.7,
+     "ERC": 1.5,
+     "EH Bildu": 1,
+     "BNG": 0.8,
+     "EAJ-PNV": 0.8,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 4.7,
+     "En blanco": 1.4
+    }
+   },
+   {
+    "mes": "2024-12",
+    "estudio": "3489",
+    "v": {
+     "PSOE": 32.2,
+     "PP": 28.4,
+     "VOX": 12.2,
+     "SUMAR": 7,
+     "Podemos": 4.1,
+     "Se Acabó la Fiesta": 2.8,
+     "ERC": 1.7,
+     "Junts": 1.2,
+     "EAJ-PNV": 1.2,
+     "EH Bildu": 1.1,
+     "BNG": 0.9,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 5.3,
+     "En blanco": 1.5
+    }
+   },
+   {
+    "mes": "2025-01",
+    "estudio": "3492",
+    "v": {
+     "PSOE": 31.8,
+     "PP": 29.7,
+     "VOX": 12.4,
+     "SUMAR": 6.5,
+     "Podemos": 3.9,
+     "Se Acabó la Fiesta": 2.4,
+     "ERC": 1.9,
+     "BNG": 1.4,
+     "Junts": 1.4,
+     "EH Bildu": 1.2,
+     "EAJ-PNV": 1,
+     "CCa": 0.1,
+     "UPN": 0.1,
+     "Otros partidos": 4.8,
+     "En blanco": 1.2
+    }
+   },
+   {
+    "mes": "2025-02",
+    "estudio": "3496",
+    "v": {
+     "PSOE": 33.4,
+     "PP": 28.1,
+     "VOX": 13.3,
+     "SUMAR": 6.4,
+     "Podemos": 4.4,
+     "Se Acabó la Fiesta": 1.6,
+     "ERC": 1.6,
+     "Junts": 1.3,
+     "EH Bildu": 1.3,
+     "EAJ-PNV": 1,
+     "BNG": 0.8,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 5.2,
+     "En blanco": 1.3
+    }
+   },
+   {
+    "mes": "2025-03",
+    "estudio": "3502",
+    "v": {
+     "PSOE": 34.5,
+     "PP": 29.2,
+     "VOX": 11.7,
+     "SUMAR": 7.6,
+     "Podemos": 3.8,
+     "Se Acabó la Fiesta": 1.9,
+     "ERC": 1.7,
+     "Junts": 1.4,
+     "EAJ-PNV": 1.1,
+     "EH Bildu": 0.9,
+     "BNG": 0.8,
+     "CCa": 0.1,
+     "UPN": 0.1,
+     "Otros partidos": 4,
+     "En blanco": 1.2
+    }
+   },
+   {
+    "mes": "2025-04",
+    "estudio": "3505",
+    "v": {
+     "PSOE": 32.6,
+     "PP": 26.1,
+     "VOX": 15.2,
+     "SUMAR": 6.2,
+     "Podemos": 4,
+     "Se Acabó la Fiesta": 1.9,
+     "ERC": 1.7,
+     "Junts": 1.1,
+     "EH Bildu": 1,
+     "BNG": 0.8,
+     "EAJ-PNV": 0.7,
+     "CCa": 0.6,
+     "UPN": 0.1,
+     "Otros partidos": 6.7,
+     "En blanco": 1.3
+    }
+   },
+   {
+    "mes": "2025-05",
+    "estudio": "3510",
+    "v": {
+     "PSOE": 32,
+     "PP": 29.3,
+     "VOX": 13.7,
+     "SUMAR": 6.1,
+     "Podemos": 4.3,
+     "ERC": 1.6,
+     "Se Acabó la Fiesta": 1.5,
+     "Junts": 1.1,
+     "EAJ-PNV": 1.1,
+     "BNG": 1,
+     "EH Bildu": 0.8,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 5.7,
+     "En blanco": 1.4
+    }
+   },
+   {
+    "mes": "2025-06",
+    "estudio": "3514",
+    "v": {
+     "PSOE": 34.3,
+     "PP": 27.3,
+     "VOX": 13.2,
+     "SUMAR": 7,
+     "Podemos": 4.2,
+     "Se Acabó la Fiesta": 1.5,
+     "ERC": 1.4,
+     "EH Bildu": 1.2,
+     "Junts": 1.1,
+     "EAJ-PNV": 0.6,
+     "BNG": 0.6,
+     "CCa": 0.4,
+     "UPN": 0.1,
+     "Otros partidos": 5.7,
+     "En blanco": 1.5
+    }
+   },
+   {
+    "mes": "2025-07",
+    "estudio": "3517",
+    "v": {
+     "PSOE": 27,
+     "PP": 26.5,
+     "VOX": 18.9,
+     "SUMAR": 7.8,
+     "Podemos": 4.4,
+     "ERC": 2.1,
+     "Se Acabó la Fiesta": 1.7,
+     "Junts": 1,
+     "EH Bildu": 0.9,
+     "EAJ-PNV": 0.8,
+     "BNG": 0.7,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 6.2,
+     "En blanco": 1.6
+    }
+   },
+   {
+    "mes": "2025-09",
+    "estudio": "3524",
+    "v": {
+     "PSOE": 32.7,
+     "PP": 23.7,
+     "VOX": 17.3,
+     "SUMAR": 7.9,
+     "Podemos": 4.3,
+     "ERC": 2.1,
+     "Se Acabó la Fiesta": 1.6,
+     "EH Bildu": 1.1,
+     "Junts": 0.8,
+     "BNG": 0.7,
+     "EAJ-PNV": 0.6,
+     "CCa": 0.1,
+     "UPN": 0.1,
+     "Otros partidos": 5.7,
+     "En blanco": 1.4
+    }
+   },
+   {
+    "mes": "2025-10",
+    "estudio": "3528",
+    "v": {
+     "PSOE": 34.8,
+     "PP": 19.8,
+     "VOX": 17.7,
+     "SUMAR": 7.7,
+     "Podemos": 4.9,
+     "ERC": 2,
+     "Se Acabó la Fiesta": 1.3,
+     "Junts": 1,
+     "EH Bildu": 1,
+     "EAJ-PNV": 0.9,
+     "BNG": 0.8,
+     "UPN": 0.1,
+     "CCa": 0.1,
+     "Otros partidos": 6.6,
+     "En blanco": 1.4
+    }
+   },
+   {
+    "mes": "2025-11",
+    "estudio": "3530",
+    "v": {
+     "PSOE": 32.6,
+     "PP": 22.4,
+     "VOX": 18.8,
+     "SUMAR": 7.1,
+     "Podemos": 4,
+     "ERC": 2.2,
+     "EH Bildu": 1.2,
+     "BNG": 1.1,
+     "Junts": 1.1,
+     "EAJ-PNV": 0.7,
+     "Se Acabó la Fiesta": 0.6,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 6.8,
+     "En blanco": 1.3
+    }
+   },
+   {
+    "mes": "2025-12",
+    "estudio": "3536",
+    "v": {
+     "PSOE": 31.4,
+     "PP": 22.4,
+     "VOX": 17.6,
+     "SUMAR": 7.8,
+     "Podemos": 4.1,
+     "Se Acabó la Fiesta": 2.4,
+     "ERC": 2.1,
+     "EH Bildu": 1.5,
+     "EAJ-PNV": 0.9,
+     "BNG": 0.8,
+     "Junts": 0.8,
+     "Aliança Catalana": 0.5,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 5.8,
+     "En blanco": 1.6
+    }
+   },
+   {
+    "mes": "2026-01",
+    "estudio": "3540",
+    "v": {
+     "PSOE": 31.7,
+     "PP": 23,
+     "VOX": 17.7,
+     "SUMAR": 7.2,
+     "Podemos": 3.5,
+     "ERC": 2.6,
+     "Se Acabó la Fiesta": 1.8,
+     "EH Bildu": 1.5,
+     "Junts": 1,
+     "EAJ-PNV": 1,
+     "BNG": 0.9,
+     "CCa": 0.3,
+     "UPN": 0.1,
+     "Otros partidos": 6.4,
+     "En blanco": 1.3
+    }
+   },
+   {
+    "mes": "2026-02",
+    "estudio": "3544",
+    "v": {
+     "PSOE": 32.6,
+     "PP": 22.9,
+     "VOX": 18.9,
+     "SUMAR": 7,
+     "Podemos": 3.9,
+     "ERC": 2.5,
+     "Se Acabó la Fiesta": 2.4,
+     "Junts": 1.2,
+     "EH Bildu": 1,
+     "BNG": 0.8,
+     "EAJ-PNV": 0.8,
+     "CCa": 0.1,
+     "UPN": 0.1,
+     "Otros partidos": 4.6,
+     "En blanco": 1.2
+    }
+   },
+   {
+    "mes": "2026-03",
+    "estudio": "3546",
+    "v": {
+     "PSOE": 31.8,
+     "PP": 23.3,
+     "VOX": 16.6,
+     "SUMAR": 7.1,
+     "Podemos": 2.9,
+     "ERC": 2.4,
+     "Se Acabó la Fiesta": 2.1,
+     "BNG": 1.7,
+     "EH Bildu": 1.1,
+     "Junts": 0.6,
+     "EAJ-PNV": 0.5,
+     "CCa": 0,
+     "UPN": 0,
+     "Otros partidos": 8.1,
+     "En blanco": 1.8
+    }
+   },
+   {
+    "mes": "2026-04",
+    "estudio": "3557",
+    "v": {
+     "PSOE": 36.4,
+     "PP": 23.6,
+     "VOX": 14.7,
+     "SUMAR": 5.8,
+     "ERC": 2.9,
+     "Podemos": 2.2,
+     "Se Acabó la Fiesta": 1.7,
+     "EH Bildu": 1.3,
+     "Junts": 0.8,
+     "BNG": 0.8,
+     "EAJ-PNV": 0.8,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 7.7,
+     "En blanco": 1.1
+    }
+   },
+   {
+    "mes": "2026-05",
+    "estudio": "3562",
+    "v": {
+     "PSOE": 36.2,
+     "PP": 24.9,
+     "VOX": 16.2,
+     "SUMAR": 5.7,
+     "ERC": 2.6,
+     "Podemos": 2.5,
+     "Se Acabó la Fiesta": 2.4,
+     "EH Bildu": 0.9,
+     "Junts": 0.8,
+     "BNG": 0.7,
+     "EAJ-PNV": 0.5,
+     "CCa": 0.1,
+     "UPN": 0.1,
+     "Otros partidos": 5.5,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2026-06",
+    "estudio": "3567",
+    "v": {
+     "PSOE": 31.3,
+     "PP": 27.1,
+     "VOX": 15.8,
+     "SUMAR": 6.4,
+     "Podemos": 2.8,
+     "Se Acabó la Fiesta": 1.9,
+     "ERC": 1.9,
+     "EH Bildu": 1.2,
+     "Junts": 1,
+     "BNG": 1,
+     "EAJ-PNV": 0.6,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 7.6,
+     "En blanco": 1.2
+    }
+   },
+   {
+    "mes": "2026-07",
+    "estudio": "3571",
+    "v": {
+     "PSOE": 33,
+     "PP": 25.1,
+     "VOX": 15.3,
+     "SUMAR": 6.1,
+     "ERC": 2.7,
+     "Se Acabó la Fiesta": 2.6,
+     "Podemos": 2.5,
+     "EAJ-PNV": 1,
+     "BNG": 0.9,
+     "EH Bildu": 0.8,
+     "Junts": 0.7,
+     "CCa": 0.2,
+     "UPN": 0.2,
+     "Otros partidos": 8,
+     "En blanco": 0.9
+    }
+   },
+   {
+    "mes": "2026-09",
+    "estudio": "3577",
+    "v": {
+     "PSOE": 31,
+     "PP": 25.5,
+     "VOX": 16.6,
+     "SUMAR": 5.7,
+     "Podemos": 3.7,
+     "ERC": 2.5,
+     "Se Acabó la Fiesta": 1.8,
+     "EH Bildu": 1.3,
+     "BNG": 0.7,
+     "Junts": 0.7,
+     "EAJ-PNV": 0.7,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 8.6,
+     "En blanco": 1
+    }
+   },
+   {
+    "mes": "2026-10",
+    "estudio": "3582",
+    "v": {
+     "PSOE": 34,
+     "PP": 22.2,
+     "VOX": 17.1,
+     "SUMAR / Frente Amplio": 6.1,
+     "Podemos": 3.1,
+     "ERC": 3,
+     "Se Acabó la Fiesta": 1.8,
+     "EH Bildu": 1.6,
+     "Junts": 1.1,
+     "BNG": 0.9,
+     "EAJ-PNV": 0.6,
+     "CCa": 0.2,
+     "UPN": 0.1,
+     "Otros partidos": 7.9,
+     "En blanco": 0.3
+    }
+   }
+  ],
+  "licencia": "CC BY 4.0 (armonizacion de Guillermo Astiaso Llamazares sobre microdatos del CIS)"
+ },
+ "electomania": [
+  {
+   "fecha": "2026-11-18",
+   "titular": "Tracking Sigma Dos (18 nov): \"PP y Vox mantienen su mayoría, Podemos baja del 1% y los bloques se estancan\"",
+   "ficha": "Sigma Dos España 18/11/2026",
+   "sondeante": "Sigma Dos para El Mundo",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sigma-dos-18-nov-pp-y-vox-mantienen-su-mayoria-podemos-baja-del-1-y-los-bloques-se-estancan/",
+   "muestra": null,
+   "v": {
+    "PP": 30.7,
+    "PSOE": 26.7,
+    "Vox": 19.7,
+    "Otros": 15.2,
+    "Frente Amplio": 6.9,
+    "Podemos": 0.8
+   },
+   "esc": {
+    "PP": 126,
+    "PSOE": 111,
+    "Vox": 65,
+    "Otros": 36,
+    "Frente Amplio": 12,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-18",
+   "titular": "Tracking SW Demoscopia (18 nov): \"PP y Vox no suman\"",
+   "ficha": "SW Demoscopia España 18/11/2026",
+   "sondeante": "SW Demoscopia para La Séptima",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sw-demoscopia-18-nov-pp-y-vox-no-suman/",
+   "muestra": null,
+   "v": {
+    "PSOE": 31.9,
+    "PP": 29.1,
+    "Vox": 16.4,
+    "Otros": 15.3,
+    "Frente Amplio": 7.3
+   },
+   "esc": {
+    "PSOE": 134,
+    "PP": 118,
+    "Vox": 53,
+    "Otros": 33,
+    "Frente Amplio": 12
+   }
+  },
+  {
+   "fecha": "2026-11-18",
+   "titular": "Tracking Sondaxe (18 nov): \"PP y PSOE lanzan la llamada al voto útil con la diferencia más estrecha entre ambos\"",
+   "ficha": "Sondaxe España 18/11/2026",
+   "sondeante": "Sondaxe para La Voz de Galicia",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sondaxe-18-nov-pp-y-psoe-lanzan-la-llamada-al-voto-util-con-la-diferencia-mas-estrecha-entre-ambos/",
+   "muestra": null,
+   "v": {
+    "PP": 29,
+    "PSOE": 27,
+    "Vox": 19.4,
+    "Otros": 17.8,
+    "Frente Amplio": 5.5,
+    "Podemos": 1.2
+   },
+   "esc": {}
+  },
+  {
+   "fecha": "2026-11-18",
+   "titular": "Tracking 40dB (18 nov): \"El PP consolida su posición frente a Vox\"",
+   "ficha": "40dB España 18/11/2026",
+   "sondeante": "40dB para El País",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-40db-18-nov-el-pp-consolida-su-posicion-frente-a-vox/",
+   "muestra": null,
+   "v": {
+    "PP": 32.2,
+    "PSOE": 30.7,
+    "Vox": 17,
+    "Otros": 15.4,
+    "Frente Amplio": 3.5,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.7,
+    "Podemos": 1.2
+   },
+   "esc": {
+    "PP": 133,
+    "PSOE": 122,
+    "Vox": 55,
+    "Otros": 30,
+    "Frente Amplio": 5,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 5,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-17",
+   "titular": "Tracking Sigma Dos (17 nov): \"Sánchez esquilma a toda la izquierda: Podemos se aleja del escaño y Colau ya roza los 10 diputados\"",
+   "ficha": "Sigma Dos España 17/11/2026",
+   "sondeante": "Sigma Dos para El Mundo",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sigma-dos-17-nov-sanchez-esquilma-a-toda-la-izquierda-podemos-se-aleja-del-escano-y-colau-ya-roza-los-10-diputados/",
+   "muestra": null,
+   "v": {
+    "PP": 30.7,
+    "PSOE": 26.4,
+    "Vox": 19.8,
+    "Otros": 15.2,
+    "Frente Amplio": 6.7,
+    "Podemos": 1.2
+   },
+   "esc": {
+    "PP": 126,
+    "PSOE": 111,
+    "Vox": 65,
+    "Otros": 36,
+    "Frente Amplio": 11,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-17",
+   "titular": "Tracking SW Demoscopia (17 nov): \"El PP sube, pero a costa de Vox\"",
+   "ficha": "SW Demoscopia España 17/11/2026",
+   "sondeante": "SW Demoscopia para La Séptima",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sw-demoscopia-17-nov-el-pp-sube-pero-a-costa-de-vox/",
+   "muestra": null,
+   "v": {
+    "PSOE": 31.9,
+    "PP": 28.9,
+    "Vox": 16.5,
+    "Otros": 15.4,
+    "Frente Amplio": 7.3
+   },
+   "esc": {
+    "PSOE": 134,
+    "PP": 118,
+    "Vox": 54,
+    "Otros": 33,
+    "Frente Amplio": 11
+   }
+  }
+ ],
+ "errores": []
+}

@@ -236,6 +236,56 @@ for (const p of PARTIES) {
   if (r[1] !== p.words) fail(`partido "${p.id}": palabras ${p.words}, el repo dice ${r[1]}`);
 }
 
+/* ------------------------------------------------------------------ *
+ * 7. Datos de intencion de voto (los genera el bot)
+ * ------------------------------------------------------------------ */
+const POLLS = path.join(__dirname, '..', 'data', 'voting-intention.json');
+if (fs.existsSync(POLLS)) {
+  const P = JSON.parse(fs.readFileSync(POLLS, 'utf8'));
+  if (!P.generado) fail('voto: falta la marca de tiempo "generado"');
+  if (!P.fuentes || !P.fuentes.length) fail('voto: no se declara ninguna fuente');
+  if (P.errores && P.errores.length) {
+    P.errores.forEach((e) => fail('voto: el bot avisa de un fallo -> ' + e));
+  }
+  const m = P.media;
+  if (m) {
+    if (!m.partidos || !m.partidos.length) fail('voto (medios): sin partidos');
+    if (!m.promedios || m.promedios.length < 2) fail('voto (medios): la serie mensual esta vacia o es demasiado corta');
+    if (!m.encuestas || !m.encuestas.length) fail('voto (medios): sin encuestas');
+    (m.promedios || []).forEach((p) => {
+      if (!/^\d{4}-\d{2}$/.test(p.mes)) fail(`voto (medios): mes con formato invalido "${p.mes}"`);
+      Object.keys(p.v || {}).forEach((k) => {
+        const v = p.v[k];
+        if (v !== null && (typeof v !== 'number' || v < 0 || v > 100)) {
+          fail(`voto (medios): valor fuera de rango en ${p.mes}/${k} = ${v}`);
+        }
+      });
+    });
+    (m.encuestas || []).forEach((e) => {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(e.pub)) fail(`voto (medios): fecha invalida "${e.pub}"`);
+      if (!e.fuente || !e.medio) fail(`voto (medios): encuesta sin fuente ni medio`);
+    });
+  }
+  const c = P.cis;
+  if (c) {
+    if (!c.actualizado || !/^\d{4}-\d{2}$/.test(c.actualizado)) fail('voto (CIS): fecha de actualizacion invalida');
+    if (!c.estimaciones || !c.estimaciones.length) fail('voto (CIS): sin estimaciones');
+    c.estimaciones.forEach((e) => {
+      if (typeof e.valor !== 'number' || e.valor < 0 || e.valor > 100) {
+        fail(`voto (CIS): estimacion fuera de rango: ${e.etiqueta} = ${e.valor}`);
+      }
+    });
+  }
+  if (P.electomania) {
+    P.electomania.forEach((e) => {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(e.fecha)) fail(`voto (Electomania): fecha invalida "${e.fecha}"`);
+      if (!e.url) fail('voto (Electomania): ficha sin enlace a la fuente');
+    });
+  }
+} else {
+  console.warn('aviso: no existe data/voting-intention.json (el bot lo genera)');
+}
+
 /* ------------------------------------------------------------------ */
 function trunc(s) {
   const t = s.replace(/\s+/g, ' ').trim();
