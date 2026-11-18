@@ -395,13 +395,26 @@
   }
 
   /* ------------------------------------------------------- contador */
-  /* Abacus: solo guarda un numero. Sin cookies, sin IP, sin perfiles.
+  /* CountAPI: solo guarda un numero. Sin cookies, sin IP, sin perfiles.
      La visita se cuenta una vez cada 12 horas por navegador, para que
      recargar la pagina no dispare el contador. */
-  const COUNTER_API = 'https://abacus.jasoncameron.dev';
-  const COUNTER_NS = 'alejandroid80.github.io';
-  const COUNTER_KEY = 'pe29n-portada';
+  const COUNTER_API = 'https://countapi.mileshilliard.com/api/v1';
+  const COUNTER_KEY = 'pe29n-alejandroid80';
   const COUNTER_WINDOW = 12 * 60 * 60 * 1000;
+
+  function fetchJson(url, intentos) {
+    return fetch(url, { mode: 'cors', cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('http ' + r.status);
+        return r.json();
+      })
+      .catch(function (err) {
+        if (intentos <= 1) throw err;
+        return new Promise(function (res) {
+          setTimeout(function () { res(fetchJson(url, intentos - 1)); }, 1200);
+        });
+      });
+  }
 
   function initCounter() {
     const box = $('#visits');
@@ -415,17 +428,19 @@
     };
 
     // ¿esta visita ya se conto?
-    let counted = false;
+    var counted = false;
     try {
-      const last = parseInt(localStorage.getItem('pv_' + COUNTER_KEY) || '0', 10);
+      var last = parseInt(localStorage.getItem('pv_' + COUNTER_KEY) || '0', 10);
       counted = Date.now() - last < COUNTER_WINDOW;
       if (!counted) localStorage.setItem('pv_' + COUNTER_KEY, String(Date.now()));
     } catch (e) { /* sin localStorage: se cuenta siempre */ }
 
-    const url = COUNTER_API + (counted ? '/get/' : '/hit/') + COUNTER_NS + '/' + COUNTER_KEY;
-    fetch(url, { mode: 'cors', cache: 'no-store' })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) { if (d && typeof d.value === 'number') paint(d.value); })
+    var url = COUNTER_API + (counted ? '/get/' : '/hit/') + COUNTER_KEY;
+    fetchJson(url, 3)
+      .then(function (d) {
+        var n = parseInt(d && d.value, 10);
+        if (!isNaN(n)) paint(n);
+      })
       .catch(function () { /* si no se puede medir no se muestra nada: no es cero */ });
   }
 
