@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-19T03:57:13.445Z",
+ "generado": "2026-11-19T18:22:49.080Z",
  "elecciones": "2026-11-29",
  "fuentes": [
   {
@@ -4053,6 +4053,52 @@
  },
  "electomania": [
   {
+   "fecha": "2026-11-19",
+   "titular": "Encuesta Politico (19 nov): PP y PSOE se disputan la victoria",
+   "ficha": "Public First España 19/11/2026",
+   "sondeante": "Public First para Politico",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/encuesta-politico-19-nov-pp-y-psoe-se-disputan-la-victoria/",
+   "muestra": null,
+   "v": {
+    "PP": 29.5,
+    "PSOE": 27.2,
+    "Vox": 19.6,
+    "Otros": 13.6,
+    "Frente Amplio": 5.9,
+    "Podemos": 2.2,
+    "Se Acabó la Fiesta": 2
+   },
+   "esc": {}
+  },
+  {
+   "fecha": "2026-11-19",
+   "titular": "Tracking 40dB (19 nov): \"Sánchez llega al debate a 2p del PP\"",
+   "ficha": "40dB España 19/11/2026",
+   "sondeante": "40dB para El País",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-40db-19-nov-sanchez-llega-al-debate-a-2p-del-pp/",
+   "muestra": null,
+   "v": {
+    "PP": 32.4,
+    "PSOE": 30.4,
+    "Vox": 17.2,
+    "Otros": 13.4,
+    "Frente Amplio": 3.7,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.7,
+    "Podemos": 1.2
+   },
+   "esc": {
+    "PP": 135,
+    "PSOE": 121,
+    "Vox": 57,
+    "Otros": 28,
+    "Frente Amplio": 5,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 4,
+    "Podemos": 0
+   }
+  },
+  {
    "fecha": "2026-11-18",
    "titular": "Tracking Sondaxe (18 nov &#8211; II): la distancia entre PP y PSOE, en menos de un punto",
    "ficha": "Sondaxe España 18/11/2026",
@@ -4359,48 +4405,6 @@
     "Otros": 35,
     "Frente Amplio": 12,
     "Podemos": 2
-   }
-  },
-  {
-   "fecha": "2026-11-16",
-   "titular": "Encuesta Invymark (16 nov): \"El PP ganaría las elecciones por 4 puntos\"",
-   "ficha": "Invymark España 16/11/2026",
-   "sondeante": "Invymark para La Sexta",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/encuesta-invymark-16-nov-el-pp-ganaria-las-elecciones-por-4-puntos/",
-   "muestra": null,
-   "v": {
-    "PP": 32.2,
-    "PSOE": 28.2,
-    "Vox": 19.1,
-    "Otros": 14.1,
-    "Frente Amplio*": 6.4
-   },
-   "esc": {}
-  },
-  {
-   "fecha": "2026-11-16",
-   "titular": "Tracking 40dB (16 nov): \"El PSOE remonta pero no altera la mayoría de la derecha\"",
-   "ficha": "40dB España 16/11/2026",
-   "sondeante": "40dB para El País",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-40db-16-nov-el-psoe-remonta-pero-no-altera-la-mayoria-de-la-derecha/",
-   "muestra": null,
-   "v": {
-    "PP": 31.5,
-    "PSOE": 30.3,
-    "Vox": 18,
-    "Otros": 13.7,
-    "Frente Amplio*": 5.4,
-    "Podemos": 1.1
-   },
-   "esc": {
-    "PP": 130,
-    "PSOE": 119,
-    "Vox": 62,
-    "Otros": 28,
-    "Frente Amplio*": 10,
-    "Podemos": 0
    }
   }
  ],
