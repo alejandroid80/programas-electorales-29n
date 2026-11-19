@@ -4,7 +4,6 @@
 (function () {
   'use strict';
 
-  const CORE = ['pp', 'psoe', 'podemos', 'vox', 'erc', 'bng', 'bildu', 'pnv'];
   const state = {
     // La selección es global: gobierna las fichas, la matriz, las diferencias
     // por tema, el mapa, el resumen y el pactómetro. Por defecto están los 22.
@@ -489,12 +488,10 @@
       ? 'Los ' + n + ' partidos activados'
       : n === 1 ? '1 partido activado' : n + ' partidos activados';
 
-    ['#selTodos', '#selNinguno', '#selGrandes', '#selDefecto'].forEach(function (sel) {
+    ['#selTodos', '#selNinguno'].forEach(function (sel) {
       const b = $(sel);
       if (!b) return;
-      const activo = (sel === '#selTodos' && n === PARTIES.length)
-        || (sel === '#selNinguno' && n === 0)
-        || (sel === '#selGrandes' && CORE.every(function (id) { return state.selected.has(id); }) && n === CORE.length);
+      const activo = (sel === '#selTodos' && n === PARTIES.length) || (sel === '#selNinguno' && n === 0);
       b.setAttribute('aria-pressed', String(activo));
     });
   }
@@ -656,18 +653,12 @@
 
     $('#resetBtn').addEventListener('click', clearFilters);
 
-    /* Botonera global, justo antes de "En un vistazo". */
+    /* Botonera global, junto a la cabecera. */
     $('#selTodos').addEventListener('click', function () {
       fijar(PARTIES.map(function (p) { return p.id; }));
     });
     $('#selNinguno').addEventListener('click', function () {
       fijar([]);
-    });
-    $('#selGrandes').addEventListener('click', function () {
-      fijar(CORE);
-    });
-    $('#selDefecto').addEventListener('click', function () {
-      fijar(PARTIES.map(function (p) { return p.id; }));
     });
 
     // atajos: "/" enfoca el buscador, "Esc" limpia la comparacion
