@@ -19,7 +19,28 @@
 
   let DATOS = null;         // bloque preelectoral
   let PARTIDOS = [];        // [{id, nombre, color, estimacion, escaMin, escaMax, escaMedio}]
-  let sel = new Set();      // partidos elegidos
+  let sel = new Set();      // partidos elegidos en el pactómetro
+
+  /* El pactómetro se sincroniza con la selección global: un partido
+  marcado en la botonera de arriba aparece aquí, y al marcarlo aquí se marca
+  en toda la pagina. Los tres partidoes que solo estima el CIS (Junts, UPC
+  y Ara Més) no tienen ficha propia y solo se activan aqui. */
+  function idDe(etiqueta) {
+    if (typeof CIS_LABELS !== 'undefined') {
+      for (const id in CIS_LABELS) if (CIS_LABELS[id] === etiqueta) return id;
+    }
+    return null;
+  }
+  function sincronizarSeleccion() {
+    if (!PARTIDOS.length || !window.SELECCION) return;
+    const nuevos = new Set();
+    for (const p of PARTIDOS) {
+      const id = idDe(p.etiqueta);
+      if (id && window.SELECCION.isOn(id)) nuevos.add(p.etiqueta);
+      else if (!id && sel.has(p.etiqueta)) nuevos.add(p.etiqueta);
+    }
+    sel = nuevos;
+  }
 
   function colorDe(etiqueta) {
     if (typeof CIS_LABELS !== 'undefined') {
@@ -86,7 +107,7 @@
       sel = new Set(PARTIDOS.slice(0, 2).map((p) => p.etiqueta));
       render();
     } catch (e) {
-      console.error('pactometro:', e);
+      console.error('pactómetro:', e);
       box.innerHTML = '<div class="voto-vacio"><p><b>No se han podido cargar los datos</b></p>' +
         '<p>El fichero de datos no está disponible ahora mismo.</p></div>';
     }
@@ -142,7 +163,11 @@
   function render() {
     const box = $('#pacto');
     if (!box) return;
+    // Puede llegar un aviso de cambio de seleccion antes de que lleguen
+    // los datos: en ese caso no hay nada que dibujar todavia.
+    if (!DATOS) return;
 
+    sincronizarSeleccion();
     const t = totales();
     const n = t.els.length;
     const absoluto = t.escMedio >= mayoriaAbs;
@@ -260,10 +285,19 @@
   document.addEventListener('click', function (e) {
     const chip = e.target.closest('[data-partido]');
     if (!chip) return;
-    const id = chip.getAttribute('data-partido');
-    if (sel.has(id)) sel.delete(id); else sel.add(id);
+    const etiqueta = chip.getAttribute('data-partido');
+    const id = idDe(etiqueta);
+    if (id && window.SELECCION) {
+      // Cambia la selección global: toda la página se redibuja.
+      window.SELECCION.toggle(id, chip);
+      return;
+    }
+    if (sel.has(etiqueta)) sel.delete(etiqueta); else sel.add(etiqueta);
     render();
   });
+
+  // Cuando cambia la selección global, el pactómetro se redibuja.
+  if (window.SELECCION) window.SELECCION.subscribe(function () { render(); });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', cargar);

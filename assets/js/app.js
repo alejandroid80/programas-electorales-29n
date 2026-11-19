@@ -6,10 +6,24 @@
 
   const CORE = ['pp', 'psoe', 'podemos', 'vox', 'erc', 'bng', 'bildu', 'pnv'];
   const state = {
-    selected: new Set(CORE),
+    // La selección es global: gobierna las fichas, la matriz, las diferencias
+    // por tema, el mapa, el resumen y el pactómetro. Por defecto están los 22.
+    selected: new Set(PARTIES.map(function (p) { return p.id; })),
     blocs: new Set(),
     query: '',
     theme: 'light'
+  };
+
+  /* --- API compartida: otras secciones escuchan los cambios --- */
+  var oyentes = [];
+  window.SELECCION = {
+    get selected() { return state.selected; },
+    toggle: function (id, origen) { toggleParty(id, origen); },
+    isOn: function (id) { return state.selected.has(id); },
+    subscribe: function (fn) { oyentes.push(fn); },
+    emit: function () {
+      oyentes.forEach(function (fn) { try { fn(state.selected); } catch (e) { console.error(e); } });
+    }
   };
 
   const $ = (s, r) => (r || document).querySelector(s);
@@ -75,6 +89,7 @@
       const ids = q.get('sel').split(',').filter(Boolean).filter(id => byId(id));
       state.selected = new Set(ids);
     }
+    // Sin parametro: todos los partidos activados.
     if (q.has('q')) state.query = q.get('q');
     if (q.has('bloc')) state.blocs = new Set(q.get('bloc').split(',').filter(Boolean));
   }
@@ -157,6 +172,7 @@
         return { key: key, pos: th.positions[key], members: [] };
       });
       PARTIES.forEach(function (p) {
+        if (!state.selected.has(p.id)) return;   // solo los partidos activos
         const g = groups.find(g => g.key === p.axes[th.id]);
         if (g) g.members.push(p);
       });
@@ -182,8 +198,8 @@
         });
       });
 
-      // leyenda agrupada
-      const groupHtml = groups.map(function (g) {
+      // leyenda agrupada (solo las posiciones con partidos activos)
+      const groupHtml = groups.filter(function (g) { return g.members.length; }).map(function (g) {
         const items = g.members.map(function (p) {
           return '<li><button type="button" class="pip" data-pick="' + p.id + '"' +
             ' aria-pressed="' + state.selected.has(p.id) + '"' +
@@ -218,11 +234,24 @@
 
   /* -------------------------------------------------------- cards */
   function renderParties() {
-    const list = visibleParties();
+    const todos = visibleParties();
+    const list = todos.filter(function (p) { return state.selected.has(p.id); });
     $('#emptyState').classList.toggle('hidden', list.length > 0);
     $('#live').textContent = list.length === PARTIES.length
       ? 'Mostrando los ' + list.length + ' partidos.'
-      : 'Mostrando ' + list.length + ' de ' + PARTIES.length + ' partidos.';
+      : 'Mostrando ' + list.length + ' de ' + PARTIES.length + ' partidos activados.';
+
+    // El estado vacio dice la causa real: los partidos desactivados o el filtro.
+    const sinActivos = state.selected.size === 0;
+    const porFiltro = todos.length < PARTIES.length;
+    $('#emptyState').innerHTML = sinActivos
+      ? '<p>No hay ningún partido activo.</p>' +
+        '<button class="chip" id="emptyReset" type="button">Activar los 22 partidos</button>'
+      : porFiltro
+        ? '<p>Ningún partido coincide con la búsqueda ni con el filtro de bloque.</p>' +
+          '<button class="chip" id="emptyReset" type="button">Quitar el filtro de bloque y la búsqueda</button>'
+        : '<p>Ningún partido coincide con la búsqueda.</p>' +
+          '<button class="chip" id="emptyReset" type="button">Borrar la búsqueda</button>';
 
     $('#parties').innerHTML = list.map(function (p) {
       const on = state.selected.has(p.id);
@@ -303,12 +332,12 @@
         (sel.length > 4 ? '. Desplaza la tabla en horizontal para ver el resto.' : '.')
       : 'No hay partidos seleccionados: elige arriba al menos uno para ver la tabla.';
 
-    // El ancho minimo se ajusta al numero de columnas: con pocos partidos
+    // El ancho mínimo se ajusta al número de columnas: con pocos partidos
     // la tabla cabe entera y no hace falta desplazar en horizontal.
     var table = $('#matrix');
     table.style.setProperty('--matrix-min-w', (170 + sel.length * 205) + 'px');
 
-    // Boton de compartir la comparacion actual (la url ya lleva la seleccion).
+    // Botón de compartir la comparación actual (la url ya lleva la selección).
     var shareBox = $('#matrixShare');
     if (shareBox) {
       shareBox.innerHTML = sel.length ? shareMarkup(
@@ -326,7 +355,7 @@
 
   function renderThemes() {
     $('#themeBlocks').innerHTML = THEMES.map(function (th) {
-      const cards = PARTIES.map(function (p) {
+      const cards = PARTIES.filter(function (p) { return state.selected.has(p.id); }).map(function (p) {
         const key = p.axes[th.id];
         const pos = th.positions[key];
         const txt = (DETAIL[p.id] && DETAIL[p.id][th.id]) ? DETAIL[p.id][th.id] : '—';
@@ -421,7 +450,7 @@
       box.hidden = false;
     };
 
-    // ¿esta visita ya se conto?
+    // ¿esta visita ya se contó?
     var counted = false;
     try {
       var last = parseInt(localStorage.getItem('pv_' + COUNTER_KEY) || '0', 10);
@@ -449,6 +478,28 @@
     });
   }
 
+  /* ------------------------------------------------- botonera de filtro */
+  function renderFiltro() {
+    const n = state.selected.size;
+    $('#filtro-cuenta').textContent = n === PARTIES.length
+      ? 'Los ' + n + ' partidos activados'
+      : n === 1 ? '1 partido activado' : n + ' partidos activados';
+
+    ['#selTodos', '#selNinguno', '#selGrandes', '#selDefecto'].forEach(function (sel) {
+      const b = $(sel);
+      if (!b) return;
+      const activo = (sel === '#selTodos' && n === PARTIES.length)
+        || (sel === '#selNinguno' && n === 0)
+        || (sel === '#selGrandes' && CORE.every(function (id) { return state.selected.has(id); }) && n === CORE.length);
+      b.setAttribute('aria-pressed', String(activo));
+    });
+  }
+
+  function fijar(ids) {
+    state.selected = new Set(ids.filter(function (id) { return byId(id); }));
+    renderAll();
+  }
+
   /* --------------------------------------------------------- render */
   function renderAll() {
     renderSpectrum();
@@ -457,7 +508,9 @@
     renderSelectChips();
     renderMatrix();
     renderThemes();
+    renderFiltro();
     writeUrl();
+    window.SELECCION.emit();
   }
 
   /* Mantiene el foco donde estaba tras reconstruir el DOM. */
@@ -575,7 +628,14 @@
         return;
       }
 
-      if (e.target.closest('#emptyReset')) { clearFilters(); return; }
+      if (e.target.closest('#emptyReset')) {
+        if (state.selected.size === 0) {
+          fijar(PARTIES.map(function (p) { return p.id; }));
+        } else {
+          clearFilters();
+        }
+        return;
+      }
       if (e.target.closest('#copyLinkBtn')) {
         copyText(location.href, $('#copyLinkBtn')); return;
       }
@@ -593,16 +653,27 @@
     $('#resetBtn').addEventListener('click', clearFilters);
 
     $('#allBtn').addEventListener('click', function () {
-      PARTIES.forEach(p => state.selected.add(p.id));
-      renderAll();
+      fijar(PARTIES.map(function (p) { return p.id; }));
     });
     $('#coreBtn').addEventListener('click', function () {
-      state.selected = new Set(CORE);
-      renderAll();
+      fijar(CORE);
     });
     $('#noneBtn').addEventListener('click', function () {
-      state.selected.clear();
-      renderAll();
+      fijar([]);
+    });
+
+    /* Botonera global, justo antes de "En un vistazo". */
+    $('#selTodos').addEventListener('click', function () {
+      fijar(PARTIES.map(function (p) { return p.id; }));
+    });
+    $('#selNinguno').addEventListener('click', function () {
+      fijar([]);
+    });
+    $('#selGrandes').addEventListener('click', function () {
+      fijar(CORE);
+    });
+    $('#selDefecto').addEventListener('click', function () {
+      fijar(PARTIES.map(function (p) { return p.id; }));
     });
 
     // atajos: "/" enfoca el buscador, "Esc" limpia la comparacion

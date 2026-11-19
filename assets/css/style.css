@@ -593,6 +593,27 @@ html[data-theme="dark"] .voto-table .baja { color: #ff9a8f; }
   .voto-table th, .voto-table td { padding: 8px 11px; }
 }
 
+/* --------------------------------------- Partidos activos (filtro global) */
+.filtro-bloque {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px;
+  padding: 18px 0 20px; margin-bottom: 4px;
+  border-bottom: 1px solid var(--line);
+}
+.filtro-izq { display: flex; flex-direction: column; gap: 1px; margin-right: auto; }
+.filtro-izq b { font-size: .95rem; font-weight: 650; color: var(--ink); }
+.filtro-izq span { font-size: .8rem; color: var(--ink-3); }
+.filtro-botones { display: flex; flex-wrap: wrap; gap: 7px; }
+.filtro-botones .chip[aria-pressed="true"] {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+}
+html[data-theme="dark"] .filtro-botones .chip[aria-pressed="true"] { color: #1a1013; }
+
+@media (max-width: 620px) {
+  .filtro-izq { margin-right: 0; }
+  .filtro-botones { width: 100%; }
+  .filtro-botones .chip { flex: 1 1 auto; justify-content: center; }
+}
+
 /* ------------------------------------------------------ En un vistazo */
 #vistazo { padding-top: 44px; }
 #vistazo .sec-head { margin-bottom: 22px; }

@@ -21,14 +21,26 @@
   };
 
   /* ------------------------------------------- Los 22 en una línea */
+  // Solo los partidos activos (la selección es global).
+  const activos = function () {
+    return PARTIES.filter(function (p) {
+      return window.SELECCION ? window.SELECCION.isOn(p.id) : true;
+    });
+  };
+
   function resumenPartidos() {
     const box = $('#resumenPartidos');
     if (!box) return;
 
-    const orden = PARTIES.slice().sort(function (a, b) {
-      // Primero los tres nationales grandes por proporcion, luego el resto.
+    const orden = activos().sort(function (a, b) {
+      // Primero los tres nacionales grandes por proporción, luego el resto.
       return (b.words || 0) - (a.words || 0);
     });
+
+    if (!orden.length) {
+      box.innerHTML = '<p class="voto-vacio">No hay partidos activos. Activa alguno con los botones de arriba.</p>';
+      return;
+    }
 
     box.innerHTML = orden.map(function (p) {
       return '<a class="resumen-fila" href="#p-' + p.id + '">' +
@@ -50,7 +62,7 @@
       // Partidos de cada posicion, en el orden de la escala.
       const posiciones = th.scale.map(function (clave) {
         const pos = th.positions[clave];
-        const miembros = PARTIES.filter(function (p) { return p.axes[th.id] === clave; });
+        const miembros = activos().filter(function (p) { return p.axes[th.id] === clave; });
         if (!miembros.length) return '';
         const pips = miembros.map(function (p) {
           return '<span class="resumen-pip" title="' + esc(p.name + ' — ' + p.tagline) + '">' +
@@ -70,6 +82,9 @@
     resumenPartidos();
     resumenEjes();
   }
+
+  // Si cambia la selección global, esta sección se redibuja.
+  if (window.SELECCION) window.SELECCION.subscribe(render);
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', render);

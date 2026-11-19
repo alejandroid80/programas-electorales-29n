@@ -21,6 +21,30 @@ el texto carácter a carácter contra el original, con sumas SHA-256 de cada PDF
 
 Cada tarjeta de la web enlaza al fichero `.rst` correspondiente dentro del repositorio.
 
+## La selección global de partidos
+
+Justo antes de "En un vistazo" hay una botonera que decide **qué partidos aparecen en toda
+la página**. La selección es una sola y gobierna todas las vistas a la vez:
+
+| Vista | Qué hace la selección |
+|---|---|
+| Fichas | Solo se muestran las fichas de los partidos activos |
+| En un vistazo | La lista de los 22 y los grupos de los 8 ejes se filtran |
+| Matriz comparativa | Las columnas son los partidos activos |
+| Diferencias por tema | Las tarjetas de cada tema son solo de los activos |
+| Mapa de posiciones | Los puntos de la escala son solo de los activos |
+| Pactómetro | Las fichas encendidas son las de los partidos activos |
+
+Al pulsar un partido **en cualquier sitio** (ficha, punto del mapa, chip del pactómetro) se
+altera la selección global y la página entera se redibuja.
+
+- La selección vive en la URL (`?sel=pp,psoe,…`), así que se puede compartir y sobrevive
+  a la recarga.
+- Por defecto están los 22 partidos. "Solo los ocho grandes" deja la matriz en modo lectura
+  rápida.
+- `window.SELECCION` es la API compartida entre secciones: `isOn(id)`, `toggle(id)` y
+  `subscribe(fn)`. Quien añada una sección nueva solo tiene que suscribirse.
+
 ## Pactómetro
 
 Una herramienta interactiva dentro de la sección de intención de voto: se marcan los partidos
