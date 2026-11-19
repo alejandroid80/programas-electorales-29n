@@ -60,18 +60,43 @@
 
     box.innerHTML = THEMES.map(function (th) {
       // Partidos de cada posicion, en el orden de la escala.
+      // Cada posicion es un arbol: la etiqueta arriba y los partidos
+      // colgando en columna, para que se lean de un vistazo.
       const posiciones = th.scale.map(function (clave) {
         const pos = th.positions[clave];
         const miembros = activos().filter(function (p) { return p.axes[th.id] === clave; });
         if (!miembros.length) return '';
-        const pips = miembros.map(function (p) {
-          return '<span class="resumen-pip" title="' + esc(p.name + ' — ' + p.tagline) + '">' +
-            '<span class="dot" style="background:' + p.color + '"></span>' + esc(p.short) + '</span>';
+
+        // Una rama muy larga se parte en dos columnas, cada una con su
+        // guia, para que no descuadre la fila. El reparto desigual es
+        // informacion: asi se ve cuantas fuerzas hay en cada posicion.
+        const ramas = [];
+        if (miembros.length > 8) {
+          const mitad = Math.ceil(miembros.length / 2);
+          ramas.push(miembros.slice(0, mitad), miembros.slice(mitad));
+        } else {
+          ramas.push(miembros);
+        }
+
+        const html = ramas.map(function (grupo) {
+          const pips = grupo.map(function (p) {
+            return '<span class="resumen-pip" title="' + esc(p.name + ' — ' + p.tagline) + '">' +
+              '<span class="dot" style="background:' + p.color + '"></span>' + esc(p.short) + '</span>';
+          }).join('');
+          return '<span class="resumen-rama">' + pips + '</span>';
         }).join('');
-        return '<span class="resumen-grupo"><span class="resumen-pos">' + esc(pos.short || pos.label) + '</span>' + pips + '</span>';
+
+        return '<span class="resumen-grupo">' +
+          '<span class="resumen-pos">' + esc(pos.short || pos.label) + '</span>' +
+          '<span class="resumen-ramas">' + html + '</span>' +
+          '</span>';
       }).join('');
 
-      return '<a class="resumen-eje" href="#t-' + th.id + '">' +
+      const nPos = th.scale.filter(function (clave) {
+        return activos().some(function (p) { return p.axes[th.id] === clave; });
+      }).length;
+
+      return '<a class="resumen-eje" href="#t-' + th.id + '" style="--cols:' + nPos + '">' +
         '<span class="resumen-eje-nom">' + esc(th.name) + '</span>' +
         '<span class="resumen-eje-grupos">' + posiciones + '</span>' +
         '</a>';
@@ -86,9 +111,38 @@
   // Si cambia la selección global, esta sección se redibuja.
   if (window.SELECCION) window.SELECCION.subscribe(render);
 
+  /* Conmutador entre la vista arbol y la vista en una linea. */
+  function cambiarVista() {
+    const box = $('#resumenEjes');
+    const btn = $('#ejesVista');
+    if (!box || !btn) return;
+    const compacto = box.classList.toggle('compacto');
+    btn.setAttribute('aria-pressed', String(compacto));
+    btn.textContent = compacto ? 'Ver en árbol' : 'Ver en una línea';
+    try { localStorage.setItem('pe29n-vista-ejes', compacto ? 'compacto' : 'arbol'); } catch (e) {}
+  }
+
+  function aplicarVistaGuardada() {
+    let v = null;
+    try { v = localStorage.getItem('pe29n-vista-ejes'); } catch (e) {}
+    const box = $('#resumenEjes');
+    const btn = $('#ejesVista');
+    if (!box || !btn) return;
+    if (v === 'compacto') {
+      box.classList.add('compacto');
+      btn.setAttribute('aria-pressed', 'true');
+      btn.textContent = 'Ver en árbol';
+    }
+    btn.addEventListener('click', cambiarVista);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', render);
+    document.addEventListener('DOMContentLoaded', function () {
+      render();
+      aplicarVistaGuardada();
+    });
   } else {
     render();
+    aplicarVistaGuardada();
   }
 })();
