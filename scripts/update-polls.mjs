@@ -26,6 +26,29 @@ const RAIZ = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SALIDA = resolve(RAIZ, 'data/voting-intention.json');
 
 const UA = 'programas-electorales-29n/1.0 (+https://github.com/alejandroid80/programas-electorales-29n)';
+
+/* ------------------------------------------------------------ calendario
+   El articulo 69.7 de la LOREG prohibe publicar, difundir o reproducir
+   sondeos electorales durante los cinco dias anteriores al de la votacion.
+   Para el 29N de 2026 ese periodo va del martes 24 al sabado 28, ambos
+   incluidos. Durante esos dias el bot no recoge nada ni escribe nada: el
+   fichero de datos es publico (lo sirve GitHub Pages), asi que escreverlo
+   seria justo lo que la ley prohibe. */
+const CALENDARIO = JSON.parse(readFileSync(resolve(RAIZ, 'data/elecciones.json'), 'utf8'));
+
+function enProhibicion(fecha) {
+  const t = fecha.getTime();
+  return t >= new Date(CALENDARIO.prohibicionPublicacion.inicio).getTime()
+      && t < new Date(CALENDARIO.prohibicionPublicacion.fin).getTime();
+}
+
+if (enProhibicion(new Date())) {
+  console.log('Periodo de prohibicion de publicar sondeos.');
+  console.log('  ' + CALENDARIO.prohibicionPublicacion.inicio + ' -> ' + CALENDARIO.prohibicionPublicacion.fin);
+  console.log('  ' + CALENDARIO.prohibicionPublicacion.norma);
+  console.log('No se recogen datos y no se publica nada. La web los oculta sola.');
+  process.exit(0);
+}
 const TIMEOUT = 45000;
 const ESPERA = 1500;   // pausa entre peticiones al CIS, para no castigar el servidor
 

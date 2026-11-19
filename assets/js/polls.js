@@ -57,6 +57,15 @@
     const box = $('#voto');
     if (!box) return;
 
+    // En los cinco dias previos a la votacion no se pueden publicar
+    // sondeos: no se baja el fichero ni se pinta nada.
+    if (window.ELECCIONES && window.ELECCIONES.enProhibicion()) {
+      box.innerHTML = '<div class="voto-vacio"><p><b>Los datos de las encuestas están cerrados</b></p>' +
+        '<p>' + esc(window.ELECCIONES.aviso()) + '</p>' +
+        '<p>Vuelven a estar visibles el domingo 29, con la última estimación publicada el lunes 23.</p></div>';
+      return;
+    }
+
     // Con file:// el navegador no deja hacer fetch: se avisa en vez de fallar.
     if (location.protocol === 'file:') {
       box.innerHTML = estadoError('Los datos de intención de voto necesitan un servidor',

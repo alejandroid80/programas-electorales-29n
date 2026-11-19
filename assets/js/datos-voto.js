@@ -12,6 +12,12 @@
 
   window.DATOS_VOTO = {
     get: function () {
+      // Durante los cinco dias anteriores a la votacion no se pueden publicar
+      // sondeos electorales (art. 69.7 de la LOREG). Aqui no se baja nada:
+      // aunque una seccion nueva se olvide de comprobarlo, no pinta nada.
+      if (window.ELECCIONES && window.ELECCIONES.enProhibicion()) {
+        return Promise.reject(new Error('periodo de prohibicion de publicar sondeos'));
+      }
       if (!promesa) {
         promesa = fetch('data/voting-intention.json?t=' + Date.now(), { cache: 'no-store' })
           .then(function (r) {

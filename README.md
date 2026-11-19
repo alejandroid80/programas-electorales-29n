@@ -97,6 +97,30 @@ El workflow `.github/workflows/update-polls.yml` lo ejecuta cada día a las **23
 (la hora más cercana a medianoche en Madrid todo el año) y también se puede lanzar a mano.
 Solo hace commit si el fichero ha cambiado.
 
+### Los cinco días en los que no se pueden publicar sondeos
+
+El **artículo 69.7 de la LOREG** dice: *«Durante los cinco días anteriores al de la votación
+queda prohibida la publicación y difusión o reproducción de sondeos electorales por cualquier
+medio de comunicación»*.
+
+Para las generales del 29 de noviembre de 2026 ese periodo es **del martes 24 al sábado 28**,
+ambos incluidos. El lunes 23 es el último día en el que se puede publicar.
+
+Como el fichero de datos es público (lo sirve GitHub Pages), escribirlo ya sería publicar. Por
+eso el apagado es automático y está en las dos mitades:
+
+| | Qué hace |
+|---|---|
+| `scripts/update-polls.mjs` | Si está en el periodo, **no recoge nada y no escribe nada**. Sale con código 0 y el workflow no publica nada. |
+| `assets/js/elecciones.js` | La web comprueba la hora al cargar y **oculta la sección de intención de voto y el pactómetro**, con un aviso que cita el artículo. |
+| `assets/js/datos-voto.js` | El cargador compartido se niega a bajar el fichero: si alguna sección nueva se olvidara de comprobarlo, tampoco pinta nada. |
+| `data/elecciones.json` | Las fechas, en un solo sitio. `scripts/check-data.js` comprueba que el navegador y el bot usan las mismas y que el periodo dura exactamente cinco días. |
+
+El resto de la página (los 22 programas, los 8 ejes, la matriz) no son sondeos: **no se apaga**.
+
+Para otro calendario electoral se editan `data/elecciones.json` y `assets/js/elecciones.js`; el
+checker avisa si se te olvida una de las dos.
+
 ### Verificar los datos
 
 `scripts/check-data.js` comprueba los datos de los programas. Para los datos de las

@@ -1,0 +1,12 @@
+{
+  "elecciones": "2026-11-29",
+  "diaVotacion": "domingo 29 de noviembre de 2026",
+  "cierreMesas": "2026-11-29T20:00:00+01:00",
+  "prohibicionPublicacion": {
+    "inicio": "2026-11-24T00:00:00+01:00",
+    "fin": "2026-11-29T00:00:00+01:00",
+    "norma": "Artículo 69.7 de la Ley Orgánica 5/1985, del Régimen Electoral General",
+    "motivo": "Durante los cinco días anteriores al de la votación queda prohibida la publicación y difusión o reproducción de sondeos electorales por cualquier medio de comunicación.",
+    "ultimoDiaPublicacion": "2026-11-23"
+  }
+}

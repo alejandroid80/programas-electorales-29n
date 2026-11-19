@@ -371,6 +371,58 @@ if (!fs.existsSync(VC)) {
   }
 }
 
+/* ------------------------------------------------------------------ *
+ * 9. Calendario electoral: el periodo en el que no se publican sondeos
+ * ------------------------------------------------------------------ */
+const CAL = path.join(__dirname, '..', 'data', 'elecciones.json');
+if (!fs.existsSync(CAL)) {
+  fail('calendario: falta data/elecciones.json (sin el, no se sabe cuando hay que apagar las encuestas)');
+} else {
+  const cal = JSON.parse(fs.readFileSync(CAL, 'utf8'));
+  const pro = cal.prohibicionPublicacion;
+  if (!cal.elecciones || !/^\d{4}-\d{2}-\d{2}$/.test(cal.elecciones)) {
+    fail('calendario: la fecha de las elecciones no es valida');
+  }
+  if (!pro || !pro.inicio || !pro.fin) {
+    fail('calendario: falta el periodo de prohibicion de publicar sondeos');
+  } else {
+    const ini = new Date(pro.inicio).getTime();
+    const fin = new Date(pro.fin).getTime();
+    const vot = new Date(cal.elecciones + 'T00:00:00+01:00').getTime();
+    if (isNaN(ini) || isNaN(fin)) fail('calendario: las fechas del periodo de prohibicion no son validas');
+    else {
+      if (fin <= ini) fail('calendario: el periodo de prohibicion esta al reves');
+      // Son los cinco dias anteriores a la votacion: ni uno mas ni uno menos.
+      const dias = Math.round((vot - ini) / 86400000);
+      if (dias !== 5) {
+        fail(`calendario: el periodo de prohibicion dura ${dias} dias y deberian ser 5 (del 24 al 28)`);
+      }
+      if (!pro.norma || !/69\.7/.test(pro.norma)) {
+        fail('calendario: la norma citada no es el articulo 69.7 de la LOREG');
+      }
+    }
+    // El navegador tiene su propia copia de las fechas: si divergen, la web
+    // apagaria las encuestas en un dia distinto del que cree el bot.
+    const js = fs.readFileSync(path.join(__dirname, '..', 'assets', 'js', 'elecciones.js'), 'utf8');
+    const copia = (campo) => {
+      const m = js.match(new RegExp(campo + ":\\s*'([^']+)'"));
+      return m ? m[1] : null;
+    };
+    if (copia('dia') !== cal.elecciones) {
+      fail(`calendario: assets/js/elecciones.js dice "${copia('dia')}" y data/elecciones.json dice "${cal.elecciones}"`);
+    }
+    if (copia('inicio') !== pro.inicio) {
+      fail(`calendario: el inicio del periodo no coincide: "${copia('inicio')}" vs "${pro.inicio}"`);
+    }
+    if (copia('fin') !== pro.fin) {
+      fail(`calendario: el fin del periodo no coincide: "${copia('fin')}" vs "${pro.fin}"`);
+    }
+    if (!/ELECCIONES\.enProhibicion/.test(js)) {
+      fail('calendario: assets/js/elecciones.js no expone enProhibicion()');
+    }
+  }
+}
+
 /* ------------------------------------------------------------------ */
 function trunc(s) {
   const t = s.replace(/\s+/g, ' ').trim();

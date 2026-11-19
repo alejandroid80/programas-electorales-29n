@@ -90,6 +90,15 @@
   async function cargar() {
     const box = $('#pacto');
     if (!box) return;
+    // El pactometro se apoya en la estimacion preelectoral del CIS, que es
+    // un sondeo: en los cinco dias previos a la votacion tampoco se puede
+    // publicar.
+    if (window.ELECCIONES && window.ELECCIONES.enProhibicion()) {
+      box.innerHTML = '<div class="voto-vacio"><p><b>El pactómetro está cerrado</b></p>' +
+        '<p>' + esc(window.ELECCIONES.aviso()) + '</p>' +
+        '<p>Vuelve a estar visible el domingo 29, con el reparto de escaños publicado el lunes 23.</p></div>';
+      return;
+    }
     if (location.protocol === 'file:') {
       box.innerHTML = '<div class="voto-vacio"><p><b>El pactómetro necesita un servidor</b></p>' +
         '<p>Abre la página con <code>python3 -m http.server</code> y entra en http://localhost:8765.</p></div>';
