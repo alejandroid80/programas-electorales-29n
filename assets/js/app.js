@@ -18,6 +18,7 @@
   window.SELECCION = {
     get selected() { return state.selected; },
     toggle: function (id, origen) { toggleParty(id, origen); },
+    set: function (id, on) { setParty(id, on); },
     isOn: function (id) { return state.selected.has(id); },
     subscribe: function (fn) { oyentes.push(fn); },
     emit: function () {
@@ -498,6 +499,16 @@
 
   function fijar(ids) {
     state.selected = new Set(ids.filter(function (id) { return byId(id); }));
+    renderAll();
+  }
+
+  /* Poner un partido en un estado concreto (encendido o apagado) en vez de
+     alternarlo. Lo usa el pactometro: ahi el chip manda y la seleccion
+     global le sigue. */
+  function setParty(id, on) {
+    if (!byId(id)) return;
+    if (state.selected.has(id) === !!on) return;
+    if (on) state.selected.add(id); else state.selected.delete(id);
     renderAll();
   }
 

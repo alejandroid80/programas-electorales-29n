@@ -8,10 +8,27 @@
 
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.prototype.slice.call((r || document).querySelectorAll(s));
+  /* El color de un partido llega de una web de terceros (Onda Cero). No se
+     escapa como texto: se comprueba que sea un color hexadecimal y, si no
+     lo es, se usa el color por defecto. Asi no puede romper el atributo en
+     el que se pinta. */
+  const colorOk = (c) => (/^#[0-9a-fA-F]{3,8}$/.test(String(c || '')) ? String(c) : '#6c737c');
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[c]));
   const num = (v) => (v == null || v === '' || Number.isNaN(Number(v))) ? null : Number(v);
+  /* Un numero que viene de un tercero se pinta como numero o no se pinta:
+     nunca como texto suelto dentro del HTML. */
+  const numTxt = (v, sufijo) => {
+    const n = num(v);
+    return n == null ? '' : String(n) + (sufijo || '');
+  };
+  /* Una URL de un tercero solo se sigue si es http o https. Un javascript:
+     sobrevive al escapado y por eso no vale. */
+  const urlSegura = (u) => {
+    const s = String(u == null ? '' : u).trim();
+    return /^https?:\/\//i.test(s) ? s : null;
+  };
   const pct = (v) => (v == null ? '—' : String(v).replace('.', ',') + ' %');
   const fechaES = (iso) => {
     if (!iso) return '—';
@@ -100,7 +117,7 @@
       let tramo = [];
       const cerrar = function () {
         if (tramo.length > 1) {
-          svg += '<polyline points="' + tramo.join(' ') + '" fill="none" stroke="' + p.color +
+          svg += '<polyline points="' + tramo.join(' ') + '" fill="none" stroke="' + colorOk(p.color) +
             '" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" class="voto-line"/>';
         }
         tramo = [];
@@ -116,7 +133,7 @@
       for (let i = series.length - 1; i >= 0; i--) {
         const v = num(series[i].v[p.id]);
         if (v == null) continue;
-        svg += '<circle cx="' + x(i) + '" cy="' + y(v) + '" r="3.4" fill="' + p.color +
+        svg += '<circle cx="' + x(i) + '" cy="' + y(v) + '" r="3.4" fill="' + colorOk(p.color) +
           '" stroke="var(--bg-card)" stroke-width="1.6"/>';
         break;
       }
@@ -132,7 +149,7 @@
       }
       const nota = mes && mes !== series[series.length - 1].mes
         ? ' <span class="voto-leg-nota">(' + esc(mesES(mes)) + ')</span>' : '';
-      return '<span class="voto-leg"><span class="dot" style="background:' + p.color + '"></span>' +
+      return '<span class="voto-leg"><span class="dot" style="background:' + colorOk(p.color) + '"></span>' +
         esc(p.nombre) + ' <b>' + pct(v) + '</b>' + nota + '</span>';
     }).join('');
 
@@ -156,10 +173,10 @@
       const min = vals.length ? Math.min.apply(null, vals) : null;
       const max = vals.length ? Math.max.apply(null, vals) : null;
       return '<tr>' +
-        '<th scope="row"><span class="dot" style="background:' + p.color + '"></span>' + esc(p.nombre) + '</th>' +
+        '<th scope="row"><span class="dot" style="background:' + colorOk(p.color) + '"></span>' + esc(p.nombre) + '</th>' +
         '<td class="num"><b>' + pct(prom) + '</b></td>' +
         '<td class="num">' + (min != null && max != null && min !== max ? pct(min) + ' – ' + pct(max) : '—') + '</td>' +
-        '<td class="num">' + (ultimo.n != null ? ultimo.n + ' #' : '—') + '</td>' +
+        '<td class="num">' + (numTxt(ultimo.n, ' #') || '—') + '</td>' +
         '</tr>';
     }).join('');
 
@@ -168,6 +185,15 @@
       '<thead><tr><th scope="col">Partido</th><th scope="col">Promedio</th>' +
       '<th scope="col">Rango en las ' + recientes.length + ' últimas</th><th scope="col">Encuestas del mes</th></tr></thead>' +
       '<tbody>' + filas + '</tbody></table>';
+  }
+
+  /* Un enlace a una pagina de un tercero. Si la URL no es http o https no
+     se pone enlace: el texto se queda plano. */
+  function enlace(url, texto) {
+    const href = urlSegura(url);
+    const t = esc(texto);
+    if (!href) return t;
+    return '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + t + '</a>';
   }
 
   /* --------------------------------------------------- tabla CIS */
@@ -209,8 +235,8 @@
         return '<td class="num">' + (v == null ? '—' : String(v).replace('.', ',')) + '</td>';
       }).join('');
       return '<tr>' +
-        '<th scope="row"><a href="' + esc(e.url) + '" target="_blank" rel="noopener">' +
-        esc(e.fuente) + '</a><span class="medio">' + esc(e.medio) + '</span></th>' +
+        '<th scope="row">' + enlace(e.url, e.fuente) +
+        '<span class="medio">' + esc(e.medio) + '</span></th>' +
         '<td class="fecha">' + esc(e.pub.split('-').reverse().join('/')) + '</td>' +
         celdas + '</tr>';
     }).join('');
@@ -234,7 +260,7 @@
         return '<td class="num">' + (v == null ? '—' : (v > 0 ? '+' : '') + String(v).replace('.', ',')) + '</td>';
       }).join('');
       return '<tr><th scope="row">' + esc(e.fuente) + '</th>' +
-        '<td class="fecha">' + (e.n != null ? e.n : '—') + '</td>' + celdas + '</tr>';
+        '<td class="fecha">' + (numTxt(e.n) || '—') + '</td>' + celdas + '</tr>';
     }).join('');
     const cab = partidos.map(p => '<th scope="col">' + esc(p.nombre) + '</th>').join('');
 
@@ -271,7 +297,7 @@
         '<div>' +
           '<p class="voto-meta">Datos generados el <b>' + esc(generado) + '</b> por un bot que los recoge cada día de forma automática.</p>' +
           '<p class="voto-meta">Agregado de medios: <b>' + esc(fechaES(m.actualizado)) + '</b> · ' +
-            (m.total != null ? m.total + ' encuestas' : '') + ' de ' +
+            numTxt(m.total, ' encuestas') + ' de ' +
             (m.fuente || 'los medios') + '. CIS: <b>' + esc(mesES(c.actualizado)) + '</b> (estudio ' +
             esc(c.estudio || '—') + (c.n ? ', n = ' + c.n : '') + ').</p>' +
         '</div>' +
@@ -327,7 +353,7 @@
           (esc_ != null ? '<i>' + esc_ + ' esc.</i>' : '') + '</li>';
       }).join('');
       return '<article class="voto-ficha">' +
-        '<h4><a href="' + esc(e.url) + '" target="_blank" rel="noopener">' + esc(e.ficha || e.titular) + '</a></h4>' +
+        '<h4>' + enlace(e.url, e.ficha || e.titular) + '</h4>' +
         '<p class="voto-meta">' + esc(e.sondeante || '') + ' · ' + esc(fechaES(e.fecha)) + '</p>' +
         '<ul class="voto-ficha-vals">' + filas + '</ul>' +
         '</article>';

@@ -1,0 +1,7 @@
+# Temporales que deja el bot al leer el PDF del CIS.
+.tmp-cis-*.pdf
+.tmp-cis-parse-*.pdf
+
+# Nada de esto se publica: la pagina es estatica.
+node_modules/
+.DS_Store

@@ -44,6 +44,12 @@ jobs:
         id: fetch
         run: node scripts/update-polls.mjs
 
+      # Los datos se validan antes de publicarlos: si el CIS cambia como
+      # escribe el nombre de un partido, el pactometro dejaria de reconocerlo
+      # y eso se para aqui, no en la pagina.
+      - name: Validar los datos
+        run: node scripts/check-data.js
+
       - name: Comprobar si han cambiado
         id: diff
         run: |

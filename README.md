@@ -40,15 +40,26 @@ altera la selección global y la página entera se redibuja.
 
 - La selección vive en la URL (`?sel=pp,psoe,…`), así que se puede compartir y sobrevive
   a la recarga.
-- Por defecto están los 22 partidos. "Solo los ocho grandes" deja la matriz en modo lectura
-  rápida.
-- `window.SELECCION` es la API compartida entre secciones: `isOn(id)`, `toggle(id)` y
-  `subscribe(fn)`. Quien añada una sección nueva solo tiene que suscribirse.
+- Por defecto están los 22 partidos. "Activar todos" y "Desactivar todos" los encienden y
+  apagan de golpe.
+- `window.SELECCION` es la API compartida entre secciones: `isOn(id)`, `toggle(id)`,
+  `set(id, on)` y `subscribe(fn)`. Quien añada una sección nueva solo tiene que suscribirse.
 
 ## Pactómetro
 
 Una herramienta interactiva dentro de la sección de intención de voto: se marcan los partidos
 que se pusieran de acuerdo y la pagina calcula que pasando habría.
+
+- **Por defecto** se prueban los dos partidos con más accentuación, que es la combinación que
+  más se discute. La coalición la elige quien la prueba: la selección global de la página no
+  la impone, porque con los 22 partidos activos se abriría con todos los del CIS encendidos y
+  un veredicto de mayoría absoluta que nadie ha pedido. Lo que sí hace la selección global
+  es quitar: un partido apagado en la página no puede formar parte de la coalición.
+- **Al marcar un chip** se enciende también en toda la página; al desmarcarlo, se apaga.
+  Los tres partidos que solo estima el CIS (Junts, UPC y Ara Més) no tienen ficha propia y
+  se activan solo aquí.
+- **"Desactivar todos"** vacía también el pactómetro, y "Activar todos" lo devuelve a la
+  coalición de por defecto.
 
 - **Fuente**: la encuesta **preelectoral del CIS** (estudio 3584), la unica que reparte
   escanos por partido. Su PDF se lee con `pdftotext -layout` (`poppler-utils`) y se

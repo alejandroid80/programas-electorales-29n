@@ -19,8 +19,8 @@ const DATA = path.join(__dirname, '..', 'assets', 'js', 'data.js');
 const src = fs.readFileSync(DATA, 'utf8');
 
 const mod = {};
-new Function('exports', src + '\nObject.assign(exports,{PARTIES,THEMES,DETAIL});')(mod);
-const { PARTIES, THEMES, DETAIL } = mod;
+new Function('exports', src + '\nObject.assign(exports,{PARTIES,THEMES,DETAIL,CIS_LABELS,CIS_EXTRA});')(mod);
+const { PARTIES, THEMES, DETAIL, CIS_LABELS, CIS_EXTRA } = mod;
 
 const errors = [];
 const fail = (m) => errors.push(m);
@@ -322,6 +322,16 @@ if (fs.existsSync(POLLS)) {
       }
       if (p.escaMin != null && p.escaMax != null && (p.escaMin < 0 || p.escaMax > 350)) {
         fail(`voto (preelectoral): escanos fuera de rango en ${p.etiqueta}`);
+      }
+      // El pactometro busca la etiqueta del CIS en CIS_LABELS para saber a
+      // que partido pertenece. Si el CIS cambia como escribe un nombre, la
+      // etiqueta deja de resolver y el partido se queda fuera de la pagina
+      // sin que se note. Aqui se avisa.
+      const conocida = Object.keys(CIS_LABELS).some((id) => CIS_LABELS[id] === p.etiqueta)
+        || CIS_EXTRA.some((x) => x.etiqueta === p.etiqueta);
+      if (!conocida) {
+        fail(`voto (preelectoral): etiqueta desconocida del CIS: "${p.etiqueta}" `
+          + '(no coincide con CIS_LABELS ni con CIS_EXTRA: el pactometro no la podra asignar)');
       }
     });
   } else {

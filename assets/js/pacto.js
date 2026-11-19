@@ -31,13 +31,25 @@
     }
     return null;
   }
+  /* La coalicion que se prueba es la que el usuario ha ido marcando en el
+     pactometro. La seleccion global de la pagina no la impone: si lo
+     hiciera, con los 22 partidos activados se abriria con todos los del CIS
+     encendidos y un veredicto de mayoria absoluta que nadie ha elegido.
+
+     Lo que si hace la seleccion global es quitar: un partido apagado en la
+     pagina no puede formar parte de la coalicion. Y los tres partidos que
+     solo estima el CIS (Junts, UPC y Ara Mes) no tienen ficha propia, asi
+     que su estado es solo local del pactometro. */
   function sincronizarSeleccion() {
     if (!PARTIDOS.length || !window.SELECCION) return;
     const nuevos = new Set();
     for (const p of PARTIDOS) {
       const id = idDe(p.etiqueta);
-      if (id && window.SELECCION.isOn(id)) nuevos.add(p.etiqueta);
-      else if (!id && sel.has(p.etiqueta)) nuevos.add(p.etiqueta);
+      if (!id) {
+        if (sel.has(p.etiqueta)) nuevos.add(p.etiqueta);
+        continue;
+      }
+      if (sel.has(p.etiqueta) && window.SELECCION.isOn(id)) nuevos.add(p.etiqueta);
     }
     sel = nuevos;
   }
@@ -103,7 +115,9 @@
         };
       }).filter(function (p) { return p.estimacion != null; });
 
-      // Por defecto: los tres primeros, que es la combinacion que mas se discute.
+      // Por defecto, los dos con mas accentuacion, que es la combinacion
+      // que mas se discute. No son los 22 de la pagina: una coalicion de
+      // 348 escaños no es una coalicion que haya pedido nadie.
       sel = new Set(PARTIDOS.slice(0, 2).map((p) => p.etiqueta));
       render();
     } catch (e) {
@@ -287,17 +301,37 @@
     if (!chip) return;
     const etiqueta = chip.getAttribute('data-partido');
     const id = idDe(etiqueta);
+    // El chip manda sobre la coalicion que se esta probando.
+    const encendido = !sel.has(etiqueta);
+    if (encendido) sel.add(etiqueta); else sel.delete(etiqueta);
     if (id && window.SELECCION) {
-      // Cambia la selección global: toda la página se redibuja.
-      window.SELECCION.toggle(id, chip);
+      // Y la seleccion global le sigue: toda la pagina se redibuja.
+      window.SELECCION.set(id, encendido);
+      // Si la seleccion global no ha cambiado, no hay aviso de cambio: hay
+      // que repintar el pactometro a mano.
+      render();
       return;
     }
-    if (sel.has(etiqueta)) sel.delete(etiqueta); else sel.add(etiqueta);
     render();
   });
 
-  // Cuando cambia la selección global, el pactómetro se redibuja.
-  if (window.SELECCION) window.SELECCION.subscribe(function () { render(); });
+  // Cuando cambia la seleccion global, el pactometro se redibuja.
+  // Se guarda cuantos partidos habia activos antes, para distinguir "se ha
+  // vaciado todo" de "se ha vuelto a activar todo".
+  let actAntes = 0;
+  if (window.SELECCION) window.SELECCION.subscribe(function (activos) {
+    const n = activos ? activos.size : 0;
+    if (n === 0) {
+      // Si en la pagina no queda ningun partido activo, el pactometro tampoco
+      // puede seguir con una coalicion encendida: la pagina se vacia entera.
+      sel.clear();
+    } else if (actAntes === 0 && n > 0 && sel.size === 0 && PARTIDOS.length) {
+      // Se acaba de activar todo: la coalicion vuelve a la de por defecto.
+      sel = new Set(PARTIDOS.slice(0, 2).map((p) => p.etiqueta));
+    }
+    actAntes = n;
+    render();
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', cargar);

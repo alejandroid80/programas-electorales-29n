@@ -8,7 +8,14 @@ coreano, cirilico, arabe, devanagari...
 """
 import io, os, re, sys, unicodedata
 
-RAIZ = '/var/home/alejandroid80/Documentos/Proyectos OpenCode/programas-electorales-29n'
+# La raiz se deduce del propio script: asi el script funciona en cualquier
+# clon, en CI y en cualquier maquina, y no deja en el repositorio la ruta
+# local de quien lo escribio.
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+if not os.path.isdir(RAIZ):
+    print('✗ no existe el directorio del proyecto: %s' % RAIZ)
+    sys.exit(1)
 
 EXT = {'.js', '.mjs', '.html', '.css', '.json', '.md', '.yml', '.yaml', '.txt', '.csv', '.gitignore'}
 
@@ -26,8 +33,7 @@ PERMITIDOS = set(
 )
 
 problemas = []
-
-def_raiz = None
+revisados = 0
 
 for dirpath, dirnames, filenames in os.walk(RAIZ):
     dirnames[:] = [d for d in dirnames if d not in ('.git', 'node_modules', '.impeccable')]
@@ -41,6 +47,7 @@ for dirpath, dirnames, filenames in os.walk(RAIZ):
         except UnicodeDecodeError:
             problemas.append((path, 0, 'NO ES UTF-8'))
             continue
+        revisados += 1
         for num, linea in enumerate(txt.split('\n'), 1):
             for ch in linea:
                 if ch in PERMITIDOS:
@@ -58,6 +65,10 @@ for dirpath, dirnames, filenames in os.walk(RAIZ):
                 if ord(ch) > 0x2000:
                     problemas.append((path, num, f'{ch!r} U+{ord(ch):04X} {cat}'))
 
+if revisados == 0:
+    print('✗ no se ha revisado ningun fichero: el control no seria fiable')
+    sys.exit(1)
+
 if problemas:
     print(f'✗ {len(problemas)} caracter(es) sospechoso(s):\n')
     for path, num, det in problemas:
@@ -65,4 +76,5 @@ if problemas:
         print(f' {rel}:{num}  {det}')
     sys.exit(1)
 else:
-    print('✓ Ningun caracter de alfabeto no latino en el proyecto')
+    print('✓ Ningun caracter de alfabeto no latino en el proyecto '
+          '(%d ficheros revisados)' % revisados)
