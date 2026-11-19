@@ -69,21 +69,29 @@ for (const p of PARTIES) {
 //     tipograficos (apostrophe ’), unidades (€, %, ≈) y operadores (=, <, >).
 // La apostrofe tipografica (U+2019) es legitima en catalan y gallego.
 const ALLOWED = /^[A-Za-zÀ-ÿ0-9\s.,;:!¡?¿'"’«»()\[\]\/–—·%€$+=<>~≈…&_-]$/;
-const NOT_ALLOWED_HINT = {
-  '؀': 'alfabeto arabe (desorden bidi visible)',
-  '̇': 'combinante',
-  'Ά': 'alfabeto griego',
-  'А': 'alfabeto cirilico',
-  '　': 'espacio ideografico',
-  '‐': 'guion unicode',
-  '﻿': 'byte order mark'
-};
+// Pistas por rango de codepoint: sin meter letras de otros alfabetos en
+// el propio fichero del checker.
+function pista(cp) {
+  if (cp >= 0x0600 && cp <= 0x06ff) return 'alfabeto arabe (desordena el texto de derecha a izquierda)';
+  if (cp >= 0x0400 && cp <= 0x04ff) return 'alfabeto cirilico';
+  if (cp >= 0x0370 && cp <= 0x03ff) return 'alfabeto griego';
+  if (cp >= 0x4e00 && cp <= 0x9fff) return 'alfabeto chino';
+  if (cp >= 0x3040 && cp <= 0x30ff) return 'alfabeto japones';
+  if (cp >= 0xac00 && cp <= 0xd7af) return 'alfabeto coreano';
+  if (cp >= 0x0590 && cp <= 0x05ff) return 'alfabeto hebreo';
+  if (cp >= 0x0530 && cp <= 0x058f) return 'alfabeto armenio';
+  if (cp >= 0x0e00 && cp <= 0x0e7f) return 'alfabeto tailandés';
+  if (cp === 0x3000) return 'espacio ideografico';
+  if (cp === 0xfeff) return 'byte order mark';
+  if (cp >= 0x2000 && cp <= 0x206f) return 'signo tipografico no permitido';
+  return 'caracter no permitido';
+}
 
 for (const { donde, texto } of prose) {
   for (const ch of texto) {
     if (ALLOWED.test(ch)) continue;
     const cp = 'U+' + ch.codePointAt(0).toString(16).toUpperCase().padStart(4, '0');
-    const hint = NOT_ALLOWED_HINT[ch[0]] || (ch.codePointAt(0) > 0x2FFF ? 'caracter de otro alfabeto' : 'caracter no permitido');
+    const hint = pista(ch.codePointAt(0));
     fail(`${donde}: ${cp} (${ch}) — ${hint}  en "${trunc(texto)}"`);
     break;
   }
@@ -143,6 +151,30 @@ for (const { donde, texto } of prose) {
     CAMEL.lastIndex = 0;
     if (!CAMEL.test(texto)) fail(`${donde}: mayuscula pegada a minuscula  en "${trunc(texto)}"`);
   }
+}
+
+/* ------------------------------------------------------------------ *
+ * 1c. Ninguna letra de otro alfabeto en los ficheros del proyecto
+ *
+ * Los signos tipograficos y matematicos si se permiten; lo que no vale es
+ * que se cuele una letra china, cirilica, arabe o coreana.
+ * ------------------------------------------------------------------ */
+const LETRAS_OTRAS = /[\u0370-\u03FF\u0400-\u04FF\u0530-\u058F\u0590-\u05FF\u0600-\u06FF\u0E00-\u0E7F\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uAC00-\uD7AF\uF900-\uFAFF]/;
+
+const FICHEROS_REVISADOS = ['index.html', 'assets/js/app.js', 'assets/js/data.js',
+  'assets/js/polls.js', 'assets/js/pacto.js', 'assets/js/resumen.js',
+  'assets/js/datos-voto.js', 'assets/css/style.css'];
+
+for (const rel of FICHEROS_REVISADOS) {
+  const ruta = path.join(__dirname, '..', rel);
+  if (!fs.existsSync(ruta)) continue;
+  const txt = fs.readFileSync(ruta, 'utf8');
+  txt.split('\n').forEach((linea, i) => {
+    if (LETRAS_OTRAS.test(linea)) {
+      const encontradas = (linea.match(LETRAS_OTRAS) || []).join('');
+      fail(`${rel}:${i + 1}  letra(s) de otro alfabeto "${encontradas}"  en "${trunc(linea)}"`);
+    }
+  });
 }
 
 /* ------------------------------------------------------------------ *
@@ -337,7 +369,7 @@ function trunc(s) {
 
 if (errors.length) {
   console.error(`\n✗ ${errors.length} problema(s) en los datos:\n`);
-  errors.forEach((e) => console.error('  · ' + e));
+  errors.forEach((e) => console.error(' · ' + e));
   console.error('');
   process.exit(1);
 }

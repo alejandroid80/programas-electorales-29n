@@ -43,7 +43,6 @@ const THEMES = [
   {
     id: 'fiscal',
     name: 'Economía y fiscalidad',
-    icon: '€',
     scale: ['subir', 'gradual', 'bajar', 'recorte'],
     axisLeft: 'Máxima presión redistributiva',
     axisRight: 'Menos Estado, más mercado',
@@ -74,7 +73,6 @@ const THEMES = [
   {
     id: 'vivienda',
     name: 'Vivienda',
-    icon: '⌂',
     scale: ['precio', 'universal', 'fiscal', 'oferta'],
     axisLeft: 'El alquiler lo fija el Estado',
     axisRight: 'El mercado lo fija',
@@ -105,7 +103,6 @@ const THEMES = [
   {
     id: 'migracion',
     name: 'Inmigración',
-    icon: '⇄',
     scale: ['regular', 'control', 'expulsion'],
     axisLeft: 'Vías legales e integración',
     axisRight: 'Prioridad nacional y expulsión',
@@ -131,7 +128,6 @@ const THEMES = [
   {
     id: 'energia',
     name: 'Energía y clima',
-    icon: '⚡',
     scale: ['renovable', 'mixto', 'nuclear'],
     axisLeft: '100 % renovable',
     axisRight: 'Nuclear y transición lenta',
@@ -157,7 +153,6 @@ const THEMES = [
   {
     id: 'estado',
     name: 'Forma del Estado',
-    icon: '◈',
     scale: ['unitario', 'autonomico', 'federal', 'independiente'],
     axisLeft: 'Estado unitario',
     axisRight: 'Derecho a decidir',
@@ -188,7 +183,6 @@ const THEMES = [
   {
     id: 'militar',
     name: 'Paz y militarismo',
-    icon: '☮',
     scale: ['desarme', 'reforma', 'mas'],
     axisLeft: 'Desarme y paz',
     axisRight: 'Más gasto militar',
@@ -214,7 +208,6 @@ const THEMES = [
   {
     id: 'ue',
     name: 'Unión Europea',
-    icon: '★',
     scale: ['pueblos', 'integrar', 'critica'],
     axisLeft: 'Europa de los pueblos',
     axisRight: 'Europa crítica o de salida',
@@ -240,7 +233,6 @@ const THEMES = [
   {
     id: 'servicios',
     name: 'Servicios públicos y Estado',
-    icon: '✚',
     scale: ['blindar', 'eficiencia', 'reducir'],
     axisLeft: 'Blindar el Estado de bienestar',
     axisRight: 'Reducir y desregular',
