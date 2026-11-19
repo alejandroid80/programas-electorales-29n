@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-19T18:22:49.080Z",
+ "generado": "2026-11-19T18:24:42.930Z",
  "elecciones": "2026-11-29",
  "fuentes": [
   {
@@ -4054,6 +4054,29 @@
  "electomania": [
   {
    "fecha": "2026-11-19",
+   "titular": "Tracking Data10 (19 nov): \"El PP sacar 5p al PSOE\"",
+   "ficha": "Data10 España 19/11/2026",
+   "sondeante": "Data10 para okdiario",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-data10-19-nov-el-pp-sacar-5p-al-psoe/",
+   "muestra": null,
+   "v": {
+    "PP": 31.6,
+    "PSOE": 26.5,
+    "Vox": 19.4,
+    "Otros": 15.8,
+    "Frente Amplio": 6.7
+   },
+   "esc": {
+    "PP": 130,
+    "PSOE": 109,
+    "Vox": 66,
+    "Otros": 35,
+    "Frente Amplio": 10
+   }
+  },
+  {
+   "fecha": "2026-11-19",
    "titular": "Encuesta Politico (19 nov): PP y PSOE se disputan la victoria",
    "ficha": "Public First España 19/11/2026",
    "sondeante": "Public First para Politico",
@@ -4380,31 +4403,6 @@
     "Vox": 57,
     "Otros": 33,
     "Frente Amplio": 11
-   }
-  },
-  {
-   "fecha": "2026-11-16",
-   "titular": "Tracking Sondaxe (16 nov): \"El PSOE le quita tres escaños al PP y reduce la ventaja de Feijoo a 18 actas\"",
-   "ficha": "Sondaxe España 16/11/2026",
-   "sondeante": "Sondaxe para La Voz de Galicia",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sondaxe-16-nov-el-psoe-le-quita-tres-escanos-al-pp-y-reduce-la-ventaja-de-feijoo-a-18-actas/",
-   "muestra": null,
-   "v": {
-    "PP": 30.2,
-    "PSOE": 26.7,
-    "Vox": 17.6,
-    "Otros": 15.4,
-    "Frente Amplio": 7.9,
-    "Podemos": 2.2
-   },
-   "esc": {
-    "PP": 127,
-    "PSOE": 109,
-    "Vox": 65,
-    "Otros": 35,
-    "Frente Amplio": 12,
-    "Podemos": 2
    }
   }
  ],
