@@ -36,6 +36,10 @@ const SANS = 'Liberation Sans';
 const ANCHO = 1200;
 const ALTO = 630;
 
+/* Las medidas de la tarjeta, para que el publicador pueda decirselas a
+   Bluesky (sin el aspectRatio, la red enmarca la imagen en un cuadrado). */
+export const TARJETA = { ancho: ANCHO, alto: ALTO };
+
 export function esc(s) {
   return String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')

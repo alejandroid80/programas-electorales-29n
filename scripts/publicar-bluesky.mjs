@@ -17,7 +17,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mkdirSync, readdirSync, unlinkSync } from 'node:fs';
-import { tarjetaEje, tarjetaDistribucion, tarjetaCifras, aPNG } from './tarjetas.mjs';
+import { tarjetaEje, tarjetaDistribucion, tarjetaCifras, aPNG, TARJETA } from './tarjetas.mjs';
 
 const RAIZ = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const WEB = 'https://alejandroid80.github.io/programas-electorales-29n/';
@@ -207,13 +207,21 @@ async function crearRegistro(jwt, did, record) {
   return r.json();
 }
 
-/* Ya se publico este texto? Se mira el feed del autor. */
-async function yaPublicado(did, texto) {
+/* Ya se publico este texto? Se mira el registro propio en el PDS.
+   Se usa listRecords y no getAuthorFeed por dos motivos: el feed de la
+   appview necesita autorizacion (sin ella devuelve 401 y la comprobacion
+   fallaria en silencio, publicando siempre dos veces) y ademas tarde en
+   indexar, mientras que los registros del propio repositorio se leen al
+   momento. */
+async function yaPublicado(did, jwt, texto) {
   if (process.env.FORZAR === '1') return false;
-  const r = await fetch(XRPC + '/app.bsky.feed.getAuthorFeed?actor=' + encodeURIComponent(did) + '&limit=50');
-  if (!r.ok) return false;
-  const feed = await r.json();
-  return (feed.feed || []).some((e) => e.post && e.post.record && e.post.record.text === texto);
+  const r = await fetch(XRPC + '/com.atproto.repo.listRecords?repo=' + encodeURIComponent(did)
+    + '&collection=app.bsky.feed.post&limit=100&reverse=true',
+  { headers: { authorization: 'Bearer ' + jwt } });
+  // Si la comprobacion falla, mejor no publicar a arriesgarse a duplicar.
+  if (!r.ok) throw new Error('no se pudo comprobar el feed (' + r.status + '): ' + (await r.text()).slice(0, 200));
+  const datos = await r.json();
+  return (datos.records || []).some((x) => x.value && x.value.text === texto);
 }
 
 /* ------------------------------------------------------------ programa */
@@ -282,7 +290,7 @@ for (const f of readdirSync(TMP)) { try { unlinkSync(resolve(TMP, f)); } catch {
 const s = await sesion(handle, password);
 console.log('Sesion iniciada: ' + s.handle + ' (' + s.did + ')');
 
-if (await yaPublicado(s.did, texto)) {
+if (await yaPublicado(s.did, s.accessJwt, texto)) {
   console.log('Esta pieza ya estaba publicada hoy: no se duplica.');
   process.exit(0);
 }
@@ -298,7 +306,7 @@ const registro = {
   facets,
   embed: {
     $type: 'app.bsky.embed.images',
-    images: [{ image: blob, alt: pieza.alt }]
+    images: [{ image: blob, alt: pieza.alt, aspectRatio: { width: TARJETA.ancho, height: TARJETA.alto } }]
   }
 };
 
