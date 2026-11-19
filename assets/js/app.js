@@ -652,16 +652,6 @@
 
     $('#resetBtn').addEventListener('click', clearFilters);
 
-    $('#allBtn').addEventListener('click', function () {
-      fijar(PARTIES.map(function (p) { return p.id; }));
-    });
-    $('#coreBtn').addEventListener('click', function () {
-      fijar(CORE);
-    });
-    $('#noneBtn').addEventListener('click', function () {
-      fijar([]);
-    });
-
     /* Botonera global, justo antes de "En un vistazo". */
     $('#selTodos').addEventListener('click', function () {
       fijar(PARTIES.map(function (p) { return p.id; }));

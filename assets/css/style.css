@@ -253,7 +253,8 @@ section:first-of-type { border-top: none; }
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
   margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--line);
 }
-.toolbar-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto; }
+.toolbar-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto; align-items: center; }
+.toolbar-nota { font-size: .8rem; color: var(--ink-3); margin-right: 6px; }
 .search {
   flex: 1 1 230px; min-width: 180px; display: flex; align-items: center; gap: 8px;
   background: var(--bg-card); border: 1px solid var(--line); border-radius: 10px; padding: 4px 13px;
@@ -593,25 +594,35 @@ html[data-theme="dark"] .voto-table .baja { color: #ff9a8f; }
   .voto-table th, .voto-table td { padding: 8px 11px; }
 }
 
-/* --------------------------------------- Partidos activos (filtro global) */
-.filtro-bloque {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px;
-  padding: 18px 0 20px; margin-bottom: 4px;
-  border-bottom: 1px solid var(--line);
+/* ------------------------- Partidos de la pagina (selector global) */
+.sel-partidos {
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 15px 18px 16px; margin-bottom: 24px; box-shadow: var(--shadow);
 }
-.filtro-izq { display: flex; flex-direction: column; gap: 1px; margin-right: auto; }
-.filtro-izq b { font-size: .95rem; font-weight: 650; color: var(--ink); }
-.filtro-izq span { font-size: .8rem; color: var(--ink-3); }
-.filtro-botones { display: flex; flex-wrap: wrap; gap: 7px; }
-.filtro-botones .chip[aria-pressed="true"] {
-  background: var(--accent); border-color: var(--accent); color: #fff;
+.sel-cabecera {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin-bottom: 13px;
 }
-html[data-theme="dark"] .filtro-botones .chip[aria-pressed="true"] { color: #1a1013; }
+.sel-titulo { display: flex; align-items: baseline; gap: 10px; margin-right: auto; flex-wrap: wrap; }
+.sel-titulo b { font-size: .93rem; font-weight: 650; color: var(--ink); }
+.sel-titulo span { font-size: .8rem; color: var(--ink-3); }
+.sel-acciones { display: flex; flex-wrap: wrap; gap: 6px; }
+.sel-acciones .chip[aria-pressed="true"] {
+  background: var(--ink); color: var(--bg); border-color: var(--ink);
+}
+.sel-partidos .chips { gap: 6px; }
+
+/* Cada boton de partido lleva el color del partido: encendido, con el
+   borde y el fondo tintados; apagado, solo el punto. */
+.sel-partidos .chip[aria-pressed="true"] { background: var(--bg-soft); border-color: var(--line-2); color: var(--ink); }
+.sel-partidos .chip[aria-pressed="false"] { color: var(--ink-3); background: transparent; }
+.sel-partidos .chip[aria-pressed="false"] .dot { opacity: .3; }
+.sel-partidos .chip:hover { border-color: var(--ink-3); color: var(--ink); }
+.sel-partidos .chip .dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
 
 @media (max-width: 620px) {
-  .filtro-izq { margin-right: 0; }
-  .filtro-botones { width: 100%; }
-  .filtro-botones .chip { flex: 1 1 auto; justify-content: center; }
+  .sel-titulo { margin-right: 0; }
+  .sel-acciones { width: 100%; }
+  .sel-acciones .chip { flex: 1 1 auto; justify-content: center; }
 }
 
 /* ------------------------------------------------------ En un vistazo */

@@ -53,26 +53,27 @@
         los resume y los pone <strong>lado a lado</strong>: qué propone cada quien, y en qué se diferencian de verdad.
       </p>
       <div class="stats" id="stats" aria-label="Cifras del corpus analizado"></div>
+
+      <div class="sel-partidos">
+        <div class="sel-cabecera">
+          <div class="sel-titulo">
+            <b>Partidos en la página</b>
+            <span id="filtro-cuenta">Los 22 partidos activados</span>
+          </div>
+          <div class="sel-acciones" role="group" aria-label="Activar o desactivar todos los partidos">
+            <button class="chip" id="selTodos" type="button" aria-pressed="true">Activar todos</button>
+            <button class="chip" id="selGrandes" type="button" aria-pressed="false">Solo los ocho grandes</button>
+            <button class="chip" id="selDefecto" type="button" aria-pressed="true">Restablecer</button>
+            <button class="chip" id="selNinguno" type="button" aria-pressed="false">Desactivar todos</button>
+          </div>
+        </div>
+        <div class="chips" id="selectChips" role="group" aria-label="Partidos que aparecen en la página"></div>
+      </div>
+
       <div class="btn-row">
         <a class="btn primary" href="#fichas">Ver las fichas de los partidos</a>
         <a class="btn" href="#matriz">Ir a la matriz comparativa</a>
         <a class="btn" href="#temas">Ver las diferencias por tema</a>
-      </div>
-    </section>
-  </div>
-
-  <!-- ------------------------------------------------- PARTIDOS ACTIVOS -->
-  <div class="wrap">
-    <section id="filtro" class="filtro-bloque">
-      <div class="filtro-izq">
-        <b>Partidos en la página</b>
-        <span id="filtro-cuenta">Los 22 partidos activados</span>
-      </div>
-      <div class="filtro-botones" role="group" aria-label="Activar o desactivar partidos">
-        <button class="chip" id="selTodos" type="button" aria-pressed="true">Activar todos</button>
-        <button class="chip" id="selGrandes" type="button" aria-pressed="false">Solo los ocho grandes</button>
-        <button class="chip" id="selDefecto" type="button" aria-pressed="true">Restablecer</button>
-        <button class="chip" id="selNinguno" type="button" aria-pressed="false">Desactivar todos</button>
       </div>
     </section>
   </div>
@@ -155,15 +156,12 @@
     <section id="matriz">
       <div class="sec-head">
         <h2>Qué dice cada partido de cada tema</h2>
-        <p>La tabla se construye con los partidos que tengas seleccionados. Arriba a la izquierda puedes activarlos o desactivarlos uno a uno.</p>
+        <p>La tabla se construye con los partidos que tengas activados arriba, en la cabecera. Desactivar un partido lo quita de toda la página.</p>
       </div>
       <div class="toolbar">
-        <div class="chips" id="selectChips" role="group" aria-label="Partidos incluidos en la comparación"></div>
         <div class="toolbar-actions">
           <span id="matrixShare"></span>
-          <button class="chip" id="allBtn" type="button">Seleccionar los 22</button>
-          <button class="chip" id="coreBtn" type="button">Solo los ocho grandes</button>
-          <button class="chip" id="noneBtn" type="button">Vaciar la comparación</button>
+          <span class="toolbar-nota">Los partidos se activan y desactivan arriba, en la cabecera.</span>
           <button class="chip" id="copyLinkBtn" type="button">Copiar el enlace</button>
           <button class="chip" id="copyTableBtn" type="button">Copiar la tabla</button>
         </div>
