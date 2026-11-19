@@ -616,13 +616,13 @@ html[data-theme="dark"] .voto-table .baja { color: #ff9a8f; }
    perfil: sin fondo, con el borde fino y el punto atenuado. La diferencia
    entre los dos estados es maxima a primera vista. */
 .sel-partidos .chip {
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-2);
   background: transparent;
   color: var(--ink-3);
   font-weight: 500;
   padding-left: 9px;
 }
-.sel-partidos .chip .dot { width: 11px; height: 11px; border-radius: 50%; flex: none; opacity: .28; }
+.sel-partidos .chip .dot { width: 11px; height: 11px; border-radius: 50%; flex: none; opacity: .34; }
 .sel-partidos .chip[aria-pressed="false"]:hover {
   border-color: var(--ink-3); color: var(--ink-2); background: var(--bg-soft);
 }
@@ -636,6 +636,11 @@ html[data-theme="dark"] .voto-table .baja { color: #ff9a8f; }
 }
 .sel-partidos .chip[aria-pressed="true"] .dot { display: none; }
 .sel-partidos .chip[aria-pressed="true"]:hover { filter: brightness(1.08); }
+
+/* En oscuro, el punto de un partido apagado se perdia contra el fondo. */
+html[data-theme="dark"] .sel-partidos .chip { border-color: #3c434c; }
+html[data-theme="dark"] .sel-partidos .chip .dot { opacity: .5; }
+html[data-theme="dark"] .sel-partidos .chip[aria-pressed="false"] { color: #949da7; }
 
 @media (max-width: 620px) {
   .sel-titulo { margin-right: 0; }
