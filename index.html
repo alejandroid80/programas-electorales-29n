@@ -6,13 +6,16 @@
 <title>Programas electorales 29N 2026 — los partidos, punto por punto</title>
 <meta name="description" content="Comparativa de los 22 programas electorales de las elecciones generales del 29 de noviembre de 2026: principales puntos de cada partido y diferencias entre ellos, a partir del repositorio de programas en .rst.">
 <meta name="theme-color" content="#faf7f2">
+<!-- Politica de seguridad de contenido: solo se ejecuta el JavaScript que
+     esta en este repositorio, y solo se habla con el propio origen y con el
+     servicio del contador de visitas. Asi, aunque un dato de un tercero
+     llegara roto al DOM, no podria ejecutar nada. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://countapi.mileshilliard.com">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Programas electorales 29N 2026 — los partidos, punto por punto">
 <meta property="og:description" content="Veintidós programas del 29N de 2026 leídos, resumidos y puestos lado a lado: ocho ejes de comparación, fichas por partido y matriz comparativa.">
 <meta property="og:locale" content="es_ES">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/fonts.css?v=18">
 <link rel="stylesheet" href="assets/css/style.css?v=18">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23a41f33'/><path d='M28 40h44M28 52h44M28 64h28' stroke='white' stroke-width='7' stroke-linecap='round'/></svg>">
 </head>
@@ -290,9 +293,10 @@
         <div class="mbox">
           <h3>El contador de visitas</h3>
           <ul>
-            <li>Cuenta una visita cada 12 horas por navegador y solo guarda un número: ni IP, ni cookies, ni perfiles.</li>
+            <li>Cuenta una visita cada 12 horas por navegador y solo guarda un número: ni cookies, ni perfiles, ni identificadores.</li>
             <li>El total que ves es la <b>base histórica</b> que está en el repositorio más el valor del servicio en este momento.</li>
             <li>Por eso <b>publicar un cambio no pone el contador a cero</b>: la base no se toca nunca. Si algún día hay que reiniciar el servicio, lo que se pierda se suma a la base antes.</li>
+            <li>Y para que el número <b>nunca baje</b>, aunque alguien reinicie el servicio por su cuenta, se guarda también el total más alto que se ha visto y se enseña ese mientras el contador no lo supera.</li>
           </ul>
         </div>
         <div class="mbox">
@@ -332,7 +336,7 @@
       Resumen elaborado a partir de los programas electorales del 29N de 2026 publicados por los partidos y verificados en
       <a href="https://github.com/jynus/programas-electorales-29n-generales-2026" target="_blank" rel="noopener">github.com/jynus/programas-electorales-29n-generales-2026</a>.
     </div>
-    <div>Sin cookies ni perfiles. El contador de visitas solo guarda un número, ni IP ni identificadores. · <span id="year"></span></div>
+    <div>Sin cookies, sin perfiles y sin analítica. Las tipografías están en este mismo servidor, así que no se pide nada a terceros. La única excepción es el contador de visitas: consulta un servicio externo que ve la IP de quien entra, como en cualquier petición web. · <span id="year"></span></div>
   </div>
 </footer>
 

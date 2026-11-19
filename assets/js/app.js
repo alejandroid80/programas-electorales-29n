@@ -463,10 +463,17 @@
     } catch (e) { /* sin localStorage: se cuenta siempre */ }
 
     // La base historica vive en el repo: se lee siempre, sin cache.
+    // El pico es el total mas alto que se ha visto: si alguien reinicia el
+    // servicio, el numero sigue sin bajar.
     const base = fetch('data/visit-counter.json?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { return j && Number.isFinite(Number(j.base)) ? Number(j.base) : 0; })
-      .catch(function () { return 0; });
+      .then(function (j) {
+        return {
+          base: j && Number.isFinite(Number(j.base)) ? Number(j.base) : 0,
+          pico: j && Number.isFinite(Number(j.pico)) ? Number(j.pico) : 0
+        };
+      })
+      .catch(function () { return { base: 0, pico: 0 }; });
 
     // El valor en vivo, del servicio.
     const url = COUNTER_SERVICE + (counted ? '/get/' : '/hit/') + COUNTER_KEY;
@@ -476,9 +483,11 @@
       .catch(function () { return null; });
 
     Promise.all([base, vivo]).then(function (valores) {
-      const b = valores[0], v = valores[1];
+      const d = valores[0], v = valores[1];
       if (v == null) return;      // si no se puede medir, no se muestra nada
-      paint(b + v);
+      // El total no baja nunca: si el servicio se reinicia, se sigue
+      // mostrando el total mas alto que se ha visto.
+      paint(Math.max(d.base + v, d.pico));
     });
   }
 

@@ -110,8 +110,17 @@ El total que ve el lector es **la base histórica + el valor en vivo del servici
 - `data/visit-counter.json` guarda la base. **Vive en el repositorio y no la regenera nadie**:
   el bot solo escribe `data/voting-intention.json`. Es lo que impide que una publicación
   (o un reinicio manual) deje el contador a cero.
-- El valor en vivo lo da CountAPI, que solo almacena un número: ni IP, ni cookies, ni perfiles.
+- El valor en vivo lo da CountAPI, que solo almacena un número: ni cookies, ni perfiles, ni
+  identificadores. Lo que ese servicio sí ve es la IP de quien entra, como en cualquier petición
+  web; la página no lo guarda ni lo oculta. Es la **única petición a un tercero** que hace la
+  web: las tipografías están en el propio repositorio (`assets/fonts/`), no en Google Fonts.
 - Se cuenta **una visita cada 12 horas por navegador**, así que recargar no infla el número.
+
+**El número no puede bajar nunca.** El servicio permite escribir su valor y **cualquiera que lea
+este repositorio puede hacerlo**: la clave es pública, porque la pagina tiene que poder leer el
+contador. Por eso `data/visit-counter.json` guarda tambien un `pico`, que es el total mas alto
+que se ha visto, y la pagina enseña `max(base + valor en vivo, pico)`. Si alguien reinicia el
+servicio por su cuenta, el total no cae.
 
 **Si alguna vez hay que reiniciar el servicio**, el valor antiguo se suma a la base *antes* de
 reiniciarlo, y el total sigue intacto:
@@ -122,8 +131,35 @@ curl -s "https://countapi.mileshilliard.com/api/v1/get/pe29n-alejandroid80"   # 
 curl -s "https://countapi.mileshilliard.com/api/v1/set/pe29n-alejandroid80?value=0"
 ```
 
+Ojo: ese segundo comando lo puede usar cualquiera, no solo el mantenedor. Por eso existe el
+`pico`.
+
 `scripts/check-data.js` comprueba que la base sea un entero válido y que el bot no toque ese
 fichero.
+
+## Seguridad
+
+Cosas que se hicieron para que la pagina se pueda tocar sin miedo:
+
+- **Politica de seguridad de contenido** (`Content-Security-Policy` en `index.html`): solo se
+  ejecuta el JavaScript que esta en este repositorio. `script-src 'self'` no admite scripts en
+  linea ni manejadores `onerror=`, asi que, aun si un dato de un tercero llegara roto al DOM, no
+  podria ejecutar nada. Lo unico que se permite hacia fuera es `connect-src` al servicio del
+  contador de visitas.
+- **Los datos de terceros se validan antes de pintarse.** Los que llegan de Onda Cero (el color y
+  los numeros de cada partido) y de Electomania (la URL de cada ficha) se comprueban: el color
+  tiene que ser un hexadecimal, los numeros se convierten a numero y los enlaces solo se siguen
+  si son `http` o `https`. Un `javascript:` en un `href` no sobrevive.
+- **Todo se escapa** con `esc()` antes de meterse en el DOM. La unica excepcion son los colores,
+  que se validan en vez de escaparse, porque van dentro de atributos de estilo.
+- **Las tipografias estan en el repositorio** (`assets/fonts/`), no en Google Fonts: la IP del
+  visitante no viaja a un tercero y no hace falta `integrity`.
+- **El bot valida antes de publicar**: `scripts/check-data.js` se ejecuta en el workflow, asi que
+  si el CIS cambia como escribe el nombre de un partido, el pipeline para en vez de subir un
+  pactometro roto.
+- **`scripts/check-encoding.py`** busca caracteres de otros alfabetos en todo el proyecto y
+  falla si no encuentra la raiz o si no ha revisado ningun fichero (para que un control no pueda
+  pasar en verde sin haber mirado nada).
 
 ## Estructura
 
@@ -132,6 +168,8 @@ programas-electorales-29n/
 ├── index.html              # estructura de la página
 ├── assets/
 │   ├── css/style.css       # estilos (tema claro/oscuro, responsive)
+│   ├── css/fonts.css       # las dos tipografías, servidas desde aquí
+│   ├── fonts/              # Inter y Newsreader (woff2, SIL OFL 1.1)
 │   └── js/
 │       ├── data.js         # DATOS: temas, partidos, detalle por tema
 │       ├── app.js          # LÓGICA: render, filtros, comparador
@@ -144,6 +182,7 @@ programas-electorales-29n/
 │   └── visit-counter.json      # base historica del contador (nadie la regenera)
 ├── scripts/
 │   ├── check-data.js       # control automático de calidad de los datos
+│   ├── check-encoding.py   # busca caracteres de otros alfabetos
 │   └── update-polls.mjs    # bot que recoge las encuestas
 ├── .github/workflows/
 │   └── update-polls.yml    # el bot, cada día a las 23:00 UTC
