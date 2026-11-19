@@ -1,0 +1,7 @@
+{
+  "clave": "pe29n-alejandroid80",
+  "servicio": "https://countapi.mileshilliard.com/api/v1",
+  "base": 47,
+  "nota": "Visitas que se perdieron al reiniciar el contador a mano durante las pruebas: 42 del contador de CountAPI mas 5 del contador abandonado de Abacus. El numero que se ve en la pagina es esta base mas el valor que hay ahora mismo en el servicio. Si alguna vez hay que reiniciar el servicio, el valor antiguo se suma aqui antes de hacerlo, y nunca se pierde.",
+  "actualizado": "2026-11-19"
+}

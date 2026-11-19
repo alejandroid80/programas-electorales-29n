@@ -309,6 +309,26 @@ if (fs.existsSync(POLLS)) {
   console.warn('aviso: no existe data/voting-intention.json (el bot lo genera)');
 }
 
+/* ------------------------------------------------------------------ *
+ * 8. Contador de visitas: la base historica no se puede perder
+ * ------------------------------------------------------------------ */
+const VC = path.join(__dirname, '..', 'data', 'visit-counter.json');
+if (!fs.existsSync(VC)) {
+  fail('contador: falta data/visit-counter.json (sin el, publicar puede poner el contador a cero)');
+} else {
+  const v = JSON.parse(fs.readFileSync(VC, 'utf8'));
+  if (!Number.isInteger(v.base) || v.base < 0) {
+    fail(`contador: la base debe ser un entero >= 0, no "${v.base}"`);
+  }
+  if (!v.clave) fail('contador: falta la clave del servicio');
+  if (!v.nota) fail('contador: falta la nota que explica de donde sale la base');
+  // El bot nunca debe tocar este fichero.
+  const bot = fs.readFileSync(path.join(__dirname, 'update-polls.mjs'), 'utf8');
+  if (/visit-counter/.test(bot) && !/visit-counter/.test(bot.split('\n').filter(l => /readFileSync|writeFileSync/.test(l)).join('\n'))) {
+    fail('contador: el bot parece tocar visit-counter.json');
+  }
+}
+
 /* ------------------------------------------------------------------ */
 function trunc(s) {
   const t = s.replace(/\s+/g, ' ').trim();

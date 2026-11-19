@@ -402,26 +402,13 @@
   }
 
   /* ------------------------------------------------------- contador */
-  /* CountAPI: solo guarda un numero. Sin cookies, sin IP, sin perfiles.
-     La visita se cuenta una vez cada 12 horas por navegador, para que
-     recargar la pagina no dispare el contador. */
-  const COUNTER_API = 'https://countapi.mileshilliard.com/api/v1';
+  /* El total que se ve es la base historica (data/visit-counter.json, que
+     vive en el repositorio y nunca se borra) mas el valor que hay ahora
+     mismo en el servicio. Asi, aunque el servicio se reinicie, el
+     contador no vuelve a cero. */
+  const COUNTER_SERVICE = 'https://countapi.mileshilliard.com/api/v1';
   const COUNTER_KEY = 'pe29n-alejandroid80';
   const COUNTER_WINDOW = 12 * 60 * 60 * 1000;
-
-  function fetchJson(url, intentos) {
-    return fetch(url, { mode: 'cors', cache: 'no-store' })
-      .then(function (r) {
-        if (!r.ok) throw new Error('http ' + r.status);
-        return r.json();
-      })
-      .catch(function (err) {
-        if (intentos <= 1) throw err;
-        return new Promise(function (res) {
-          setTimeout(function () { res(fetchJson(url, intentos - 1)); }, 1200);
-        });
-      });
-  }
 
   function initCounter() {
     const box = $('#visits');
@@ -442,13 +429,24 @@
       if (!counted) localStorage.setItem('pv_' + COUNTER_KEY, String(Date.now()));
     } catch (e) { /* sin localStorage: se cuenta siempre */ }
 
-    var url = COUNTER_API + (counted ? '/get/' : '/hit/') + COUNTER_KEY;
-    fetchJson(url, 3)
-      .then(function (d) {
-        var n = parseInt(d && d.value, 10);
-        if (!isNaN(n)) paint(n);
-      })
-      .catch(function () { /* si no se puede medir no se muestra nada: no es cero */ });
+    // La base historica vive en el repo: se lee siempre, sin cache.
+    const base = fetch('data/visit-counter.json?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { return j && Number.isFinite(Number(j.base)) ? Number(j.base) : 0; })
+      .catch(function () { return 0; });
+
+    // El valor en vivo, del servicio.
+    const url = COUNTER_SERVICE + (counted ? '/get/' : '/hit/') + COUNTER_KEY;
+    const vivo = fetch(url, { mode: 'cors', cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { return d && Number.isFinite(Number(d.value)) ? Number(d.value) : null; })
+      .catch(function () { return null; });
+
+    Promise.all([base, vivo]).then(function (valores) {
+      const b = valores[0], v = valores[1];
+      if (v == null) return;      // si no se puede medir, no se muestra nada
+      paint(b + v);
+    });
   }
 
   /* --------------------------------------------------------- render */

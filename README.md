@@ -68,6 +68,28 @@ Solo hace commit si el fichero ha cambiado.
 encuestas, `update-polls.mjs` valida que cada fuente traiga lo mínimo esperado (partidos,
 meses, encuestas) y avisa si alguna falla.
 
+## El contador de visitas
+
+El total que ve el lector es **la base histórica + el valor en vivo del servicio**:
+
+- `data/visit-counter.json` guarda la base. **Vive en el repositorio y no la regenera nadie**:
+  el bot solo escribe `data/voting-intention.json`. Es lo que impide que una publicación
+  (o un reinicio manual) deje el contador a cero.
+- El valor en vivo lo da CountAPI, que solo almacena un número: ni IP, ni cookies, ni perfiles.
+- Se cuenta **una visita cada 12 horas por navegador**, así que recargar no infla el número.
+
+**Si alguna vez hay que reiniciar el servicio**, el valor antiguo se suma a la base *antes* de
+reiniciarlo, y el total sigue intacto:
+
+```bash
+curl -s "https://countapi.mileshilliard.com/api/v1/get/pe29n-alejandroid80"   # valor actual
+# sumar ese valor a "base" en data/visit-counter.json
+curl -s "https://countapi.mileshilliard.com/api/v1/set/pe29n-alejandroid80?value=0"
+```
+
+`scripts/check-data.js` comprueba que la base sea un entero válido y que el bot no toque ese
+fichero.
+
 ## Estructura
 
 ```
@@ -80,7 +102,8 @@ programas-electorales-29n/
 │       ├── app.js          # LÓGICA: render, filtros, comparador
 │       └── polls.js        # Sección de intención de voto
 ├── data/
-│   └── voting-intention.json   # datos de las encuestas (los genera el bot)
+│   ├── voting-intention.json   # datos de las encuestas (los genera el bot)
+│   └── visit-counter.json      # base historica del contador (nadie la regenera)
 ├── scripts/
 │   ├── check-data.js       # control automático de calidad de los datos
 │   └── update-polls.mjs    # bot que recoge las encuestas
