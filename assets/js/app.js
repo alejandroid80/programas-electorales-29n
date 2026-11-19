@@ -301,8 +301,12 @@
   }
 
   function renderSelectChips() {
+    // --pc y --pc-fg viajan en linea: el boton encendido se pinta con el
+    // color del partido y el texto con el tono que contrasta con el.
     $('#selectChips').innerHTML = PARTIES.map(p =>
-      '<button type="button" class="chip" data-pick="' + p.id + '" aria-pressed="' + state.selected.has(p.id) + '">' +
+      '<button type="button" class="chip" data-pick="' + p.id + '" aria-pressed="' + state.selected.has(p.id) + '"' +
+      ' style="--pc:' + p.color + ';--pc-fg:' + p.badgeFg + '"' +
+      ' title="' + esc(p.name) + '">' +
       '<span class="dot" style="background:' + p.color + '"></span>' + esc(p.short) + '</button>').join('');
   }
 

@@ -611,13 +611,31 @@ html[data-theme="dark"] .voto-table .baja { color: #ff9a8f; }
 }
 .sel-partidos .chips { gap: 6px; }
 
-/* Cada boton de partido lleva el color del partido: encendido, con el
-   borde y el fondo tintados; apagado, solo el punto. */
-.sel-partidos .chip[aria-pressed="true"] { background: var(--bg-soft); border-color: var(--line-2); color: var(--ink); }
-.sel-partidos .chip[aria-pressed="false"] { color: var(--ink-3); background: transparent; }
-.sel-partidos .chip[aria-pressed="false"] .dot { opacity: .3; }
-.sel-partidos .chip:hover { border-color: var(--ink-3); color: var(--ink); }
-.sel-partidos .chip .dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+/* Un boton encendido lleva el color solido del partido y el texto con el
+   tono que contrasta con ese color (--pc-fg). Uno apagado se queda en
+   perfil: sin fondo, con el borde fino y el punto atenuado. La diferencia
+   entre los dos estados es maxima a primera vista. */
+.sel-partidos .chip {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-3);
+  font-weight: 500;
+  padding-left: 9px;
+}
+.sel-partidos .chip .dot { width: 11px; height: 11px; border-radius: 50%; flex: none; opacity: .28; }
+.sel-partidos .chip[aria-pressed="false"]:hover {
+  border-color: var(--ink-3); color: var(--ink-2); background: var(--bg-soft);
+}
+.sel-partidos .chip[aria-pressed="false"]:hover .dot { opacity: .6; }
+.sel-partidos .chip[aria-pressed="true"] {
+  background: var(--pc);
+  border-color: var(--pc);
+  color: var(--pc-fg);
+  font-weight: 650;
+  padding-left: 12px;
+}
+.sel-partidos .chip[aria-pressed="true"] .dot { display: none; }
+.sel-partidos .chip[aria-pressed="true"]:hover { filter: brightness(1.08); }
 
 @media (max-width: 620px) {
   .sel-titulo { margin-right: 0; }
