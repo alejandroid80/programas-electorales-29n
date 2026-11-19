@@ -33,7 +33,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       # ImageMagick convierte las tarjetas de SVG a PNG y las fuentes son las
       # que se usan para escribir en ellas.

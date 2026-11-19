@@ -30,7 +30,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       # pdftotext hace falta para leer la nota de estimacion de voto del CIS,
       # que es la unica fuente que reparte escanos por partido.
