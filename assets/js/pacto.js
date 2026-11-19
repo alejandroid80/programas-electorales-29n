@@ -63,9 +63,7 @@
       return;
     }
     try {
-      const r = await fetch('data/voting-intention.json?t=' + Date.now(), { cache: 'no-store' });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      const d = await r.json();
+      const d = await window.DATOS_VOTO.get();
       DATOS = d.preelectoral;
       if (!DATOS || !DATOS.partidos || !DATOS.partidos.length) {
         box.innerHTML = '<div class="voto-vacio"><p><b>Todavía no hay reparto de escaños</b></p>' +

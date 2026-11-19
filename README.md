@@ -100,7 +100,10 @@ programas-electorales-29n/
 │   └── js/
 │       ├── data.js         # DATOS: temas, partidos, detalle por tema
 │       ├── app.js          # LÓGICA: render, filtros, comparador
-│       └── polls.js        # Sección de intención de voto
+│       ├── resumen.js      # Sección "En un vistazo"
+│       ├── datos-voto.js   # Cargador único de los datos de encuestas
+│       ├── polls.js        # Sección de intención de voto
+│       └── pacto.js       # Pactómetro
 ├── data/
 │   ├── voting-intention.json   # datos de las encuestas (los genera el bot)
 │   └── visit-counter.json      # base historica del contador (nadie la regenera)
@@ -170,14 +173,18 @@ gh api repos/alejandroid80/programas-electorales-29n/pages/builds/latest -q '.co
 
 ## Qué contiene la página
 
-1. **Fichas de partidos** — una por partido, con las cuatro cifras que mejor resumen su programa
+1. **En un vistazo** — lo esencial antes del detalle: la guía de los seis destinos, los 22
+   partidos en una línea, los 8 ejes con los partidos agrupados por posición, y el pactómetro.
+2. **Fichas de partidos** — una por partido, con las cuatro cifras que mejor resumen su programa
    y sus principales propuestas, con enlace al `.rst` original.
 3. **Matriz comparativa** — tabla de 8 temas × los partidos seleccionados, para leer las
    diferencias de un vistazo.
 4. **Diferencias por tema** — los mismos ejes, con la posición y la propuesta concreta de cada partido.
-5. **Mapa de posiciones** — los 8 ejes con las posiciones posibles y qué partido sostiene cada una.
+5. **Intención de voto** — el promedio de las encuestas de los medios, la estimación del CIS,
+   el efecto casa y las fichas de cada sondeo. Enlaza al pactómetro, que está al principio.
+6. **Mapa de posiciones** — los 8 ejes con las posiciones posibles y qué partido sostiene cada una.
    Va casi al final, como vista de conjunto de lo anterior.
-6. **Método y fuentes** — qué se ha resumido, qué no, y los enlaces al repositorio.
+7. **Método y fuentes** — qué se ha resumido, qué no, y los enlaces al repositorio.
 
 ## Notas de método
 

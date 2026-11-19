@@ -6,7 +6,6 @@
 (function () {
   'use strict';
 
-  const DATA_URL = 'data/voting-intention.json';
   const $ = (s, r) => (r || document).querySelector(s);
   const $$ = (s, r) => Array.prototype.slice.call((r || document).querySelectorAll(s));
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({
@@ -49,9 +48,7 @@
     }
 
     try {
-      const r = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      D = await r.json();
+      D = await window.DATOS_VOTO.get();
       render();
     } catch (e) {
       box.innerHTML = estadoError('No se han podido cargar los datos de intención de voto',
