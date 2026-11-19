@@ -643,7 +643,7 @@ html[data-theme="dark"] .sel-partidos .chip .dot { opacity: .5; }
 html[data-theme="dark"] .sel-partidos .chip[aria-pressed="false"] { color: #949da7; }
 
 @media (max-width: 620px) {
-  .sel-titulo { margin-right: 0; }
+  .sel-titulo { margin-right: 0; flex-direction: column; align-items: flex-start; gap: 1px; }
   .sel-acciones { width: 100%; }
   .sel-acciones .chip { flex: 1 1 auto; justify-content: center; }
 }
