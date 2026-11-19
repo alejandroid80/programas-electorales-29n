@@ -185,6 +185,45 @@ Cosas que se hicieron para que la pagina se pueda tocar sin miedo:
   falla si no encuentra la raiz o si no ha revisado ningun fichero (para que un control no pueda
   pasar en verde sin haber mirado nada).
 
+## Bluesky
+
+Una cuenta en Bluesky difunde la web: una pieza al día, con una tarjeta dibujada a partir de
+los datos de la propia página.
+
+```bash
+node scripts/publicar-bluesky.mjs --listar     # el calendario de contenidos
+node scripts/publicar-bluesky.mjs --preview    # lo que se publicaría hoy, sin publicar
+node scripts/perfil-bluesky.mjs                # avatar, banner y bio del perfil
+```
+
+| Fichero | Qué hace |
+|---|---|
+| `scripts/tarjetas.mjs` | Dibuja las tarjetas en SVG y las convierte a PNG con ImageMagick. Los colores son los de la página y los datos, los de `assets/js/data.js`. |
+| `scripts/publicar-bluesky.mjs` | Elige la pieza del día, dibuja la tarjeta y la publica por la API de AT Protocol. |
+| `scripts/perfil-bluesky.mjs` | Escribe el avatar, el banner y los datos del perfil en la carpeta `perfil/`. |
+| `.github/workflows/publicar-bluesky.yml` | Lo ejecuta cada día a las 13:30 (hora de Madrid). |
+
+Tres tipos de pieza:
+
+1. **Un eje y cómo se reparten los 22 partidos** (las ocho).
+2. **Un partido en la posición en la que menos gente está** (las minorías de cada eje).
+3. **La estimación de voto del CIS**, que solo se publica **fuera** del periodo de prohibición
+   del artículo 69.7 de la LOREG.
+
+La pieza se elige por el día, así que el calendario es predecible y el workflow puede repetirse
+sin duplicar: antes de publicar, comprueba si ese texto ya está en el feed y, si está, no
+publica otra vez.
+
+**Las credenciales** son dos secretos del repositorio, nunca en el código:
+
+```bash
+gh secret set BSKY_HANDLE --repo alejandroid80/programas-electorales-29n
+gh secret set BSKY_APP_PASSWORD --repo alejandroid80/programas-electorales-29n
+```
+
+`BSKY_APP_PASSWORD` es la **contraseña de aplicación** (Ajustes → Contraseñas de aplicación), no
+la de la cuenta: así se puede revocar sin tocar el acceso.
+
 ## Estructura
 
 ```

@@ -2,6 +2,11 @@
 .tmp-cis-*.pdf
 .tmp-cis-parse-*.pdf
 
+# Material generado para las tarjetas y el perfil.
+.tmp-tarjeta/
+perfil/
+tarjetas/
+
 # Nada de esto se publica: la pagina es estatica.
 node_modules/
 .DS_Store

@@ -63,6 +63,9 @@
       box.innerHTML = '<div class="voto-vacio"><p><b>Los datos de las encuestas están cerrados</b></p>' +
         '<p>' + esc(window.ELECCIONES.aviso()) + '</p>' +
         '<p>Vuelven a estar visibles el domingo 29, con la última estimación publicada el lunes 23.</p></div>';
+      // El enlace al pactometro tampoco tiene sentido: tambien esta cerrado.
+      const enlace = document.querySelector('.voto-enlace-pacto');
+      if (enlace) enlace.hidden = true;
       return;
     }
 

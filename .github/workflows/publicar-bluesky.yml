@@ -1,0 +1,52 @@
+name: Publicar en Bluesky
+
+# Publica una pieza cada dia en la cuenta de Bluesky del proyecto.
+#
+#   node scripts/publicar-bluesky.mjs --preview   # ver lo que se publicaria
+#   node scripts/publicar-bluesky.mjs --listar     # ver el calendario entero
+#
+# El script elige la pieza por el dia, asi que se puede repetir sin miedo: si
+# el texto ya esta en el feed del autor, no publica otra vez.
+on:
+  schedule:
+    - cron: '30 12 * * *'   # 13:30 en Madrid
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: 'Publicar aunque esa pieza ya se haya publicado hoy'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publicar-bluesky
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ImageMagick convierte las tarjetas de SVG a PNG y las fuentes son las
+      # que se usan para escribir en ellas.
+      - name: Instalar ImageMagick y las fuentes
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq imagemagick fonts-liberation
+          magick -version | head -1
+          fc-list : family | grep -c Liberation
+
+      - name: Publicar
+        run: node scripts/publicar-bluesky.mjs
+        env:
+          BSKY_HANDLE: ${{ secrets.BSKY_HANDLE }}
+          BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
+          FORZAR: ${{ inputs.forzar && '1' || '0' }}
