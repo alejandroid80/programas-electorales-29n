@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-19T18:25:49.736Z",
+ "generado": "2026-11-20T03:51:18.605Z",
  "elecciones": "2026-11-29",
  "fuentes": [
   {
@@ -4054,6 +4054,81 @@
  "electomania": [
   {
    "fecha": "2026-11-19",
+   "titular": "Tracking 40dB (19 nov): \"ligera ventaja del PP y muy clara del bloque derechista\"",
+   "ficha": "40dB España 19/11/2026",
+   "sondeante": "40dB para El País",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-40db-19-nov-ligera-ventaja-del-pp-y-muy-clara-del-bloque-derechista/",
+   "muestra": null,
+   "v": {
+    "PP": 32.2,
+    "PSOE": 30.2,
+    "Vox": 17.6,
+    "Otros": 13.6,
+    "Frente Amplio": 3.6,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.7,
+    "Podemos": 1.1
+   },
+   "esc": {
+    "PP": 132,
+    "PSOE": 120,
+    "Vox": 58,
+    "Otros": 31,
+    "Frente Amplio": 5,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 4,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-19",
+   "titular": "Tracking Sigma Dos (19 nov): \"El PP coge fuerza a costa de Vox y Sánchez llega al cara a cara a 4p de Feijóo\"",
+   "ficha": "Sigma Dos España 19/11/2026",
+   "sondeante": "Sigma Dos para El Mundo",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sigma-dos-19-nov-pp-y-psoe-al-alza-mientras-vox-desciende/",
+   "muestra": null,
+   "v": {
+    "PP": 31,
+    "PSOE": 27.1,
+    "Vox": 19.4,
+    "Otros": 15.8,
+    "Frente Amplio": 7.1,
+    "Podemos": 0.8
+   },
+   "esc": {
+    "PP": 128,
+    "PSOE": 113,
+    "Vox": 62,
+    "Otros": 35,
+    "Frente Amplio": 12,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-19",
+   "titular": "Tracking SW Demoscopia (19 nov): subida del PP",
+   "ficha": "SW Demoscopia España 19/11/2026",
+   "sondeante": "SW Demoscopia para La Séptima",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sw-demoscopia-19-nov-subida-del-pp/",
+   "muestra": null,
+   "v": {
+    "PSOE": 31.8,
+    "PP": 29.2,
+    "Vox": 16.4,
+    "Otros": 15.3,
+    "Frente Amplio": 7.3
+   },
+   "esc": {
+    "PSOE": 133,
+    "PP": 120,
+    "Vox": 53,
+    "Otros": 33,
+    "Frente Amplio": 11
+   }
+  },
+  {
+   "fecha": "2026-11-19",
    "titular": "Tracking Data10 (19 nov): \"El PP sacar 5p al PSOE\"",
    "ficha": "Data10 España 19/11/2026",
    "sondeante": "Data10 para okdiario",
@@ -4329,87 +4404,12 @@
     "Se Acabó la Fiesta": 1,
     "Podemos": 2
    }
-  },
-  {
-   "fecha": "2026-11-17",
-   "titular": "Tracking 40dB (17 nov): \"Vox se frena y cede terreno al PP\"",
-   "ficha": "40dB España 17/11/2026",
-   "sondeante": "40dB para El País",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-40db-17-nov-vox-se-frena-y-cede-terreno-al-pp/",
-   "muestra": null,
-   "v": {
-    "PP": 31.8,
-    "PSOE": 30.6,
-    "Vox": 17.5,
-    "Otros": 13.6,
-    "Frente Amplio": 3.7,
-    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.7,
-    "Podemos": 1.1
-   },
-   "esc": {
-    "PP": 133,
-    "PSOE": 120,
-    "Vox": 58,
-    "Otros": 39,
-    "Frente Amplio": 5,
-    "Otras coaliciones izq. (CHA / UPC / AraMés)": 5,
-    "Podemos": 0
-   }
-  },
-  {
-   "fecha": "2026-11-16",
-   "titular": "Tracking Sigma Dos (16 nov): \"El PSOE hunde todavía más al Frente Amplio y se coloca a menos de cinco puntos del PP\"",
-   "ficha": "Sigma Dos España 16/11/2026",
-   "sondeante": "Sigma Dos para El Mundo",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sigma-dos-16-nov-el-psoe-hunde-todavia-mas-al-frente-amplio-y-se-coloca-a-menos-de-cinco-puntos-del-pp/",
-   "muestra": null,
-   "v": {
-    "PP": 30.8,
-    "PSOE": 26.1,
-    "Vox": 19.8,
-    "Otros": 15.2,
-    "Frente Amplio": 6.7,
-    "Podemos": 1.4
-   },
-   "esc": {
-    "PP": 126,
-    "PSOE": 110,
-    "Vox": 66,
-    "Otros": 34,
-    "Frente Amplio": 14,
-    "Podemos": 0
-   }
-  },
-  {
-   "fecha": "2026-11-16",
-   "titular": "Tracking SW Demoscopia (16 nov): \"PP y Vox tendrían que incorporar a Junts para conseguir la mayoría\"",
-   "ficha": "SW Demoscopia España 16/11/2026",
-   "sondeante": "SW Demoscopia para La Séptima",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sw-demoscopia-16-nov-pp-y-vox-tendrian-que-incorporar-a-junts-para-conseguir-la-mayoria/",
-   "muestra": null,
-   "v": {
-    "PSOE": 31.8,
-    "PP": 28.6,
-    "Vox": 16.8,
-    "Otros": 15.4,
-    "Frente Amplio": 7.4
-   },
-   "esc": {
-    "PSOE": 134,
-    "PP": 115,
-    "Vox": 57,
-    "Otros": 33,
-    "Frente Amplio": 11
-   }
   }
  ],
  "preelectoral": {
   "estudio": 3584,
   "titulo": "Preelectoral elecciones generales 2026",
-  "actualizado": "2026-11-19",
+  "actualizado": "2026-11-20",
   "url": "https://www.cis.es/documents/d/guest/3584_estimacion-pdf",
   "mayoria": 176,
   "XL": 350,
