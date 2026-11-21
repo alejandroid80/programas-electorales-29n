@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-20T03:51:18.605Z",
+ "generado": "2026-11-21T03:43:34.769Z",
  "elecciones": "2026-11-29",
  "fuentes": [
   {
@@ -66,9 +66,9 @@
     "color": "#6c737c"
    }
   ],
-  "actualizado": "2026-11-15",
+  "actualizado": "2026-11-20",
   "elecciones": "2026-11-29",
-  "total": 122,
+  "total": 137,
   "fuente": "Datos recopilados a partir de una selección de las principales encuestas publicadas en los medios",
   "promedios": [
    {
@@ -269,20 +269,244 @@
    },
    {
     "mes": "2026-11",
-    "n": 22,
+    "n": 37,
     "v": {
-     "pp": 31.04,
-     "psoe": 27.25,
-     "vox": 18.82,
+     "pp": 30.96,
+     "psoe": 27.6,
+     "vox": 18.75,
      "sumar": null,
-     "fa": 6.97,
-     "podemos": 1.76,
-     "salf": 1.86,
-     "otros": 12.81
+     "fa": 6.87,
+     "podemos": 1.6,
+     "salf": 1.92,
+     "otros": 12.99
     }
    }
   ],
   "encuestas": [
+   {
+    "medio": "La Voz de Galicia",
+    "fuente": "Sondaxe",
+    "pub": "2026-11-20",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.3,
+     "psoe": 27.8,
+     "vox": 19.7,
+     "sumar": null,
+     "fa": 6.9,
+     "podemos": 0.9,
+     "salf": null,
+     "otros": 15.4
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-11-19",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.2,
+     "psoe": 27.1,
+     "vox": 19.4,
+     "sumar": null,
+     "fa": 7.1,
+     "podemos": 0.8,
+     "salf": null,
+     "otros": 14.4
+    }
+   },
+   {
+    "medio": "La Séptima",
+    "fuente": "SW Demoscopia",
+    "pub": "2026-11-19",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.4,
+     "psoe": 31.8,
+     "vox": 16.4,
+     "sumar": null,
+     "fa": 7.3,
+     "podemos": 1.6,
+     "salf": 2,
+     "otros": 11.5
+    }
+   },
+   {
+    "medio": "POLITICO",
+    "fuente": "PF Global",
+    "pub": "2026-11-19",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.7,
+     "psoe": 27.2,
+     "vox": 19.6,
+     "sumar": null,
+     "fa": 5.9,
+     "podemos": 2.2,
+     "salf": 2,
+     "otros": 13.4
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-11-19",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.2,
+     "psoe": 30.2,
+     "vox": 17.6,
+     "sumar": null,
+     "fa": 5.3,
+     "podemos": 1.1,
+     "salf": 1.7,
+     "otros": 11.9
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-11-18",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.9,
+     "psoe": 26.7,
+     "vox": 19.7,
+     "sumar": null,
+     "fa": 6.9,
+     "podemos": 0.8,
+     "salf": null,
+     "otros": 15
+    }
+   },
+   {
+    "medio": "La Voz de Galicia",
+    "fuente": "Sondaxe",
+    "pub": "2026-11-17",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 29.7,
+     "psoe": 26.7,
+     "vox": 18,
+     "sumar": null,
+     "fa": 7.7,
+     "podemos": 2.1,
+     "salf": 3,
+     "otros": 12.8
+    }
+   },
+   {
+    "medio": "La Séptima",
+    "fuente": "SW Demoscopia",
+    "pub": "2026-11-17",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 28.8,
+     "psoe": 31.8,
+     "vox": 16.8,
+     "sumar": null,
+     "fa": 7.4,
+     "podemos": 1.7,
+     "salf": 2,
+     "otros": 11.5
+    }
+   },
+   {
+    "medio": "El Debate",
+    "fuente": "Target Point",
+    "pub": "2026-11-16",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 30.6,
+     "psoe": 27,
+     "vox": 18.7,
+     "sumar": null,
+     "fa": 7.3,
+     "podemos": 1.6,
+     "salf": 2.1,
+     "otros": 12.7
+    }
+   },
+   {
+    "medio": "El Mundo",
+    "fuente": "Sigma Dos",
+    "pub": "2026-11-16",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31,
+     "psoe": 26.1,
+     "vox": 19.8,
+     "sumar": null,
+     "fa": 6.7,
+     "podemos": 1.4,
+     "salf": null,
+     "otros": 15
+    }
+   },
+   {
+    "medio": "La Razón",
+    "fuente": "NC Report",
+    "pub": "2026-11-16",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.5,
+     "psoe": 26.1,
+     "vox": 19,
+     "sumar": null,
+     "fa": 7.6,
+     "podemos": 1.5,
+     "salf": null,
+     "otros": 13.3
+    }
+   },
+   {
+    "medio": "La Sexta",
+    "fuente": "Invymark",
+    "pub": "2026-11-16",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.2,
+     "psoe": 28.2,
+     "vox": 19.1,
+     "sumar": null,
+     "fa": 6.4,
+     "podemos": null,
+     "salf": null,
+     "otros": 14.1
+    }
+   },
+   {
+    "medio": "El Confidencial",
+    "fuente": "IMOP Insights",
+    "pub": "2026-11-16",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.5,
+     "psoe": 26.9,
+     "vox": 19,
+     "sumar": null,
+     "fa": 6.9,
+     "podemos": 0.9,
+     "salf": 1.6,
+     "otros": 13.2
+    }
+   },
+   {
+    "medio": "El País y Cadena SER",
+    "fuente": "40dB",
+    "pub": "2026-11-16",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 31.5,
+     "psoe": 30.3,
+     "vox": 18,
+     "sumar": null,
+     "fa": 5.4,
+     "podemos": 1.1,
+     "salf": 1.7,
+     "otros": 12
+    }
+   },
    {
     "medio": "Ara",
     "fuente": "YouGov",
@@ -313,6 +537,22 @@
      "podemos": 2.2,
      "salf": 1.6,
      "otros": 14.4
+    }
+   },
+   {
+    "medio": "El Español",
+    "fuente": "Sociométrica",
+    "pub": "2026-11-15",
+    "url": "https://www.ondacero.es/elecciones/generales/encuestas/",
+    "v": {
+     "pp": 32.1,
+     "psoe": 27.8,
+     "vox": 19.1,
+     "sumar": null,
+     "fa": 6,
+     "podemos": 1.2,
+     "salf": 2.2,
+     "otros": 12.6
     }
    },
    {
@@ -2242,33 +2482,16 @@
     "medios": [
      "El Mundo"
     ],
-    "n": 19,
+    "n": 22,
     "d": {
      "pp": 0.2,
-     "psoe": -0.6,
-     "vox": -0.1,
+     "psoe": -0.7,
+     "vox": 0,
      "sumar": 1.1,
-     "fa": 0.8,
-     "podemos": 0.2,
+     "fa": 0.5,
+     "podemos": 0.1,
      "salf": -0.5,
-     "otros": 0.2
-    }
-   },
-   {
-    "fuente": "Sociométrica",
-    "medios": [
-     "El Español"
-    ],
-    "n": 17,
-    "d": {
-     "pp": 0.9,
-     "psoe": -0.5,
-     "vox": -0.3,
-     "sumar": -0.1,
-     "fa": -1.1,
-     "podemos": -0.2,
-     "salf": 0.4,
-     "otros": -0.5
+     "otros": 0.4
     }
    },
    {
@@ -2276,16 +2499,33 @@
     "medios": [
      "El País y Cadena SER"
     ],
-    "n": 16,
+    "n": 18,
     "d": {
-     "pp": -0.9,
-     "psoe": 1.2,
-     "vox": -0.1,
+     "pp": -0.6,
+     "psoe": 1.3,
+     "vox": -0.2,
      "sumar": -0.3,
-     "fa": -1.8,
+     "fa": -1.6,
      "podemos": -0.5,
-     "salf": 0.1,
-     "otros": 0.1
+     "salf": 0,
+     "otros": 0
+    }
+   },
+   {
+    "fuente": "Sociométrica",
+    "medios": [
+     "El Español"
+    ],
+    "n": 18,
+    "d": {
+     "pp": 0.9,
+     "psoe": -0.5,
+     "vox": -0.3,
+     "sumar": -0.1,
+     "fa": -1,
+     "podemos": -0.2,
+     "salf": 0.3,
+     "otros": -0.5
     }
    },
    {
@@ -2293,16 +2533,16 @@
     "medios": [
      "La Razón"
     ],
-    "n": 14,
+    "n": 15,
     "d": {
      "pp": 1.6,
-     "psoe": -1,
+     "psoe": -1.1,
      "vox": -0.1,
      "sumar": -0.7,
-     "fa": -0.3,
+     "fa": 0,
      "podemos": 0.5,
      "salf": 0.3,
-     "otros": 0.7
+     "otros": 0.6
     }
    },
    {
@@ -2310,16 +2550,16 @@
     "medios": [
      "El Debate"
     ],
-    "n": 11,
+    "n": 12,
     "d": {
      "pp": -1.1,
-     "psoe": -0.4,
-     "vox": 0.9,
+     "psoe": -0.5,
+     "vox": 0.8,
      "sumar": 0.4,
-     "fa": -0.4,
+     "fa": 0.1,
      "podemos": -0.1,
      "salf": 0.3,
-     "otros": -0.2
+     "otros": -0.3
     }
    },
    {
@@ -2333,7 +2573,7 @@
      "psoe": 0.3,
      "vox": -0.9,
      "sumar": -1.2,
-     "fa": -1.4,
+     "fa": -1.3,
      "podemos": 0.3,
      "salf": -1.1,
      "otros": 0.7
@@ -2344,16 +2584,16 @@
     "medios": [
      "La Sexta"
     ],
-    "n": 7,
+    "n": 8,
     "d": {
      "pp": 0.8,
      "psoe": 0.7,
      "vox": 0.3,
      "sumar": -0.6,
-     "fa": null,
+     "fa": -0.5,
      "podemos": 0.2,
      "salf": -0.2,
-     "otros": -1.5
+     "otros": -1.2
     }
    },
    {
@@ -2364,13 +2604,47 @@
     "n": 5,
     "d": {
      "pp": -0.7,
-     "psoe": -0.2,
+     "psoe": -0.3,
      "vox": 0.2,
      "sumar": 0.6,
-     "fa": -0.1,
+     "fa": 0,
      "podemos": -0.2,
-     "salf": -0.2,
-     "otros": 0.6
+     "salf": -0.3,
+     "otros": 0.5
+    }
+   },
+   {
+    "fuente": "SW Demoscopia",
+    "medios": [
+     "La Séptima"
+    ],
+    "n": 5,
+    "d": {
+     "pp": -2.1,
+     "psoe": 3.8,
+     "vox": -1.8,
+     "sumar": null,
+     "fa": 0.6,
+     "podemos": 0.1,
+     "salf": 0.1,
+     "otros": -1.4
+    }
+   },
+   {
+    "fuente": "Sondaxe",
+    "medios": [
+     "La Voz de Galicia"
+    ],
+    "n": 5,
+    "d": {
+     "pp": -1.2,
+     "psoe": -0.6,
+     "vox": 0,
+     "sumar": null,
+     "fa": 0.2,
+     "podemos": 0.3,
+     "salf": 0.2,
+     "otros": 0.8
     }
    },
    {
@@ -2381,13 +2655,13 @@
     "n": 4,
     "d": {
      "pp": -0.2,
-     "psoe": 1,
+     "psoe": 0.9,
      "vox": 0.6,
      "sumar": 0.6,
-     "fa": -0.8,
-     "podemos": 0,
+     "fa": -0.7,
+     "podemos": 0.1,
      "salf": -0.2,
-     "otros": -0.7
+     "otros": -0.8
     }
    },
    {
@@ -2409,71 +2683,37 @@
     }
    },
    {
-    "fuente": "Celeste Tel",
-    "medios": [
-     "Onda Cero"
-    ],
-    "n": 3,
-    "d": {
-     "pp": 0.8,
-     "psoe": -1,
-     "vox": -0.4,
-     "sumar": -0.7,
-     "fa": 1,
-     "podemos": 0.3,
-     "salf": -0.1,
-     "otros": 0.1
-    }
-   },
-   {
     "fuente": "IMOP Insights",
     "medios": [
      "El Confidencial"
     ],
-    "n": 3,
+    "n": 4,
     "d": {
-     "pp": -2,
-     "psoe": -0.3,
-     "vox": 0.8,
+     "pp": -1.4,
+     "psoe": -0.5,
+     "vox": 0.7,
      "sumar": 1.2,
-     "fa": 1.3,
+     "fa": 0.9,
      "podemos": -0.6,
      "salf": -0.2,
      "otros": 0.2
     }
    },
    {
-    "fuente": "SW Demoscopia",
+    "fuente": "Celeste Tel",
     "medios": [
-     "La Séptima"
+     "Onda Cero"
     ],
     "n": 3,
     "d": {
-     "pp": -2.4,
-     "psoe": 3.9,
-     "vox": -1.6,
-     "sumar": null,
-     "fa": 0.6,
-     "podemos": 0,
-     "salf": 0.2,
-     "otros": -1.2
-    }
-   },
-   {
-    "fuente": "Sondaxe",
-    "medios": [
-     "La Voz de Galicia"
-    ],
-    "n": 3,
-    "d": {
-     "pp": -1.1,
-     "psoe": -0.4,
-     "vox": -0.2,
-     "sumar": null,
-     "fa": -0.1,
-     "podemos": 0.4,
-     "salf": 0,
-     "otros": 0.9
+     "pp": 0.9,
+     "psoe": -1.1,
+     "vox": -0.4,
+     "sumar": -0.7,
+     "fa": 1.1,
+     "podemos": 0.3,
+     "salf": -0.1,
+     "otros": 0.1
     }
    },
    {
@@ -4053,6 +4293,158 @@
  },
  "electomania": [
   {
+   "fecha": "2026-11-20",
+   "titular": "Tracking Sigma Dos (20 nov): \"El cara a cara impulsa a Feijóo a su mejor dato desde que arrancó la campaña y lo consolida ante Vox\"",
+   "ficha": "Sigma Dos España 20/11/2026",
+   "sondeante": "Sigma Dos para El Mundo",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sigma-dos-20-nov-el-psoe-recorta-la-distancia-con-el-pp-vox-cae/",
+   "muestra": null,
+   "v": {
+    "PP": 31.2,
+    "PSOE": 27.6,
+    "Vox": 18.9,
+    "Frente Amplio": 7.1,
+    "ERC": 2.5,
+    "Adelante Andalucía": 1.7,
+    "EH Bildu": 1.6,
+    "Junts": 1.3,
+    "BNG": 1.1,
+    "PNV": 1,
+    "Podemos": 0.8,
+    "CC": 0.4
+   },
+   "esc": {
+    "PP": 129,
+    "PSOE": 115,
+    "Vox": 60,
+    "Frente Amplio": 12,
+    "ERC": 10,
+    "Adelante Andalucía": 4,
+    "EH Bildu": 7,
+    "Junts": 5,
+    "BNG": 2,
+    "PNV": 5,
+    "Podemos": 0,
+    "CC": 1
+   }
+  },
+  {
+   "fecha": "2026-11-20",
+   "titular": "Tracking SW Demoscopia (20 nov): \"PP y Vox sumarían mayoría con CC y UPN\"",
+   "ficha": "SW Demoscopia España 20/11/2026",
+   "sondeante": "SW Demoscopia para La Séptima",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sw-demoscopia-20-nov-pp-y-vox-sumarian-mayoria-con-cc-y-upn/",
+   "muestra": null,
+   "v": {
+    "PSOE": 32.1,
+    "PP": 29.4,
+    "Vox": 16.3,
+    "Otros": 15.3,
+    "Frente Amplio": 6.9
+   },
+   "esc": {
+    "PSOE": 134,
+    "PP": 120,
+    "Vox": 53,
+    "Otros": 33,
+    "Frente Amplio": 10
+   }
+  },
+  {
+   "fecha": "2026-11-20",
+   "titular": "Tracking Data10 (20 nov): \"Feijóo roba 70.000 votantes a Sánchez, 120.000 a Vox, 150.000 de la abstención y el PP sube 8 escaños\"",
+   "ficha": "Data10 España 20/11/2026",
+   "sondeante": "Data10 para okdiario",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-data10-20-nov-feijoo-roba-70-000-votantes-a-sanchez-120-000-a-vox-150-000-de-la-abstencion-y-el-pp-sube-8-escanos/",
+   "muestra": null,
+   "v": {
+    "PP": 32.5,
+    "PSOE": 26.5,
+    "Vox": 18.8,
+    "Otros": 15.4,
+    "Frente Amplio": 6.8
+   },
+   "esc": {
+    "PP": 137,
+    "PSOE": 106,
+    "Vox": 62,
+    "Otros": 33,
+    "Frente Amplio": 12
+   }
+  },
+  {
+   "fecha": "2026-11-20",
+   "titular": "Tracking 40dB (20 nov): \"La distancia entre PP y PSOE se estrecha al mínimo pese a la victoria de Feijóo en el debate\"",
+   "ficha": "40dB España 20/11/2026",
+   "sondeante": "40dB para El País",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-40db-20-nov-la-distancia-entre-pp-y-psoe-se-estrecha-al-minimo-pese-a-la-victoria-de-feijoo-en-el-debate/",
+   "muestra": null,
+   "v": {
+    "PP": 31.9,
+    "PSOE": 31.2,
+    "Vox": 17.1,
+    "Otros": 13.1,
+    "Frente Amplio": 3.8,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.8,
+    "Podemos": 1.1
+   },
+   "esc": {
+    "PP": 133,
+    "PSOE": 124,
+    "Vox": 56,
+    "Otros": 29,
+    "Frente Amplio": 5,
+    "Otras coaliciones izq. (CHA / UPC / AraMés)": 3,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-20",
+   "titular": "Encuesta More In Common (20 nov): \"La derecha mantiene una clara ventaja\"",
+   "ficha": "More In Common España 20/11/2026",
+   "sondeante": "More In Common",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/encuesta-more-in-common-20-nov-la-derecha-mantiene-una-clara-ventaja/",
+   "muestra": null,
+   "v": {
+    "PP": 28.9,
+    "PSOE": 28,
+    "Vox": 19.8,
+    "Otros": 12.2,
+    "Frente Amplio": 7.1,
+    "Se Acabó la Fiesta": 2.3,
+    "Podemos": 1.7
+   },
+   "esc": {}
+  },
+  {
+   "fecha": "2026-11-20",
+   "titular": "Tracking Sondaxe (19 nov): \"Feijoo repunta por primera vez en campaña antes del debate con Sánchez\"",
+   "ficha": "Sondaxe España 20/11/2026",
+   "sondeante": "Sondaxe para La Voz de Galicia",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sondaxe-19-nov-feijoo-repunta-por-primera-vez-en-campana-antes-del-debate-con-sanchez/",
+   "muestra": null,
+   "v": {
+    "PP": 29.3,
+    "PSOE": 27.8,
+    "Vox": 19.7,
+    "Otros": 16.3,
+    "Frente Amplio": 6.9
+   },
+   "esc": {
+    "PP": 123,
+    "PSOE": 110,
+    "Vox": 70,
+    "Otros": 35,
+    "Frente Amplio": 12
+   }
+  },
+  {
    "fecha": "2026-11-19",
    "titular": "Tracking 40dB (19 nov): \"ligera ventaja del PP y muy clara del bloque derechista\"",
    "ficha": "40dB España 19/11/2026",
@@ -4261,155 +4653,12 @@
     "Frente Amplio": 12,
     "Podemos": 0
    }
-  },
-  {
-   "fecha": "2026-11-18",
-   "titular": "Tracking SW Demoscopia (18 nov): \"PP y Vox no suman\"",
-   "ficha": "SW Demoscopia España 18/11/2026",
-   "sondeante": "SW Demoscopia para La Séptima",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sw-demoscopia-18-nov-pp-y-vox-no-suman/",
-   "muestra": null,
-   "v": {
-    "PSOE": 31.9,
-    "PP": 29.1,
-    "Vox": 16.4,
-    "Otros": 15.3,
-    "Frente Amplio": 7.3
-   },
-   "esc": {
-    "PSOE": 134,
-    "PP": 118,
-    "Vox": 53,
-    "Otros": 33,
-    "Frente Amplio": 12
-   }
-  },
-  {
-   "fecha": "2026-11-18",
-   "titular": "Tracking Sondaxe (18 nov): \"PP y PSOE lanzan la llamada al voto útil con la diferencia más estrecha entre ambos\"",
-   "ficha": "Sondaxe España 18/11/2026",
-   "sondeante": "Sondaxe para La Voz de Galicia",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sondaxe-18-nov-pp-y-psoe-lanzan-la-llamada-al-voto-util-con-la-diferencia-mas-estrecha-entre-ambos/",
-   "muestra": null,
-   "v": {
-    "PP": 29,
-    "PSOE": 27,
-    "Vox": 19.4,
-    "Otros": 17.8,
-    "Frente Amplio": 5.5,
-    "Podemos": 1.2
-   },
-   "esc": {}
-  },
-  {
-   "fecha": "2026-11-18",
-   "titular": "Tracking 40dB (18 nov): \"El PP consolida su posición frente a Vox\"",
-   "ficha": "40dB España 18/11/2026",
-   "sondeante": "40dB para El País",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-40db-18-nov-el-pp-consolida-su-posicion-frente-a-vox/",
-   "muestra": null,
-   "v": {
-    "PP": 32.2,
-    "PSOE": 30.7,
-    "Vox": 17,
-    "Otros": 15.4,
-    "Frente Amplio": 3.5,
-    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.7,
-    "Podemos": 1.2
-   },
-   "esc": {
-    "PP": 133,
-    "PSOE": 122,
-    "Vox": 55,
-    "Otros": 30,
-    "Frente Amplio": 5,
-    "Otras coaliciones izq. (CHA / UPC / AraMés)": 5,
-    "Podemos": 0
-   }
-  },
-  {
-   "fecha": "2026-11-17",
-   "titular": "Tracking Sigma Dos (17 nov): \"Sánchez esquilma a toda la izquierda: Podemos se aleja del escaño y Colau ya roza los 10 diputados\"",
-   "ficha": "Sigma Dos España 17/11/2026",
-   "sondeante": "Sigma Dos para El Mundo",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sigma-dos-17-nov-sanchez-esquilma-a-toda-la-izquierda-podemos-se-aleja-del-escano-y-colau-ya-roza-los-10-diputados/",
-   "muestra": null,
-   "v": {
-    "PP": 30.7,
-    "PSOE": 26.4,
-    "Vox": 19.8,
-    "Otros": 15.2,
-    "Frente Amplio": 6.7,
-    "Podemos": 1.2
-   },
-   "esc": {
-    "PP": 126,
-    "PSOE": 111,
-    "Vox": 65,
-    "Otros": 36,
-    "Frente Amplio": 11,
-    "Podemos": 0
-   }
-  },
-  {
-   "fecha": "2026-11-17",
-   "titular": "Tracking SW Demoscopia (17 nov): \"El PP sube, pero a costa de Vox\"",
-   "ficha": "SW Demoscopia España 17/11/2026",
-   "sondeante": "SW Demoscopia para La Séptima",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sw-demoscopia-17-nov-el-pp-sube-pero-a-costa-de-vox/",
-   "muestra": null,
-   "v": {
-    "PSOE": 31.9,
-    "PP": 28.9,
-    "Vox": 16.5,
-    "Otros": 15.4,
-    "Frente Amplio": 7.3
-   },
-   "esc": {
-    "PSOE": 134,
-    "PP": 118,
-    "Vox": 54,
-    "Otros": 33,
-    "Frente Amplio": 11
-   }
-  },
-  {
-   "fecha": "2026-11-17",
-   "titular": "Tracking Sondaxe (17 nov): \"la derecha mantiene distancia sobre la absoluta pese a la subida del PSOE\"",
-   "ficha": "Sondaxe España 17/11/2026",
-   "sondeante": "Sondaxe para La Voz de Galicia",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sondaxe-17-nov-la-derecha-mantiene-distancia-sobre-la-absoluta-pese-a-la-subida-del-psoe/",
-   "muestra": null,
-   "v": {
-    "PP": 29.7,
-    "PSOE": 26.7,
-    "Vox": 18,
-    "Otros": 13.3,
-    "Frente Amplio*": 7.2,
-    "Se Acabó la Fiesta": 3,
-    "Podemos": 2.1
-   },
-   "esc": {
-    "PP": 125,
-    "PSOE": 112,
-    "Vox": 66,
-    "Otros": 32,
-    "Frente Amplio*": 12,
-    "Se Acabó la Fiesta": 1,
-    "Podemos": 2
-   }
   }
  ],
  "preelectoral": {
   "estudio": 3584,
   "titulo": "Preelectoral elecciones generales 2026",
-  "actualizado": "2026-11-20",
+  "actualizado": "2026-11-21",
   "url": "https://www.cis.es/documents/d/guest/3584_estimacion-pdf",
   "mayoria": 176,
   "XL": 350,
