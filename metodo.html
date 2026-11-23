@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Método y Fuentes 29N 2026</title>
+<meta name="description" content="Método y Fuentes: de dónde sale todo lo de la comparativa de los programas electorales del 29N de 2026.">
+<meta name="theme-color" content="#faf7f2">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://countapi.mileshilliard.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Método y Fuentes 29N 2026">
+<meta property="og:description" content="Método y Fuentes: de dónde sale todo lo de la comparativa de los programas electorales del 29N de 2026.">
+<meta property="og:locale" content="es_ES">
+<link rel="stylesheet" href="assets/css/fonts.css?v=33">
+<link rel="stylesheet" href="assets/css/style.css?v=33">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23a41f33'/><path d='M28 40h44M28 52h44M28 64h28' stroke='white' stroke-width='7' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">    <a class="brand" href="index.html"><b>29N · 2026</b><span>Método</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="index.html">Inicio</a>
+      <a href="fichas.html">Fichas</a>
+      <a href="matriz.html">Matriz</a>
+      <a href="temas.html">Diferencias</a>
+      <a href="pacto.html">Pactómetro</a>
+      <a href="voto.html">Intención de Voto</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="metodo.html">Método</a>
+    </nav>
+    <a class="topbar-cta" href="comparador.html">Tabla para compartir</a>
+    <span class="visits" id="visits" hidden title="Visitas a esta página">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      <b id="visitsN">—</b> <span id="visitsWord">visitas</span>
+    </span>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar a tema oscuro" aria-pressed="false">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M21.4 12h-2.2M4.8 12H2.6M18.6 5.4l-1.6 1.6M7 17l-1.6 1.6M18.6 18.6 17 17M7 7 5.4 5.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="wrap">
+    <section class="hero">
+      <h1>De dónde salen los datos</h1>
+      <p class="lead">Sin método, una comparativa electoral no deja de ser una impresión personal. Aquí está explicado todo lo que hay detrás.</p>
+
+    </section>
+  </div>
+<div class="wrap">
+    <section id="metodo">
+      <div class="sec-head">
+        <h2>De dónde sale todo lo de aquí</h2>
+        <p>Sin esto, una comparativa electoral no deja de ser una impresión personal.</p>
+      </div>
+
+      <div class="method">
+        <div class="mbox">
+          <h3>La fuente primaria</h3>
+          <p>
+            El repositorio de <a href="https://github.com/jynus/programas-electorales-29n-generales-2026" target="_blank" rel="noopener">jynus</a>
+            convierte a <code>.rst</code> el PDF original de cada programa (o su web, cuando el partido no publicó PDF) y verifica
+            el texto carácter a carácter contra el original, con sumas SHA-256 de cada PDF.
+          </p>
+          <p>Cada ficha enlaza directamente al <code>.rst</code> correspondiente.</p>
+        </div>
+        <div class="mbox">
+          <h3>Qué se ha resumido</h3>
+          <ul>
+            <li>Los <b>puntos fuertes</b> reproducen propuestas concretas y verificables del programa (cifras, plazos, trabas legales).</li>
+            <li>Las <b>posiciones por eje</b> son una clasificación de lectura: agrupan programas que, en ese tema concreto, comparten enfoque.</li>
+            <li>Cuando un partido no aborda un tema, se dice explícitamente en lugar de inventar una posición.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>Cuentas que no cuadran entre sí</h3>
+          <ul>
+            <li>Hay <b>22 partidos</b> y <b>24 ficheros <code>.rst</code></b>: EH Bildu, ERC y el PNV publican su programa en dos idiomas.</li>
+            <li>Los programas van de <b>617 a 51.399 palabras</b>. No son directamente comparables en detalle.</li>
+            <li>Por eso cada ficha indica el <b>perfil</b> del programa: manifiesto, contrato electoral, por capítulos, por áreas o plan con fuentes.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>Los idiomas de los originales</h3>
+          <ul>
+            <li>BNG publica su programa en <b>gallego</b>, ERC y Compromís-Front en <b>catalán</b>, EH Bildu y el PNV en <b>euskera</b> y castellano.</li>
+            <li><b>Todos los resúmenes de esta página están en castellano</b>, también los de esos partidos. Cuando el título del programa está en otra lengua, se muestra el traducido y, debajo, el original.</li>
+            <li>La interfaz y las etiquetas de esta página están siempre en castellano.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>De dónde sale la intención de voto</h3>
+          <ul>
+            <li><b>Medios</b>: el agregado de Onda Cero, que reúne las encuestas publicadas en ABC, El País, El Mundo, El Español, El Confidencial, La Vanguardia, La Razón, Onda Cero y una docena más, con su efecto casa.</li>
+            <li><b>CIS</b>: la estimación oficial de los barómetros mensuales, transcrita de la serie abierta de <a href="https://gastiaso.github.io/barometros/" target="_blank" rel="noopener">Barómetro a barómetro</a> (CC BY 4.0).</li>
+            <li><b>Electomanía</b>: la ficha de cada encuesta con su reparto de escaños y su encuestadora (CC BY 4.0).</li>
+            <li>Un bot las recoge cada día y escribe <code>data/voting-intention.json</code>. Si una fuente falla, se conserva el dato anterior y se avisa: nunca se rellena con ceros.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>El pactómetro y sus límites</h3>
+          <ul>
+            <li>El reparto de escaños sale de la <b>encuesta preelectoral del CIS</b> (estudio 3584, 45.074 entrevistas), la única fuente que reparte diputados por partido. El bot la lee del PDF del CIS cada día.</li>
+            <li>El CIS advierte de su propia estimación que <b>las horquillas no se suman</b>: son percentiles de su modelo, no intervalos de confianza. El pactómetro suma los puntos medios y enseña el rango solo como referencia.</li>
+            <li>La mayoría absoluta son <b>176 de 350</b>. Cuando el bloque no llega pero es el más numeroso, se indica que tiene mayoría simple y se nombra al rival más fuerte.</li>
+            <li>No es una predicción: es un cálculo sobre la estimación del CIS de octubre de 2026.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>El contador de visitas</h3>
+          <ul>
+            <li>Cuenta una visita cada 12 horas por navegador y solo guarda un número: ni cookies, ni perfiles, ni identificadores.</li>
+            <li>El total que ves es la <b>base histórica</b> que está en el repositorio más el valor del servicio en este momento.</li>
+            <li>Por publicar un cambio no pone el contador a cero: la base no se toca nunca. Si algún día hay que reiniciar el servicio, lo que se pierda se suma a la base antes.</li>
+            <li>Y para que el número <b>nunca baje</b>, aunque alguien reinicie el servicio por su cuenta, se guarda también el total más alto que se ha visto y se enseña ese mientras el contador no lo supera.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>Lo que esta página no es</h3>
+          <ul>
+            <li>No es una predicción electoral ni un sondeo.</li>
+            <li>No valora la viabilidad de las propuestas.</li>
+            <li>No es un resumen oficial de los partidos: es una lectura de sus textos.</li>
+            <li>Los programas se publicaron en distintas fechas y con distinta extensión; el detalle de cada uno no es directamente comparable.</li>
+          </ul>
+        </div>
+        <div class="mbox">
+          <h3>Los originales y el control de calidad</h3>
+          <ul>
+            <li><code>programas_electorales/</code>: los 24 ficheros <code>.rst</code> verificados.</li>
+            <li><code>documentos_originales/</code>: los PDF de origen con sus sumas SHA-256.</li>
+            <li><code>scripts/check-data.js</code>: comprueba que ningún texto se corrompe y que las cifras coinciden con el repositorio.</li>
+          </ul>
+          <p style="margin-top:10px"><a href="https://github.com/jynus/programas-electorales-29n-generales-2026/tree/main/programas_electorales" target="_blank" rel="noopener">Ver los 24 programas en el repositorio →</a></p>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Una advertencia sobre el formato.</strong> Los programas van de 617 palabras (Feministas al Congreso) a 51.399 (Podemos),
+        y hay cinco perfiles muy distintos: manifiestos breves, contratos electorales con compromisos numerados, programas por capítulos,
+        programas por áreas y planes de área con fuentes citadas. Comparar el detalle de un bloque de 150 páginas con el de dos páginas
+        puede inducir a error: por aquí se resumen las <em>propuestas</em>, no el número de páginas.
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap fcols">
+    <div>
+      Resumen elaborado a partir de los programas electorales del 29N de 2026 publicados por los partidos y verificados en
+      <a href="https://github.com/jynus/programas-electorales-29n-generales-2026" target="_blank" rel="noopener">github.com/jynus/programas-electorales-29n-generales-2026</a>.
+    </div>
+    <div>Sin cookies, sin perfiles y sin analítica. Las tipografías están en este mismo servidor, así que no se pide nada a terceros. La única excepción es el contador de visitas: consulta un servicio externo que ve la IP de quien entra, como en cualquier petición web. · <span id="year"></span></div>
+  </div>
+</footer>
+
+<script src="assets/js/elecciones.js?v=33"></script>
+<script src="assets/js/data.js?v=33"></script>
+</body>
+</html>

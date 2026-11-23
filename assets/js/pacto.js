@@ -267,41 +267,7 @@
           '<li>El CIS dice de su propia estimación que <b>las horquillas no se suman</b>: son percentiles de su modelo, no intervalos de confianza, y la suma de dos no da la horquilla del bloque. Aquí se suman los puntos medios y se enseña el rango solo como referencia.</li>' +
           '<li>Esto <b>no es una predicción</b>, sino un cálculo sobre la estimación del CIS de octubre de 2026. Y recordemos que el CIS cuenta a ERC y Podemos juntos en Cataluña y aparte en el resto.</li>' +
         '</ul>' +
-      '</div>' +
-
-      tablaParejas();
-  }
-
-  /* ------------------------------- que combinaciones llegan a mayoría */
-  function tablaParejas() {
-    const conEsca = PARTIDOS.filter((p) => p.escaMedio != null);
-    const pares = [];
-    for (let i = 0; i < conEsca.length; i++) {
-      for (let j = i + 1; j < conEsca.length; j++) {
-        const a = conEsca[i], b = conEsca[j];
-        const suma = (a.escaMedio || 0) + (b.escaMedio || 0);
-        pares.push({ a, b, suma, ok: suma >= mayoriaAbs });
-      }
-    }
-    pares.sort((x, y) => y.suma - x.suma);
-    const top = pares.filter((p) => p.ok).slice(0, 8);
-    if (!top.length) return '';
-
-    const filas = top.map(function (p) {
-      return '<tr>' +
-        '<th scope="row"><span class="dot" style="background:' + p.a.color + '"></span>' +
-        esc(p.a.nombre) + ' <span class="mas">+</span> <span class="dot" style="background:' + p.b.color + '"></span>' +
-        esc(p.b.nombre) + '</th>' +
-        '<td class="num"><b>' + p.suma + '</b></td>' +
-        '<td class="num">' + (p.suma - mayoriaAbs) + ' de sobra</td>' +
-        '</tr>';
-    }).join('');
-
-    return '<details class="voto-details"><summary>Las parejas que sí llegarían a la mayoría</summary>' +
-      '<div class="voto-scroll"><table class="voto-table">' +
-      '<caption>Parejas de partidos que sumadas superan los 176 diputados</caption>' +
-      '<thead><tr><th scope="col">Pareja</th><th scope="col">Escaños</th><th scope="col">Margen</th></tr></thead>' +
-      '<tbody>' + filas + '</tbody></table></div></details>';
+      '</div>';
   }
 
   /* ------------------------------------------------------- eventos */

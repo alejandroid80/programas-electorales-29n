@@ -83,18 +83,46 @@
   };
 
   /* ----------------------------------------------------------- estado */
+  /* La seleccion se guarda tambien en localStorage para que se mantenga
+     al pasar de una pagina a otra. El parametro ?sel= sigue mandando:
+     sirve para compartir un enlace con una seleccion concreta. */
+  const SEL_KEY = 'pe29n-selected';
+
+  function loadSelected() {
+    try {
+      const raw = localStorage.getItem(SEL_KEY);
+      if (!raw) return null;                 // sin dato: se deja el estado inicial
+      const ids = JSON.parse(raw);
+      if (!Array.isArray(ids)) return null;
+      return ids.filter(function (id) { return byId(id); });
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveSelected() {
+    try {
+      localStorage.setItem(SEL_KEY, JSON.stringify(Array.from(state.selected)));
+    } catch (e) { /* almacenamiento no disponible: seguir sin persistencia */ }
+  }
+
   function readUrl() {
     const q = new URLSearchParams(location.search);
     if (q.has('sel')) {
       const ids = q.get('sel').split(',').filter(Boolean).filter(id => byId(id));
       state.selected = new Set(ids);
+      saveSelected();                        // el enlace compartido actualiza el guardado
+    } else {
+      const guardado = loadSelected();
+      if (guardado) state.selected = new Set(guardado);
     }
-    // Sin parametro: todos los partidos activados.
+    // Sin parametro ni dato guardado: todos los partidos activados.
     if (q.has('q')) state.query = q.get('q');
     if (q.has('bloc')) state.blocs = new Set(q.get('bloc').split(',').filter(Boolean));
   }
 
   function writeUrl() {
+    saveSelected();
     const q = new URLSearchParams();
     if (state.selected.size) q.set('sel', Array.from(state.selected).join(','));
     if (state.query) q.set('q', state.query);

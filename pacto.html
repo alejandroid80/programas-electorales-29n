@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pactómetro 29N 2026</title>
+<meta name="description" content="Pactómetro de las elecciones del 29N de 2026: qué gobierno podría salir de los acuerdos entre partidos, con la estimación del CIS y la selección de partidos compartida.">
+<meta name="theme-color" content="#faf7f2">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://countapi.mileshilliard.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pactómetro 29N 2026">
+<meta property="og:description" content="Pactómetro de las elecciones del 29N de 2026: qué gobierno podría salir de los acuerdos entre partidos, con la estimación del CIS y la selección de partidos compartida.">
+<meta property="og:locale" content="es_ES">
+<link rel="stylesheet" href="assets/css/fonts.css?v=33">
+<link rel="stylesheet" href="assets/css/style.css?v=33">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23a41f33'/><path d='M28 40h44M28 52h44M28 64h28' stroke='white' stroke-width='7' stroke-linecap='round'/></svg>">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">    <a class="brand" href="index.html"><b>29N · 2026</b><span>Pactómetro</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="index.html">Inicio</a>
+      <a href="fichas.html">Fichas</a>
+      <a href="matriz.html">Matriz</a>
+      <a href="temas.html">Diferencias</a>
+      <a href="pacto.html">Pactómetro</a>
+      <a href="voto.html">Intención de Voto</a>
+      <a href="mapa.html">Mapa</a>
+      <a href="metodo.html">Método</a>
+    </nav>
+    <a class="topbar-cta" href="comparador.html">Tabla para compartir</a>
+    <span class="visits" id="visits" hidden title="Visitas a esta página">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      <b id="visitsN">—</b> <span id="visitsWord">visitas</span>
+    </span>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar a tema oscuro" aria-pressed="false">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M21.4 12h-2.2M4.8 12H2.6M18.6 5.4l-1.6 1.6M7 17l-1.6 1.6M18.6 18.6 17 17M7 7 5.4 5.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="contenido">
+  <div class="wrap">
+    <section class="hero">
+      <h1>Los posibles pactos, a la vista</h1>
+      <p class="lead">Marca qué partidos se pondrían de acuerdo y comprueba si suman los 176 diputados de la mayoría absoluta, con la estimación preelectoral del CIS.</p>
+
+    </section>
+  </div>
+<div class="wrap">
+    <section id="pacto-sec">
+      <div class="sec-head">
+        <h2>Qué pasaría si se pusieran de acuerdo</h2>
+        <p>
+          Usa la estimación preelectoral del CIS, la única que reparte escaños por partido.
+          Marca en el selector de arriba los partidos que formarían el gobierno y mira si suman
+          la mayoría absoluta de 176 diputados.
+        </p>
+      </div>
+      <div id="pacto">
+        <p class="voto-cargando">Cargando el reparto de escaños…</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contenedores que usa app.js para pintar el resto de secciones. -->
+  <div hidden aria-hidden="true">
+    <div id="stats"></div>
+    <div id="spectrum"></div>
+    <div id="parties"></div>
+    <div id="blocChips"></div>
+    <div id="emptyState"></div>
+    <div id="live"></div>
+    <table id="matrix"></table>
+    <div id="matrixHead"></div>
+    <div id="matrixBody"></div>
+    <div id="matrixCount"></div>
+    <div id="matrixShare"></div>
+    <button id="copyLinkBtn" type="button"></button>
+    <button id="copyTableBtn" type="button"></button>
+    <div id="themeIndex"></div>
+    <div id="themeBlocks"></div>
+    <input type="search" id="search">
+    <button id="resetBtn" type="button"></button>
+    <div id="selectChips"></div>
+    <div id="filtro-cuenta"></div>
+    <button id="selTodos" type="button"></button>
+    <button id="selNinguno" type="button"></button>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap fcols">
+    <div>
+      Resumen elaborado a partir de los programas electorales del 29N de 2026 publicados por los partidos y verificados en
+      <a href="https://github.com/jynus/programas-electorales-29n-generales-2026" target="_blank" rel="noopener">github.com/jynus/programas-electorales-29n-generales-2026</a>.
+    </div>
+    <div>Sin cookies, sin perfiles y sin analítica. Las tipografías están en este mismo servidor, así que no se pide nada a terceros. La única excepción es el contador de visitas: consulta un servicio externo que ve la IP de quien entra, como en cualquier petición web. · <span id="year"></span></div>
+  </div>
+</footer>
+
+<script src="assets/js/elecciones.js?v=33"></script>
+<script src="assets/js/data.js?v=33"></script>
+<script src="assets/js/app.js?v=33"></script>
+<script src="assets/js/datos-voto.js?v=33"></script>
+<script src="assets/js/pacto.js?v=33"></script>
+</body>
+</html>
