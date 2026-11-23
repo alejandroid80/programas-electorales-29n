@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-22T02:48:02.966Z",
+ "generado": "2026-11-23T03:28:45.984Z",
  "elecciones": "2026-11-29",
  "fuentes": [
   {
@@ -4293,6 +4293,226 @@
  },
  "electomania": [
   {
+   "fecha": "2026-11-22",
+   "titular": "Encuesta Sigma Dos (22 nov): \"Batalla al límite en 23 provincias\"",
+   "ficha": "Sigma Dos España 22/11/2026",
+   "sondeante": "Sigma Dos para El Mundo",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/encuesta-sigma-dos-22-nov-batalla-al-limite-en-23-provincias/",
+   "muestra": null,
+   "v": {
+    "PP": 31.7,
+    "PSOE": 28.3,
+    "Vox": 17.9,
+    "Otros": 14.2,
+    "Frente Amplio": 7.2,
+    "Podemos": 0.7
+   },
+   "esc": {
+    "PP": 132,
+    "PSOE": 117,
+    "Vox": 58,
+    "Otros": 31,
+    "Frente Amplio": 12,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-22",
+   "titular": "Tracking SW Demoscopia (22 nov): \"Vox cae y PP y PSOE movilizan\"",
+   "ficha": "SW Demoscopia España 22/11/2026",
+   "sondeante": "SW Demoscopia para La Séptima",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sw-demoscopia-22-nov-vox-cae-y-pp-y-psoe-movilizan/",
+   "muestra": null,
+   "v": {
+    "PSOE": 32.5,
+    "PP": 29.7,
+    "Vox": 15.8,
+    "Otros": 15.2,
+    "Frente Amplio": 6.8
+   },
+   "esc": {
+    "PSOE": 134,
+    "PP": 123,
+    "Vox": 50,
+    "Otros": 33,
+    "Frente Amplio": 10
+   }
+  },
+  {
+   "fecha": "2026-11-22",
+   "titular": "Tracking Sondaxe (22 nov): \"Feijoo llega a la recta final de la campaña con una ventaja de 12 escaños sobre Sánchez\"",
+   "ficha": "Sondaxe España 22/11/2026",
+   "sondeante": "Sondaxe para La Voz de Galicia",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-sondaxe-22-nov-feijoo-llega-a-la-recta-final-de-la-campana-con-una-ventaja-de-12-escanos-sobre-sanchez/",
+   "muestra": null,
+   "v": {
+    "PP": 30,
+    "PSOE": 27.7,
+    "Vox": 18.8,
+    "Otros": 15.4,
+    "Frente Amplio": 8.1
+   },
+   "esc": {
+    "PP": 124,
+    "PSOE": 112,
+    "Vox": 68,
+    "Otros": 34,
+    "Frente Amplio": 12
+   }
+  },
+  {
+   "fecha": "2026-11-22",
+   "titular": "Tracking Data10 (22 nov): \"El PSOE recorta distancias, pero el PP sigue cinco puntos por delante\"",
+   "ficha": "Data10 España 22/11/2026",
+   "sondeante": "Data10 para okdiario",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/tracking-data10-22-nov-el-psoe-recorta-distancias-pero-el-pp-sigue-cinco-puntos-por-delante/",
+   "muestra": null,
+   "v": {
+    "PP": 32.1,
+    "PSOE": 27,
+    "Vox": 19,
+    "Otros": 15.3,
+    "Frente Amplio": 6.6
+   },
+   "esc": {
+    "PP": 133,
+    "PSOE": 111,
+    "Vox": 63,
+    "Otros": 33,
+    "Frente Amplio": 10
+   }
+  },
+  {
+   "fecha": "2026-11-22",
+   "titular": "Encuesta GAD3 (22 nov): \"La derecha mantiene una holgada mayoría de 194 escaños\"",
+   "ficha": "GAD3 España 22/11/2026",
+   "sondeante": "GAD3 para ABC",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/encuesta-gad3-22-nov-la-derecha-mantiene-una-holgada-mayoria-de-194-escanos/",
+   "muestra": null,
+   "v": {
+    "PP": 31.1,
+    "PSOE": 28.4,
+    "Vox": 18.1,
+    "Otros": 11.4,
+    "Frente Amplio": 5.8
+   },
+   "esc": {
+    "PP": 131,
+    "PSOE": 110,
+    "Vox": 63,
+    "Otros": 39,
+    "Frente Amplio": 7
+   }
+  },
+  {
+   "fecha": "2026-11-22",
+   "titular": "Encuesta Ipsos (22 nov): \"La derecha suma absoluta mientras el PSOE se acerca al PP\"",
+   "ficha": "Ipsos España 22/11/2026",
+   "sondeante": "Ipsos para La Vanguardia",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/encuesta-ipsos-22-nov-la-derecha-suma-absoluta-mientras-el-psoe-se-acerca-al-pp/",
+   "muestra": null,
+   "v": {
+    "PP": 30.3,
+    "PSOE": 29.8,
+    "Vox": 17.9,
+    "Frente Amplio": 4.8,
+    "ERC": 2.7,
+    "Adelante Andalucía": 2.1,
+    "Se Acabó la Fiesta": 1.9,
+    "EH Bildu": 1.4,
+    "Junts": 1.3,
+    "Podemos": 1.1,
+    "Compromis": 1,
+    "PNV": 0.8,
+    "BNG": 0.6,
+    "CC": 0.4
+   },
+   "esc": {
+    "PP": 127,
+    "PSOE": 119,
+    "Vox": 63,
+    "Frente Amplio": 6,
+    "ERC": 11,
+    "Adelante Andalucía": 4,
+    "Se Acabó la Fiesta": 0,
+    "EH Bildu": 7,
+    "Junts": 5,
+    "Podemos": 0,
+    "Compromis": 3,
+    "PNV": 3,
+    "BNG": 1,
+    "CC": 1
+   }
+  },
+  {
+   "fecha": "2026-11-22",
+   "titular": "Encuesta DYM (22 nov): \"PP y Vox consolidan su ventaja\"",
+   "ficha": "DYM España 22/11/2026",
+   "sondeante": "DYM para Diario de Navarra",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/encuesta-dym-22-nov-pp-y-vox-consolidan-su-ventaja/",
+   "muestra": null,
+   "v": {
+    "PP": 33,
+    "PSOE": 28,
+    "Vox": 18,
+    "Otros": 12.8,
+    "Frente Amplio": 6.9,
+    "Podemos": 1.3
+   },
+   "esc": {
+    "PP": 135,
+    "PSOE": 110,
+    "Vox": 62,
+    "Otros": 32,
+    "Frente Amplio": 11,
+    "Podemos": 0
+   }
+  },
+  {
+   "fecha": "2026-11-22",
+   "titular": "Encuesta H. Métrica (22 nov): \"PP y Vox se disparan a 210 escaños\"",
+   "ficha": "Hamalgama Métrica España 22/11/2026",
+   "sondeante": "Hamalgama Métrica para Vozpópuli",
+   "licencia": "https://creativecommons.org/licenses/by/4.0/",
+   "url": "https://electomania.es/encuesta-h-metrica-22-nov-pp-y-vox-se-disparan-a-210-escanos/",
+   "muestra": null,
+   "v": {
+    "PP": 31.8,
+    "PSOE": 25.4,
+    "Vox": 20.6,
+    "Frente Amplio": 6.5,
+    "ERC": 2.2,
+    "Adelante Andalucía": 1.5,
+    "Junts": 1.5,
+    "EH Bildu": 1.4,
+    "Podemos": 1.2,
+    "PNV": 0.9,
+    "BNG": 0.8,
+    "UPN": 0.4
+   },
+   "esc": {
+    "PP": 130,
+    "PSOE": 98,
+    "Vox": 80,
+    "Frente Amplio": 9,
+    "ERC": 9,
+    "Adelante Andalucía": 3,
+    "Junts": 6,
+    "EH Bildu": 7,
+    "Podemos": 0,
+    "PNV": 4,
+    "BNG": 2,
+    "UPN": 2
+   }
+  },
+  {
    "fecha": "2026-11-21",
    "titular": "Tracking Sigma Dos (21 nov): \"PP y PSOE ganan apoyos y la derecha ancla su ventaja\"",
    "ficha": "Sigma Dos España 21/11/2026",
@@ -4441,216 +4661,12 @@
     "Otros": 33,
     "Frente Amplio": 11
    }
-  },
-  {
-   "fecha": "2026-11-20",
-   "titular": "Tracking Sigma Dos (20 nov): \"El cara a cara impulsa a Feijóo a su mejor dato desde que arrancó la campaña y lo consolida ante Vox\"",
-   "ficha": "Sigma Dos España 20/11/2026",
-   "sondeante": "Sigma Dos para El Mundo",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sigma-dos-20-nov-el-psoe-recorta-la-distancia-con-el-pp-vox-cae/",
-   "muestra": null,
-   "v": {
-    "PP": 31.2,
-    "PSOE": 27.6,
-    "Vox": 18.9,
-    "Frente Amplio": 7.1,
-    "ERC": 2.5,
-    "Adelante Andalucía": 1.7,
-    "EH Bildu": 1.6,
-    "Junts": 1.3,
-    "BNG": 1.1,
-    "PNV": 1,
-    "Podemos": 0.8,
-    "CC": 0.4
-   },
-   "esc": {
-    "PP": 129,
-    "PSOE": 115,
-    "Vox": 60,
-    "Frente Amplio": 12,
-    "ERC": 10,
-    "Adelante Andalucía": 4,
-    "EH Bildu": 7,
-    "Junts": 5,
-    "BNG": 2,
-    "PNV": 5,
-    "Podemos": 0,
-    "CC": 1
-   }
-  },
-  {
-   "fecha": "2026-11-20",
-   "titular": "Tracking SW Demoscopia (20 nov): \"PP y Vox sumarían mayoría con CC y UPN\"",
-   "ficha": "SW Demoscopia España 20/11/2026",
-   "sondeante": "SW Demoscopia para La Séptima",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sw-demoscopia-20-nov-pp-y-vox-sumarian-mayoria-con-cc-y-upn/",
-   "muestra": null,
-   "v": {
-    "PSOE": 32.1,
-    "PP": 29.4,
-    "Vox": 16.3,
-    "Otros": 15.3,
-    "Frente Amplio": 6.9
-   },
-   "esc": {
-    "PSOE": 134,
-    "PP": 120,
-    "Vox": 53,
-    "Otros": 33,
-    "Frente Amplio": 10
-   }
-  },
-  {
-   "fecha": "2026-11-20",
-   "titular": "Tracking Data10 (20 nov): \"Feijóo roba 70.000 votantes a Sánchez, 120.000 a Vox, 150.000 de la abstención y el PP sube 8 escaños\"",
-   "ficha": "Data10 España 20/11/2026",
-   "sondeante": "Data10 para okdiario",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-data10-20-nov-feijoo-roba-70-000-votantes-a-sanchez-120-000-a-vox-150-000-de-la-abstencion-y-el-pp-sube-8-escanos/",
-   "muestra": null,
-   "v": {
-    "PP": 32.5,
-    "PSOE": 26.5,
-    "Vox": 18.8,
-    "Otros": 15.4,
-    "Frente Amplio": 6.8
-   },
-   "esc": {
-    "PP": 137,
-    "PSOE": 106,
-    "Vox": 62,
-    "Otros": 33,
-    "Frente Amplio": 12
-   }
-  },
-  {
-   "fecha": "2026-11-20",
-   "titular": "Tracking 40dB (20 nov): \"La distancia entre PP y PSOE se estrecha al mínimo pese a la victoria de Feijóo en el debate\"",
-   "ficha": "40dB España 20/11/2026",
-   "sondeante": "40dB para El País",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-40db-20-nov-la-distancia-entre-pp-y-psoe-se-estrecha-al-minimo-pese-a-la-victoria-de-feijoo-en-el-debate/",
-   "muestra": null,
-   "v": {
-    "PP": 31.9,
-    "PSOE": 31.2,
-    "Vox": 17.1,
-    "Otros": 13.1,
-    "Frente Amplio": 3.8,
-    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.8,
-    "Podemos": 1.1
-   },
-   "esc": {
-    "PP": 133,
-    "PSOE": 124,
-    "Vox": 56,
-    "Otros": 29,
-    "Frente Amplio": 5,
-    "Otras coaliciones izq. (CHA / UPC / AraMés)": 3,
-    "Podemos": 0
-   }
-  },
-  {
-   "fecha": "2026-11-20",
-   "titular": "Encuesta More In Common (20 nov): \"La derecha mantiene una clara ventaja\"",
-   "ficha": "More In Common España 20/11/2026",
-   "sondeante": "More In Common",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/encuesta-more-in-common-20-nov-la-derecha-mantiene-una-clara-ventaja/",
-   "muestra": null,
-   "v": {
-    "PP": 28.9,
-    "PSOE": 28,
-    "Vox": 19.8,
-    "Otros": 12.2,
-    "Frente Amplio": 7.1,
-    "Se Acabó la Fiesta": 2.3,
-    "Podemos": 1.7
-   },
-   "esc": {}
-  },
-  {
-   "fecha": "2026-11-20",
-   "titular": "Tracking Sondaxe (19 nov): \"Feijoo repunta por primera vez en campaña antes del debate con Sánchez\"",
-   "ficha": "Sondaxe España 20/11/2026",
-   "sondeante": "Sondaxe para La Voz de Galicia",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sondaxe-19-nov-feijoo-repunta-por-primera-vez-en-campana-antes-del-debate-con-sanchez/",
-   "muestra": null,
-   "v": {
-    "PP": 29.3,
-    "PSOE": 27.8,
-    "Vox": 19.7,
-    "Otros": 16.3,
-    "Frente Amplio": 6.9
-   },
-   "esc": {
-    "PP": 123,
-    "PSOE": 110,
-    "Vox": 70,
-    "Otros": 35,
-    "Frente Amplio": 12
-   }
-  },
-  {
-   "fecha": "2026-11-19",
-   "titular": "Tracking 40dB (19 nov): \"ligera ventaja del PP y muy clara del bloque derechista\"",
-   "ficha": "40dB España 19/11/2026",
-   "sondeante": "40dB para El País",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-40db-19-nov-ligera-ventaja-del-pp-y-muy-clara-del-bloque-derechista/",
-   "muestra": null,
-   "v": {
-    "PP": 32.2,
-    "PSOE": 30.2,
-    "Vox": 17.6,
-    "Otros": 13.6,
-    "Frente Amplio": 3.6,
-    "Otras coaliciones izq. (CHA / UPC / AraMés)": 1.7,
-    "Podemos": 1.1
-   },
-   "esc": {
-    "PP": 132,
-    "PSOE": 120,
-    "Vox": 58,
-    "Otros": 31,
-    "Frente Amplio": 5,
-    "Otras coaliciones izq. (CHA / UPC / AraMés)": 4,
-    "Podemos": 0
-   }
-  },
-  {
-   "fecha": "2026-11-19",
-   "titular": "Tracking Sigma Dos (19 nov): \"El PP coge fuerza a costa de Vox y Sánchez llega al cara a cara a 4p de Feijóo\"",
-   "ficha": "Sigma Dos España 19/11/2026",
-   "sondeante": "Sigma Dos para El Mundo",
-   "licencia": "https://creativecommons.org/licenses/by/4.0/",
-   "url": "https://electomania.es/tracking-sigma-dos-19-nov-pp-y-psoe-al-alza-mientras-vox-desciende/",
-   "muestra": null,
-   "v": {
-    "PP": 31,
-    "PSOE": 27.1,
-    "Vox": 19.4,
-    "Otros": 15.8,
-    "Frente Amplio": 7.1,
-    "Podemos": 0.8
-   },
-   "esc": {
-    "PP": 128,
-    "PSOE": 113,
-    "Vox": 62,
-    "Otros": 35,
-    "Frente Amplio": 12,
-    "Podemos": 0
-   }
   }
  ],
  "preelectoral": {
   "estudio": 3584,
   "titulo": "Preelectoral elecciones generales 2026",
-  "actualizado": "2026-11-22",
+  "actualizado": "2026-11-23",
   "url": "https://www.cis.es/documents/d/guest/3584_estimacion-pdf",
   "mayoria": 176,
   "XL": 350,
