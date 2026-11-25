@@ -1,0 +1,80 @@
+/* ===================================================================
+   Banner compacto y página «Pasadas Legislaturas»
+   =================================================================== */
+
+.banner-legis {
+  display: flex; align-items: center; gap: 16px;
+  min-height: 104px; margin: 0 0 26px; padding: 12px 18px;
+  text-decoration: none; color: var(--ink);
+  background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.banner-legis:hover {
+  transform: translateY(-2px); box-shadow: var(--shadow-lift);
+  border-color: var(--line-2);
+}
+.banner-legis img {
+  width: 64px; height: 80px; flex: none; object-fit: cover;
+  border-radius: 8px; border: 1px solid var(--line); background: var(--bg-soft);
+}
+.banner-legis-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.banner-legis-copy b {
+  font-family: var(--serif); font-size: 1.12rem; font-weight: 600;
+  letter-spacing: -.01em;
+}
+.banner-legis-copy span { font-size: .84rem; color: var(--ink-2); line-height: 1.4; }
+.banner-legis-cta {
+  margin-left: auto; flex: none; font-size: .82rem; font-weight: 700;
+  color: var(--accent); background: var(--accent-soft);
+  padding: 8px 14px; border-radius: 99px; white-space: nowrap;
+}
+html[data-theme="dark"] .banner-legis-cta { color: #ff9eae; background: #352027; }
+
+.pasadas-hero { padding-bottom: 22px; }
+.pasadas-hero h1 { margin-bottom: 12px; }
+.pasadas-hero .lead { max-width: 72ch; margin-bottom: 0; }
+
+.pasadas-layout {
+  display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 34px; align-items: start; padding-bottom: 46px;
+}
+.pasadas-fig { margin: 0; }
+.pasadas-image {
+  display: block; width: 100%; height: auto; border-radius: var(--radius);
+  border: 1px solid var(--line); box-shadow: var(--shadow-lift);
+  background: var(--bg-card);
+}
+.pasadas-fig figcaption { margin-top: 9px; font-size: .76rem; color: var(--ink-3); }
+
+.pasadas-copy h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: 10px; }
+.pasadas-copy p { color: var(--ink-2); max-width: 62ch; }
+.pasadas-copy h3 {
+  font-family: var(--sans); font-size: .8rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-3); margin: 24px 0 10px;
+}
+.pasadas-actions { margin: 20px 0 0; }
+.share-row .btn { font-size: .82rem; padding: 8px 12px; }
+
+/* .btn de la base fija display:inline-flex y anula el atributo hidden. */
+#shareNative[hidden] { display: none; }
+
+.pasadas-nota {
+  margin-top: 22px; padding: 13px 16px; border-left: 3px solid var(--accent);
+  background: var(--bg-soft); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: .85rem; color: var(--ink-2);
+}
+.pasadas-nota b { color: var(--ink); }
+
+@media (max-width: 860px) {
+  .pasadas-layout { grid-template-columns: 1fr; gap: 26px; }
+  .pasadas-image { max-width: 420px; margin: 0 auto; }
+}
+@media (max-width: 620px) {
+  .banner-legis { gap: 11px; padding: 10px 12px; min-height: 92px; }
+  .banner-legis img { width: 52px; height: 65px; }
+  .banner-legis-copy b { font-size: 1rem; }
+  .banner-legis-copy span { font-size: .78rem; }
+  .banner-legis-cta { font-size: .74rem; padding: 7px 10px; }
+}

@@ -10,3 +10,7 @@ tarjetas/
 # Nada de esto se publica: la pagina es estatica.
 node_modules/
 .DS_Store
+
+# Bytecode del generador de la infografia.
+__pycache__/
+*.pyc
