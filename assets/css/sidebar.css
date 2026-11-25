@@ -1,0 +1,157 @@
+/* ===================================================================
+   Navegacion lateral — barra vertical a la izquierda en escritorio,
+   cajon con boton en pantallas estrechas.
+   =================================================================== */
+
+:root { --sidebar-w: 264px; }
+
+.menu-toggle {
+  display: none;
+  width: var(--tap); height: var(--tap); flex: none;
+  align-content: center; justify-items: center; gap: 4px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bg-card); color: var(--ink-2); cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.menu-toggle:hover { border-color: var(--line-2); background: var(--bg-soft); }
+.menu-toggle span {
+  display: block; width: 18px; height: 2px; border-radius: 2px;
+  background: var(--ink-2); transition: transform .2s ease, opacity .2s ease;
+}
+
+.nav-label {
+  display: block; margin: 0 0 8px 11px;
+  font-size: .66rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+
+@media (min-width: 1024px) {
+  html { scroll-padding-top: 0; }
+  body { padding-left: var(--sidebar-w); }
+  .skip:focus { left: calc(var(--sidebar-w) + 12px); top: 12px; }
+
+  .topbar {
+    position: fixed; inset: 0 auto 0 0;
+    width: var(--sidebar-w); height: 100vh; height: 100dvh;
+    background: var(--bg-card); border-right: 1px solid var(--line);
+    border-bottom: 0; backdrop-filter: none; z-index: 60;
+  }
+  .topbar-in {
+    position: relative; display: flex; flex-direction: column; align-items: stretch;
+    max-width: none; height: 100%; margin: 0; padding: 24px 18px 26px; gap: 0;
+  }
+  .brand { flex-direction: column; align-items: flex-start; gap: 2px; font-size: 1.15rem; }
+  .brand span { font-size: .72rem; line-height: 1.35; }
+
+  .nav {
+    display: flex; flex-direction: column; gap: 2px;
+    width: 100%; margin: 22px 0 0; padding: 0;
+    overflow: visible;
+  }
+  .nav a {
+    display: flex; align-items: center; gap: 10px;
+    width: 100%; padding: 9px 11px; border-radius: 9px;
+    font-size: .88rem; white-space: normal;
+  }
+  .nav a::before {
+    content: ""; width: 6px; height: 6px; flex: none;
+    border-radius: 50%; background: var(--line-2);
+  }
+  .nav a:hover { color: var(--ink); background: var(--bg-soft); }
+  .nav a[aria-current="page"] {
+    color: var(--accent); background: var(--accent-soft); font-weight: 650;
+  }
+  .nav a[aria-current="page"]::before { background: var(--accent); }
+  .nav-local {
+    display: flex; flex-direction: column; gap: 2px;
+    margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line);
+  }
+
+  .topbar-cta {
+    display: block; width: 100%; margin-top: auto;
+    text-align: center; padding: 12px; border-radius: 10px;
+  }
+  .visits { margin-top: 14px; align-self: flex-start; }
+  .icon-btn { position: absolute; top: 22px; right: 18px; width: 40px; height: 40px; }
+}
+
+@media (max-width: 1023px) {
+  .topbar {
+    position: sticky; top: 0; z-index: 60;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: saturate(1.6) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-in {
+    display: flex; align-items: center; gap: 12px;
+    max-width: none; min-height: 64px; padding: 0 16px;
+  }
+  .menu-toggle { display: grid; }
+  .brand { min-width: 0; }
+  .brand b { white-space: nowrap; }
+  .brand span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .icon-btn { margin-left: auto; }
+  .nav, .nav-label, .topbar-cta, .visits { display: none; }
+
+  body.nav-open { overflow: hidden; }
+  body.nav-open::before {
+    content: ""; position: fixed; inset: 0; z-index: 55;
+    background: rgba(12, 14, 17, .55); backdrop-filter: blur(2px);
+  }
+  body.nav-open .topbar {
+    position: fixed; inset: 0 auto 0 0;
+    width: min(320px, 86vw); height: 100vh; height: 100dvh;
+    background: var(--bg-card); border-right: 1px solid var(--line);
+    border-bottom: 0; backdrop-filter: none;
+    overflow-y: auto; overscroll-behavior: contain;
+  }
+  body.nav-open .topbar-in {
+    display: grid; align-items: start; min-height: 100%;
+    grid-template-columns: 44px 1fr 44px;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+      "toggle brand theme"
+      "nav nav nav"
+      "visits visits visits"
+      "cta cta cta";
+    padding: 14px 16px 24px; gap: 0;
+  }
+  body.nav-open .menu-toggle { grid-area: toggle; }
+  body.nav-open .brand {
+    grid-area: brand; flex-direction: column; align-items: flex-start;
+    gap: 0; margin: 0 6px; font-size: 1.05rem;
+  }
+  body.nav-open .brand span { max-width: 100%; white-space: normal; }
+  body.nav-open .icon-btn { grid-area: theme; margin-left: 0; width: 40px; height: 40px; }
+
+  body.nav-open .nav {
+    grid-area: nav; display: flex; flex-direction: column; gap: 2px;
+    width: 100%; margin: 24px 0 0; padding: 0; overflow: visible;
+  }
+  body.nav-open .nav a {
+    display: flex; align-items: center; gap: 10px;
+    width: 100%; padding: 10px 11px; border-radius: 9px;
+    font-size: .92rem; white-space: normal;
+  }
+  body.nav-open .nav a::before {
+    content: ""; width: 6px; height: 6px; flex: none;
+    border-radius: 50%; background: var(--line-2);
+  }
+  body.nav-open .nav a[aria-current="page"] {
+    color: var(--accent); background: var(--accent-soft); font-weight: 650;
+  }
+  body.nav-open .nav a[aria-current="page"]::before { background: var(--accent); }
+  body.nav-open .nav-label { display: block; }
+  body.nav-open .nav-local { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+
+  body.nav-open .visits { grid-area: visits; display: inline-flex; margin-top: 18px; }
+  body.nav-open .visits[hidden] { display: none; }
+  body.nav-open .topbar-cta {
+    grid-area: cta; align-self: end; display: block; width: 100%;
+    margin-top: 24px; padding: 12px; text-align: center; border-radius: 10px;
+  }
+
+  body.nav-open .menu-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  body.nav-open .menu-toggle span:nth-child(2) { opacity: 0; }
+  body.nav-open .menu-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+}

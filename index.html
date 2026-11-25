@@ -15,9 +15,10 @@
 <meta property="og:title" content="Programas electorales 29N 2026 — los partidos, punto por punto">
 <meta property="og:description" content="Veintidós programas del 29N de 2026 leídos, resumidos y puestos lado a lado: ocho ejes de comparación, fichas por partido y matriz comparativa.">
 <meta property="og:locale" content="es_ES">
-<link rel="stylesheet" href="assets/css/fonts.css?v=35">
-<link rel="stylesheet" href="assets/css/style.css?v=35">
-<link rel="stylesheet" href="assets/css/legislaturas.css?v=35">
+<link rel="stylesheet" href="assets/css/fonts.css?v=36">
+<link rel="stylesheet" href="assets/css/style.css?v=36">
+<link rel="stylesheet" href="assets/css/sidebar.css?v=36">
+<link rel="stylesheet" href="assets/css/legislaturas.css?v=36">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23a41f33'/><path d='M28 40h44M28 52h44M28 64h28' stroke='white' stroke-width='7' stroke-linecap='round'/></svg>">
 </head>
 <body>
@@ -25,8 +26,11 @@
 
 <header class="topbar">
   <div class="wrap topbar-in">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuNav"><span></span><span></span><span></span></button>
     <a class="brand" href="index.html"><b>29N · 2026</b><span>Programas electorales a un clic</span></a>
-    <nav class="nav" aria-label="Secciones">
+    <nav class="nav" id="menuNav" aria-label="Secciones">
+      <span class="nav-label" aria-hidden="true">Secciones</span>
+      <a href="index.html" aria-current="page">Inicio</a>
       <a href="fichas.html">Fichas</a>
       <a href="matriz.html">Matriz</a>
       <a href="temas.html">Diferencias</a>
@@ -85,7 +89,7 @@
   <!-- --------------------------------------------------- BANNER LEGISLATURAS -->
   <div class="wrap">
     <a class="banner-legis" href="pasadas-legislaturas.html">
-      <img src="assets/resumen-legislativo-coalicion.png?v=35" alt="Infografía con las leyes y reformas clave de la XIV y XV legislatura" width="64" height="80">
+      <img src="assets/resumen-legislativo-coalicion.png?v=36" alt="Infografía con las leyes y reformas clave de la XIV y XV legislatura" width="64" height="80">
       <span class="banner-legis-copy">
         <b>Pasadas Legislaturas</b>
         <span>Leyes y reformas clave de la XIV y XV legislatura, en una imagen lista para compartir.</span>
@@ -150,8 +154,9 @@
   </div>
 </footer>
 
-<script src="assets/js/elecciones.js?v=35"></script>
-<script src="assets/js/data.js?v=35"></script>
-<script src="assets/js/app.js?v=35"></script>
+<script src="assets/js/elecciones.js?v=36"></script>
+<script src="assets/js/data.js?v=36"></script>
+<script src="assets/js/app.js?v=36"></script>
+<script src="assets/js/sidebar.js?v=36"></script>
 </body>
 </html>
