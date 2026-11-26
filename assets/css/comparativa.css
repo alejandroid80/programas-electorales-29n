@@ -5,14 +5,53 @@
 .comparativa-hero .lead { max-width: 80ch; margin-bottom: 0; }
 
 .comp-bloque {
+  --party: var(--line-2);
+  --party-soft: var(--bg-card);
+  --party-line: var(--line);
+  --party-ink: var(--ink);
   margin: 0 0 24px; padding: 22px 24px;
-  background: var(--bg-card); border: 1px solid var(--line);
+  background: var(--party-soft);
+  border: 1px solid var(--party-line);
+  border-left: 5px solid var(--party);
   border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.comp-bloque.pp {
+  --party: #1B5FA8; --party-soft: #EAF2FA;
+  --party-line: #D4E2F1; --party-ink: #174E85;
+}
+.comp-bloque.ps {
+  --party: #B5232A; --party-soft: #FBE9EA;
+  --party-line: #EFD4D5; --party-ink: #8E1B21;
+}
+.comp-bloque.podemos {
+  --party: #6C3A8E; --party-soft: #F0E7F6;
+  --party-line: #E2D5EA; --party-ink: #563070;
+}
+.comp-bloque.sumar {
+  --party: #B8327A; --party-soft: #FBE6F1;
+  --party-line: #F0D7E5; --party-ink: #8E255E;
+}
+html[data-theme="dark"] .comp-bloque.pp {
+  --party: #78ADE6; --party-soft: #16212F;
+  --party-line: #29415C; --party-ink: #A8CEF2;
+}
+html[data-theme="dark"] .comp-bloque.ps {
+  --party: #F08A97; --party-soft: #2A1B1E;
+  --party-line: #4A2B30; --party-ink: #F4B3BC;
+}
+html[data-theme="dark"] .comp-bloque.podemos {
+  --party: #C79BE0; --party-soft: #241B2D;
+  --party-line: #3D2D4C; --party-ink: #DDBAF0;
+}
+html[data-theme="dark"] .comp-bloque.sumar {
+  --party: #F09BC9; --party-soft: #2B1B26;
+  --party-line: #4B2E40; --party-ink: #F5BADC;
 }
 .comp-bloque h2 {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
   font-family: var(--serif); font-size: 1.5rem; font-weight: 600;
   letter-spacing: -.01em; margin-bottom: 4px;
+  color: var(--party-ink);
 }
 .comp-bloque h2 span {
   font-family: var(--sans); font-size: .74rem; font-weight: 700;
@@ -24,9 +63,9 @@
 .comp-col h3 {
   font-family: var(--sans); font-size: .78rem; font-weight: 700;
   letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3);
-  padding-bottom: 7px; margin-bottom: 12px; border-bottom: 1px solid var(--line);
+  padding-bottom: 7px; margin-bottom: 12px; border-bottom: 1px solid var(--party-line);
 }
-.comp-col.avances h3 { color: #0E7C7B; border-bottom-color: #0E7C7B; }
+.comp-col.avances h3 { color: #0B7473; border-bottom-color: #0B7473; }
 .comp-col.limites h3 { color: #B5232A; border-bottom-color: #B5232A; }
 html[data-theme="dark"] .comp-col.avances h3 { color: #5FD0C4; }
 html[data-theme="dark"] .comp-col.limites h3 { color: #F08A97; }
