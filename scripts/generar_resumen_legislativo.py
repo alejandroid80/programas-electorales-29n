@@ -43,7 +43,7 @@ DATA_15 = [
     ("Renovación del CGPJ y el TC", "JUL 2024", "Acuerdo PSOE-PP que desbloquea el Consejo General del Poder Judicial tras cinco años."),
     ("Ley de paridad", "AGO 2024", "Ley Orgánica 2/2024: paridad en las listas electorales y presencia equilibrada en los órganos de decisión."),
     ("Reforma de la Justicia", "ENE 2025", "Ley Orgánica 1/2025 de eficiencia del Servicio Público de Justicia: más oralidad y digitalización."),
-    ("Decretos de vivienda", "OCT 2026", "Paralización de desahucios y prórroga de alquileres, convalidados en la Diputación Permanente."),
+    ("Decretos de vivienda", "OCT 2026", "RDL 29/2026, vivienda asequible: convalidado por la Resolución 23755, de 12-11-2026 (BOE 283); RDL 28/2026, derogado."),
 ]
 
 NOTE_15 = "Sin Presupuestos Generales del Estado en toda la legislatura: rigieron las cuentas de 2023."
